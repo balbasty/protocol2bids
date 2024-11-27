@@ -1,0 +1,1146 @@
+# -----------------------------------------------------------------------------
+#   BIDS keys (MRI)
+# -----------------------------------------------------------------------------
+BIDS:
+  # MRIHardware
+  Manufacturer:
+    level: recommended
+    type: string
+    enum: [Siemens, Philipps, GE, ...]
+    dicom: 0008,0070
+    description: Manufacturer of the equipment that produced the measurements.
+  ManufacturersModelName:
+    level: recommended
+    type: string
+    dicom: 0008,1090
+    description: Manufacturer's model name of the equipment that produced the measurements.
+  DeviceSerialNumber:
+    level: recommended
+    type: string
+    dicom: 0018,1000
+    description: |
+      The serial number of the equipment that produced the measurements.
+      A pseudonym can also be used to prevent the equipment from being
+      identifiable, so long as each pseudonym is unique within the dataset
+  StationName:
+    level: recommended
+    type: string
+    dicom: 0008,1010
+    description: Institution defined name of the machine that produced the measurements.
+  SoftwareVersions:
+    level: recommended
+    type: string
+    dicom: 0018,1020
+    description: Manufacturer's designation of software version of the equipment that produced the measurements.
+  MagneticFieldStrength:
+    level: recommended
+    type: number
+    unit: T
+    dicom: 0018,0087
+    description: Nominal field strength of MR magnet in Tesla.
+  ReceiveCoilName:
+    level: recommended
+    type: string
+    dicom: 0018,1250
+    description: Information describing the receiver coil.
+  ReceiveCoilActiveElements:
+    level: recommended
+    type: string
+    description: |
+      Information describing the active/selected elements of the receiver coil.
+      This does not correspond to a tag in the DICOM ontology.
+      The vendor-defined terminology for active coil elements can go in this field.
+    long_description: |
+      For Siemens, coil channels are typically not activated/selected
+      individually, but rather in pre-defined selectable "groups" of individual
+      channels, and the list of the "groups" of elements that are active/selected
+      in any given scan populates the Coil String entry in Siemens' private DICOM
+      fields (for example, HEA;HEP for the Siemens standard 32 ch coil when both
+      the anterior and posterior groups are activated). This is a flexible field
+      that can be used as most appropriate for a given vendor and coil to define
+      the "active" coil elements. Since individual scans can sometimes not have
+      the intended coil elements selected, it is preferable for this field to be
+      populated directly from the DICOM for each individual scan, so that it can
+      be used as a mechanism for checking that a given scan was collected with
+      the intended coil elements selected.
+  GradientSetType:
+    level: recommended
+    type: string
+    description: |
+      It should be possible to infer the gradient coil from the scanner model.
+      If not, for example because of a custom upgrade or use of a gradient
+      insert set, then the specifications of the actual gradient coil should
+      be reported independently.
+  MRTransmitCoilSequence:
+    level: recommended
+    type: string
+    dicom: 0018,9049
+    description: This is a relevant field if a non-standard transmit coil is used.
+  MatrixCoilMode:
+    level: recommended
+    type: string
+    description: |
+      (If used) A method for reducing the number of independent channels by
+      combining in analog the signals from multiple coil elements.
+      There are typically different default modes when using un-accelerated
+      or accelerated (for example, "GRAPPA", "SENSE") imaging.
+  CoilCombinationMethod:
+    level: recommended
+    type: string
+    enum: [rSOS, adaptive]
+    description: |
+      Almost all fMRI studies using phased-array coils use root-sum-of-squares
+      (rSOS) combination, but other methods exist. The image reconstruction is
+      changed by the coil combination method (as for the matrix coil mode above),
+      so anything non-standard should be reported.
+  NumberTransmitCoilActiveElements:
+    level: optional
+    type: integer
+    description: The number of active RF elements used by the transmit coil.
+  TablePosition:
+    level: {chunk: recommended, "": optional}
+    type: array
+    items: number
+    description: |
+      The table position, relative to an implementation-specific reference
+      point, often the isocenter. Values must be an array (1x3) of three
+      distances in millimeters in absolute coordinates (world coordinates).
+      If an observer stands in front of the scanner looking at it, a table
+      moving to the left, up or into the scanner (from the observer's point
+      of view) will increase the 1st, 2nd and 3rd value in the array
+      respectively. The origin is defined by the image affine.
+  # MRIInstitutionInformation
+  InstitutionName:
+    level: recommended
+    type: string
+    dicom: 0008,0080
+    description: The name of the institution in charge of the equipment that produced the measurements.
+  InstitutionAddress:
+    level: recommended
+    type: string
+    dicom: 0008,0081
+    description: The address of the institution in charge of the equipment that produced the measurements.
+  InstitutionalDepartmentName:
+    level: recommended
+    type: string
+    dicom: 0008,1040
+    description: The department in the institution in charge of the equipment that produced the measurements.
+  # MRISequenceSpecifics
+  PulseSequenceType:
+    level: recommended
+    type: string
+    enum: [
+      MPRAGE,
+      Gradient Echo EPI,
+      Spin Echo EPI,
+      Multiband Gradient Echo EPI,
+      ...
+    ]
+    description: A general description of the pulse sequence used for the scan
+  ScanningSequence:
+    level: recommended
+    type: [string, array]
+    items: string
+    dicom: 0018,0020
+    description: Description of the type of data acquired.
+  SequenceVariant:
+    level: recommended
+    type: [string, array]
+    items: string
+    dicom: 0018,0021
+    description: Variant of the ScanningSequence.
+  ScanOptions:
+    level: recommended
+    type: [string, array]
+    items: string
+    enum:
+      PER:  Phase Encode Reordering
+      RG:   Respiratory Gating
+      CG:   Cardiac Gating
+      PPG:  Peripheral Pulse Gating
+      FC:   Flow Compensation
+      PFF:  Partial Fourier - Frequency
+      PFP:  Partial Fourier - Phase
+      SP:   Spatial Presaturation
+      FS:   Fat Saturation
+      ...:
+    dicom: 0018,0022
+    description: Parameters of ScanningSequence.
+  SequenceName:
+    level: recommended
+    type: string
+    dicom: 0018,0024
+    description: Manufacturer's designation of the sequence name.
+  PulseSequenceDetails:
+    level: recommended
+    type: string
+    description: Information beyond pulse sequence type that identifies the specific pulse sequence used
+  NonlinearGradientCorrection:
+    level: {pet: required, "": recommended}
+    type: bool
+    description: Boolean stating if the image saved has been corrected for gradient nonlinearities by the scanner sequence.
+  MRAcquisitionType:
+    level: {asl: required, "": recommended}
+    type: string
+    enum: ["2D", "3D"]
+    dicom: 0018,0023
+    description: Type of sequence readout.
+  # MTParameters
+  MTState:
+    level: recommended
+    type: boolean
+    dicom: 0018,9020
+    dicom_key: MagnetizationTransfer
+    description: Boolean stating whether the magnetization transfer pulse is applied
+  MTOffsetFrequency:
+    level: optional
+    type: number
+    unit: Hz
+    description: The frequency offset of the magnetization transfer pulse with respect to the central H1 Larmor frequency
+  MTPulseBandwidth:
+    level: optional
+    type: number
+    unit: Hz
+    description: The excitation bandwidth of the magnetization transfer pulse
+  MTNumberOfPulses:
+    level: optional
+    type: integer
+    description: The number of magnetization transfer RF pulses applied before the readout.
+  MTPulseShape:
+    level: optional
+    type: string
+    enum: [HARD, GAUSSIAN, GAUSSHANN, SINC, SINCHANN, SINCGAUSS, FERMI]
+    description: Shape of the magnetization transfer RF pulse waveform.
+  MTPulseDuration:
+    level: optional
+    type: number
+    unit: s
+    description: Duration of the magnetization transfer RF pulse
+  SpoilingState:
+    level: recommended
+    type: bool
+    description: |
+      Boolean stating whether the pulse sequence uses any type of spoiling
+      strategy to suppress residual transverse magnetization.
+  SpoilingType:
+    level: optional
+    type: str
+    enum: [RF, GRADIENT, COMBINED]
+    description: Specifies which spoiling method(s) are used by a spoiled sequence.
+  SpoilingRFPhaseIncrement:
+    level: optional
+    type: number
+    unit: deg
+    description: |
+      The amount of incrementation described in degrees, which is applied to
+      the phase of the excitation pulse at each TR period for achieving RF spoiling.
+  SpoilingGradientMoment:
+    level: optional
+    type: number
+    unit: mT.s/m
+    description: Zeroth moment of the spoiler gradient lobe
+  SpoilingGradientDuration:
+    level: optional
+    type: number
+    unit: s
+    description: |
+      The duration of the spoiler gradient lobe in seconds. The duration of a
+      trapezoidal lobe is defined as the summation of ramp-up and plateau times.
+  # ??
+  WaterSuppression:
+    level: optional
+    type: boolean
+    description: Boolean indicating whether water suppression was used prior to acquisition.
+  WaterSuppressionTechnique:
+    level: optional
+    type: string
+    enum: ["CHESS", "VAPOR", ...]
+    description: The name of the pulse sequence used for water suppression
+  B0ShimmingTechnique:
+    level: optional
+    type: string
+    description: The technique used to shim the B0 field
+  B1ShimmingTechnique:
+    level: optional
+    type: string
+    description: The technique used to shim the B1 field
+  # MRISpatialEncoding
+  NumberShots:
+    level: recommended
+    type: [integer, array]
+    items: integer
+    description: |
+      The number of RF excitations needed to reconstruct a slice or volume
+      (may be referred to as partition). Please mind that this is not the
+      same as Echo Train Length which denotes the number of k-space lines
+      collected after excitation in a multi-echo readout. The data type array
+      is applicable for specifying this parameter before and after the k-space
+      center is sampled.
+      Please see "NumberShots" metadata field in the qMRI appendix for
+      corresponding calculations.
+  ParallelReductionFactorInPlane:
+    level: recommended
+    type: number
+    dicom: 0018,9069
+    dicom_key: ParallelReductionFactorInPlane
+    description: |
+      The parallel imaging (for instance, GRAPPA) factor in plane.
+      Use the denominator of the fraction of k-space encoded for each slice.
+      For example, 2 means half of k-space is encoded.
+  ParallelReductionFactorOutOfPlane:
+    level: recommended
+    type: number
+    dicom: 0018,9155
+    dicom_key: ParallelReductionFactorOutOfPlane
+    description: |
+      The parallel imaging (for instance, GRAPPA) factor in the second phase
+      encoding dimension of 3D sequences. Use the denominator of the fraction
+      of k-space encoded in the second phase encoding dimension.
+      For example, 2 means half of k-space is encoded. Will typically be 1 for
+      2D sequences, as each slice in a 2D acquisition is usually fully encoded.
+      `ParallelReductionFactorOutOfPlane` should not be confused with
+      `MultibandAccelerationFactor`, as they imply different methods of
+      accelerating the acquisition.
+  ParallelAcquisitionTechnique:
+    level: recommended
+    type: str
+    enum: [GRAPPA, SENSE, ...]
+    dicom: 0018,9078
+    dicom_key: ParallelAcquisitionTechnique
+    description: The type of parallel imaging used
+  PartialFourier:
+    level: recommended
+    type: number
+    dicom: 0018,9081
+    dicom_key: PartialFourier
+    description: The fraction of partial Fourier information collected.
+  PartialFourierDirection:
+    level: recommended
+    type: str
+    enum: [PHASE, FREQUENCY, SLICE_SELECT, COMBINATION]
+    dicom: 0018,9036
+    dicom_key: PartialFourierDirection
+    description: The direction where only partial Fourier information was collected.
+  EffectiveEchoSpacing:
+    level: {unwarp: required, "": recommended}
+    type: number
+    unit: s
+    description: |
+      The "effective" sampling interval between lines in the phase-encoding
+      direction, defined based on the size of the reconstructed image in the
+      phase direction. It is frequently, but incorrectly, referred to as
+      "dwell time" (see the "DwellTime" parameter for actual dwell time).
+      Note that beyond just in-plane acceleration, a variety of other
+      manipulations to the phase encoding need to be accounted for properly,
+      including partial fourier, phase oversampling, phase resolution,
+      phase field-of-view and interpolation.
+    long_description: |
+      Conveniently, for Siemens data, this value is easily obtained as
+      1 / (BWPPPE * ReconMatrixPE), where BWPPPE is the
+      "BandwidthPerPixelPhaseEncode" in DICOM Tag 0019,1028 and
+      ReconMatrixPE is the size of the actual reconstructed data in the
+      phase direction (which is NOT reflected in a single DICOM Tag for all
+      possible aforementioned scan manipulations).
+      See Acquiring and using field maps - LCNI and TotalReadoutTime - dcm_qa.
+  MixingTime:
+    level: recommended
+    type: number
+    unit: s
+    description: |
+        In the context of a stimulated- and spin-echo 3D EPI sequence for
+        B1+ mapping, corresponds to the interval between spin- and
+        stimulated-echo pulses. In the context of a diffusion-weighted
+        double spin-echo sequence, corresponds to the interval between two
+        successive diffusion sensitizing gradients, specified in seconds.
+  PhaseEncodingDirection:
+    level: recommended
+    type: string
+    enum: [i, i-, j, j-, k, k-]
+    description: |
+      The letters i, j, k correspond to the first, second and third axis of
+      the data in the NIFTI file. The polarity of the phase encoding is assumed
+      to go from zero index to maximum index unless - sign is present (then the
+      order is reversed - starting from the highest index instead of zero).
+      PhaseEncodingDirection is defined as the direction along which phase
+      was modulated which may result in visible distortions. Note that this is
+      not the same as the DICOM term InPlanePhaseEncodingDirection which can
+      have ROW or COL values.
+  TotalReadoutTime:
+    level: {topup: required, "": recommended}
+    type: number
+    description: |
+      This is actually the "effective" total readout time, defined as the
+      readout duration, specified in seconds, that would have generated data
+      with the given level of distortion. It is NOT the actual, physical
+      duration of the readout train. If "EffectiveEchoSpacing" has been
+      properly computed, it is just EffectiveEchoSpacing * (ReconMatrixPE - 1).
+  # MRITimingParameters
+  EchoTime:
+    level: {unwarp: required, asl: required, me: requried, "": recommended}
+    type: [number, array]
+    items: number
+    unit: s
+    dicom: 0018,0081
+    dicom_key: EchoTime
+    description: |
+      The echo time (TE) for the acquisition, specified in seconds.
+      The data type number may apply to files from any MRI modality concerned
+      with a single value for this field, or to the files in a file collection
+      where the value of this field is iterated using the echo entity.
+      The data type array provides a value for each volume in a 4D dataset and
+      should only be used when the volume timing is critical for interpretation
+      of the data, such as in ASL or variable echo time fMRI sequences.
+  InversionTime:
+    level: recommended
+    type: number
+    unit: s
+    dicom: 0018,0082
+    dicom_key: InversionTime
+    description: |
+      The inversion time (TI) for the acquisition.
+      Inversion time is the time after the middle of inverting RF pulse to
+      middle of excitation pulse to detect the amount of longitudinal magnetization.
+  DwellTime:
+    level: {unwarp3d: required, "": recommended}
+    type: number
+    unit: s
+    dicom: {siemens: "0019,1018"}
+    description: |
+      Actual dwell time of the receiver per point in the readout direction,
+      including any oversampling. It usefully provides a handle on the readout
+      bandwidth, which isn't captured in the other metadata tags. Not to be
+      confused with "EffectiveEchoSpacing", and the frequent mislabeling of
+      echo spacing (which is spacing in the phase encoding direction) as
+      "dwell time" (which is spacing in the readout direction).
+  SliceTiming:
+    level: {asl2d: required, "": recommended}
+    type: array
+    items: numbers
+    unit: s
+    description: |
+      The time at which each slice was acquired within each volume (frame)
+      of the acquisition. Slice timing is not slice order -- rather, it is a
+      list of times containing the time (in seconds) of each slice acquisition
+      in relation to the beginning of volume acquisition. The list goes through
+      the slices along the slice axis in the slice encoding dimension (see below).
+      Note that to ensure the proper interpretation of the "SliceTiming" field,
+      it is important to check if the OPTIONAL SliceEncodingDirection exists.
+      In particular, if "SliceEncodingDirection" is negative, the entries in
+      "SliceTiming" are defined in reverse order with respect to the slice axis,
+      such that the final entry in the "SliceTiming" list is the time of
+      acquisition of slice 0. Without this parameter slice time correction
+      will not be possible.
+  SliceEncodingDirection:
+    level: recommended
+    type: str
+    enum: [i, i-, j, j-, k, k-]
+    description: |
+      The axis of the NIfTI data along which slices were acquired, and the
+      direction in which "SliceTiming" is defined with respect to. i, j, k
+      identifiers correspond to the first, second and third axis of the data
+      in the NIfTI file. A - sign indicates that the contents of "SliceTiming"
+      are defined in reverse order - that is, the first entry corresponds
+      to the slice with the largest index, and the final entry corresponds to
+      slice index zero. When present, the axis defined by
+      "SliceEncodingDirection" needs to be consistent with the slice_dim field
+      in the NIfTI header. When absent, the entries in "SliceTiming" must be
+      in the order of increasing slice index as defined by the NIfTI header.
+  # MRIRFandContrast
+  FlipAngle:
+    level: {looklocker: required, "": recommended}
+    type: [number, array]
+    items: number
+    unit: deg
+    dicom: 0018,1314
+    dicom_key: FlipAngle
+    description: |
+      Flip angle (FA) for the acquisition.
+      The data type number may apply to files from any MRI modality concerned
+      with a single value for this field, or to the files in a file collection
+      where the value of this field is iterated using the flip entity. The data
+      type array provides a value for each volume in a 4D dataset and should
+      only be used when the volume timing is critical for interpretation of
+      the data, such as in ASL or variable flip angle fMRI sequences.
+  NegativeContrast:
+    level: optional
+    type: boolean
+    description: |
+      true or false value specifying whether increasing voxel intensity
+      (within sample voxels) denotes a decreased value with respect to the
+      contrast suffix. This is commonly the case when Cerebral Blood Volume
+      is estimated via usage of a contrast agent in conjunction with a
+      T2* weighted acquisition protocol.
+  # MRISliceAcceleration
+  MultibandAccelerationFactor:
+    level: recommended
+    type: number
+    description: The multiband factor, for multiband acquisitions.
+  # Anat
+  RepetitionTimeExcitation:
+    level: optional
+    type: number
+    unit: s
+    dicom: 0018,0080
+    description: |
+      The interval between two successive excitations.
+      This field may be used together with the "RepetitionTimePreparation"
+      for certain use cases, such as MP2RAGE. Use RepetitionTimeExcitation
+      (in combination with "RepetitionTimePreparation" if needed) for anatomy
+      imaging data rather than "RepetitionTime" as it is already defined as
+      the amount of time that it takes to acquire a single volume in the task
+      imaging data section.
+  RepetitionTimePreparation:
+    level: optional
+    type: [number, array]
+    items: number
+    unit: s
+    decription: |
+      The interval, in seconds, that it takes a preparation pulse block
+      to re-appear at the beginning of the succeeding (essentially identical)
+      pulse sequence block. The data type number may apply to files from any
+      MRI modality concerned with a single value for this field. The data
+      type array provides a value for each volume in a 4D dataset and should
+      only be used when the volume timing is critical for interpretation of
+      the data, such as in ASL.
+  # Task/Rest
+  RepetitionTime:
+    level: required
+    exclusive: VolumeTiming
+    type: number
+    unit: s
+    dicom: 0020,0110 or 0018,0080
+    description: |
+      The time in seconds between the beginning of an acquisition of one
+      volume and the beginning of acquisition of the volume following it (TR).
+      When used in the context of functional acquisitions this parameter best
+      corresponds to DICOM Tag 0020, 0110: the "time delta between images in a
+      dynamic of functional set of images" but may also be found in
+      DICOM Tag 0018, 0080: "the period of time in msec between the
+      beginning of a pulse sequence and the beginning of the succeeding
+      (essentially identical) pulse sequence". This definition includes time
+      between scans (when no data has been acquired) in case of sparse
+      acquisition schemes. This value MUST be consistent with the 'pixdim[4]'
+      field (after accounting for units stored in 'xyzt_units' field) in the
+      NIfTI header. This field is mutually exclusive with VolumeTiming.
+  VolumeTiming:
+    level: required
+    exclusive: [RepetitionTime, DelayTime]
+    type: array
+    items: number
+    unit: s
+    description: |
+      The time at which each volume was acquired during the acquisition.
+      It is described using a list of times referring to the onset of each
+      volume in the series. The list must have the same length as the series,
+      and the values must be non-negative and monotonically increasing.
+      This field is mutually exclusive with "RepetitionTime".
+      This field is mutually exclusive with "DelayTime".
+      If defined, this requires acquisition time (TA) be defined via
+      either "SliceTiming" or "AcquisitionDuration".
+  TaskName:
+    level: required
+    type: string
+    description: |
+      Name of the task. No two tasks should have the same name.
+      The task label included in the filename is derived from this
+      "TaskName" field by removing all non-alphanumeric characters
+      (that is, all except those matching [0-9a-zA-Z]). For example
+      "TaskName" "faces n-back" or "head nodding" will correspond to
+      task labels facesnback and headnodding, respectively.
+      A RECOMMENDED convention is to name resting state task using labels
+      beginning with rest.
+  # Task/Rest - Timing
+  NumberOfVolumesDiscardedByScanner:
+    level: recommended
+    type: integer
+    description: |
+      Number of volumes ("dummy scans") discarded by the scanner (as
+      opposed to those discarded by the user post hoc) before saving the
+      imaging file. For example, a sequence that automatically discards
+      the first 4 volumes before saving would have this field as 4.
+      A sequence that does not discard dummy scans would have this set to 0.
+      Please note that the onsets recorded in the events.tsv file should
+      always refer to the beginning of the acquisition of the first volume
+      in the corresponding imaging file - independent of the value of
+      "NumberOfVolumesDiscardedByScanner" field.
+  NumberOfVolumesDiscardedByUser:
+    level: recommended
+    type: integer
+    description: |
+      Number of volumes ("dummy scans") discarded by the user before
+      including the file in the dataset. If possible, including all of
+      the volumes is strongly RECOMMENDED. Please note that the onsets
+      recorded in the events.tsv file should always refer to the beginning
+      of the acquisition of the first volume in the corresponding imaging
+      file - independent of the value of "NumberOfVolumesDiscardedByUser" field.
+  DelayTime:
+    level: recommended
+    exclusive: VolumeTiming
+    type: number
+    unit: s
+    description: |
+      User specified time to delay the acquisition of data
+      for the following volume. If the field is not present it is assumed
+      to be set to zero. Corresponds to Siemens CSA header field
+      lDelayTimeInTR. This field is REQUIRED for sparse sequences using the
+      "RepetitionTime" field that do not have the "SliceTiming" field set to
+      allowed for accurate calculation of "acquisition time".
+      This field is mutually exclusive with "VolumeTiming".
+  AcquisitionDuration:
+    level: recommended
+    exclusive: RepetitionTime
+    type: number
+    unit: s
+    dicom: 0018,9073
+    description: Duration of volume acquisition.
+  DelayAfterTrigger:
+    level: recommended
+    type: number
+    unit: s
+    description: |
+      Duration from trigger delivery to scan onset. This delay is commonly
+      caused by adjustments and loading times. This specification is entirely
+      independent of "NumberOfVolumesDiscardedByScanner" or
+      "NumberOfVolumesDiscardedByUser", as the delay precedes the acquisition.
+  # Task/Rest - Task Info
+  Instructions:
+    level: recommended
+    type: string
+    description: |
+      Text of the instructions given to participants before the recording.
+      This is especially important in context of resting state recordings
+      and distinguishing between eyes open and eyes closed paradigms.
+  TaskDescription:
+    level: recommended
+    type: string
+    description: Longer description of the task.
+  CogAtlasID:
+    level: recommended
+    type: string
+    description: URI of the corresponding Cognitive Atlas Task term.
+  CogPOID:
+    level: recommended
+    type: string
+    description: URI of the corresponding CogPO term.
+  # Fieldmap data
+  EchoTime1:
+    level: {phasediff: required}
+    type: number
+    unit: s
+    description: The time  when the first (shorter) echo occurs.
+  EchoTime2:
+    level: {phasediff: required}
+    type: number
+    unit: s
+    description: The time  when the second (longer) echo occurs.
+  Units:
+    level: {fieldmap: required}
+    type: string
+    enum: [Hz, rad/s, T]
+    description: Measurement units for the associated variable.
+
+
+# -----------------------------------------------------------------------------
+#   DCM2NIIX keys
+# -----------------------------------------------------------------------------
+DCM2NIIX:
+  # GlobalConstants
+  Modality:
+    type: string
+    enum: [MR, CT, PT, ...]
+    enum_dicom:
+      ANN:        Annotation
+      AR:         Autorefraction
+      ASMT:       Content Assessment Results
+      AU:         Audio
+      BDUS:       Bone Densitometry (ultrasound)
+      BI:         Biomagnetic imaging
+      BMD:        Bone Densitometry (X-Ray)
+      CFM:        Confocal Microscopy
+      CR:         Computed Radiography
+      CT:         Computed Tomography
+      CTPROTOCOL: CT Protocol (Performed)
+      DMS:        Dermoscopy
+      DG:         Diaphanography
+      DOC:        Document
+      DX:         Digital Radiography
+      ECG:        Electrocardiography
+      EEG:        Electroencephalography
+      EMG:        Electromyography
+      EOG:        Electrooculography
+      EPS:        Cardiac Electrophysiology
+      ES:         Endoscopy
+      FID:        Fiducials
+      GM:         General Microscopy
+      HC:         Hard Copy
+      HD:         Hemodynamic Waveform
+      IO:         Intra-Oral Radiography
+      IOL:        Intraocular Lens Data
+      IVOCT:      Intravascular Optical Coherence Tomography
+      IVUS:       Intravascular Ultrasound
+      KER:        Keratometry
+      KO:         Key Object Selection
+      LEN:        Lensometry
+      LS:         Laser surface scan
+      MG:         Mammography
+      MR:         Magnetic Resonance
+      M3D:        Model for 3D Manufacturing
+      NM:         Nuclear Medicine
+      OAM:        Ophthalmic Axial Measurements
+      OCT:        Optical Coherence Tomography (non-Ophthalmic)
+      OP:         Ophthalmic Photography
+      OPM:        Ophthalmic Mapping
+      OPT:        Ophthalmic Tomography
+      OPTBSV:     Ophthalmic Tomography B-scan Volume Analysis
+      OPTENF:     Ophthalmic Tomography En Face
+      OPV:        Ophthalmic Visual Field
+      OSS:        Optical Surface Scan
+      OT:         Other
+      PA:         Photoacoustic
+      PLAN:       Plan (planned activities)
+      POS:        Position Sensor
+      PR:         Presentation State
+      PT:         Positron emission tomography (PET)
+      PX:         Panoramic X-Ray
+      REG:        Registration
+      RESP:       Respiratory Waveform
+      RF:         Radio Fluoroscopy
+      RG:         Radiographic imaging (conventional film/screen)
+      RTDOSE:     Radiotherapy Dose
+      RTIMAGE:    Radiotherapy Image
+      RTINTENT:   Radiotherapy Intent
+      RTPLAN:     Radiotherapy Plan
+      RTRAD:      RT Radiation
+      RTRECORD:   RT Treatment Record
+      RTSEGANN:   Radiotherapy Segment Annotation
+      RTSTRUCT:   Radiotherapy Structure Set
+      RWV:        Real World Value Map
+      SEG:        Segmentation
+      SM:         Slide Microscopy
+      SMR:        Stereometric Relationship
+      SR:         SR Document
+      SRF:        Subjective Refraction
+      STAIN:      Automated Slide Stainer
+      TEXTUREMAP: Texture Map
+      TG:         Thermography
+      US:         Ultrasound
+      VA:         Visual Acuity
+      XA:         X-Ray Angiography
+      XAPROTOCOL: XA Protocol (Performed)
+      XC:         External-camera Photography
+    enum_dicom_retired:
+      AS:       Angioscopy
+      CD:       Color flow Doppler
+      CF:       Cinefluorography
+      CP:       Culposcopy
+      CS:       Cystoscopy
+      DD:       Duplex Doppler
+      DF:       Digital fluoroscopy
+      DM:       Digital microscopy
+      DS:       Digital Subtraction Angiography
+      EC:       Echocardiography
+      FA:       Fluorescein angiography
+      FS:       Fundoscopy
+      LP:       Laparoscopy
+      MA:       Magnetic resonance angiography
+      MS:       Magnetic resonance spectroscopy
+      OPR:      Ophthalmic Refraction
+      ST:       Single-photon emission computed tomography (SPECT)
+      VF:       Videofluorography
+    dicom: 0008,0060
+    description: |
+      Type of device, process or method that originally acquired or
+      produced the data used to create the Instances in this Series.
+  ConversionSoftware:
+    type: string
+  ConversionSoftwareVersion:
+    type: string
+  # GlobalSeriesInformation
+  BodyPartExamined:
+    type: string
+    enum: [BRAIN, ...]
+    dicom: 0018,0015
+    description: |
+      Text description of the part of the body examined.
+      See Annex L “Correspondence of Anatomic Region Codes and Body Part
+      Examined Defined Terms” in PS3.16 for Defined Terms
+  PatientPosition:
+    type: string
+    enum:
+      HFP:  Head First-Prone
+      HFS:  Head First-Supine
+      HFDR: Head First-Decubitus Right
+      HFDL: Head First-Decubitus Left
+      FFDR: Feet First-Decubitus Right
+      FFDL: Feet First-Decubitus Left
+      FFP:  Feet First-Prone
+      FFS:  Feet First-Supine
+      LFP:  Left First-Prone
+      LFS:  Left First-Supine
+      RFP:  Right First-Prone
+      RFS:  Right First-Supine
+      AFDR: Anterior First-Decubitus Right
+      AFDL: Anterior First-Decubitus Left
+      PFDR: Posterior First-Decubitus Right
+      PFDL: Posterior First-Decubitus Left
+    dicom: 0020,0032
+    description: |
+      Patient position descriptor relative to the equipment.
+  ProcedureStepDescription:
+    type: string
+    dicom: 0040,0254
+    description: Institution-generated description or classification of the Procedure Step that was performed
+  SeriesDescription:
+    type: string
+    dicom: 0008,103E
+    description: Description of the Series
+  ProtocolName:
+    type: string
+    dicom: 0018,1030
+    description: User-defined description of the conditions under which the Series was performed
+  ImageType:
+    type: array
+    items:
+      - string
+      - enum:
+        # Value 1
+        - ORIGINAL
+        - DERIVED
+        # Value 2
+        - PRIMARY
+        - SECONDARY
+        # Value 3 (MR)
+        - DENSITY MAP
+        - DIFFUSION MAP
+        - IMAGE ADDITION
+        - MODULUS SUBTRACT
+        - MPR
+        - OTHER
+        - PHASE MAP
+        - PHASE SUBTRACT
+        - PROJECTION IMAGE
+        - T1 MAP
+        - T2 MAP
+        - VELOCITY MAP
+        # Value 3 (CT)
+        - AXIAL
+        - LOCALIZER
+        # Value 4 (CT)
+        - VMI
+        - MAT_SPECIFIC
+        - MAT_REMOVED
+        - MAT_FRACTIONAL
+        - EFF_ATOMIC_NUM
+        - ELECTRON_DENSITY
+        - MAT_MODIFIED
+        - MAT_VALUE_BASED
+    dicom: 0008,0008
+    description: Image identification characteristics
+  AcquisitionTime:
+    type: string
+    dicom: 0008,0032
+    description: The time the acquisition of data that resulted in this instance started
+  AcquisitionNumber:
+    type: integer
+    dicom: 0020,0012
+    description: A number identifying the single continuous gathering of data over a period of time that resulted in this Instance.
+  ImageComments:
+    type: string
+    dicom: 0020,4000
+    description: User-defined comments about the image.
+  # ModalityMagneticResonanceImaging
+  AcquisitionMatrixPE:
+    type: integer
+    dicom: 0018,9231
+    dicom_key: MRAcquisitionPhaseEncodingStepsInPlane
+    description: |
+      Acquisition matrix across the phase-encode direction.
+      Does not account for partial fourier / oversampling / acceleration
+  VendorReportedEchoSpacing:
+    type: number
+    unit: s
+    description: |
+      If the vendor reports an "EchoSpacing" in its private DICOM tags,
+      dcm2niix saves it under this key.
+      - SIEMENS: it is the true delay between consecutive EPI echoes
+  DerivedVendorReportedEchoSpacing:
+    type: number
+    unit: s
+    description: |
+      Estimated VendorReportedEchoSpacing calculated backward from
+      EffectiveEchoSpacing, for sanity check.
+  EchoNumber:
+    type: integer
+    description: Index of echo in multi-echo series
+  EstimatedEffectiveEchoSpacing:
+    type: number
+    unit: s
+    description: |
+      An estimate of BIDS' `EffectiveEchoSpacing`
+
+      The "effective" sampling interval between lines in the phase-encoding
+      direction, defined based on the size of the reconstructed image in the
+      phase direction. It is frequently, but incorrectly, referred to as
+      "dwell time" (see the "DwellTime" parameter for actual dwell time).
+      Note that beyond just in-plane acceleration, a variety of other
+      manipulations to the phase encoding need to be accounted for properly,
+      including partial fourier, phase oversampling, phase resolution,
+      phase field-of-view and interpolation.
+  EstimatedTotalReadoutTime:
+    type: number
+    unit: s
+    description: |
+      An estimate of BIDS' `TotalReadoutTime`
+
+      This is actually the "effective" total readout time, defined as the
+      readout duration, specified in seconds, that would have generated data
+      with the given level of distortion. It is NOT the actual, physical
+      duration of the readout train. If "EffectiveEchoSpacing" has been
+      properly computed, it is just EffectiveEchoSpacing * (ReconMatrixPE - 1).
+  VariableFlipAngleFlag:
+    type: boolean
+    dicom: 0018,1315
+    description: Flip angle variation applied during image acquisition
+  ImageOrientationPatientDICOM:
+    type: array
+    items: number
+    dicom: 0020,0037
+    dicom_key: ImageOrientationPatient
+    description: |
+      The direction cosines of the first row and the first column with
+      respect to the patient. See Section C.7.6.2.1.1 for further explanation.
+  ImagingFrequency:
+    type: number
+    unit: MHz
+    dicom: 0018,0084 or 0018,9098
+    description: Precession frequency in MHz of the nucleus being addressed.
+  InPlanePhaseEncodingDirectionDICOM:
+    type: string
+    enum: [ROW, COL]
+    dicom: 0018,1312
+    dicom_key: InPlanePhaseEncodingDirection
+    description: The axis of phase encoding with respect to the image.
+  NumberOfAverages:
+    type: integer
+    dicom: 0018,0083
+    description: Number of times a given pulse sequence is repeated before any parameter is changed
+  PercentPhaseFOV:
+    type: number
+    unit: pct
+    dicom: 0018,0094
+    dicom_key: PercentPhaseFieldOfView
+    description: |
+      Ratio of field of view dimension in phase direction to field of view
+      dimension in frequency direction, expressed as a percent.
+  PercentSampling:
+    type: number
+    unit: pct
+    dicom: 0018,0093
+    description: Fraction of acquisition matrix lines acquired, expressed as a percent.
+  FrequencyEncodingSteps:
+    type: integer
+    dicom: 0018,9058
+    dicom_key: MRAcquisitionFrequencyEncodingSteps
+    description: Number of Frequency Encoding steps (kx) acquired
+  PhaseEncodingSteps:
+    type: integer
+    dicom: 0018,0089 or 0018,9231
+    dicom_key: NumberOfPhaseEncodingSteps or MRAcquisitionPhaseEncodingStepsInPlane
+    description: |
+      (0018,0089) Total number of lines in k-space in the 'y' direction collected during acquisition.
+      (0018,9231) Number of In-Plane Phase Encoding steps (ky) acquired
+  PhaseEncodingStepsOutOfPlane:
+    type: integer
+    dicom: 0018,9232
+    dicom_key: MRAcquisitionPhaseEncodingStepsOutOfPlane
+    description: Number of Out-of-Plane Phase Encoding steps (kz) acquired
+  PixelBandwidth:
+    type: number
+    unit: Hz
+    dicom: 0018,0095
+    description: Reciprocal of the total sampling period, in hertz per pixel.
+  RepetitionTimeInversion:
+    type: number
+    unit: s
+  SAR:
+    type: number
+    dicom: 0018,1316 or 0018,9181 defined by 0018,9179
+    description: |
+      (0018,1316) Calculated whole body Specific Absorption Rate in watts/kilogram
+      (0018,9181) Specific Absorption Rate in W/kg
+  SliceThickness:
+    type: number
+    unit: mm
+    dicom: 0018,0050
+    description: Nominal slice thickness, in mm
+  SpacingBetweenSlices:
+    type: number
+    unit: mm
+    dicom: 0018,0088
+    description: Spacing between adjacent slices, in mm. The spacing is measured from the center-to-center of each slice.
+
+# -----------------------------------------------------------------------------
+#   Additional DICOM keys
+# -----------------------------------------------------------------------------
+DICOM:
+  EchoPulseSequence:
+    type: string
+    enum: [SPIN, GRADIENT, BOTH]
+    dicom: 0018,9008
+    description: Echo category of pulse sequences
+  MultipleSpinEcho:
+    type: boolean
+    dicom: 0018,9011
+    description: Multiple Spin Echo category of pulse sequence used to collect different lines in k-space for a single frame
+  MultiPlanarExcitation:
+    type: boolean
+    dicom: 0018,9012
+    description: Technique that simultaneously excites several volumes
+  PhaseContrast:
+    type: boolean
+    dicom: 0018,9014
+    description: Phase contrast pulse sequence is a pulse sequence in which the flowing spins are velocity encoded in phase
+  VelocityEncodingDirection:
+    type: array
+    items: number
+    dicom: 0018,9090
+    description: |
+      The direction cosines of the velocity encoding vector with respect to the patient
+
+      We provide this vector in RAS coordinates (as opposed to the original
+      DICOM field that provides it in LPS coordinates)
+  TimeOfFlightContrast:
+    type: boolean
+    dicom: 0018,9015
+    description: Time of Flight contrast is created by the inflow of blood in the saturated plane.
+  ArterialSpinLabelingContrast:
+    type: string
+    enum: [CONTINUOUS, PSEUDOCONTINUOUS, PULSED]
+    dicom: 0018,9250
+    description: Arterial Spin Labeling contrast technique
+  SteadyStatePulseSequence:
+    type: string
+    enum: [FREE_PRECESSION, TRANSVERSE, TIME_REVERSED, LONGITUDINAL, NONE]
+    dicom: 0018,9017
+    description: Steady State Sequence
+  EchoPlanarPulseSequence:
+    type: boolean
+    dicom: 0018,9018
+    description: Echo Planar category of Pulse Sequences
+  SaturationRecovery:
+    type: boolean
+    dicom: 0018,9024
+    description: Saturation recovery pulse sequence
+  SpectrallySelectedSuppression:
+    type: string
+    enum: [FAT, WATER, FAT_AND_WATER, SILICON_GEL, NONE]
+    dicom: 0018,9025
+    description: Spectrally Selected Suppression
+  OversamplingPhase:
+    type: string
+    enum: [2D, 3D, 2D_3D, NONE]
+    dicom: 0018,9029
+    description: Oversampling Phase
+  GeometryOfKSpaceTraversal:
+    type: string
+    enum: [RECTILINEAR, RADIAL, SPIRAL]
+    dicom: 0018,9032
+    description: Geometry category of k-Space traversal
+  SegmentedKSpaceTraversal:
+    type: string
+    enum: [SINGLE, PARTIAL, FULL]
+    dicom: 0018,9033
+    description: |
+      Segmented k-Space traversal.
+      If Geometry of k-Space Traversal is rectilinear, multiple lines can be
+      acquired at one time. If Geometry of k-Space Traversal is spiral or
+      radial, paths can be interleaved and acquired at one time.
+  RectilinearPhaseEncodeReordering:
+    type: string
+    enum: [LINEAR, CENTRIC, SEGMENTED, REVERSE_LINEAR, REVERSE_CENTRIC]
+    dicom: 0018,9034
+    description: Rectilinear phase encode reordering
+  NumberOfKSpaceTrajectories:
+    type: integer
+    dicom: 0018,9093
+    description: Number of interleaves or shots
+  CoverageOfKSpace:
+    type: string
+    enum: [FULL, CYLINDRICAL, ELLIPSOIDAL, WEIGHTED]
+    dicom: 0018,9094
+    description: Coverage of k-Space in the ky-kz plane
+  EchoTrainLength:
+    type: integer
+    dicom: 0018,0091
+    description: Number of lines in k-space acquired per excitation per image
+
+# -----------------------------------------------------------------------------
+#   PROTOCOL2BIDS keys
+# -----------------------------------------------------------------------------
+PROTOCOL2BIDS:
+  SliceGap:
+    type: number
+    unit: mm
+    description: |
+      Gap between slices.
+      `SpacingBetweenSlices = SliceThickness + SliceGap`
+  VendorReportedRepetitionTime:
+    type: number
+    unit: s
+    description: |
+      The period of time between the beginning of a pulse sequence and the
+      beginning of the succeeding (essentially identical) pulse sequence.
+  DirectionFE:
+    type: string
+    enum: ["LR", "RL", "PA", "AP", "SI", "IS"]
+    description: |
+      Frequency encoding direction and polarity, in terms of anatomical axes.
+  DirectionPE:
+    type: string
+    enum: ["LR", "RL", "PA", "AP", "SI", "IS"]
+    description: |
+      Phase encoding direction and polarity, in terms of anatomical axes.
+  DirectionSE:
+    type: string
+    enum: ["LR", "RL", "PA", "AP", "SI", "IS"]
+    description: |
+      Slice encoding direction and polarity, in terms of anatomical axes.
+  HasPartialFourierFE:
+    type: bool
+    description: Whether partial Fourier (asymmetric echo) is used in the frequency encoding direction
+  HasPartialFourierPE:
+    type: bool
+    description: Whether partial Fourier is used in the phase encoding direction
+  HasPartialFourierSE:
+    type: bool
+    description: Whether partial Fourier is used in the slice encoding direction
+  AcquisitionMatrixFE:
+    type: integer
+    description: Acquisition matrix (without oversampling) in the frequency-encoding direction
+  AcquisitionMatrixPE:
+    type: integer
+    description: Acquisition matrix (without oversampling) in the phase-encoding direction
+  AcquisitionMatrixSE:
+    type: integer
+    description: Acquisition matrix (without oversampling) in the slice-encoding direction
+  OversampledAcquisitionMatrixFE:
+    type: integer
+    description: Acquisition matrix (with oversampling) in the frequency-encoding direction
+  OversampledAcquisitionMatrixPE:
+    type: integer
+    description: Acquisition matrix (with oversampling) in the phase-encoding direction
+  OversampledAcquisitionMatrixSE:
+    type: integer
+    description: Acquisition matrix (with oversampling) in the slice-encoding direction
+  FieldOfViewFE:
+    type: number
+    unit: mm
+    description: Field-of-view in the frequency-encoding direction
+  FieldOfViewPE:
+    type: number
+    unit: mm
+    description: Field-of-view in the phase-encoding direction
+  FieldOfViewSE:
+    type: number
+    unit: mm
+    description: Field-of-view in the slice-encoding direction
