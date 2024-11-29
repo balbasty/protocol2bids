@@ -1,4 +1,5 @@
 import fnmatch
+from math import ceil
 from operator import truediv
 from protocol2bids.utils.nii2axes import nii2axes
 
@@ -25,34 +26,34 @@ def _get(mapping, key, *default):
 
 def _guess_fe_direction(pe, se, s, c, t):
     se = {
-        "Sagittal": s[0] + s[-1],
-        "Transversal": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
-        "Coronal": c[0] + c[-1],
-    }[se]
+        "S": s[0] + s[-1],
+        "T": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
+        "C": c[0] + c[-1],
+    }[se[0]]
     pe = pe[0] + pe[-1]
     if pe in ("LR", "RL"):
         if se in ("PA", "AP"):
-            fe = "Transversal"
+            fe = "T"
         else:
             assert se in ("IS", "SI")
-            fe = "Coronal"
+            fe = "C"
     elif pe in ("PA", "AP"):
         if se in ("LR", "RL"):
-            fe = "Transversal"
+            fe = "T"
         else:
             assert se in ("IS", "SI")
-            fe = "Sagittal"
+            fe = "S"
     else:
         assert pe in ("IS", "SI")
         if se in ("LR", "RL"):
-            fe = "Coronal"
+            fe = "C"
         else:
             assert se in ("AP", "PA")
-            fe = "Sagittal"
+            fe = "S"
     fe = {
-        "Sagittal": s[0] + s[-1],
-        "Transversal": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
-        "Coronal": c[0] + c[-1],
+        "S": s[0] + s[-1],
+        "T": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
+        "C": c[0] + c[-1],
     }[fe]
     return fe
 
@@ -66,20 +67,20 @@ VARIANTS = {
     "Phase enc. dir.": (
         "Routine//Slab group 1//Phase enc. dir.",     # VB,VE
         "Routine//Slice group 1//Phase enc. dir.",    # VB,VE
-        "Routine//Phase enc. dir.",                  # VD
-        "Geometry//Phase enc. dir.",                 # VD
+        "Routine//Phase enc. dir.",                   # VD
+        "Geometry//Phase enc. dir.",                  # VD
     ),
     "System//Sagittal": (
-        "System//Sagittal",                          # VD,VB
-        "System - Miscellaneous//Sagittal",          # VE
+        "System//Sagittal",                           # VD,VB
+        "System - Miscellaneous//Sagittal",           # VE
     ),
     "System//Coronal": (
-        "System//Coronal",                           # VD,VB
-        "System - Miscellaneous//Coronal",           # VE
+        "System//Coronal",                            # VD,VB
+        "System - Miscellaneous//Coronal",            # VE
     ),
     "System//Transversal": (
-        "System//Transversal",                       # VD,VB
-        "System - Miscellaneous//Transversal",       # VE
+        "System//Transversal",                        # VD,VB
+        "System - Miscellaneous//Transversal",        # VE
     ),
 }
 
@@ -106,10 +107,10 @@ KEYMAP_BASIC = {
             VARIANTS["System//Transversal"],
         ],
         "formula": lambda x, s, c, t: {
-            "Sagittal": s[0] + s[-1],
-            "Transversal": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
-            "Coronal": c[0] + c[-1],
-        }[x]
+            "S": s[0] + s[-1],
+            "T": {"FH": "IS", "HF": "SI"}[t[0] + t[-1]],
+            "C": c[0] + c[-1],
+        }[x[0]]
     },
     "DirectionPE":  {
         "args": [VARIANTS["Phase enc. dir."]],
@@ -290,6 +291,7 @@ KEYMAP_CLASSIC = {
                 "spcir": "FLAIR",
                 "spcR": "Driven Equilibrium T2-SPACE",
                 "epse": "Spin Echo EPI",
+                "ep_seg_se": "Segmented Spin Echo EPI",
                 "ep2d_diff": "Spin Echo EPI",
                 "tse": "Fast Spin Echo",
                 "tse_vfl": "Fast Spin Echo + Variable Flip",
@@ -322,6 +324,7 @@ KEYMAP_CLASSIC = {
                 "spcR": ["SE"],                 # SPACE + RESTORE
                 "epse": ["SE", "EP"],           # Echo-planar Spin Echo
                 "ep2d_diff": ["SE", "EP"],      # Echo-planar Diffusion
+                "ep_seg_se": ["SE", "EP", "SK"],  # Segmented EPI Spin Echo
                 "tse": ["SE"],                  # Turbo Spin Echo
                 "tse_vfl": ["SE"],              # Turbo Spin Echo Variable Flip
                 "tfi": ["GR"],                  # TRUFI
@@ -344,7 +347,7 @@ KEYMAP_CLASSIC = {
         # OverSampling Phase
         {
             "args": ["Routine//Phase oversampling"],
-            "formula": lambda x: ["PO"] if int(x.split()[0]) > 0 else [],
+            "formula": lambda x: ["PO"] if float(x.split()[0]) > 0 else [],
             "iadd": True,
         },
         # Steady State
@@ -491,6 +494,9 @@ KEYMAP_CLASSIC = {
         )],
         "formula": lambda x: float(x.split()[0]) * 1e-3,
     },
+    # Siemens' "sequence bandwidth" parameter is always the "effective"
+    # frequency-encode bandwidth (as if no oversampling was happening).
+    # The dwell time is therefore 1/(bandwidth * matrix_size)
     "DwellTime": {
         "args": [
             (
@@ -500,7 +506,7 @@ KEYMAP_CLASSIC = {
             (
                 "Resolution//Base resolution",
                 "Resolution - Common//Base resolution"
-            )
+            ),
         ],
         "formula": lambda x, y: 1/(float(x.split()[0])*int(y))
     },
@@ -614,6 +620,7 @@ KEYMAP_CLASSIC = {
         "args": ["OversampledAcquisitionMatrixSE", "PartialFourierSE"],
         "formula": lambda x, y: int(round(x * y))
     },
+    # This is the bandwidth/pixel along the frequency-encoding direction
     "PixelBandwidth": {
         "args": [(
             "Sequence//Bandwidth",
@@ -745,7 +752,7 @@ KEYMAP_CLASSIC = {
     ],
     # "NumberOfKSpaceTrajectories": None,
     # "CoverageOfKSpace": None,
-    # "EchoTrainLength": None,
+    # "EchoTrainLength": raise ValueError("Done in special"),
     # ------------------------------------------------------------------
     #   ???
     # ------------------------------------------------------------------
@@ -888,7 +895,7 @@ KEYMAP_CLASSIC = {
                 "Routine//Slice oversampling",
             ],
             "formula": lambda slabs, slices, os: int(round(
-                int(slabs) * int(slices) * (1 + float(os.split()[0]))
+                int(slabs) * int(slices) * (1 + float(os.split()[0]) / 100)
             ))
         },
         {
@@ -898,7 +905,7 @@ KEYMAP_CLASSIC = {
                 "Routine//Slice oversampling",
             ],
             "formula": lambda slabs, slices, os: int(round(
-                int(slabs) * int(slices) * (1 + float(os.split()[0]))
+                int(slabs) * int(slices) * (1 + float(os.split()[0]) / 100)
             ))
         },
         {
@@ -917,7 +924,7 @@ KEYMAP_CLASSIC = {
                 ),
             ],
             "formula": lambda slabs, slices, os: int(round(
-                int(slabs) * int(slices) * (1 + float(os.split()[0]))
+                int(slabs) * int(slices) * (1 + float(os.split()[0]) / 100)
             ))
         },
         {
@@ -936,7 +943,7 @@ KEYMAP_CLASSIC = {
                 ),
             ],
             "formula": lambda slabs, slices, os: int(round(
-                int(slabs) * int(slices) * (1 + float(os.split()[0]))
+                int(slabs) * int(slices) * (1 + float(os.split()[0]) / 100)
             ))
         },
         # --------------------------------------------------------------
@@ -1041,16 +1048,42 @@ KEYMAP_SPECIAL["*ep*"] = {
         "args": ["BandwidthPerPixelPhaseEncode", "ReconMatrixPE"],
         "formula": lambda x, y: 1/(x*y)
     },
-    # This should really be called "EffectiveTotalReadoutTime"
     "TotalReadoutTime": {
         "args": ["EffectiveEchoSpacing", "ReconMatrixPE"],
         "formula": lambda x, y: x * (y - 1)
     },
+    # FIXME
+    # It seems that Siemens' "EPI factor" does not take acceleration
+    # into account. For example, for a matrix of size 64x64 and
+    # in-plane acceleration factor 2, the EPI factor is listed as "64",
+    # whereas the true echo train length should be 32. I expect the
+    # same is true when partial fourier is used (I don't have a protocol
+    # to check). The Siemens "pulse sequence" brochure states that for
+    # ep2d sequences are always single shot, and that the EPI factor
+    # "cannot be freely set, depends on base and phase resolution",
+    # which seems to confirm that it ignores acceleration.
     "EchoTrainLength": {
         "args": [(
+            "Sequence//EPI factor",
             "Sequence//EPI Factor",
+            "Sequence - Part 1//EPI factor",
             "Sequence - Part 1//EPI Factor",
-        )]
+        )],
+        "formula": int,
+    },
+    # See comment on ETL above. Only acquisition matrix is needed to
+    # calculate the number of shots.
+    "NumberShots": {
+        "args": [
+            "AcquisitionMatrixPE",
+            (
+                "Sequence//EPI factor",
+                "Sequence//EPI Factor",
+                "Sequence - Part 1//EPI factor",
+                "Sequence - Part 1//EPI Factor",
+            ),
+        ],
+        "formula": lambda x, y: ceil(x / int(y))
     },
 }
 # TSE:
@@ -1159,7 +1192,6 @@ def siemens_to_bids(prot, **kwargs):
 
     # Basic fields
     _siemens_to_bids(bids, prot, KEYMAP_BASIC)
-
     # Set fields based on nifti header
     if anat2vox is not None:
         if "DirectionFE" in bids:

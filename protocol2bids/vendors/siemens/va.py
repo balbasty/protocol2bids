@@ -274,7 +274,7 @@ def _parse_printout_content(
 def sniff(path: str):
     doc = pymupdf.open(str(path))
     try:
-        model, version = _parse_model(doc)
+        model, version = _parse_model(doc[0])
         if version.startswith('syngo MR 20'):
             return True
     except Exception:

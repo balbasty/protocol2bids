@@ -22,6 +22,8 @@ def _find_alignment(page: pymupdf.Page) -> dict[Literal['L', 'R'], float]:
     # [0] Protocol path
     # [1..5] General stuff (PAT, voxel size, etc)
     traces = traces[6:]
+    # skip page number
+    traces = traces[:-2]
     # Find column alignment
     colx = {'L': float('inf'), 'R': float('inf')}
     for trace in traces[:-1]:
@@ -215,7 +217,7 @@ def _parse_printout_content(
         # move iterator
         iter_traces.next()
 
-        if set(text) in ({'-'}, {'-', ' '}):
+        if set(text) in ({'-'}, {'-', ' '}, {'!'}):
             # skip line separator
             continue
 
@@ -226,6 +228,10 @@ def _parse_printout_content(
         if re.fullmatch(r'\d+/(-|\+)', text):
             # skip page number
             continue
+
+        # if prot is None:
+        #     # weird stuff before protocol was opened
+        #     continue
 
         # Find which column we're on and compute indentation size
         column = 'L' if box[0] < pagewidth / 2 else 'R'

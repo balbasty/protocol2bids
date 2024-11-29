@@ -44,18 +44,21 @@ def nii2axes(**kwargs):
     affine = affine[:3, :3]
     voxel_size = (affine**2).sum(0)**0.5
     affine = affine / voxel_size
-    layout = np.round(affine + (np.random.random([3, 3]) - 0.5) * 1e-5)
 
-    onehot = np.round(np.abs(affine)).astype(np.int32)
+    # add noise to avoid issues if there's a 45 deg angle somewhere
+    affine = affine + (np.random.random([3, 3]) - 0.5) * 1e-5
+
+    # project onto canonical axes
+    onehot = np.round(np.square(affine)).astype(np.int32)
     index = [
         onehot[:, 0].tolist().index(1),
         onehot[:, 1].tolist().index(1),
         onehot[:, 2].tolist().index(1),
     ]
     sign = [
-        -1 if layout[index[0], 0] < 0 else 1,
-        -1 if layout[index[1], 1] < 0 else 1,
-        -1 if layout[index[2], 2] < 0 else 1,
+        -1 if affine[index[0], 0] < 0 else 1,
+        -1 if affine[index[1], 1] < 0 else 1,
+        -1 if affine[index[2], 2] < 0 else 1,
     ]
     anatnames = ['LR', 'PA', 'IS']
     voxnames = ['i', 'j', 'k']
