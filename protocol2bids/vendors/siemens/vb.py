@@ -2,9 +2,13 @@ import pymupdf
 import re
 from os import PathLike
 from typing import Literal, Iterator, Iterable
+from logging import getLogger
 
 from .utils import peekable
 from .common import siemens_to_bids
+
+
+LOGGER = getLogger(__name__)
 
 
 def _find_alignment(page: pymupdf.Page) -> dict[Literal['L', 'R'], float]:
@@ -50,16 +54,27 @@ def _parse_title(traces: peekable) -> dict:
     """
     Parse the title box of a protocol
     """
-    title = dict(path=traces.next()[0])
-    text = ''
-    for i in range(5):
-        # there's something weird with the multiplication signs, with
-        # a repeated block, so we only use even components
-        text1 = traces.next()[0]
-        if i % 2:
-            continue
-        text += text1
-    text = text.strip()
+    # title = dict(path=traces.next()[0])
+    # text = ''
+    # for i in range(5):
+    #     # there's something weird with the multiplication signs, with
+    #     # a repeated block, so we only use even components
+    #     text1 = traces.next()[0]
+    #     if i % 2:
+    #         continue
+    #     text += text1
+    # text = text.strip()
+
+    # Parse sequence path
+    path = []
+    while True:
+        text = traces.next()[0]
+        if text.startswith('TA:'):
+            break
+        path += [text]
+    path = ' '.join(path)
+    title = dict(path=path)
+    # Parse tags
     pattern = (
         r'TA:\s*(?P<TA>\S+)\s+'
         r'PAT:\s*(?P<PAT>\S+)\s+'
@@ -95,10 +110,50 @@ def _iter_traces(doc: pymupdf.Document) -> Iterator[tuple[str, dict]]:
         traces = traces[1:-1]
         for trace in traces:
             text = page.get_textbox(trace['bbox'])
-            yield text, trace
+            yield text, trace['bbox']
 
 
-def _parse_printout_content(path: str | PathLike):
+def _iter_blocks(doc: pymupdf.Document) -> Iterator[tuple[str, dict]]:
+    has_toc = False
+    for page in doc:
+
+        text = page.get_text()
+        if 'Table of contents' in text:
+            has_toc = True
+            continue
+        if has_toc:
+            if '\\\\' in text and 'TA:' in text:
+                # found the start of a protocol, we're passed the TOC
+                has_toc = False
+            else:
+                continue
+
+        blocks = page.get_textpage().extractDICT(sort=False)['blocks']
+        for block in blocks:
+            lines = [[]]
+            boxes = [[]]
+            x = None
+            for line in block['lines']:
+                if x is None:
+                    x = line['bbox'][1]
+                text = ''.join([span['text'] for span in line['spans']])
+                text = text.rstrip()
+                if abs(line['bbox'][1] - x) < 1:
+                    lines[-1].append(text)
+                    boxes[-1].append(line['bbox'])
+                else:
+                    lines.append([text])
+                    boxes.append([line['bbox']])
+                x = line['bbox'][1]
+            for line, cellboxes in zip(lines, boxes):
+                for cell, bbox in zip(line, cellboxes):
+                    yield cell, bbox
+
+
+def _parse_printout_content(
+    path: str | PathLike,
+    skip_pages: int | Iterable[int] | None = None
+):
     """
     Parse the content in a protocol printout
 
@@ -123,26 +178,28 @@ def _parse_printout_content(path: str | PathLike):
     header: str | None = None                 # Current header
     group: str | None = None                  # Current group
     key: str | None = None                    # Last parsed key
+    last_key: str | None = None               # Last parsed key (never erased)
+
+    if skip_pages is not None:
+        if isinstance(skip_pages, int):
+            skip_pages = [skip_pages]
+        skip_pages = list(skip_pages)
+        doc = [page for i, page in enumerate(doc) if i not in skip_pages]
 
     colx = _find_alignment(doc[0])
     pagewidth = doc[0].bound()[2]
 
     model_name, software_version = _parse_model(doc[0])
 
-    iter_traces = peekable(_iter_traces(doc))
+    iter_traces = peekable(_iter_blocks(doc))
     while True:
         try:
-            text, trace = iter_traces.peek()
+            text, box = iter_traces.peek()
         except StopIteration:
             if prot is not None:
                 prot['Header'] = title
                 prots.append(prot)
             break
-
-        if set(text) in ({'-'}, {'-', ' '}):
-            # skip line separator
-            iter_traces.next()
-            continue
 
         if text.startswith('\\\\'):
             # Start of a new protocol (paths start with \\)
@@ -155,9 +212,21 @@ def _parse_printout_content(path: str | PathLike):
             prot = dict()
             continue
 
+        # move iterator
         iter_traces.next()
 
-        box = trace['bbox']
+        if set(text) in ({'-'}, {'-', ' '}):
+            # skip line separator
+            continue
+
+        if text.startswith('SIEMENS MAGNETOM'):
+            # skip line header
+            continue
+
+        if re.fullmatch(r'\d+/(-|\+)', text):
+            # skip page number
+            continue
+
         # Find which column we're on and compute indentation size
         column = 'L' if box[0] < pagewidth / 2 else 'R'
         indent = abs(colx[column] - box[0])
@@ -166,44 +235,110 @@ def _parse_printout_content(path: str | PathLike):
             header = text
             prot.setdefault(header, {})
             group = key = None
-        elif indent < 50:
-            if not text.startswith(' '):
-                if key is not None:
-                    if group is not None:
-                        prot[header][group][key] = None
-                    else:
-                        prot[header][key] = None
-                key = text
-                group = None
-            else:
+
+        elif indent < 15:
+            if text.startswith(' '):
                 text = text.strip()
-                if group is None and key is not None:
-                    group = key
-                    prot[header].setdefault(group, {})
-                key = text
-        else:
-            assert key is not None, key
-            if group is not None:
-                prot[header][group][key] = text
+
+                # A key inside a group
+                # - If group is None, this is the first element in the group
+                #   and we know now that the previous key was a group.
+                #   If group is None _and_ key is None, it's a bit weird...
+                if group is None:
+                    if last_key is None:
+                        LOGGER.warning(
+                            "Found an element that should be within a group, "
+                            "but no opened group. Let's assume it's just a "
+                            "normal key: " + text
+                        )
+                    else:
+                        group = last_key
+                        prot[header].setdefault(group, {})
+                        # In VE, group-opening keys can have values
+                        # (it was not the case in VD/VB). If it's key case
+                        # we edit the group name so that it's "{name} {value}".
+                        if not isinstance(prot[header][group], dict):
+                            if prot[header][group] is not None:
+                                old_group = group
+                                group = group + ' ' + prot[header][group]
+                                del prot[header][old_group]
+                            prot[header][group] = {}
+                key = last_key = text
+                prot[header][group].setdefault(key, None)
+
             else:
-                prot[header][key] = text
+                # A key inside a section
+                # May happen to be opening a group but we'll only know later.
+                CAPITAL = tuple('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+                _group = prot[header].get(group, prot[header])
+                if (
+                    not text.startswith(CAPITAL) and
+                    _group.get(last_key, '') is None
+                ):
+                    # Sometimes keys span two lines, which we must reconcile
+                    del _group[last_key]
+                    key = last_key = last_key + ' ' + text
+                    _group[last_key] = None
+                else:
+                    key = last_key = text
+                    prot[header].setdefault(key, None)
+                # If a group was opened, close it
+                group = None
+
+        # elif indent < 50:
+        #     if not text.startswith(' '):
+        #         key = last_key = text
+        #         if key is not None:
+        #             _group = prot[header].get(group, prot[header])
+        #             _group[key] = None
+        #         group = None
+        #     else:
+        #         text = text.strip()
+        #         if group is None and key is not None:
+        #             group = key
+        #             prot[header].setdefault(group, {})
+        #         key = last_key = text
+        else:
+            # A value.
+            # Note that sometime a value is split across multiple lines.
+            if last_key is None:
+                LOGGER.warning(
+                    "Found a value without key... Let's skip it: " + text
+                )
+                continue
+            _group = prot[header].get(group, prot[header])
+            if key is None:
+                _group[last_key] += ' ' + text
+            else:
+                if _group[key] is not None:
+                    LOGGER.warning(
+                        f"Key \"{key}\" was already filled with value "
+                        f"\"{_group[key]}\". Ignoring new value \"{text}\"."
+                    )
+                else:
+                    _group[key] = text
             key = None
 
     return prots
 
 
-def sniff(path: str):
+def sniff(path: str) -> bool:
     doc = pymupdf.open(str(path))
     try:
         model, version = _parse_model(doc[0])
         if version.startswith('syngo MR B'):
             return True
-    finally:
-        return False
+    except Exception:
+        ...
+    return False
 
 
-def parse(path: str | PathLike, nii: Iterable[str | dict] | None = None):
-    prots = _parse_printout_content(path)
+def parse(
+    path: str | PathLike,
+    nii: Iterable[str | dict] | None = None,
+    skip_pages: int | Iterable[int] | None = None,
+):
+    prots = _parse_printout_content(path, skip_pages=skip_pages)
     base = {
         'Manufacturer': 'Siemens',
         'ManufacturersModelName': prots[0]['Header']['ModelName'],

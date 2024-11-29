@@ -2,13 +2,16 @@ import cyclopts
 import json
 from typing import Iterable, Literal
 from pathlib import Path
-from warnings import warn
 from os import PathLike
 from ast import literal_eval
+from logging import getLogger, basicConfig, INFO
+
 from .register import REGISTER
 from .utils.nii2axes import nii2shape
 from .utils.prettify import JSONs
 
+
+LOGGER = getLogger(__name__)
 
 app = cyclopts.App("protocol2bids", help_format="markdown")
 
@@ -28,7 +31,8 @@ def protocol2bids(
     hints: Iterable[str] | None = None,
     nii: Iterable[str | PathLike] | None = None,
     defaults: str | dict | None = None,
-    assigns: str | dict | None = None
+    assigns: str | dict | None = None,
+    skip_pages: Iterable[int] | None = None,
 ):
     """
     protocol2bids : Convert protocol printouts to BIDS sidecars
@@ -48,12 +52,16 @@ def protocol2bids(
         Dictionary of default BIDS metadata
     assigns
         Dictionary of BIDS metadata to assign
+    skip_pages
+        List of pages to ignore in the protocol
 
     Returns
     -------
     sidecars : dict{str, JSON}
         JSON sidecars
     """
+    basicConfig(format="%(message)s", level=INFO)
+
     sidecars = None
     tried = set()
 
@@ -63,8 +71,10 @@ def protocol2bids(
             if not path:
                 volinfo.append({})
             else:
-                affine, shape = nii2shape(nii)
+                affine, shape = nii2shape(path)
                 volinfo.append(dict(affine=affine, shape=shape))
+
+    opt = dict(nii=volinfo, skip_pages=skip_pages)
 
     # Use hints
     for hint in (hints or []):
@@ -74,26 +84,30 @@ def protocol2bids(
             tried.add(path)
             parse = getattr(REGISTER[path], 'parse')
             try:
-                sidecars = parse(inp)
+                LOGGER.info(f'parse: {path}')
+                sidecars = parse(inp, **opt)
                 break
             except Exception as e:
+                LOGGER.warning(f'Failed to parse with parser {path}: {e}')
                 raise e
-                warn(f'Failed to parse with parser {path}: {e}')
 
     # Use sniff
     if sidecars is None:
         for path, module in REGISTER.items():
             if path in tried:
                 continue
+            LOGGER.info(f'sniff: {path}')
             sniff = getattr(module, 'sniff')
             parse = getattr(module, 'parse')
             if sniff(inp):
                 tried.add(path)
                 try:
-                    sidecars = parse(inp)
+                    LOGGER.info(f'parse: {path}')
+                    sidecars = parse(inp, **opt)
                     break
                 except Exception as e:
-                    warn(f'Failed to parse with parser {path}: {e}')
+                    LOGGER.warning(f'Failed to parse with parser {path}: {e}')
+                    raise e
 
     # Try all remaining
     if sidecars is None:
@@ -103,10 +117,11 @@ def protocol2bids(
             tried.add(path)
             parse = getattr(module, 'parse')
             try:
-                sidecars = parse(inp)
+                LOGGER.info(f'parse: {path}')
+                sidecars = parse(inp, **opt)
                 break
             except Exception as e:
-                warn(f'Failed to parse with parser {path}: {e}')
+                LOGGER.warning(f'Failed to parse with parser {path}: {e}')
 
     # Set defaults
     if defaults:
@@ -136,6 +151,6 @@ def protocol2bids(
         if len(sidecars) > 1:
             opath = out.with_stem(out.stem + f'{i+1}')
         with opath.open('w') as f:
-            json.dump(sidecar, f)
+            json.dump(sidecar, f, indent=4)
 
     return JSONs(sidecars)

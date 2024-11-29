@@ -44,9 +44,9 @@ def nii2axes(**kwargs):
     affine = affine[:3, :3]
     voxel_size = (affine**2).sum(0)**0.5
     affine = affine / voxel_size
-    layout = np.round(affine + (np.random.random(3, 3) - 0.5) * 1e-5)
+    layout = np.round(affine + (np.random.random([3, 3]) - 0.5) * 1e-5)
 
-    onehot = np.round(np.abs(affine)).astype(np.int)
+    onehot = np.round(np.abs(affine)).astype(np.int32)
     index = [
         onehot[:, 0].tolist().index(1),
         onehot[:, 1].tolist().index(1),
@@ -67,22 +67,22 @@ def nii2axes(**kwargs):
     ]
     anat2vox = {}
     if 'LR' in vox2anat:
-        anat2vox['LR'] = voxnames.get(vox2anat.index('LR')) + '+'
-        anat2vox['RL'] = voxnames.get(vox2anat.index('LR')) + '-'
+        anat2vox['LR'] = voxnames[vox2anat.index('LR')] + '+'
+        anat2vox['RL'] = voxnames[vox2anat.index('LR')] + '-'
     else:
-        anat2vox['RL'] = voxnames.get(vox2anat.index('RL')) + '+'
-        anat2vox['LR'] = voxnames.get(vox2anat.index('RL')) + '-'
+        anat2vox['RL'] = voxnames[vox2anat.index('RL')] + '+'
+        anat2vox['LR'] = voxnames[vox2anat.index('RL')] + '-'
     if 'PA' in vox2anat:
-        anat2vox['PA'] = voxnames.get(vox2anat.index('PA')) + '+'
-        anat2vox['AP'] = voxnames.get(vox2anat.index('PA')) + '-'
+        anat2vox['PA'] = voxnames[vox2anat.index('PA')] + '+'
+        anat2vox['AP'] = voxnames[vox2anat.index('PA')] + '-'
     else:
-        anat2vox['AP'] = voxnames.get(vox2anat.index('AP')) + '+'
-        anat2vox['PA'] = voxnames.get(vox2anat.index('AP')) + '-'
+        anat2vox['AP'] = voxnames[vox2anat.index('AP')] + '+'
+        anat2vox['PA'] = voxnames[vox2anat.index('AP')] + '-'
     if 'IS' in vox2anat:
-        anat2vox['IS'] = voxnames.get(vox2anat.index('IS')) + '+'
-        anat2vox['SI'] = voxnames.get(vox2anat.index('IS')) + '-'
+        anat2vox['IS'] = voxnames[vox2anat.index('IS')] + '+'
+        anat2vox['SI'] = voxnames[vox2anat.index('IS')] + '-'
     else:
-        anat2vox['SI'] = voxnames.get(vox2anat.index('SI')) + '+'
-        anat2vox['IS'] = voxnames.get(vox2anat.index('SI')) + '-'
+        anat2vox['SI'] = voxnames[vox2anat.index('SI')] + '+'
+        anat2vox['IS'] = voxnames[vox2anat.index('SI')] + '-'
 
     return vox2anat, anat2vox, shape

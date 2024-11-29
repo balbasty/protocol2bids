@@ -2,8 +2,13 @@ import pymupdf
 import re
 from os import PathLike
 from typing import Iterator, Iterable
+from logging import getLogger
+
 from .utils import peekable
 from .common import siemens_to_bids
+
+
+LOGGER = getLogger(__name__)
 
 
 def _find_alignment(page: pymupdf.Page) -> float:
@@ -53,7 +58,11 @@ def _parse_title(blocks: peekable) -> dict:
     Parse the title box of a protocol
     """
     *path, text = blocks.next()[0]
+    while text and not text[0].startswith('TA'):
+        path.append(text.pop(0))
     path = ''.join([''.join(subpath) for subpath in path])
+    if not text:
+        text = [_ for __ in blocks.next()[0] for _ in __]
     text = ' '.join(text)
     title = dict(path=path)
     text = text.strip()
@@ -63,7 +72,7 @@ def _parse_title(blocks: peekable) -> dict:
         r'Voxel size:\s*'
         r'(?P<vx>[\d\.]+)\s*×\s*(?P<vy>[\d\.]+)\s*×\s*(?P<vz>[\d\.]+)\s*mm\s*'
         r'Rel. SNR:\s*(?P<SNR>\S+)\s+'
-        r':\s*(?P<SIEMENS>\S+)'
+        r':\s*(?P<SeqName>\S+)'
     )
     match = re.fullmatch(pattern, text)
     if match:
@@ -105,7 +114,10 @@ def _iter_blocks(doc: pymupdf.Document) -> Iterator[tuple[list, dict]]:
             yield lines, block
 
 
-def _parse_printout_content(path: str | PathLike):
+def _parse_printout_content(
+    path: str | PathLike,
+    skip_pages: int | Iterable[int] | None = None
+):
     """
     Parse the content in a protocol printout
 
@@ -127,6 +139,12 @@ def _parse_printout_content(path: str | PathLike):
     title: dict | None = None           # Current protocol title object
     prot: dict | None = None            # Current protocol content
     header: str | None = None           # Current header
+
+    if skip_pages is not None:
+        if isinstance(skip_pages, int):
+            skip_pages = [skip_pages]
+        skip_pages = list(skip_pages)
+        doc = [page for i, page in enumerate(doc) if i not in skip_pages]
 
     colx = _find_alignment(doc[0])
 
@@ -166,7 +184,7 @@ def _parse_printout_content(path: str | PathLike):
         if first_span.startswith('Page'):
             # Page number (header)
             continue
-        if re.fullmatch(r'\d\d/\d\d/\d\d\d\d', first_span):
+        if re.fullmatch(r'\d+(/|\.)\d+(/|\.)\d\d+', first_span):
             # Date (footer)
             continue
         if first_span == 'Table of contents':
@@ -197,12 +215,18 @@ def sniff(path: str):
         model, version = _parse_model(doc[0])
         if version.startswith('syngo MR D'):
             return True
-    finally:
-        return False
+    except Exception:
+        ...
+    return False
 
 
-def parse(path: str | PathLike, nii: Iterable[str | dict] | None = None):
-    model, software, prots = _parse_printout_content(path)
+def parse(
+    path: str | PathLike,
+    nii: Iterable[str | dict] | None = None,
+    skip_pages: int | Iterable[int] | None = None,
+):
+    model, software, prots = _parse_printout_content(path,
+                                                     skip_pages=skip_pages)
     base = {
         'Manufacturer': 'Siemens',
         'ManufacturersModelName': model,

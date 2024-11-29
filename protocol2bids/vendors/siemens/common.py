@@ -468,7 +468,7 @@ KEYMAP_CLASSIC = {
             "Resolution - iPAT//PAT mode",
             "Resolution - Acceleration//Acceleration mode",
         )],
-        "formula": lambda x: _error() if x == "Off" else x
+        "formula": lambda x: _error() if x in ("Off", "None") else x
     },
     # "PartialFourier": None,
     # "PartialFourierDirection": None,
@@ -634,7 +634,7 @@ KEYMAP_CLASSIC = {
                 "Routine//Slice group 1//Dist. factor"
             ],
             "formula": lambda x, y:
-                float(x.split()[0]) * (1 + float(y.split()[0])),
+                float(x.split()[0]) * (1 + float(y.split()[0]) / 100),
         },
         {
             "args": ["Routine//Slice thickness"],
@@ -686,16 +686,16 @@ KEYMAP_CLASSIC = {
         },
         {
             "args": ["SequenceName"],
-            "formula": lambda x: "tof" in x
+            "formula": lambda x: True if "tof" in x else _error()
         },
     ],
     "ArterialSpinLabelingContrast": {
         "args": ["SequenceName"],
-        "formula": lambda x: "PULSED" if "pasl" in x else "NONE"
+        "formula": lambda x: "PULSED" if "pasl" in x else _error()
     },
     "SteadyStatePulseSequence": {
         "args": ["SequenceName"],
-        "formula": lambda x: "FREE_PRECESSION" if "tfi" in x else "NONE"
+        "formula": lambda x: "FREE_PRECESSION" if "tfi" in x else _error()
         # FIXME!!!
     },
     "EchoPlanarPulseSequence": {
@@ -756,7 +756,7 @@ KEYMAP_CLASSIC = {
                 "Routine//Slice group 1//Dist. factor"
             ],
             "formula": lambda x, y:
-                float(x.split()[0]) * float(y.split()[0]),
+                float(x.split()[0]) * float(y.split()[0]) / 100,
         },
         {
             "args": [],
@@ -1000,24 +1000,40 @@ KEYMAP_SPECIAL["tfi*"] = {
     "RepetitionTimeExcitation": "VendorReportedRepetitionTime",
 }
 # EPI
-KEYMAP_SPECIAL["ep*"] = {
+KEYMAP_SPECIAL["*ep*"] = {
     # This is the bandwidth across the PE direction,
     # in reference to the "apparent" acquisition matrix
     # (`AcquisitionMatrixPE`), not the "true" acquisition matrix
     # (`OversampledAcquisitionMatrixPE`)
-    "BandwidthPerPixelPhaseEncode": {
-        "args": [
-            "VendorReportedEchoSpacing",
-            "ReconMatrixPE",
-            "ParallelReductionFactorInPlane",
-            "Routine//Phase oversampling",
-        ],
-        "formula": lambda es, np, ap, op:
-            1/(
-                es * (np/ap) *
-                (1 + float(op.split()[0])/100)
-            )
-    },
+    "BandwidthPerPixelPhaseEncode": [
+        {
+            "args": [
+                "VendorReportedEchoSpacing",
+                "ReconMatrixPE",
+                "ParallelReductionFactorInPlane",
+                "Routine//Phase oversampling",
+            ],
+            "formula": lambda es, np, ap, op:
+                1/(
+                    es * (np/ap) *
+                    (1 + float(op.split()[0])/100)
+                )
+        },
+        # If parallel imaging unused, ParallelReductionFactorInPlane can
+        # be unset. This is a fallback in this case.
+        {
+            "args": [
+                "VendorReportedEchoSpacing",
+                "ReconMatrixPE",
+                "Routine//Phase oversampling",
+            ],
+            "formula": lambda es, np, op:
+                1/(
+                    es * np *
+                    (1 + float(op.split()[0])/100)
+                )
+        },
+    ],
     # This is the echo spacing that would have resoluted in the
     # same amount of distortions if no acceleration/overampling
     # had been used
@@ -1147,21 +1163,21 @@ def siemens_to_bids(prot, **kwargs):
     # Set fields based on nifti header
     if anat2vox is not None:
         if "DirectionFE" in bids:
-            bids["FrequencyEncodingDirection"] = anat2vox["DirectionFE"]
+            bids["FrequencyEncodingDirection"] = anat2vox[bids["DirectionFE"]]
             bids["ReconMatrixFE"] = {
                 "i": shape[0],
                 "j": shape[1],
                 "k": shape[2],
             }[bids["FrequencyEncodingDirection"][0]]
         if "DirectionPE" in bids:
-            bids["PhaseEncodingDirection"] = anat2vox["DirectionPE"]
+            bids["PhaseEncodingDirection"] = anat2vox[bids["DirectionPE"]]
             bids["ReconMatrixPE"] = {
                 "i": shape[0],
                 "j": shape[1],
                 "k": shape[2],
             }[bids["PhaseEncodingDirection"][0]]
         if "DirectionSE" in bids:
-            bids["SliceEncodingDirection"] = anat2vox["DirectionSE"]
+            bids["SliceEncodingDirection"] = anat2vox[bids["DirectionSE"]]
             bids["ReconMatrixSE"] = {
                 "i": shape[0],
                 "j": shape[1],
