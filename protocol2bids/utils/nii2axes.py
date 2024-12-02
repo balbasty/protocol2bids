@@ -70,22 +70,22 @@ def nii2axes(**kwargs):
     ]
     anat2vox = {}
     if 'LR' in vox2anat:
-        anat2vox['LR'] = voxnames[vox2anat.index('LR')] + '+'
+        anat2vox['LR'] = voxnames[vox2anat.index('LR')]  # + '+'
         anat2vox['RL'] = voxnames[vox2anat.index('LR')] + '-'
     else:
-        anat2vox['RL'] = voxnames[vox2anat.index('RL')] + '+'
+        anat2vox['RL'] = voxnames[vox2anat.index('RL')]  # + '+'
         anat2vox['LR'] = voxnames[vox2anat.index('RL')] + '-'
     if 'PA' in vox2anat:
-        anat2vox['PA'] = voxnames[vox2anat.index('PA')] + '+'
+        anat2vox['PA'] = voxnames[vox2anat.index('PA')]  # + '+'
         anat2vox['AP'] = voxnames[vox2anat.index('PA')] + '-'
     else:
-        anat2vox['AP'] = voxnames[vox2anat.index('AP')] + '+'
+        anat2vox['AP'] = voxnames[vox2anat.index('AP')]  # + '+'
         anat2vox['PA'] = voxnames[vox2anat.index('AP')] + '-'
     if 'IS' in vox2anat:
-        anat2vox['IS'] = voxnames[vox2anat.index('IS')] + '+'
+        anat2vox['IS'] = voxnames[vox2anat.index('IS')]  # + '+'
         anat2vox['SI'] = voxnames[vox2anat.index('IS')] + '-'
     else:
-        anat2vox['SI'] = voxnames[vox2anat.index('SI')] + '+'
+        anat2vox['SI'] = voxnames[vox2anat.index('SI')]  # + '+'
         anat2vox['IS'] = voxnames[vox2anat.index('SI')] + '-'
 
     return vox2anat, anat2vox, shape
