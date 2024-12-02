@@ -304,7 +304,10 @@ KEYMAP_CLASSIC = {
     "ScanningSequence": [
         # Gradient Echo // Spin Echo
         {
-            "args": ["Header//SequenceName"],
+            "args": [(
+                "Header//SequenceName",
+                "Sequence - Part 1//Sequence Name",
+            )],
             "formula": lambda x: {
                 "gre": ["GR"],                  # Gradient Echo
                 "gre_field_mapping": ["GR"],    # Gradient Echo Field Mapping
@@ -1154,7 +1157,7 @@ def _make_mapper(mapper):
                 raise exceptions
         # call formula
         if iadd:
-            bids.setdefaut(key, [])
+            bids.setdefault(key, [])
             bids[key] += formula(*args, **kwargs)
         else:
             bids[key] = formula(*args, **kwargs)
