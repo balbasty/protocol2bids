@@ -1,0 +1,213 @@
+Coil selection =		"SENSE-Head-8";
+     element selection =	"SENSE";
+     connection =		"d";
+Dual coil =			"no";
+CLEAR =				"yes";
+    body tuned =		"no";
+FOV          RL (mm) =		248;
+             AP (mm) =		248;
+             FH (mm) =		130;
+Voxel size   RL (mm) =		2;
+             AP (mm) =		2;
+Slice thickness (mm) =		2;
+Recon voxel size (mm) =		2;
+Fold-over suppression =		"no";
+Reconstruction matrix =		128;
+SENSE =				"yes";
+    P reduction (AP) =		2;
+    P os factor =		1;
+k-t BLAST =			"no";
+Stacks =			1;
+    type =			"parallel";
+    slices =			65;
+    slice gap =			"user defined";
+          gap (mm) =		0;
+    slice orientation =		"transverse";
+    fold-over direction =	"AP";
+    fat shift direction =	"A";
+Stack Offc. AP (P=+mm) =	4.85672712;
+            RL (L=+mm) =	-2.03420067;
+            FH (H=+mm) =	21.969101;
+      Ang.  AP (deg) =		0.00473237969;
+            RL (deg) =		-13.0032053;
+            FH (deg) =		0.123505786;
+Minimum number of packages =	1;
+Slice scan order =		"default";
+Large table movement =		"no";
+PlanAlign =			"no";
+REST slabs =			0;
+Interactive positioning =	"no";
+Patient position =		"head first";
+        orientation =		"supine";
+Scan type =			"Imaging";
+Scan mode =			"MS";
+    technique =			"SE";
+Modified SE =			"no";
+Acquisition mode =		"cartesian";
+Fast Imaging mode =		"EPI";
+    shot mode =			"single-shot";
+Echoes =			1;
+    partial echo =		"no";
+TE =				"user defined";
+    (ms) =			79;
+Flip angle (deg) =		90;
+TR =				"shortest";
+Halfscan =			"no";
+Water-fat shift =		"user defined";
+     (pixels) =			21.5;
+Shim =				"auto";
+Fat suppression =		"SPIR";
+   strength =			"strong";
+   frequency offset =		"default";
+Water suppression =		"no";
+Grad. rev. offres. supp. =	"no";
+BB pulse =			"no";
+MTC =				"no";
+Diffusion mode =		"DTI";
+    sequence =			"SE";
+    gradient duration =		"overplus";
+    gradient overplus =		"no";
+    directional resolution =	"user defined";
+        nr of directions =	61;
+        user defined dirs =	0.711600006,
+				-0.521200001, 0.471799999,
+				0.825800002, 0.103799999,
+				0.55430001, 0.236399993, 0.809300005,
+				0.537800014, 0.667500019,
+				-0.712899983, 0.215000004,
+				-0.0248000007, 0.933600008,
+				0.3574, -0.529200017, -0.780300021,
+				0.333299994, -0.768599987,
+				0.156599998, 0.620199978,
+				0.81099999, -0.221599996,
+				0.541400015, 0.256900012,
+				-0.585799992, 0.768700004,
+				-0.783800006, -0.168300003,
+				0.597800016, 0.922399998,
+				0.260399997, 0.285100013,
+				0.155599996, -0.836000025,
+				0.526199996, -0.063500002,
+				-0.691500008, 0.719600022,
+				-0.702700019, -0.507700026,
+				0.498299986, 0.469999999,
+				0.590900004, 0.655700028,
+				-0.86500001, 0.376399994,
+				0.331900001, -0.379200011,
+				0.89200002, -0.245900005,
+				0.3486, 0.065700002, 0.935000002,
+				0.0467999987, -0.967499971,
+				0.248300001, -0.200000003,
+				-0.865100026, 0.460000008,
+				-0.647199988, 0.681800008,
+				0.340999991, 0.0364000015,
+				-0.0559, 0.997799993, 0.255699992,
+				-0.964699984, -0.0632999986,
+				-0.197899997, 0.495499998,
+				0.845799983, 0.555199981,
+				0.740400016, 0.378800005,
+				0.61559999, -0.0828000009,
+				0.783699989, -0.313199997,
+				-0.938199997, 0.146899998,
+				0.58039999, 0.81400001, 0.0243999995,
+				0.547399998, -0.412099987,
+				0.728399992, 0.336100012,
+				0.380400002, 0.861599982,
+				-0.356700003, 0.857500017,
+				0.370700002, -0.556699991,
+				-0.00760000013, 0.83069998,
+				0.739199996, 0.451900005,
+				0.49939999, 0.612299979, 0.256199986,
+				0.748000026, -0.672900021,
+				0.462500006, 0.577400029,
+				0.0252, -0.387800008, 0.921400011,
+				-0.780200005, -0.595099986,
+				-0.192900002, 0.959599972,
+				-0.0781000033, 0.270300001,
+				0.1184, 0.607200027, 0.785700023,
+				-0.996699989, -0.074500002,
+				0.0322000012, -0.280000001,
+				-0.170900002, 0.944700003,
+				-0.921400011, -0.388399988,
+				0.0119000003, -0.416299999,
+				0.650699973, 0.63499999, 0.885299981,
+				-0.407499999, 0.224099994,
+				0.813499987, -0.578199983,
+				-0.0621000007, -0.937099993,
+				0.0436000004, 0.346300006,
+				-0.967100024, 0.249699995,
+				0.0493000001, -0.423500001,
+				-0.662199974, 0.618200004,
+				-0.557299972, -0.34040001,
+				0.757300019, -0.326900005,
+				-0.917299986, -0.227400005,
+				0.552900016, -0.830600023,
+				-0.0666999966, -0.274100006,
+				-0.475400001, 0.835900009,
+				0.0434000008, 0.282599986,
+				0.958199978, -0.113600001,
+				0.771499991, 0.625999987,
+				-0.766499996, -0.616100013,
+				0.181500003, -0.256300002,
+				0.154100001, 0.954200029,
+				0.458700001, -0.715699971,
+				0.526600003, 0.0659999996,
+				0.996399999, 0.0533999987,
+				-0.491299987, 0.326099992,
+				0.807600021, 0.324299991,
+				-0.25850001, 0.910000026,
+				-0.900300026, -0.29429999,
+				0.320600003, (201) 0;
+    nr of b-factors =		2;
+    b-factor order =		"ascending";
+    max b-factor =		1500;
+    average high b =		"user defined";
+        b-factor averages =	4,
+				(15) 1;
+SAR mode =			"high";
+B1 mode =			"default";
+PNS mode =			"high";
+Gradient mode =			"enhanced";
+SofTone mode =			"no";
+Cardiac synchronization =	"no";
+Respiratory compensation =	"no";
+Navigator respiratory comp =	"no";
+Flow compensation =		"no";
+Temporal slice spacing =	"default";
+NSA =				1;
+Manual start =			"yes";
+Dynamic study =			"no";
+    dyn stabilization =		"yes";
+Arterial Spin labeling =	"no";
+Preparation phases =		"auto";
+Interactive F0 =		"no";
+B0 field map =			"no";
+MIP/MPR =			"no";
+Images =			" M", (3) " no";
+Autoview image =		" M";
+Calculated images =		(4) " no";
+Reference tissue =		"Grey matter";
+Preset window contrast =	"soft";
+Reconstruction mode =		"immediate";
+Save raw data =			"no";
+Hardcopy protocol =		"no";
+Ringing filtering =		"default";
+Geometry correction =		"default";
+IF_info_seperator =		0;
+Total scan duration =		"24:21.7";
+Rel. signal level (%) =		100;
+Act. TR (ms) =			"20244";
+Act. TE (ms) =			"79";
+ACQ matrix M x P =		"124 x 124";
+ACQ voxel MPS (mm) =		"2.00 / 2.00 / 2.00";
+REC voxel MPS (mm) =		"1.94 / 1.94 / 2.00";
+Scan percentage (%) =		100;
+Packages =			1;
+Min. slice gap (mm) =		0;
+EPI factor =			65;
+WFS (pix) / BW (Hz) =		"21.501 / 20.2";
+BW in EPI freq. dir. (Hz) =	"2590.6";
+SAR / head =			"<  12 %";
+Whole body / level =		"0.0 W/kg / normal";
+B1 rms =			"0.80 uT";
+PNS / level =			"79 % / normal";
+Sound Pressure Level (dB) =	19.6140404;

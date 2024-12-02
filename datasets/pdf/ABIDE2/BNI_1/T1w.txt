@@ -1,0 +1,140 @@
+     Patient weight [kg] =	102;
+Nucleus =			"H1";
+SmartSelect =			"yes";
+Coil 1  (exclude) =		"None";
+Uniformity =			"CLEAR";
+FOV          FH (mm) =		270;
+             AP (mm) =		252.295074;
+             RL (mm) =		204.000015;
+Voxel size   FH (mm) =		1.11000001;
+             AP (mm) =		1.11143208;
+             RL (mm) =		1.20000005;
+Recon voxel size (mm) =		1.0546875;
+Fold-over suppression =		"no";
+Slice oversampling =		"default";
+RF select. FOS =		"no";
+Reconstruction matrix =		256;
+SENSE =				"yes";
+    P reduction (AP) =		1;
+    S reduction (RL) =		1.79999995;
+k-t BLAST =			"no";
+Overcontiguous slices =		"no";
+Stacks =			1;
+    slices =			170;
+    slice orientation =		"sagittal";
+    fold-over direction =	"AP";
+    fat shift direction =	"F";
+Stack Offc. AP (P=+mm) =	-39.7914429;
+            RL (L=+mm) =	-5.90813494;
+            FH (H=+mm) =	-15.2577477;
+      Ang.  AP (deg) =		2.83938247e-021;
+            RL (deg) =		-0;
+            FH (deg) =		-0;
+      Free rotatable =		"no";
+Multi-chunk =			"no";
+Large table movement =		"no";
+PlanAlign =			"no";
+REST slabs =			0;
+Catheter tracking =		"no";
+Interactive positioning =	"no";
+Allow table movement =		"no";
+Patient position =		"head first";
+        orientation =		"supine";
+Scan type =			"Imaging";
+Scan mode =			"3D";
+    technique =			"FFE";
+Contrast enhancement =		"T1";
+Acquisition mode =		"cartesian";
+Fast Imaging mode =		"TFE";
+    3D non-selective =		"no";
+    shot mode =			"single-shot";
+TFE startup echoes =		"default";
+    shot interval =		"user defined";
+        (ms) =			2500;
+    profile order =		"linear";
+    turbo direction =		"Y";
+Echoes =			1;
+    partial echo =		"no";
+    shifted echo =		"no";
+TE =				"shortest";
+Flip angle (deg) =		9;
+TR =				"shortest";
+Halfscan =			"no";
+Water-fat shift =		"user defined";
+     (pixels) =			1.79999995;
+RF Shims =			"fixed";
+Shim =				"auto";
+mDIXON =			"no";
+Fat suppression =		"no";
+Water suppression =		"no";
+TFE prepulse =			"invert";
+    slice selection =		"no";
+    delay =			"user defined";
+        (ms) =			900;
+    PSIR =			"no";
+MTC =				"no";
+T2prep =			"no";
+Research prepulse =		"no";
+Diffusion mode =		"no";
+Elastography mode =		"no";
+Transmit channels =		"both";
+SAR mode =			"high";
+B1 mode =			"default";
+SAR Patient data =		"auto";
+PNS mode =			"low";
+Gradient mode =			"maximum";
+SofTone mode =			"no";
+Cardiac synchronization =	"no";
+Heart rate > 250 bpm =		"no";
+Respiratory compensation =	"no";
+Navigator respiratory comp =	"no";
+Flow compensation =		"no";
+fMRI echo stabilisation =	"no";
+Motion smoothing =		"no";
+NSA =				1;
+Angio / Contrast enh. =		"no";
+Quantitative flow =		"no";
+CENTRA =			"no";
+Manual start =			"no";
+Dynamic study =			"no";
+Arterial Spin labeling =	"no";
+Preparation phases =		"auto";
+Interactive F0 =		"no";
+SmartPlan survey =		"no";
+B0 field map =			"no";
+B1 field map =			"no";
+MIP/MPR =			"no";
+SWIp =				"no";
+Images =			"M", (3) "no";
+Autoview image =		"M";
+Calculated images =		(4) "no";
+Reference tissue =		"Grey matter";
+Recon compression =		"No";
+Preset window contrast =	"soft";
+Reconstruction mode =		"real time";
+Save raw data =			"no";
+Hardcopy protocol =		"no";
+Image filter =			"system default";
+Geometry correction =		"default";
+Elliptical k-space shutter =	"default";
+IF_info_seperator =		1634755923;
+Total scan duration =		"05:34.2";
+Rel. SNR =			0.602363825;
+Act. TR/TE (ms) =		"6.7 / 3.1";
+ACQ matrix M x P =		"244 x 227";
+ACQ voxel MPS (mm) =		"1.11 / 1.11 / 1.20";
+REC voxel MPS (mm) =		"1.05 / 1.05 / 1.20";
+Scan percentage (%) =		99.5614014;
+TFE factor =			227;
+TFE dur. shot / acq (ms) =	"1674.7 / 1530.9";
+Min. TI delay =			799.497986;
+Act. WFS (pix) / BW (Hz) =	"1.806 / 240.5";
+Min. WFS (pix) / Max. BW (Hz) =	"0.441 / 985.1";
+SAR / head =			"<  10 %";
+Whole body / level =		"0.0 W/kg / normal";
+SED =				"  0.0 kJ/kg";
+B1+rms / Coil Power =		"0.74 uT / 10 %";
+Max B1+rms =			"0.74 uT";
+PNS / level =			"60 % / normal";
+dB/dt =				"57.5 T/s";
+Sound Pressure Level (dB) =	9.65894127;
