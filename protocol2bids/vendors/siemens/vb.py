@@ -350,9 +350,13 @@ def parse(
         'ManufacturersModelName': prots[0]['Header']['ModelName'],
         'SoftwareVersions': prots[0]['Header']['SoftwareVersions'],
     }
-    nii = nii or []
+
+    if isinstance(nii, str):
+        nii = [nii]
+    nii = list(nii or [])
     nii += max(0, len(prots)-len(nii)) * [{}]
     nii = [dict(file=x) if isinstance(x, str) else x for x in nii]
+
     sidecars = {}
     for prot, info in zip(prots, nii):
         # Convert to BIDS
