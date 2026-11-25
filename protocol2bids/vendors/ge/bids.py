@@ -263,6 +263,47 @@ def s_phase_axis(ctx: Context):
         ctx.set('PhaseEncodingAxis', 'ij'[inplane.index(pe)])
 
 
+def ge_slice_ranks(n: int, mb: int = 1, interleaved: bool = True,
+                   descending: bool = False,
+                   r03: bool = True) -> tuple[list[int], int]:
+    """
+    Acquisition rank of each slice, following dcm2niix `sliceTimeGE`
+    (which dcm2niix uses to *compute* GE SliceTiming):
+
+    * nexc = ceil(N / MB) excitations; interleaved = odd slices first;
+    * HyperBand with an even nexc: before software 27.0 R03 a dummy
+      excitation is added (nexc + 1 slots); from 27.0 R03 on, the last
+      and third-to-last slots are swapped;
+    * descending = mirror image over all N slices.
+
+    Returns the ranks and the number of time slots.
+    """
+    nexc = -(-n // mb)
+    if mb > 1 and not r03 and nexc % 2 == 0:
+        nexc += 1
+    if interleaved:
+        nodd = (nexc - 1) // 2
+        t = [i // 2 if i % 2 == 0 else nodd + (i + 1) // 2
+             for i in range(nexc)]
+        if mb > 1 and r03 and nexc > 2 and nexc % 2 == 0:
+            t[nexc - 1], t[nexc - 3] = t[nexc - 3], t[nexc - 1]
+    else:
+        t = list(range(nexc))
+    ranks = [t[i % nexc] for i in range(n)]
+    if descending:
+        ranks = ranks[::-1]
+    return ranks, nexc
+
+
+def ge_is_r03(version: str | None) -> bool | None:
+    """Is the software at least 27.0 R03? (None if unknown)"""
+    m = re.search(r'(\d\d)\.(\d)_?R?(\d\d)', version or '')
+    if not m:
+        return None
+    major, minor, rel = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    return (major, minor, rel) >= (27, 0, 3)
+
+
 @sheet_rule
 def s_slice_timing(ctx: Context):
     """GE interleaved: odd slices first (1, 3, 5, ..., 2, 4, ...)."""
@@ -278,11 +319,21 @@ def s_slice_timing(ctx: Context):
             raise
         n = int(ctx.shape[2])   # 2D acquisitions: slices along k
     tr = ctx['RepetitionTime']
-    seq = list(range(0, n, 2)) + list(range(1, n, 2))
-    timing = [0.0] * n
-    for rank, s in enumerate(seq):
-        timing[s] = round(rank * tr / n, 6)
-    ctx.set('SliceTiming', timing)
+    mb = 1
+    for key in ('Slice Acceleration Factor', 'HyperBand Factor',
+                'Multiband Factor'):
+        value = ctx.prot.get(key, default=None)
+        if value:
+            mb = int(round(V.number(value)))
+            break
+    r03 = True
+    if mb > 1:
+        r03 = ge_is_r03(ctx.prot.scanner.get('SoftwareVersions'))
+        if r03 is None:
+            return   # HyperBand order depends on the software version
+        ctx.set('MultibandAccelerationFactor', mb)
+    ranks, nslots = ge_slice_ranks(n, mb, interleaved=True, r03=r03)
+    ctx.set('SliceTiming', [round(r * tr / nslots, 6) for r in ranks])
 
 
 # ----------------------------------------------------------------------

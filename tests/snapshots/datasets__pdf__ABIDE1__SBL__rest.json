@@ -1,0 +1,286 @@
+[
+ {
+  "name": "rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera",
+   "MagneticFieldStrength": 3.0
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "INFO PAGE": {
+    "Total scan duration": "7:28.8",
+    "Rel. signal level (%)": "100",
+    "Act. TR/TE (ms)": "2200 / 30",
+    "Dyn. scan time": "00:02.2",
+    "ACQ matrix M x P": "80 x 79",
+    "ACQ voxel MPS (mm)": "2.75 / 2.75 / 2.72",
+    "REC voxel MPS (mm)": "2.75 / 2.75 / 2.72",
+    "Scan percentage (%)": "100",
+    "Packages": "1",
+    "Min. slice gap (mm)": "0",
+    "Act. slice gap (mm)": "0.272000015",
+    "EPI factor": "29",
+    "Act. WFS (pix) /BW (Hz)": "13.000 / 33.4",
+    "BW in EPI freq. dir (Hz)": "1283.7",
+    "Min. WFS (pix) / Max. BW (Hz)": "8.186 / 53.1",
+    "Min TR/TE (ms)": "2185 / 11",
+    "SAR / head": {
+     "<": "30 %"
+    },
+    "Whole body / level": "< 0.1 W/kg / normal",
+    "B1 rms [uT]": "1.27 uT",
+    "PNS / level": "39 % / normal",
+    "Sound Pressure level (dB)": "9.2863493"
+   },
+   "MOTION": {
+    "Cardiac syncronization": "no",
+    "Respiratory compensat": "no",
+    "Navigator respiratory compensation": "no",
+    "Flow compensation": "no",
+    "Temporal slice spacing": "equidistant",
+    "fMRI echo stabilization": "no",
+    "NSA": "1"
+   },
+   "GEOMETRY": {
+    "Nucleus": "[N/A]",
+    "Coil selection 1": {
+     "": "SENSE-Head-32P",
+     "element selection": "selection 1"
+    },
+    "Coil selection 2": {
+     "": "SENSE-Head-32AH",
+     "element selection": "selection 1"
+    },
+    "Dual coil": "yes",
+    "CLEAR": {
+     "": "yes",
+     "body tuned": "no"
+    },
+    "FOV": {
+     "RL(mm)": "220",
+     "AP(mm)": "220",
+     "FH(mm)": "113.424004"
+    },
+    "Voxel size": {
+     "RL(mm)": {
+      "": "2.75",
+      "AP(mm)": "2.75"
+     }
+    },
+    "Slice thickness (mm)": "2.72000003",
+    "Recon voxel size(mm)": "2.75",
+    "Fold-over suppression": "no",
+    "Matrix scan": {
+     "": "80",
+     "reconstruction": "80"
+    },
+    "Scan percentage": "100",
+    "SENSE": {
+     "": "yes",
+     "P reduction (AP)": "3",
+     "P os factor": "1"
+    },
+    "k-t BLAST": "[N/A]",
+    "Stacks": {
+     "": "1",
+     "type": "parallel",
+     "slices": "38",
+     "slice thickness (mm)": "2.72000003",
+     "slice gap": {
+      "": "default",
+      "gap(mm)": "0.272"
+     },
+     "slice orientation": "transverse",
+     "fold-over direction": "AP",
+     "fat shift direction": "P"
+    },
+    "Minimum number of packages": "1",
+    "Slice scan order": "descend",
+    "PlanAlign": "no",
+    "REST slabs": "0",
+    "Interactive positioning": "no"
+   },
+   "OFFC/ANG": {
+    "Stacks": "1",
+    "Stack Offc.": {
+     "AP (P=+mm)": "-21.358675"
+    },
+    "RL (L=+mm)": "-0.903871536",
+    "FH (H=+mm)": "23.2325592",
+    "AP (deg)": "-1.91507339",
+    "RL (deg)": "6.48943138",
+    "FH (deg)": "-1.37635624"
+   },
+   "CONTRAST": {
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "MS",
+     "technique": "FFE"
+    },
+    "Contrast enhancement": "no",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": {
+     "": "EPI",
+     "shot mode": "single-shot"
+    },
+    "Echoes": {
+     "": "1",
+     "partial echo": "no",
+     "shifted echo": "no"
+    },
+    "TE": {
+     "": "user defined",
+     "(ms)": "30"
+    },
+    "Flip angle (deg)": "80",
+    "TR": {
+     "": "user defined",
+     "(ms)": "2200"
+    },
+    "Halfscan": "no",
+    "Water-fat-shift": {
+     "": "user defined",
+     "(pixels)": "13"
+    },
+    "Shim": "auto",
+    "Fat suppression": {
+     "": "SPIR",
+     "strength": "strong",
+     "frequency offset": "default"
+    },
+    "Water suppression": "no",
+    "MTC": "no",
+    "Research prepulse": "no",
+    "Diffusion mode": "no",
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "PNS mode": "moderate",
+    "Gradient mode": "default",
+    "SofTone mode": "no"
+   },
+   "POSTPROC": {
+    "Preparation phases": "auto",
+    "Manual Offset Freq.": null,
+    "B0 field map": "no",
+    "MIP/MPR": "no",
+    "Images": "M (3) no",
+    "Autoview Image": "no",
+    "Calculate images": "(4) no",
+    "Reference tissue": "Grey matter",
+    "EPI 2D phase correction": "[N/A]",
+    "Preset window contrast": "soft",
+    "Reconstruction mode": "real time",
+    "Save raw data": "no",
+    "Hardcopy protocol": "no",
+    "Ringing filtering": "default",
+    "Geometry correction": "default"
+   },
+   "DYN/ANG": {
+    "Angio / Contrast enh.": "no",
+    "Quantitative flow": "no",
+    "Manual start": "no",
+    "Dynamic study": {
+     "": "individual",
+     "dyn scans": "200",
+     "recon multiplier": "[N/A]",
+     "dyn scan times": "shortest",
+     "FOV time mode": "default",
+     "dummy scans": "2",
+     "intermediate": "no"
+    },
+    "subtraction": {
+     "fast next scan": "no",
+     "Physiology marker": "[N/A]",
+     "synch. ext device": "yes",
+     "start at dyn": "1",
+     "interval (dyn)": "1",
+     "RF off (dyn)": "[N/A]",
+     "dyn stabilization": "yes",
+     "prospect. motion": "no"
+    },
+    "correction": null,
+    "Keyhole": "no",
+    "Arterial Spin labeling": "no"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera",
+   "MagneticFieldStrength": 3.0,
+   "ImagingFrequency": 127.728,
+   "Modality": "MR",
+   "ProtocolName": "rest",
+   "ReceiveCoilName": "SENSE-Head-32P",
+   "RepetitionTime": 2.2,
+   "EchoTime": 0.03,
+   "FlipAngle": 80.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 3.0,
+   "AcquisitionMatrixFE": 80,
+   "AcquisitionMatrixPE": 79,
+   "ReconMatrixPE": 80,
+   "SliceThickness": 2.72000003,
+   "SpacingBetweenSlices": 2.992,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j",
+   "WaterFatShift": 13.0,
+   "EchoTrainLength": 29,
+   "EstimatedTotalReadoutTime": 0.028937104091292035,
+   "EstimatedEffectiveEchoSpacing": 0.0003662924568517979,
+   "SliceTiming": [
+    2.142105,
+    2.084211,
+    2.026316,
+    1.968421,
+    1.910526,
+    1.852632,
+    1.794737,
+    1.736842,
+    1.678947,
+    1.621053,
+    1.563158,
+    1.505263,
+    1.447368,
+    1.389474,
+    1.331579,
+    1.273684,
+    1.215789,
+    1.157895,
+    1.1,
+    1.042105,
+    0.984211,
+    0.926316,
+    0.868421,
+    0.810526,
+    0.752632,
+    0.694737,
+    0.636842,
+    0.578947,
+    0.521053,
+    0.463158,
+    0.405263,
+    0.347368,
+    0.289474,
+    0.231579,
+    0.173684,
+    0.115789,
+    0.057895,
+    0.0
+   ]
+  }
+ }
+]

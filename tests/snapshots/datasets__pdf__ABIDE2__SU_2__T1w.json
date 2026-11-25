@@ -1,0 +1,59 @@
+[
+ {
+  "name": "ANAT T1",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE",
+   "MagneticFieldStrength": 3.0,
+   "ManufacturersModelName": "SIGNA"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "": {
+    "Scanner": "GE SIGNA 3T",
+    "Protocol": "ANAT T1",
+    "Scan Plane": "Axial",
+    "Field of View": "24 cm",
+    "Slice Thickness": "1",
+    "Freq. Dir": "A/P",
+    "TR": "5.9 ms",
+    "# of Slabs": "1",
+    "Locs per Slab": "170",
+    "# of TE(s) per Scan": "1",
+    "TE": "1.8 ms",
+    "Flip Angle": "11 degrees",
+    "Frequency": "256",
+    "Phase": "192",
+    "# of Excitations": "1",
+    "Bandwidth": "31.25",
+    "Voxel Size": "0.9375 x 0.9375 x 1.0 mm",
+    "# of Voxels": "256 x 256 x 166",
+    "Slices": "132"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "SIGNA",
+   "MagneticFieldStrength": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "ANAT T1",
+   "SeriesDescription": "ANAT T1",
+   "RepetitionTime": 0.005900000000000001,
+   "EchoTime": 0.0018000000000000002,
+   "FlipAngle": 11.0,
+   "MRAcquisitionType": "3D",
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 192,
+   "PixelBandwidth": 244.141,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 1.0,
+   "PhaseEncodingAnatomicalAxis": "RL",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]

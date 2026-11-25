@@ -14,3 +14,10 @@ def pdf(path: str) -> str:
 requires_ocr = pytest.mark.skipif(
     not HAS_TESSERACT, reason='tesseract is not installed'
 )
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        '--update-snapshots', action='store_true', default=False,
+        help='Regenerate the JSON snapshots in tests/snapshots',
+    )

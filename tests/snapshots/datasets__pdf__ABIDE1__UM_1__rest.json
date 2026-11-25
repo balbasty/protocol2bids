@@ -1,0 +1,89 @@
+[
+ {
+  "name": "rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Patient Position": {
+    "Patient Position": "Supine",
+    "Patient Entry": "Head First",
+    "Coil": "HEAD"
+   },
+   "Imaging Parameters": {
+    "Plane": "Axial",
+    "Mode": "2D",
+    "Pulse Seq": "Gradient Echo",
+    "Imaging Options": "None"
+   },
+   "Scan Timing": {
+    "# of Echoes": "1",
+    "TE": "30 ms",
+    "TR": "2000 ms",
+    "Flip Angle": "90"
+   },
+   "Acquisition Timing": {
+    "Frequency": "64",
+    "Frequency DIR": "A/P",
+    "Auto Center Frequency": "Water",
+    "NEX": "1.00",
+    "Autoshim": "On"
+   },
+   "Scanning Range": {
+    "FOV": "22",
+    "Slice Thickness": "3.0",
+    "Spacing": "0.0",
+    "# of Slices": "40"
+   },
+   "User Control Variables": {
+    "CV 0 # of interleaves (1,2,4,8,16)": "1.00",
+    "CV 1 number of temporal frames": "300.00",
+    "CV 2 external trigger (1) or not (0)": "0.00",
+    "CV 3 xfer data (script_number) or": {
+     "not (0)": "0.00"
+    },
+    "CV 4 recon size (64,128,256)": "64.00",
+    "CV 5 number of disdaqs": "4.00",
+    "Minimum": "Maximum",
+    "1": [
+     "128",
+     "16384"
+    ],
+    "0": [
+     "1",
+     "999",
+     "1000"
+    ],
+    "64": "512"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "HEAD",
+   "Modality": "MR",
+   "ProtocolName": "rest",
+   "SeriesDescription": "rest",
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo",
+   "EchoPlanarPulseSequence": false,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "PhaseEncodingAnatomicalAxis": "RL",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]

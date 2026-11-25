@@ -1,0 +1,174 @@
+[
+ {
+  "name": "ABIDEII-TCD_1 Anatomical",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-TCD_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "MPRAGE",
+    "Flip Angle [Deg]": "8",
+    "Inversion Time (TI) [ms]": "1150",
+    "Echo Time (TE) [ms]": "3.9",
+    "Repetition Time (TR) [ms]": "8.4",
+    "Bandwidth per Voxel (Readout) [Hz]": "188.3",
+    "Parallel Acquisition": "SENSE x 2.3 SENSE x P2",
+    "Partial Fourier": "No",
+    "Number of Slices": "190",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "0.9",
+    "Slice Gap [mm]": "0.09",
+    "Field of View [mm]": "230x230",
+    "Acquisition Matrix": "256x256",
+    "Slice In-Place Resolution [mm ]": "0.9x0.9",
+    "Acquisition Time [min:sec]": "5:43",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "MPRAGE",
+   "MRAcquisitionType": "2D",
+   "RepetitionTime": 0.008400000000000001,
+   "EchoTime": 0.0039,
+   "InversionTime": 1.1500000000000001,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 188.3,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.3,
+   "SliceThickness": 0.9,
+   "SpacingBetweenSlices": 0.99,
+   "AcquisitionMatrixPE": 256
+  }
+ },
+ {
+  "name": "ABIDEII-TCD_1 Rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-TCD_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "27",
+    "Repetition Time (TR) [ms]": "2000",
+    "Bandwidth per Voxel (Readout) [Hz]": "39.5/pixel",
+    "Number of Slices": "37",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "3.2",
+    "Slice Gap [mm]": "0.3",
+    "Field of View [mm]": "240x240",
+    "Acquisition Matrix": "80x80",
+    "Slice In-Place Resolution [mm ]": "3x3",
+    "Number of Measurements": "210",
+    "Acquisition Time [min:sec]": "7.06",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.027,
+   "FlipAngle": 90.0,
+   "PhilipsReportedBandwidth": 39.5,
+   "SliceThickness": 3.2,
+   "SpacingBetweenSlices": 3.5,
+   "AcquisitionMatrixPE": 80
+  }
+ },
+ {
+  "name": "ABIDEII-TCD_1 DTI",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-TCD_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "79",
+    "Repetition Time (TR) [ms]": "20244",
+    "Bandwidth per Voxel (Readout) [Hz]": "2590.6",
+    "Number of Slices": "65",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "2",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "248x248",
+    "Acquisition Matrix": "124x124",
+    "Slice In-Place Resolution [mm ]": "1.94x1.94",
+    "Acquisition Time [min:sec]": "24:21",
+    "Fat Suppression": "SPIR",
+    "Number of Directions": "61",
+    "B Value(s) [s/mm ]": ";1500",
+    "Averages": "4"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 20.244,
+   "EchoTime": 0.079,
+   "FlipAngle": 90.0,
+   "PhilipsReportedBandwidth": 2590.6,
+   "SliceThickness": 2.0,
+   "SpacingBetweenSlices": 2.0,
+   "AcquisitionMatrixPE": 124
+  }
+ }
+]

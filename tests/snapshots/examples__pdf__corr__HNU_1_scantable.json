@@ -1,0 +1,163 @@
+[
+ {
+  "name": "HNU 1 Anatomical",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "HNU 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "Discovery MR750",
+    "Headcoil": "8 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D SPGR",
+    "Flip Angle [Deg]": "8.0",
+    "Inversion Time (TI) [ms]": "450",
+    "Echo Time (TE) [ms]": "Min Full",
+    "Repetition Time (TR) [ms]": "8.06",
+    "Bandwidth per Voxel (Readout) [Hz]": "125",
+    "Parallel Acquisition": "ASSET x 2",
+    "Partial Fourier": "Oﬀ",
+    "Number of Slices": "180",
+    "Slice Orientation": "Saggital",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "1.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "250",
+    "Acquisition Matrix": "250x250",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "5:01",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "Discovery MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8 Chan",
+   "PulseSequenceType": "3D SPGR",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 0.008060000000000001,
+   "InversionTime": 0.45,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 125.0,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 250,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "HNU 1 Rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "HNU 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "Discovery MR750",
+    "Headcoil": "8 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2000",
+    "Bandwidth per Voxel (Readout) [Hz]": "3437.5",
+    "Number of Slices": "43",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Interleaved Ascending Interleaved Ascending Interleaved Ascending",
+    "Slice Thickness [mm]": "3.4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "220",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.4x3.4",
+    "Number of Measurements": "300",
+    "Acquisition Time [min:sec]": "10:00",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "Discovery MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 3437.5,
+   "SliceThickness": 3.4,
+   "SpacingBetweenSlices": 3.4,
+   "AcquisitionMatrixPE": 64,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "HNU 1 DTI",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "HNU 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "Discovery MR750",
+    "Headcoil": "8 Chan",
+    "Field Strength": "3T",
+    "Echo Time (TE) [ms]": "Min",
+    "Repetition Time (TR) [ms]": "8600.0",
+    "Number of Slices": "68.0",
+    "Slice Phase Encoding Direction": "Right to Left",
+    "Slice Thickness [mm]": "1.5",
+    "Slice Gap [mm]": "0.0",
+    "Field of View [mm]": "192.0",
+    "Acquisition Matrix": "128x128",
+    "Slice In-Place Resolution [mm ]": "1.5x1.5",
+    "Number of Measurements": "33",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "Discovery MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8 Chan",
+   "RepetitionTime": 8.6,
+   "SliceThickness": 1.5,
+   "AcquisitionMatrixPE": 128,
+   "DirectionPE": "RL"
+  }
+ }
+]

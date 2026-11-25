@@ -1,0 +1,182 @@
+[
+ {
+  "name": "IPCAS 2 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "IPCAS 2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "MPRAGE",
+    "Flip Angle [Deg]": "9.0",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "2.95",
+    "Repetition Time (TR) [ms]": "2300.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "130",
+    "Partial Fourier": "Oﬀ",
+    "Number of Slices": "160",
+    "Slice Orientation": "Saggital",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "1.2",
+    "Slice Gap [mm]": "0.6",
+    "Field of View [mm]": "240",
+    "Acquisition Matrix": "240x226",
+    "Slice In-Place Resolution [mm ]": "0.9x0.9",
+    "Acquisition Time [min:sec]": "9:14",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "MPRAGE",
+   "MRAcquisitionType": "2D",
+   "RepetitionTime": 2.3000000000000003,
+   "EchoTime": 0.0029500000000000004,
+   "InversionTime": 0.9,
+   "FlipAngle": 9.0,
+   "PixelBandwidth": 130.0,
+   "SliceThickness": 1.2,
+   "SpacingBetweenSlices": 1.8,
+   "AcquisitionMatrixPE": 226,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "IPCAS 2 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "IPCAS 2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2500",
+    "Bandwidth per Voxel (Readout) [Hz]": "2232",
+    "Number of Slices": "32",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Sequential Ascending Interleaved Ascending",
+    "Slice Thickness [mm]": "3.0",
+    "Slice Gap [mm]": "0.99",
+    "Field of View [mm]": "240",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.8x3.8",
+    "Number of Measurements": "212",
+    "Acquisition Time [min:sec]": "8:57",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 2232.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.99,
+   "AcquisitionMatrixPE": 64,
+   "DirectionPE": "AP",
+   "SliceTiming": [
+    1.25,
+    0.0,
+    1.328125,
+    0.078125,
+    1.40625,
+    0.15625,
+    1.484375,
+    0.234375,
+    1.5625,
+    0.3125,
+    1.640625,
+    0.390625,
+    1.71875,
+    0.46875,
+    1.796875,
+    0.546875,
+    1.875,
+    0.625,
+    1.953125,
+    0.703125,
+    2.03125,
+    0.78125,
+    2.109375,
+    0.859375,
+    2.1875,
+    0.9375,
+    2.265625,
+    1.015625,
+    2.34375,
+    1.09375,
+    2.421875,
+    1.171875
+   ]
+  }
+ },
+ {
+  "name": "IPCAS 2 DTI",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "IPCAS 2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Number of Measurements": "39"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan"
+  }
+ }
+]

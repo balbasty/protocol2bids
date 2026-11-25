@@ -1,0 +1,119 @@
+[
+ {
+  "name": "Resting_State",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "PATIENT POSITION": {
+    "Patient Entry": "Head First",
+    "Patient Position": "Supine",
+    "Coil Configuration": "32 Ch Head Coil",
+    "Plane": "AXIAL",
+    "Series Description": "Resting_State"
+   },
+   "SCAN TIMING": {
+    "Flip Angle": "75",
+    "TE": "30.0",
+    "TR": "2000.0",
+    "Number of Shots": "1"
+   },
+   "IMAGE ENHANCE": {
+    "Filter Choice": "None"
+   },
+   "GATING/TRIGGER": {
+    "Auto Trigger Type": "Off"
+   },
+   "FMRI": {
+    "Brain Wave Real Time": "2",
+    "Paradigm String": "FACE_LOC",
+    "Resting_State Paradigm UID": "1.2.840.113819.3.69136390 610.1372432428.356",
+    "Initial State": "Control",
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "6",
+    "# of Repetitions ACTIVE": "6",
+    "# of Dummy Acquisition": "5"
+   },
+   "SAT": {
+    "Tag Type": "None"
+   },
+   "TRICKS": {
+    "Pause On/Off": "On",
+    "Auto Subtract": "0",
+    "Auto SCIC": "Off"
+   },
+   "IMAGING PARAMETERS": {
+    "Imaging Mode": "2D",
+    "Pulse Sequence": "Gradient Echo",
+    "Imaging Options": "EPI, Asset, FMRI"
+   },
+   "SCAN RANGE": {
+    "FOV": "22.0",
+    "Slice Thickness": "3.4",
+    "Slice Spacing": "0.0"
+   },
+   "ACQ TIMING": {
+    "Freq": "64",
+    "Phase": "64",
+    "Freq DIR": "R/L",
+    "NEX": "1.00",
+    "Phase FOV": "1.00",
+    "Auto Shim": "Auto",
+    "Phase Correction": "Yes"
+   },
+   "USER CVS": {
+    "User CV0": "1.00",
+    "MULTI-PHASE": "Resting_State",
+    "Slice per Location": "295",
+    "Delay after Acquisition": "0",
+    "Seperate Series": "0",
+    "Delay after Acquisition without AV": "0",
+    "Mask Phase": "0",
+    "Mask Pause": "0"
+   },
+   "DIFFUSION": {
+    "Recon All Images": "On"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No",
+    "Property of": "Tue Oct 04 12:01:36 EDT 2016"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "32 Ch Head Coil",
+   "Modality": "MR",
+   "ProtocolName": "Resting_State",
+   "SeriesDescription": "Resting_State",
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 75.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "AcquisitionMatrixFE": 64,
+   "AcquisitionMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 3.4,
+   "SpacingBetweenSlices": 3.4,
+   "NumberShots": 1,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j"
+  }
+ }
+]

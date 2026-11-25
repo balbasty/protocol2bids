@@ -162,3 +162,30 @@ def test_cmrr_order():
     # measured on dcm_qa fMRI_MB_int_26 (36 slices, MB2)
     assert cmrr_interleaved(18) == [0, 7, 14, 3, 10, 17, 6, 13, 2, 9, 16,
                                     5, 12, 1, 8, 15, 4, 11]
+
+
+def test_sms_product_order():
+    from protocol2bids.vendors.siemens.bids import sms_interleaved
+
+    def one_based(order):
+        return [g + 1 for g in order]
+    # even number of excitations (measured, VE11 to XA60)
+    assert one_based(sms_interleaved(64, 8)) == [2, 4, 8, 6, 3, 5, 1, 7]
+    assert one_based(sms_interleaved(60, 6)) == [2, 4, 10, 6, 8,
+                                                  3, 5, 1, 7, 9]
+    assert one_based(sms_interleaved(64, 4)) == [
+        2, 4, 6, 8, 16, 10, 12, 14, 3, 5, 7, 9, 1, 11, 13, 15]
+    # odd nexc, even N: VE11 uses the parity of N (group 2 first) ...
+    assert one_based(sms_interleaved(72, 8, 'syngo MR E11'))[:5] == \
+        [2, 4, 6, 8, 1]
+    assert one_based(sms_interleaved(6, 2, 'syngo MR XA10')) == [2, 1, 3]
+    # ... XA30+ uses the parity of nexc (group 1 first)
+    assert one_based(sms_interleaved(10, 2, 'syngo MR XA60')) == \
+        [1, 3, 5, 2, 4]
+    assert one_based(sms_interleaved(60, 4, 'Numaris/X VA31A')) [:3] == \
+        [1, 3, 5]
+    # odd N: both rules agree, version not needed
+    assert one_based(sms_interleaved(51, 3))[:3] == [1, 3, 5]
+    # even MB, odd nexc, unknown version: undecidable
+    with pytest.raises(Exception):
+        sms_interleaved(72, 8)

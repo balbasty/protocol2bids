@@ -1,0 +1,230 @@
+[
+ {
+  "name": "DTI_field_map",
+  "path": "\\\\USER\\INVESTIGATORS\\Castellanos\\Awake_Asleep_Inscapes\\DTI_field_map",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "gre_field_mapping",
+   "TA": "1:50",
+   "VoxelSize": [
+    3.0,
+    3.0,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "50",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "192 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "834 [ms]",
+    "TE[1]": "5.23 [ms]",
+    "TE[2]": "7.69 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "TR"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Flip angle": "60 [deg]",
+    "Reconstruction": "Magn./Phase",
+    "Fat suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Nova8_TR / TR": "1",
+    "Shim mode": "Tune up",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "140.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "350 [mm]",
+     "A >> P": "263 [mm]",
+     "F >> H": "350 [mm]"
+    }
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "2",
+    "Bandwidth": "260 [Hz/Px]",
+    "Flow comp.": "Yes",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "TR",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [
+    "FC"
+   ],
+   "SequenceName": "gre_field_mapping",
+   "PulseSequenceDetails": "%SiemensSeq%\\gre_field_mapping",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Tune up",
+   "SliceTiming": [
+    0.417,
+    0.0,
+    0.43368,
+    0.01668,
+    0.45036,
+    0.03336,
+    0.46704,
+    0.05004,
+    0.48372,
+    0.06672,
+    0.5004,
+    0.0834,
+    0.51708,
+    0.10008,
+    0.53376,
+    0.11676,
+    0.55044,
+    0.13344,
+    0.56712,
+    0.15012,
+    0.5838,
+    0.1668,
+    0.60048,
+    0.18348,
+    0.61716,
+    0.20016,
+    0.63384,
+    0.21684,
+    0.65052,
+    0.23352,
+    0.6672,
+    0.2502,
+    0.68388,
+    0.26688,
+    0.70056,
+    0.28356,
+    0.71724,
+    0.30024,
+    0.73392,
+    0.31692,
+    0.7506,
+    0.3336,
+    0.76728,
+    0.35028,
+    0.78396,
+    0.36696,
+    0.80064,
+    0.38364,
+    0.81732,
+    0.40032
+   ],
+   "DwellTime": 3.0048e-05,
+   "FlipAngle": 60.0,
+   "RepetitionTime": 0.834,
+   "RepetitionTimeExcitation": 0.834,
+   "Modality": "MR",
+   "ProtocolName": "DTI_field_map",
+   "SeriesDescription": "DTI_field_map",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "PixelBandwidth": 260.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 192.0,
+   "FieldOfViewPE": 192.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 50,
+   "OversampledAcquisitionMatrixSE": 50,
+   "FieldOfViewSE": 150.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 50,
+   "SliceOrder": "Interleaved"
+  }
+ }
+]

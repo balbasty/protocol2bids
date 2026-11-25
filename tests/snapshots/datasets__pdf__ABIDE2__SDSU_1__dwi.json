@@ -1,0 +1,117 @@
+[
+ {
+  "name": "DTI",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "PATIENT POSITION": {
+    "Patient Entry": "Head First",
+    "Patient Position": "Supine",
+    "Coil Configuration": "8HRBRAIN",
+    "Plane": "AXIAL",
+    "Series Description": "DTI"
+   },
+   "SCAN TIMING": {
+    "TE": "Minimum",
+    "TR": "8500.0",
+    "Number of Shots": "1"
+   },
+   "IMAGE ENHANCE": {
+    "Filter Choice": "None"
+   },
+   "GATING/TRIGGER": {
+    "Auto Trigger Type": "Off"
+   },
+   "DTI FMRI": {
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "0",
+    "# of Repetitions ACTIVE": "0"
+   },
+   "SAT": {
+    "Tag Type": "None",
+    "Fat/Water Saturation": "Fat"
+   },
+   "TRICKS": {
+    "Pause On/Off": "On",
+    "Auto Subtract": "0",
+    "Auto SCIC": "Off",
+    "Property of": null
+   },
+   "IMAGING PARAMETERS": {
+    "Imaging Mode": "2D",
+    "Pulse Sequence": "Spin Echo",
+    "Imaging Options": "EPI, DIFF, Asset"
+   },
+   "SCAN RANGE": {
+    "FOV": "24.0",
+    "Slice Thickness": "2.0",
+    "Slice Spacing": "0.0"
+   },
+   "ACQ TIMING": {
+    "Freq": "128",
+    "Phase": "128",
+    "Freq DIR": "R/L",
+    "Phase FOV": "1.00",
+    "Auto Shim": "Auto",
+    "Phase Correction": "Yes"
+   },
+   "USER CVS": {
+    "User CV5": "1.00",
+    "MULTI-PHASE": "DTI",
+    "# of Acquisition": "0",
+    "Seperate Series": "0",
+    "Mask Phase": "0",
+    "Mask Pause": "0"
+   },
+   "DIFFUSION": {
+    "Optimized TE": "Yes",
+    "Diffusion Directions": "Tensor",
+    "Number of Diffusion": "61",
+    "Directions": null,
+    "Number of T2 Images": "1",
+    "Dual Spin Echo": "On",
+    "Diffusion Tenser": "No Selection",
+    "Processing Output": null,
+    "Recon All Images": "Off"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No",
+    "Page 6 of 16": "Mon Sep 29 13:11:25 PDT 2014"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "8HRBRAIN",
+   "Modality": "MR",
+   "ProtocolName": "DTI",
+   "SeriesDescription": "DTI",
+   "RepetitionTime": 8.5,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "SE"
+   ],
+   "PulseSequenceType": "Spin Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "AcquisitionMatrixFE": 128,
+   "AcquisitionMatrixPE": 128,
+   "PercentPhaseFOV": 100.0,
+   "SliceThickness": 2.0,
+   "SpacingBetweenSlices": 2.0,
+   "NumberShots": 1,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j"
+  }
+ }
+]

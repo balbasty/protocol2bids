@@ -1,0 +1,103 @@
+[
+ {
+  "name": "3D_T1_Sag-",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "PATIENT POSITION": {
+    "Patient Entry": "Head First",
+    "Patient Position": "Supine",
+    "Coil Configuration": "0",
+    "Plane": "SAGITTAL",
+    "Series Description": "3D_T1_Sag-"
+   },
+   "IMAGING PARAMETERS": {
+    "Imaging Mode": "3D",
+    "Pulse Sequence": "BRAVO",
+    "Imaging Options": "EDR, Fast, IrP, ARC"
+   },
+   "SCAN RANGE": {
+    "FOV": "25.6"
+   },
+   "SCAN TIMING": {
+    "Flip Angle": "12",
+    "TI": "650",
+    "Receiver Bandwidth": "25.00"
+   },
+   "IMAGE ENHANCE": {
+    "Filter Choice": "None"
+   },
+   "GATING/TRIGGER": {
+    "Auto Trigger Type": "Off"
+   },
+   "MULTI-PHASE": {
+    "Seperate Series": "0",
+    "Mask Phase": "0",
+    "Mask Pause": "0"
+   },
+   "TRICKS": {
+    "Pause On/Off": "On",
+    "3D_T1_Sag-Structural_(FSPGR_BRAVO) Auto Subtract": "0",
+    "Auto SCIC": "Off",
+    "Property of": null,
+    "Slice Thickness": "1.0",
+    "Location per Slab": "220",
+    "Overlap Locations": "0"
+   },
+   "ACQ TIMING": {
+    "Freq": "256",
+    "Phase": "256",
+    "Freq DIR": "S/I",
+    "NEX": "1.00",
+    "Phase FOV": "1.00",
+    "Auto Shim": "Auto",
+    "Phase Correction": "No"
+   },
+   "FMRI": {
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "0 3D_T1_Sag-Structural_(FSPGR_BRAVO)",
+    "# of Repetitions ACTIVE": "0"
+   },
+   "DIFFUSION": {
+    "Recon All Images": "On"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No",
+    "Page 3 of 4": "Tue Oct 04 12:01:36 EDT 2016"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "0",
+   "Modality": "MR",
+   "ProtocolName": "3D_T1_Sag-",
+   "SeriesDescription": "3D_T1_Sag-",
+   "InversionTime": 0.65,
+   "FlipAngle": 12.0,
+   "MRAcquisitionType": "3D",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "PulseSequenceType": "BRAVO",
+   "EchoPlanarPulseSequence": false,
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 1.0,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]

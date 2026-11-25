@@ -830,6 +830,55 @@ def cmrr_interleaved(nshots: int) -> list[int]:
     return [(k * inc) % nshots for k in range(nshots)]
 
 
+def software_generation(version: str | None) -> tuple[str, int] | None:
+    """
+    'syngo MR E11' / 'syngo_MR_E11' -> ('VE', 11); 'syngo MR XA30' ->
+    ('XA', 30); 'Numaris/X VA20A-04ML' -> ('XA', 20); 'syngo MR B17' ->
+    ('VB', 17); 'syngo MR 2004A' -> ('VA', 25).
+    """
+    v = (version or '').replace('_', ' ')
+    m = re.search(r'Numaris/X\s*VA(\d\d)', v) or re.search(r'XA(\d\d)', v)
+    if m:
+        return ('XA', int(m.group(1)))
+    m = re.search(r'syngo\s*MR\s*([ABDE])(\d\d)', v)
+    if m:
+        return ('V' + m.group(1), int(m.group(2)))
+    if re.search(r'syngo\s*MR\s*200\d', v):
+        return ('VA', 25)
+    return None
+
+
+def sms_interleaved(nslices: int, mb: int,
+                    version: str | None = None) -> list[int]:
+    """
+    Excitation order of Siemens *product* SMS interleaved acquisitions
+    (empirical rule, matching the scanner-reported times of 374 dcm2niix
+    sidecars, VE11 to XA61; see notes/conversion_rules.md):
+
+    * even number of excitations (nexc = N / MB): even groups first, then
+      odd groups, with group `nexc` moved to position floor(nexc/4) of the
+      even half (and group 1 to the same position of the odd half), so
+      that the two adjacent groups nexc and 1 are excited half a TR apart:
+      nexc=8 -> 2,4,8,6,3,5,1,7 (1-based);
+    * odd nexc: single-band parity rule, applied to the total number of
+      slices N on VB/VD/VE/XA1x/XA20, and to nexc on XA30 and later.
+    """
+    nexc = nslices // mb
+    if nexc % 2 == 0:
+        p = nexc // 4
+        evens = [2 * i for i in range(1, p + 1)] + [nexc] + \
+            list(range(2 * p + 2, nexc - 1, 2))
+        odds = [(e % nexc) + 1 for e in evens]
+        return [g - 1 for g in evens + odds]
+    gen = software_generation(version)
+    if gen is None and mb % 2 == 0:
+        # parity of N and nexc differ: depends on the (unknown) version
+        raise Missing('software version (SMS slice order)')
+    parity = nexc if (gen and gen >= ('XA', 30)) else nslices
+    odd, even = list(range(0, nexc, 2)), list(range(1, nexc, 2))
+    return odd + even if parity % 2 else even + odd
+
+
 @rule
 def slice_timing(ctx: Context):
     """Slice timing for 2D multi-slice acquisitions (Siemens ordering)."""
@@ -851,12 +900,13 @@ def slice_timing(ctx: Context):
     if nslices % mb:
         return
     nexc = nslices // mb
-    if mb > 1 and not is_cmrr(sequence_name(ctx)):
-        # Siemens product SMS ordering is not documented
-        return
+    cmrr = is_cmrr(sequence_name(ctx))
     if order.startswith('interleaved'):
-        if mb > 1:
+        if mb > 1 and cmrr:
             exc_order = cmrr_interleaved(nexc)
+        elif mb > 1:
+            exc_order = sms_interleaved(
+                nslices, mb, ctx.prot.scanner.get('SoftwareVersions'))
         elif nexc % 2:
             exc_order = list(range(0, nexc, 2)) + list(range(1, nexc, 2))
         else:

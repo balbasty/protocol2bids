@@ -1,0 +1,2066 @@
+[
+ {
+  "name": "localizer",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\localizer",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "gre",
+   "TA": "9.2",
+   "VoxelSize": [
+    2.2,
+    1.1,
+    10.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "L0.0 A60.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 2": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 3": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Coronal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "280 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "10 [mm]",
+    "TR": "20 [ms]",
+    "TE": "5 [ms]",
+    "Averages": "1",
+    "Concatenations": "3",
+    "Filter": "Elliptical filter",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "TD": "0 [ms]",
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "40 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "50 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Interpolation": "1",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Sequential",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "Body": "0",
+    "Shim mode": "Tune up",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "350 [mm]",
+     "A >> P": "263 [mm]",
+     "F >> H": "350 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Short term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "180 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Slice-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre",
+   "PulseSequenceDetails": "%SiemensSeq%\\gre",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Tune up",
+   "EchoTime": 0.005,
+   "DwellTime": 1.0851e-05,
+   "FlipAngle": 40.0,
+   "RepetitionTime": 0.02,
+   "RepetitionTimeExcitation": 0.02,
+   "Modality": "MR",
+   "ProtocolName": "localizer",
+   "SeriesDescription": "localizer",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 50.0,
+   "PhaseResolution": 0.5,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 10.0,
+   "SpacingBetweenSlices": 12.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 2.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 280.0,
+   "FieldOfViewPE": 280.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 1,
+   "OversampledAcquisitionMatrixSE": 1,
+   "FieldOfViewSE": 12.0,
+   "ReconMatrixFE": 512,
+   "ReconMatrixSE": 1
+  }
+ },
+ {
+  "name": "tfl_ADNI-MPRAGE",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\tfl_ADNI-MPRAGE",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "tfl_ADNI",
+   "TA": "9:38",
+   "VoxelSize": [
+    1.3,
+    1.3,
+    1.2
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   2
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "30 [%]",
+    "Slices per slab": "160",
+    "FoV read": "240 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "1.2 [mm]",
+    "TR": "3000 [ms]",
+    "TE": "3.54 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Normalize",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1000 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "192",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "On",
+     "Unfiltered images": "1"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "240 [mm]",
+     "A >> P": "240 [mm]",
+     "R >> L": "192 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Bandwidth": "180 [Hz/Px]",
+    "Echo spacing": "8.5 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\tfl_ADNI",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00354,
+   "InversionTime": 1.0,
+   "DwellTime": 1.4468000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 3.0,
+   "RepetitionTimeExcitation": 0.0085,
+   "RepetitionTimePreparation": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "tfl_ADNI-MPRAGE",
+   "SeriesDescription": "tfl_ADNI-MPRAGE",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 192,
+   "AcquisitionMatrixPE": 192,
+   "ReconMatrixPE": 192,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 192,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 1.2,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 192,
+   "OversampledAcquisitionMatrixFE": 384,
+   "OversampledAcquisitionMatrixPE": 192,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 192.0,
+   "ReconMatrixFE": 192,
+   "ReconMatrixSE": 160
+  }
+ },
+ {
+  "name": "gre_ADNI-headcoil",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\gre_ADNI-headcoil",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "gre_ADNI",
+   "TA": "0:42",
+   "VoxelSize": [
+    2.3,
+    2.3,
+    2.5
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   3
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "96",
+    "FoV read": "300 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "2.5 [mm]",
+    "TR": "3.3 [ms]",
+    "TE": "1.08 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Large FoV",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "2 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "300 [mm]",
+     "A >> P": "300 [mm]",
+     "R >> L": "240 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "980 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\gre_ADNI",
+   "MRAcquisitionType": "3D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00108,
+   "DwellTime": 3.9860000000000005e-06,
+   "FlipAngle": 2.0,
+   "RepetitionTime": 0.0033,
+   "RepetitionTimeExcitation": 0.0033,
+   "Modality": "MR",
+   "ProtocolName": "gre_ADNI-headcoil",
+   "SeriesDescription": "gre_ADNI-headcoil",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 128,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 980.0,
+   "SliceThickness": 2.5,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 300.0,
+   "FieldOfViewPE": 300.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 96,
+   "OversampledAcquisitionMatrixSE": 96,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 240.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 96
+  }
+ },
+ {
+  "name": "gre_ADNI-bodycoil",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\gre_ADNI-bodycoil",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "gre_ADNI",
+   "TA": "0:42",
+   "VoxelSize": [
+    2.3,
+    2.3,
+    2.5
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   4
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "96",
+    "FoV read": "300 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "2.5 [mm]",
+    "TR": "3.3 [ms]",
+    "TE": "1.08 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Large FoV",
+    "Coil elements": "BC"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "2 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH5": "0",
+    "8 Channel Head / PH6": "0",
+    "8 Channel Head / PH7": "0",
+    "8 Channel Head / PH8": "0",
+    "8 Channel Head / PH1": "0",
+    "8 Channel Head / PH2": "0",
+    "8 Channel Head / PH3": "0",
+    "8 Channel Head / PH4": "0",
+    "Body": "1",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "300 [mm]",
+     "A >> P": "300 [mm]",
+     "R >> L": "240 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "980 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "BC",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\gre_ADNI",
+   "MRAcquisitionType": "3D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00108,
+   "DwellTime": 3.9860000000000005e-06,
+   "FlipAngle": 2.0,
+   "RepetitionTime": 0.0033,
+   "RepetitionTimeExcitation": 0.0033,
+   "Modality": "MR",
+   "ProtocolName": "gre_ADNI-bodycoil",
+   "SeriesDescription": "gre_ADNI-bodycoil",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 128,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 980.0,
+   "SliceThickness": 2.5,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 300.0,
+   "FieldOfViewPE": 300.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 96,
+   "OversampledAcquisitionMatrixSE": 96,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 240.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 96
+  }
+ },
+ {
+  "name": "PD-T2-TSE-ADNI",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\PD-T2-TSE-ADNI",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tse",
+   "TA": "5:08",
+   "VoxelSize": [
+    0.9,
+    0.9,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   5
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "48",
+     "Dist. factor": "0 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "240 [mm]",
+    "FoV phase": "89.1 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "3000 [ms]",
+    "TE[1]": "12 [ms]",
+    "TE[2]": "96 [ms]",
+    "Averages": "1",
+    "Concatenations": "3",
+    "Filter": "Large FoV, …",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "TD": "0 [ms]",
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "150 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Fat sat. mode": "Strong",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "On",
+     "Unfiltered images": "0"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "Parallel F",
+    "Gap": "10 [mm]",
+    "Thickness": "50 [mm]"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "Body": "0",
+    "Shim mode": "Tune up",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "350 [mm]",
+     "A >> P": "263 [mm]",
+     "F >> H": "350 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Compensate T2 decay": "0",
+    "Averaging mode": "Long term",
+    "Contrasts": "2",
+    "Bandwidth": "163 [Hz/Px]",
+    "Flow comp.": "No",
+    "Allowed delay": "30 [s]",
+    "Echo spacing": "12 [ms]",
+    "Turbo factor": "7",
+    "RF pulse type": "Low SAR",
+    "Gradient mode": "Normal"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Fast Spin Echo",
+   "ScanningSequence": [
+    "SE"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "tse",
+   "PulseSequenceDetails": "%SiemensSeq%\\tse",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Tune up",
+   "NumberShots": 33,
+   "DwellTime": 1.1982000000000001e-05,
+   "FlipAngle": 150.0,
+   "RepetitionTime": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "PD-T2-TSE-ADNI",
+   "SeriesDescription": "PD-T2-TSE-ADNI",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 228,
+   "ReconMatrixPE": 228,
+   "PercentPhaseFOV": 89.1,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 228,
+   "EchoTrainLength": 7,
+   "PixelBandwidth": 163.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TSE",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 228,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 213.83999999999997,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 48,
+   "OversampledAcquisitionMatrixSE": 48,
+   "FieldOfViewSE": 144.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 48
+  }
+ },
+ {
+  "name": "RS-FMRI-BW2004",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\RS-FMRI-BW2004",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_bold",
+   "TA": "9:36",
+   "VoxelSize": [
+    3.3,
+    3.3,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   6
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "36",
+     "Dist. factor": "10 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "211 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "2850 [ms]",
+    "TE": "60 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Flip angle": "90 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Measurements": "200",
+    "Delay in TR": "0 [ms]",
+    "Multiple series": "0"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Ascending",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "211 [mm]",
+     "A >> P": "211 [mm]",
+     "F >> H": "119 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "t-Test": "0",
+    "Threshold": "4.00",
+    "Window": "Growing",
+    "Dynamic t-maps": "0",
+    "Starting ignore meas": "0",
+    "Paradigm size": "1",
+    "Meas": "Ignore",
+    "Motion correction": "0",
+    "Spatial filter": "0"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "2004 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.56 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "ep2d_bold",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_bold",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.0005600000000000001,
+   "TotalReadoutTime": 0.035280000000000006,
+   "EchoTime": 0.06,
+   "SliceTiming": [
+    0.0,
+    0.079167,
+    0.158333,
+    0.2375,
+    0.316667,
+    0.395833,
+    0.475,
+    0.554167,
+    0.633333,
+    0.7125,
+    0.791667,
+    0.870833,
+    0.95,
+    1.029167,
+    1.108333,
+    1.1875,
+    1.266667,
+    1.345833,
+    1.425,
+    1.504167,
+    1.583333,
+    1.6625,
+    1.741667,
+    1.820833,
+    1.9,
+    1.979167,
+    2.058333,
+    2.1375,
+    2.216667,
+    2.295833,
+    2.375,
+    2.454167,
+    2.533333,
+    2.6125,
+    2.691667,
+    2.770833
+   ],
+   "DwellTime": 3.898000000000001e-06,
+   "FlipAngle": 90.0,
+   "RepetitionTime": 2.85,
+   "Modality": "MR",
+   "ProtocolName": "RS-FMRI-BW2004",
+   "SeriesDescription": "RS-FMRI-BW2004",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 2004.0,
+   "BandwidthPerPixelPhaseEncode": 27.90178571428571,
+   "DerivedVendorReportedEchoSpacing": 0.0005600000000000001,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.3,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.3,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 211.0,
+   "FieldOfViewPE": 211.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 36,
+   "OversampledAcquisitionMatrixSE": 36,
+   "FieldOfViewSE": 118.8,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 36,
+   "SliceOrder": "Ascending"
+  }
+ },
+ {
+  "name": "RS-FMRI-BW1562",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\RS-FMRI-BW1562",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_bold",
+   "TA": "10:05",
+   "VoxelSize": [
+    3.3,
+    3.3,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   7
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "36",
+     "Dist. factor": "10 [%]",
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "211 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "3010 [ms]",
+    "TE": "60 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Flip angle": "90 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Measurements": "200",
+    "Delay in TR": "0 [ms]",
+    "Multiple series": "0"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Ascending",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 A50.0 H0.0 [mm]",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "211 [mm]",
+     "A >> P": "211 [mm]",
+     "F >> H": "119 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "t-Test": "0",
+    "Threshold": "4.00",
+    "Window": "Growing",
+    "Dynamic t-maps": "0",
+    "Starting ignore meas": "0",
+    "Paradigm size": "1",
+    "Meas": "Ignore",
+    "Motion correction": "0",
+    "Spatial filter": "0"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "1562 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.7 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "ep2d_bold",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_bold",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.0007,
+   "TotalReadoutTime": 0.0441,
+   "EchoTime": 0.06,
+   "SliceTiming": [
+    0.0,
+    0.083611,
+    0.167222,
+    0.250833,
+    0.334444,
+    0.418056,
+    0.501667,
+    0.585278,
+    0.668889,
+    0.7525,
+    0.836111,
+    0.919722,
+    1.003333,
+    1.086944,
+    1.170556,
+    1.254167,
+    1.337778,
+    1.421389,
+    1.505,
+    1.588611,
+    1.672222,
+    1.755833,
+    1.839444,
+    1.923056,
+    2.006667,
+    2.090278,
+    2.173889,
+    2.2575,
+    2.341111,
+    2.424722,
+    2.508333,
+    2.591944,
+    2.675556,
+    2.759167,
+    2.842778,
+    2.926389
+   ],
+   "DwellTime": 5.0020000000000006e-06,
+   "FlipAngle": 90.0,
+   "RepetitionTime": 3.0100000000000002,
+   "Modality": "MR",
+   "ProtocolName": "RS-FMRI-BW1562",
+   "SeriesDescription": "RS-FMRI-BW1562",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 1562.0,
+   "BandwidthPerPixelPhaseEncode": 22.321428571428573,
+   "DerivedVendorReportedEchoSpacing": 0.0007,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.3,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.3,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 211.0,
+   "FieldOfViewPE": 211.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 36,
+   "OversampledAcquisitionMatrixSE": 36,
+   "FieldOfViewSE": 118.8,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 36,
+   "SliceOrder": "Ascending"
+  }
+ },
+ {
+  "name": "DTI-6directions-2.5x2.5x3",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\DTI-6directions-2.5x2.5x3",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_diff",
+   "TA": "3:17",
+   "VoxelSize": [
+    2.5,
+    2.5,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   8
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "48",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "320 [mm]",
+    "FoV phase": "75.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "6800 [ms]",
+    "TE": "87 [ms]",
+    "Averages": "4",
+    "Concatenations": "1",
+    "Filter": "Large FoV",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "Fat sat.",
+    "Measurements": "1",
+    "Delay in TR": "0 [ms]"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "320 [mm]",
+     "A >> P": "240 [mm]",
+     "F >> H": "144 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "Diff": {
+    "Diffusion mode": "MDDW",
+    "Diff. weightings": "2",
+    "b-value[1]": "0 [s/mm²]",
+    "b-value[2]": "900 [s/mm²]",
+    "Diff. weighted images": "1",
+    "Trace weighted images": "0",
+    "Average ADC maps": "0",
+    "Individual ADC maps": "0",
+    "Noise level": "40",
+    "Diff. directions": "6"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "1562 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.7 [ms]",
+    "EPI factor": "96",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Spin Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "ep2d_diff",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_diff",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.0007,
+   "TotalReadoutTime": 0.0665,
+   "EchoTime": 0.08700000000000001,
+   "SliceTiming": [
+    3.4,
+    0.0,
+    3.541667,
+    0.141667,
+    3.683333,
+    0.283333,
+    3.825,
+    0.425,
+    3.966667,
+    0.566667,
+    4.108333,
+    0.708333,
+    4.25,
+    0.85,
+    4.391667,
+    0.991667,
+    4.533333,
+    1.133333,
+    4.675,
+    1.275,
+    4.816667,
+    1.416667,
+    4.958333,
+    1.558333,
+    5.1,
+    1.7,
+    5.241667,
+    1.841667,
+    5.383333,
+    1.983333,
+    5.525,
+    2.125,
+    5.666667,
+    2.266667,
+    5.808333,
+    2.408333,
+    5.95,
+    2.55,
+    6.091667,
+    2.691667,
+    6.233333,
+    2.833333,
+    6.375,
+    2.975,
+    6.516667,
+    3.116667,
+    6.658333,
+    3.258333
+   ],
+   "DwellTime": 2.5010000000000003e-06,
+   "RepetitionTime": 6.8,
+   "Modality": "MR",
+   "ProtocolName": "DTI-6directions-2.5x2.5x3",
+   "SeriesDescription": "DTI-6directions-2.5x2.5x3",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 96,
+   "ReconMatrixPE": 96,
+   "PercentPhaseFOV": 75.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 96,
+   "EchoTrainLength": 96,
+   "PixelBandwidth": 1562.0,
+   "BandwidthPerPixelPhaseEncode": 14.880952380952381,
+   "DerivedVendorReportedEchoSpacing": 0.0007,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 4,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "SE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 96,
+   "FieldOfViewFE": 320.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 48,
+   "OversampledAcquisitionMatrixSE": 48,
+   "FieldOfViewSE": 144.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 48,
+   "SliceOrder": "Interleaved",
+   "DiffusionMode": "MDDW",
+   "DiffusionNumberOfDirections": 6
+  }
+ },
+ {
+  "name": "DTI-12directions-2.5x2.5x3",
+  "path": "\\\\USER\\FUNCTIONAL MRI 270905\\ADNI\\ADNI-VUMC\\DTI-12directions-2.5x2.5x3",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_diff",
+   "TA": "3:12",
+   "VoxelSize": [
+    2.5,
+    2.5,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   9
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "48",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "320 [mm]",
+    "FoV phase": "75.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "7100 [ms]",
+    "TE": "94 [ms]",
+    "Averages": "2",
+    "Concatenations": "1",
+    "Filter": "Large FoV",
+    "Coil elements": "PH1,PH2,PH3,..."
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "Fat sat.",
+    "Measurements": "1",
+    "Delay in TR": "0 [ms]"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "8 Channel Head / PH1": "1",
+    "8 Channel Head / PH2": "1",
+    "8 Channel Head / PH3": "1",
+    "8 Channel Head / PH4": "1",
+    "8 Channel Head / PH5": "1",
+    "8 Channel Head / PH6": "1",
+    "8 Channel Head / PH7": "1",
+    "8 Channel Head / PH8": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "200.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "320 [mm]",
+     "A >> P": "240 [mm]",
+     "F >> H": "144 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "Diff": {
+    "Diffusion mode": "MDDW",
+    "Diff. weightings": "2",
+    "b-value[1]": "0 [s/mm²]",
+    "b-value[2]": "900 [s/mm²]",
+    "Diff. weighted images": "1",
+    "Trace weighted images": "0",
+    "Average ADC maps": "0",
+    "Individual ADC maps": "0",
+    "Noise level": "40",
+    "Diff. directions": "12"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "1562 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.7 [ms]",
+    "EPI factor": "96",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "PH1,PH2,PH3,...",
+   "PulseSequenceType": "Spin Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "ep2d_diff",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_diff",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.0007,
+   "TotalReadoutTime": 0.0665,
+   "EchoTime": 0.094,
+   "SliceTiming": [
+    3.55,
+    0.0,
+    3.697917,
+    0.147917,
+    3.845833,
+    0.295833,
+    3.99375,
+    0.44375,
+    4.141667,
+    0.591667,
+    4.289583,
+    0.739583,
+    4.4375,
+    0.8875,
+    4.585417,
+    1.035417,
+    4.733333,
+    1.183333,
+    4.88125,
+    1.33125,
+    5.029167,
+    1.479167,
+    5.177083,
+    1.627083,
+    5.325,
+    1.775,
+    5.472917,
+    1.922917,
+    5.620833,
+    2.070833,
+    5.76875,
+    2.21875,
+    5.916667,
+    2.366667,
+    6.064583,
+    2.514583,
+    6.2125,
+    2.6625,
+    6.360417,
+    2.810417,
+    6.508333,
+    2.958333,
+    6.65625,
+    3.10625,
+    6.804167,
+    3.254167,
+    6.952083,
+    3.402083
+   ],
+   "DwellTime": 2.5010000000000003e-06,
+   "RepetitionTime": 7.1000000000000005,
+   "Modality": "MR",
+   "ProtocolName": "DTI-12directions-2.5x2.5x3",
+   "SeriesDescription": "DTI-12directions-2.5x2.5x3",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 96,
+   "ReconMatrixPE": 96,
+   "PercentPhaseFOV": 75.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 96,
+   "EchoTrainLength": 96,
+   "PixelBandwidth": 1562.0,
+   "BandwidthPerPixelPhaseEncode": 14.880952380952381,
+   "DerivedVendorReportedEchoSpacing": 0.0007,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 2,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "SE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 96,
+   "FieldOfViewFE": 320.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 48,
+   "OversampledAcquisitionMatrixSE": 48,
+   "FieldOfViewSE": 144.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 48,
+   "SliceOrder": "Interleaved",
+   "DiffusionMode": "MDDW",
+   "DiffusionNumberOfDirections": 12
+  }
+ }
+]

@@ -1,0 +1,251 @@
+[
+ {
+  "name": "ep2d_bold_rest",
+  "path": "\\\\USER\\Dr. O'Hearn\\Faces\\Faces\\ep2d_bold_rest",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR A30"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_bold",
+   "TA": "5:06",
+   "VoxelSize": [
+    3.1,
+    3.1,
+    4.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "29",
+     "Dist. factor": "0 [%]",
+     "Position": "L0.0 P2.9 H14.0 [mm]",
+     "Orientation": "T > C-18.4",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "200 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "4 [mm]",
+    "TR": "1500 [ms]",
+    "TE": "25 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Raw filter",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Flip angle": "70 [deg]",
+    "Fat suppr.": "Fat sat.",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "200",
+    "Delay in TR": "0 [ms]",
+    "Multiple series": "0"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "On",
+     "Intensity": "Weak",
+     "Slope": "25"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Trajectory": "Cartesian",
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "140.000 [V]",
+    "Adjust volume": {
+     "Position": "L0.0 P2.9 H14.0 [mm]",
+     "Orientation": "T > C-18.4",
+     "Rotation": "0 [deg]",
+     "R >> L": "200 [mm]",
+     "A >> P": "200 [mm]",
+     "F >> H": "116 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "t-Test": "0",
+    "Threshold": "4.00",
+    "Window": "Growing",
+    "Dynamic t-maps": "0",
+    "Starting ignore meas": "0",
+    "Paradigm size": "20",
+    "Meas[1]": "Active",
+    "Meas[2]": "Active",
+    "Meas[3]": "Baseline",
+    "Meas[4]": "Baseline",
+    "Meas[5]": "Baseline",
+    "Meas[6]": "Baseline",
+    "Meas[7]": "Baseline",
+    "Meas[8]": "Baseline",
+    "Meas[9]": "Baseline",
+    "Meas[10]": "Baseline",
+    "Meas[11]": "Baseline",
+    "Meas[12]": "Baseline",
+    "Meas[13]": "Active",
+    "Meas[14]": "Active",
+    "Meas[15]": "Active",
+    "Meas[16]": "Active",
+    "Meas[17]": "Active",
+    "Meas[18]": "Active",
+    "Meas[19]": "Active",
+    "Meas[20]": "Active",
+    "Motion correction": "0",
+    "Spatial filter": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Bandwidth": "3126 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.37 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR A30",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "ep2d_bold",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_bold",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00037,
+   "TotalReadoutTime": 0.02331,
+   "EchoTime": 0.025,
+   "SliceTiming": [
+    0.0,
+    0.775862,
+    0.051724,
+    0.827586,
+    0.103448,
+    0.87931,
+    0.155172,
+    0.931034,
+    0.206897,
+    0.982759,
+    0.258621,
+    1.034483,
+    0.310345,
+    1.086207,
+    0.362069,
+    1.137931,
+    0.413793,
+    1.189655,
+    0.465517,
+    1.241379,
+    0.517241,
+    1.293103,
+    0.568966,
+    1.344828,
+    0.62069,
+    1.396552,
+    0.672414,
+    1.448276,
+    0.724138
+   ],
+   "DwellTime": 2.499e-06,
+   "FlipAngle": 70.0,
+   "RepetitionTime": 1.5,
+   "Modality": "MR",
+   "ProtocolName": "ep2d_bold_rest",
+   "SeriesDescription": "ep2d_bold_rest",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 3126.0,
+   "BandwidthPerPixelPhaseEncode": 42.22972972972973,
+   "DerivedVendorReportedEchoSpacing": 0.00037,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 200.0,
+   "FieldOfViewPE": 200.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 29,
+   "OversampledAcquisitionMatrixSE": 29,
+   "FieldOfViewSE": 116.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 29,
+   "SliceOrder": "Interleaved"
+  }
+ }
+]

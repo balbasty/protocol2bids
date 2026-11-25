@@ -1,0 +1,282 @@
+[
+ {
+  "name": "ep2d_tra_PASL",
+  "path": "\\\\USER\\Page\\Sugar\\fructose\\ep2d_tra_PASL",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "SoftwareVersions": "syngo MR B17"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_pasl",
+   "TA": "8:18",
+   "PAT": "2",
+   "VoxelSize": [
+    3.0,
+    3.0,
+    5.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "Properties": {
+    "Prio Recon": "Off",
+    "Before measurement": null,
+    "After measurement": null,
+    "Load to viewer": "On",
+    "Inline movie": "Off",
+    "Auto store images": "On",
+    "Load to stamp segments": "Off",
+    "Load images to graphic segments": "Off",
+    "Auto open inline display": "Off",
+    "Start measurement without further preparation": "On",
+    "Wait for user to start": "On",
+    "Start measurements": "single"
+   },
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "23",
+     "Dist. factor": "0 %",
+     "Position": "R2.0 P0.0 F23.7",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0.00 deg"
+    },
+    "Phase oversampling": "0 %",
+    "FoV read": "192 mm",
+    "FoV phase": "100.0 %",
+    "Slice thickness": "5.0 mm",
+    "TR": "4000.0 ms",
+    "TE": "30 ms",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Prescan Normalize",
+    "Coil elements": "HEA;HEP"
+   },
+   "Contrast": {
+    "Inversion time 2": [
+     "1800.0 ms",
+     "1800.0 ms"
+    ],
+    "Inversion time 1": [
+     "700 ms",
+     "700 ms"
+    ],
+    "Saturation stop time": [
+     "1600 ms",
+     "1600 ms"
+    ],
+    "Flip angle": "90 deg",
+    "Fat suppr.": "Fat sat.",
+    "Fat sat. mode": "Strong",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "121",
+    "Delay in TR": "0 ms",
+    "Multiple series": "Off",
+    "Perfusion mode": "PICORE Q2T",
+    "Flow limit": "100.0 cm/s"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 %",
+    "Phase partial Fourier": "7/8",
+    "Interpolation": "Off",
+    "PAT mode": "GRAPPA",
+    "Accel. factor PE": "2",
+    "Ref. lines PE": "24",
+    "Matrix Coil Mode": "Auto (Triple)",
+    "Reference scan mode": "Separate",
+    "Prescan Normalize": "On",
+    "Raw filter": "Off",
+    "Elliptical filter": "Off",
+    "Hamming": "Off"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Ascending",
+    "Special sat.": "Parallel F",
+    "Gap": "25.0 mm",
+    "Thickness": "100 mm"
+   },
+   "System": {
+    "Body": "Off",
+    "HEP": "On",
+    "HEA": "On",
+    "Positioning mode": "REF",
+    "Table position": [
+     "H",
+     "0 mm"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Save uncombined": "Off",
+    "Coil Combine Mode": "Sum of Squares",
+    "Auto Coil Select": "Default",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "Off",
+    "Confirm freq. adjustment": "Off",
+    "Assume Silicone": "Off",
+    "? Ref. amplitude 1H": "0.000 V",
+    "Adjustment Tolerance": "Auto",
+    "Adjust volume": {
+     "Position": "R2.0 P0.0 F23.7",
+     "Orientation": "Transversal",
+     "Rotation": "0.00 deg",
+     "R >> L": "192 mm",
+     "A >> P": "192 mm",
+     "F >> H": "115 mm"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "GLM Statistics": "Off",
+    "Dynamic t-maps": "On",
+    "Starting ignore meas": "1",
+    "Ignore after transition": "0",
+    "Model transition states": "Off",
+    "Temp. highpass filter": "On",
+    "Threshold": "4.00",
+    "Paradigm size": "16",
+    "Meas[1]": "Baseline",
+    "Meas[2]": "Baseline",
+    "Meas[3]": "Baseline",
+    "Meas[4]": "Baseline",
+    "Meas[5]": "Baseline",
+    "Meas[6]": "Baseline",
+    "Meas[7]": "Baseline",
+    "Meas[8]": "Baseline",
+    "Meas[9]": "Active",
+    "Meas[10]": "Active",
+    "Meas[11]": "Active",
+    "Meas[12]": "Active",
+    "Meas[13]": "Active",
+    "Meas[14]": "Active",
+    "Meas[15]": "Active",
+    "Meas[16]": "Active",
+    "Motion correction": "Off",
+    "Spatial filter": "Off"
+   },
+   "Sequence": {
+    "Introduction": "On",
+    "Bandwidth": "2232 Hz/Px",
+    "Free echo spacing": "Off",
+    "Echo spacing": "0.53 ms",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "SoftwareVersions": "syngo MR B17",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HEA;HEP",
+   "MatrixCoilMode": "Auto (Triple)",
+   "CoilCombinationMethod": "rSOS",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "PFP",
+    "FS"
+   ],
+   "SequenceName": "ep2d_pasl",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_pasl",
+   "MRAcquisitionType": "2D",
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "ParallelReductionFactorInPlane": 2,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "PartialFourier": 0.875,
+   "PartialFourierDirection": "PHASE",
+   "EffectiveEchoSpacing": 0.00026500000000000004,
+   "TotalReadoutTime": 0.016695,
+   "EchoTime": 0.03,
+   "SliceTiming": [
+    0.0,
+    0.173913,
+    0.347826,
+    0.521739,
+    0.695652,
+    0.869565,
+    1.043478,
+    1.217391,
+    1.391304,
+    1.565217,
+    1.73913,
+    1.913043,
+    2.086957,
+    2.26087,
+    2.434783,
+    2.608696,
+    2.782609,
+    2.956522,
+    3.130435,
+    3.304348,
+    3.478261,
+    3.652174,
+    3.826087
+   ],
+   "DwellTime": 3.5000000000000004e-06,
+   "FlipAngle": 90.0,
+   "RepetitionTime": 4.0,
+   "ArterialSpinLabelingType": "PASL",
+   "Modality": "MR",
+   "ProtocolName": "ep2d_tra_PASL",
+   "SeriesDescription": "ep2d_tra_PASL",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 56,
+   "EchoTrainLength": 28,
+   "PixelBandwidth": 2232.0,
+   "BandwidthPerPixelPhaseEncode": 58.96226415094338,
+   "DerivedVendorReportedEchoSpacing": 0.0005300000000000001,
+   "SliceThickness": 5.0,
+   "SpacingBetweenSlices": 5.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 192.0,
+   "FieldOfViewPE": 192.0,
+   "PartialFourierPE": 0.875,
+   "AcquisitionMatrixSE": 23,
+   "OversampledAcquisitionMatrixSE": 23,
+   "FieldOfViewSE": 115.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 23,
+   "SliceOrder": "Ascending"
+  }
+ }
+]

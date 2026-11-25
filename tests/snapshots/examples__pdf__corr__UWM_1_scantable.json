@@ -1,0 +1,114 @@
+[
+ {
+  "name": "UWM 1 Anatomical",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "UWM 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "Discovery",
+    "Headcoil": "8 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D MPRAGE",
+    "Flip Angle [Deg]": "12.0",
+    "Inversion Time (TI) [ms]": "450",
+    "Echo Time (TE) [ms]": "3.18",
+    "Repetition Time (TR) [ms]": "8.13",
+    "Bandwidth per Voxel (Readout) [Hz]": "244",
+    "Partial Fourier": "Oﬀ",
+    "Number of Slices": "160",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Right to Left",
+    "Slice Thickness [mm]": "1.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "256",
+    "Acquisition Matrix": "256x256",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "7:30",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "Discovery",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8 Chan",
+   "PulseSequenceType": "3D MPRAGE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 0.008130000000000002,
+   "EchoTime": 0.00318,
+   "InversionTime": 0.45,
+   "FlipAngle": 12.0,
+   "PixelBandwidth": 244.0,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 256,
+   "DirectionPE": "RL"
+  }
+ },
+ {
+  "name": "UWM 1 Rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "UWM 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "Discovery MR750",
+    "Headcoil": "8 chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "60",
+    "Echo Time (TE) [ms]": "25",
+    "Repetition Time (TR) [ms]": "2600",
+    "Number of Slices": "40",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Interleaved Ascending",
+    "Slice Thickness [mm]": "3.5",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "224",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.5x3.5",
+    "Number of Measurements": "231",
+    "Acquisition Time [min:sec]": "10:01",
+    "Fat Suppression": "No (Spectral Spatial RF pulse)"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "Discovery MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8 chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.6,
+   "EchoTime": 0.025,
+   "FlipAngle": 60.0,
+   "SliceThickness": 3.5,
+   "SpacingBetweenSlices": 3.5,
+   "AcquisitionMatrixPE": 64,
+   "DirectionPE": "AP"
+  }
+ }
+]

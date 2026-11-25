@@ -1,0 +1,366 @@
+[
+ {
+  "name": "NKI 1 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "NKI 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D MPRAGE",
+    "Flip Angle [Deg]": "9.0",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "2.52",
+    "Repetition Time (TR) [ms]": "1900.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "170",
+    "Parallel Acquisition": "GRAPPA x 2",
+    "Partial Fourier": "Oﬀ",
+    "Number of Slices": "176",
+    "Slice Orientation": "Saggital",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "1.0",
+    "Slice Gap [mm]": "0.5",
+    "Field of View [mm]": "250",
+    "Acquisition Matrix": "256x246",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "4:18",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "3D MPRAGE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 1.9000000000000001,
+   "EchoTime": 0.00252,
+   "InversionTime": 0.9,
+   "FlipAngle": 9.0,
+   "PixelBandwidth": 170.0,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 246,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "NKI 1 Rest 2500",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "NKI 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "80",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2500",
+    "Bandwidth per Voxel (Readout) [Hz]": "2240",
+    "Number of Slices": "38",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "3.0",
+    "Slice Gap [mm]": "0.33",
+    "Field of View [mm]": "216",
+    "Acquisition Matrix": "72x72",
+    "Slice In-Place Resolution [mm ]": "3.0x3.0",
+    "Number of Measurements": "120",
+    "Acquisition Time [min:sec]": "5:05",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 80.0,
+   "PixelBandwidth": 2240.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.33,
+   "AcquisitionMatrixPE": 72,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "NKI 1 Rest 1400",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "NKI 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "65",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "1400",
+    "Bandwidth per Voxel (Readout) [Hz]": "1786",
+    "Number of Slices": "64",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Sequential Ascending Interleaved Ascending Interleaved Ascending Interleaved Ascending Interleaved Ascending",
+    "Slice Thickness [mm]": "2.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "224",
+    "Acquisition Matrix": "112x112",
+    "Slice In-Place Resolution [mm ]": "2.0x2.0",
+    "Number of Measurements": "404",
+    "Acquisition Time [min:sec]": "9:35",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 1.4000000000000001,
+   "EchoTime": 0.03,
+   "FlipAngle": 65.0,
+   "PixelBandwidth": 1786.0,
+   "SliceThickness": 2.0,
+   "SpacingBetweenSlices": 2.0,
+   "AcquisitionMatrixPE": 112,
+   "DirectionPE": "AP",
+   "SliceTiming": [
+    0.7,
+    0.0,
+    0.721875,
+    0.021875,
+    0.74375,
+    0.04375,
+    0.765625,
+    0.065625,
+    0.7875,
+    0.0875,
+    0.809375,
+    0.109375,
+    0.83125,
+    0.13125,
+    0.853125,
+    0.153125,
+    0.875,
+    0.175,
+    0.896875,
+    0.196875,
+    0.91875,
+    0.21875,
+    0.940625,
+    0.240625,
+    0.9625,
+    0.2625,
+    0.984375,
+    0.284375,
+    1.00625,
+    0.30625,
+    1.028125,
+    0.328125,
+    1.05,
+    0.35,
+    1.071875,
+    0.371875,
+    1.09375,
+    0.39375,
+    1.115625,
+    0.415625,
+    1.1375,
+    0.4375,
+    1.159375,
+    0.459375,
+    1.18125,
+    0.48125,
+    1.203125,
+    0.503125,
+    1.225,
+    0.525,
+    1.246875,
+    0.546875,
+    1.26875,
+    0.56875,
+    1.290625,
+    0.590625,
+    1.3125,
+    0.6125,
+    1.334375,
+    0.634375,
+    1.35625,
+    0.65625,
+    1.378125,
+    0.678125
+   ]
+  }
+ },
+ {
+  "name": "NKI 1 Rest 645",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "NKI 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "60",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "645",
+    "Bandwidth per Voxel (Readout) [Hz]": "2598",
+    "Number of Slices": "40",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "3.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "222",
+    "Acquisition Matrix": "74x74",
+    "Slice In-Place Resolution [mm ]": "3.0x3.0",
+    "Number of Measurements": "900",
+    "Acquisition Time [min:sec]": "9:46",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 0.645,
+   "EchoTime": 0.03,
+   "FlipAngle": 60.0,
+   "PixelBandwidth": 2598.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "AcquisitionMatrixPE": 74,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "NKI 1 DTI",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "NKI 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "85",
+    "Repetition Time (TR) [ms]": "2400.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "1814.0",
+    "Partial Fourier": "6/8",
+    "Number of Slices": "64.0",
+    "Slice Orientation": "a",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "2.0",
+    "Slice Gap [mm]": "0.0",
+    "Field of View [mm]": "212.0",
+    "Acquisition Matrix": "106x106",
+    "Slice In-Place Resolution [mm ]": "2.0x2.0",
+    "Number of Measurements": "137",
+    "Acquisition Time [min:sec]": "5:58",
+    "Fat Suppression": "Yes",
+    "Number of Directions": "137.0",
+    "Number of B Zeros": "0.0",
+    "B Value(s) [s/mm ]": "1500.0",
+    "Averages": "1.0"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.4,
+   "EchoTime": 0.085,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 1814.0,
+   "PartialFourier": 0.75,
+   "SliceThickness": 2.0,
+   "SpacingBetweenSlices": 2.0,
+   "AcquisitionMatrixPE": 106,
+   "DirectionPE": "AP"
+  }
+ }
+]

@@ -1,0 +1,112 @@
+[
+ {
+  "name": "ABIDEII-EMC_1 Anatomical",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "ABIDEII-EMC_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "MR750",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "IR-FSPGR",
+    "Flip Angle [Deg]": "16",
+    "Inversion Time (TI) [ms]": "350",
+    "Echo Time (TE) [ms]": "4.236",
+    "Repetition Time (TR) [ms]": "10.27",
+    "Bandwidth per Voxel (Readout) [Hz]": "20.83",
+    "Parallel Acquisition": "ASSET x 2",
+    "Number of Slices": "186",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "0.9",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "230x230",
+    "Acquisition Matrix": "256x256",
+    "Slice In-Place Resolution [mm ]": "0.9x0.9",
+    "Acquisition Time [min:sec]": "5:40",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "IR-FSPGR",
+   "MRAcquisitionType": "2D",
+   "RepetitionTime": 0.01027,
+   "EchoTime": 0.004236,
+   "InversionTime": 0.35000000000000003,
+   "FlipAngle": 16.0,
+   "PixelBandwidth": 20.83,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 0.9,
+   "SpacingBetweenSlices": 0.9,
+   "AcquisitionMatrixPE": 256
+  }
+ },
+ {
+  "name": "ABIDEII-EMC_1 Rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "ABIDEII-EMC_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "MR750",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "85",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2000",
+    "Number of Slices": "37",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "230x230",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.5938x3.5938",
+    "Number of Measurements": "160",
+    "Acquisition Time [min:sec]": "5:20"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 85.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0,
+   "AcquisitionMatrixPE": 64
+  }
+ }
+]

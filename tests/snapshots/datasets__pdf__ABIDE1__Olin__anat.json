@@ -1,0 +1,211 @@
+[
+ {
+  "name": "New MP Rage",
+  "path": "\\\\USER\\Pearlson\\Statin (129938)\\Lipid Study\\New MP Rage",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "tfl_onrc",
+   "TA": "7:37",
+   "VoxelSize": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "L5.8 A10.2 F13.8 [mm]",
+     "Orientation": "T > S-1.3",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "36 [%]",
+    "Slices per slab": "176",
+    "FoV read": "256 [mm]",
+    "FoV phase": "81.3 [%]",
+    "Slice thickness": "1 [mm]",
+    "TR": "2500 [ms]",
+    "TE": "2.74 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "900 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "7/8",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Ascending"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Tune up",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "250.000 [V]",
+    "Adjust volume": {
+     "Position": "L8.0 P3.7 F11.4 [mm]",
+     "Orientation": "T > S-1.1",
+     "Rotation": "0 [deg]",
+     "R >> L": "152 [mm]",
+     "A >> P": "185 [mm]",
+     "F >> H": "178 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Allowed",
+    "Bandwidth": "190 [Hz/Px]",
+    "Echo spacing": "7 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR",
+    "PFP"
+   ],
+   "SequenceName": "tfl_onrc",
+   "PulseSequenceDetails": "%CustomerSeq%\\tfl_onrc",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "B0ShimmingTechnique": "Tune up",
+   "PartialFourier": 0.875,
+   "PartialFourierDirection": "PHASE",
+   "EchoTime": 0.0027400000000000002,
+   "InversionTime": 0.9,
+   "DwellTime": 1.028e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 2.5,
+   "RepetitionTimeExcitation": 0.007,
+   "RepetitionTimePreparation": 2.5,
+   "Modality": "MR",
+   "ProtocolName": "New MP Rage",
+   "SeriesDescription": "New MP Rage",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 208,
+   "ReconMatrixPE": 208,
+   "PercentPhaseFOV": 81.3,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 182,
+   "PixelBandwidth": 190.0,
+   "SliceThickness": 1.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 208,
+   "FieldOfViewFE": 256.0,
+   "FieldOfViewPE": 208.128,
+   "PartialFourierPE": 0.875,
+   "AcquisitionMatrixSE": 176,
+   "OversampledAcquisitionMatrixSE": 239,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 176.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 176
+  }
+ }
+]

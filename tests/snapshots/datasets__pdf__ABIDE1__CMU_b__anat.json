@@ -1,0 +1,246 @@
+[
+ {
+  "name": "t1_mpr_sag_iso_2pat_8degflip_TI1100",
+  "path": "\\\\USER\\Dr. Behrmann\\routine\\Ilan\\t1_mpr_sag_iso_2pat_8degflip_TI1100",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "SoftwareVersions": "syngo MR B17"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tfl",
+   "TA": "4:21",
+   "PAT": "2",
+   "VoxelSize": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "Properties": {
+    "Prio Recon": "Off",
+    "Before measurement": null,
+    "After measurement": null,
+    "Load to viewer": "On",
+    "Inline movie": "Off",
+    "Auto store images": "On",
+    "Load to stamp segments": "Off",
+    "Load images to graphic segments": "Off",
+    "Auto open inline display": "Off",
+    "Start measurement without further preparation": "On",
+    "Wait for user to start": "On",
+    "Start measurements": "single"
+   },
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 %",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0.00 deg"
+    },
+    "Phase oversampling": "0 %",
+    "Slice oversampling": "18.2 %",
+    "Slices per slab": "176",
+    "FoV read": "256 mm",
+    "FoV phase": "100.0 %",
+    "Slice thickness": "1.00 mm",
+    "TR": "1870 ms",
+    "TE": "2.48 ms",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Prescan Normalize",
+    "Coil elements": "HEA;HEP"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1100 ms",
+    "Flip angle": "8 deg",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "1",
+    "Multiple series": "Each measurement"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 %",
+    "Slice resolution": "100 %",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Interpolation": "Off",
+    "PAT mode": "GRAPPA",
+    "Accel. factor PE": "2",
+    "Ref. lines PE": "24",
+    "Matrix Coil Mode": "Auto (Triple)",
+    "Reference scan mode": "Integrated",
+    "Image Filter": "Off",
+    "Distortion Corr.": "Off",
+    "Unfiltered images": "Off",
+    "Prescan Normalize": "On",
+    "Normalize": "Off",
+    "B1 filter": "Off",
+    "Raw filter": "Off",
+    "Elliptical filter": "Off"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Ascending"
+   },
+   "System": {
+    "Body": "Off",
+    "HEP": "On",
+    "HEA": "On",
+    "SP4": "Off",
+    "SP2": "Off",
+    "SP8": "Off",
+    "SP6": "Off",
+    "SP3": "Off",
+    "SP1": "Off",
+    "SP7": "Off",
+    "SP5": "Off",
+    "Positioning mode": "REF",
+    "Table position": [
+     "H",
+     "0 mm"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Save uncombined": "Off",
+    "Coil Combine Mode": "Adaptive Combine",
+    "Auto Coil Select": "Default",
+    "Shim mode": "Tune up",
+    "Adjust with body coil": "On",
+    "Confirm freq. adjustment": "Off",
+    "Assume Silicone": "Off",
+    "? Ref. amplitude 1H": "0.000 V",
+    "Adjustment Tolerance": "Auto",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0.00 deg",
+     "R >> L": "350 mm",
+     "A >> P": "263 mm",
+     "F >> H": "350 mm"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "Off",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "Off",
+    "Std-Dev-Sag": "Off",
+    "Std-Dev-Cor": "Off",
+    "Std-Dev-Tra": "Off",
+    "Std-Dev-Time": "Off",
+    "MIP-Sag": "Off",
+    "MIP-Cor": "Off",
+    "MIP-Tra": "Off",
+    "MIP-Time": "Off",
+    "Save original images": "On"
+   },
+   "Sequence": {
+    "Introduction": "On",
+    "Dimension": "3D",
+    "Elliptical scanning": "Off",
+    "Asymmetric echo": "Allowed",
+    "Bandwidth": "170 Hz/Px",
+    "Flow comp.": "No",
+    "Echo spacing": "7.4 ms",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast*",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "On"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "SoftwareVersions": "syngo MR B17",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HEA;HEP",
+   "MatrixCoilMode": "Auto (Triple)",
+   "CoilCombinationMethod": "Adaptive Combine",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl",
+   "PulseSequenceDetails": "%SiemensSeq%\\tfl",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Tune up",
+   "ParallelReductionFactorInPlane": 2,
+   "ParallelReductionFactorOutOfPlane": 1,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "EchoTime": 0.00248,
+   "InversionTime": 1.1,
+   "DwellTime": 1.1489000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 1.87,
+   "RepetitionTimeExcitation": 0.0074,
+   "RepetitionTimePreparation": 1.87,
+   "Modality": "MR",
+   "ProtocolName": "t1_mpr_sag_iso_2pat_8degflip_TI1100",
+   "SeriesDescription": "t1_mpr_sag_iso_2pat_8degflip_TI1100",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 256,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 256,
+   "PixelBandwidth": 170.0,
+   "SliceThickness": 1.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 256,
+   "FieldOfViewFE": 256.0,
+   "FieldOfViewPE": 256.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 176,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 176.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 176
+  }
+ }
+]

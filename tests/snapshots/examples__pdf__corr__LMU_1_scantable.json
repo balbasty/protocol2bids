@@ -1,0 +1,121 @@
+[
+ {
+  "name": "LMU 1 Anatomical",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "LMU 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D T1-TFE",
+    "Flip Angle [Deg]": "8.0",
+    "Inversion Time (TI) [ms]": "900",
+    "Repetition Time (TR) [ms]": "2375.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "191.5",
+    "Parallel Acquisition": "SENSE x 2/2.5",
+    "Partial Fourier": "None",
+    "Number of Slices": "220",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Right to Left",
+    "Slice Acquisition Order": "Sequential Ascending Sequential Ascending",
+    "Slice Thickness [mm]": "1.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "240",
+    "Acquisition Matrix": "240x187",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "3:06",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "3D T1-TFE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 2.375,
+   "InversionTime": 0.9,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 191.5,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 187,
+   "DirectionPE": "RL"
+  }
+ },
+ {
+  "name": "LMU 1 Rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "LMU 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2500",
+    "Bandwidth per Voxel (Readout) [Hz]": "2032",
+    "Parallel Acquisition": "SENSE x 3",
+    "Number of Slices": "52",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "3.0",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "224x233",
+    "Acquisition Matrix": "76x79",
+    "Slice In-Place Resolution [mm ]": "2.95x2.95",
+    "Number of Measurements": "180",
+    "Acquisition Time [min:sec]": "7:35",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PhilipsReportedBandwidth": 2032.0,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 3.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "AcquisitionMatrixPE": 79,
+   "DirectionPE": "AP"
+  }
+ }
+]

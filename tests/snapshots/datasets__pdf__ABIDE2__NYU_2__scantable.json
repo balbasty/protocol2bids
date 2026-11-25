@@ -1,0 +1,171 @@
+[
+ {
+  "name": "ABIDEII-NYU_2 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-NYU_2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Allegra",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "3D TFL",
+    "Flip Angle [Deg]": "7",
+    "Inversion Time (TI) [ms]": "1100",
+    "Echo Time (TE) [ms]": "3.25",
+    "Repetition Time (TR) [ms]": "3.25",
+    "Bandwidth per Voxel (Readout) [Hz]": "200",
+    "Partial Fourier": "No",
+    "Number of Slices": "128",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "1.33",
+    "Slice Gap [mm]": "0.665",
+    "Field of View [mm]": "256x256",
+    "Acquisition Matrix": "256x192",
+    "Slice In-Place Resolution [mm ]": "1.3x1.0",
+    "Acquisition Time [min:sec]": "8:07",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "3D TFL",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 0.0032500000000000003,
+   "EchoTime": 0.0032500000000000003,
+   "InversionTime": 1.1,
+   "FlipAngle": 7.0,
+   "PixelBandwidth": 200.0,
+   "SliceThickness": 1.33,
+   "AcquisitionMatrixPE": 192
+  }
+ },
+ {
+  "name": "ABIDEII-NYU_2 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-NYU_2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Allegra",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "15",
+    "Repetition Time (TR) [ms]": "2000",
+    "Bandwidth per Voxel (Readout) [Hz]": "3906",
+    "Number of Slices": "33",
+    "Slice Thickness [mm]": "4",
+    "Slice Gap [mm]": "0",
+    "Acquisition Matrix": "80x80",
+    "Slice In-Place Resolution [mm ]": "3x3x3",
+    "Number of Measurements": "180",
+    "Acquisition Time [min:sec]": "6.00",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.015,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 3906.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0,
+   "AcquisitionMatrixPE": 80
+  }
+ },
+ {
+  "name": "ABIDEII-NYU_2 DTI",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-NYU_2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Allegra",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "60",
+    "Echo Time (TE) [ms]": "78",
+    "Repetition Time (TR) [ms]": "5200",
+    "Bandwidth per Voxel (Readout) [Hz]": "3720",
+    "Partial Fourier": "None",
+    "Number of Slices": "50",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "3",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "240x240 192x192",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3x3",
+    "Number of Measurements": "1",
+    "Acquisition Time [min:sec]": "5:43",
+    "Fat Suppression": "None",
+    "Number of Directions": "64",
+    "Number of B Zeros": "1",
+    "B Value(s) [s/mm ]": "0;1000",
+    "Averages": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 5.2,
+   "EchoTime": 0.078,
+   "FlipAngle": 60.0,
+   "PixelBandwidth": 3720.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "AcquisitionMatrixPE": 64
+  }
+ }
+]

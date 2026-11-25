@@ -1,0 +1,166 @@
+[
+ {
+  "name": "dwi",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera Achieva",
+   "MagneticFieldStrength": 1.5
+  },
+  "header": {},
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "": {
+    "Difffusion32": {
+     "Voxel Tra": "2.50x2.57x2.50"
+    },
+    "Total scan duration": "03:09.2",
+    "Rel. SNR": "0.989",
+    "Act. TR (ms)": "5407",
+    "Act. TE (ms)": "86",
+    "ACQ matrix M x P": "96 x 74",
+    "ACQ voxel MPS (mm)": "2.50 / 2.57/ 2.50",
+    "REC voxel MPS (mm)": "2.50 / 2.50/ 2.50",
+    "Scan percentage (%)": "97.4",
+    "Packages": "1",
+    "Min. slice gap (mm)": "0",
+    "EPI factor": "37",
+    "WFS (pix) / BW (Hz)": "5.780 / 37.6",
+    "BW in EPI freq. dir. (Hz)": "1972.5",
+    "SAR / local torso": "< 13%",
+    "Whole body / level": "< 0.3 W/Kg/normal",
+    "SED": "0.1 Kj/Kg",
+    "B1+rms": "1.51 uT",
+    "Max B1+rms": "1.51 uT",
+    "PNS / level": "60% / normal",
+    "dB/dt": "48.0 T/s",
+    "Sound Pressure Level (dB)": "4"
+   },
+   "Geometry": {
+    "Uniformity": "CLEAR",
+    "FOV": {
+     "RL (mm)": "240",
+     "AP (mm)": "190",
+     "FH (mm)": "112"
+    },
+    "Voxel size": {
+     "RL (mm)": "2.5",
+     "AP (mm)": "2.5"
+    },
+    "Slice thickness (mm)": "2.5",
+    "Recon voxel size (mm)": "2.5",
+    "Fold-over suppression": "no",
+    "Reconstruction matrix": "96",
+    "SENSE": {
+     "": "yes",
+     "P reduction (AP)": "2"
+    },
+    "k-t BLAST": "no",
+    "k--t BLAST": {
+     "Stacks": "1",
+     "type": "parallel",
+     "slices": "45",
+     "slices gap": {
+      "": "User defined",
+      "gap (mm)": "0"
+     },
+     "slice orientation": "transverse",
+     "fold-over direction": "AP",
+     "fat shit direction": "P"
+    },
+    "Rel. SNR 0.99": "TE 86 TR 5407",
+    "Minimum number of pa": {
+     "": "1",
+     "Slice scan order": "default",
+     "PlanAlign": "no",
+     "REST slab": "0"
+    },
+    "Interactive positioning": "no"
+   },
+   "Contrast": {
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "MS",
+     "technique": "SE"
+    },
+    "Modified SE": "no",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": {
+     "": "EPI",
+     "shot mode": "single-shot"
+    },
+    "Echoes": {
+     "": "1",
+     "partial echo": "no"
+    },
+    "TE": {
+     "": "user defined",
+     "(ms)": "86"
+    },
+    "Flip angle (deg)": "90",
+    "TR": "shortest",
+    "Halfscan": {
+     "": "yes",
+     "factor": "0.683"
+    },
+    "Water-fat shift": "minimum",
+    "Shim": "auto",
+    "mDIXON": "no",
+    "Fat suppression": {
+     "": "SPIR",
+     "strength": "strong",
+     "frequency offset": "default"
+    },
+    "Water suppression": "no",
+    "BB pulse": "no",
+    "MTC": "no",
+    "Diffusion mode": {
+     "": "DTI",
+     "gradient overplus": "no",
+     "directional resolution": "high (32)",
+     "nr of b-factors": "2",
+     "b-factor order": "ascending",
+     "max b-factor": "1000",
+     "average high b": "no"
+    },
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "PNS mode": "low",
+    "Gradient mode": "default",
+    "SoftTone mode": "no"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera Achieva",
+   "MagneticFieldStrength": 1.5,
+   "ImagingFrequency": 63.864,
+   "Modality": "MR",
+   "ProtocolName": "dwi",
+   "FlipAngle": 90.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "SE"
+   ],
+   "PulseSequenceType": "Spin Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "AcquisitionMatrixFE": 96,
+   "AcquisitionMatrixPE": 74,
+   "ReconMatrixPE": 96,
+   "PartialFourierEnabled": "YES",
+   "PartialFourier": 0.683,
+   "SliceThickness": 2.5,
+   "SpacingBetweenSlices": 2.5,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j"
+  }
+ }
+]
