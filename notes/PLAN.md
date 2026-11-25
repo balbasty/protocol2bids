@@ -400,3 +400,9 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
   Slice order of Siemens product SMS inferred empirically from 374 real
   sidecars (`sms_interleaved`), GE HyperBand ported from dcm2niix
   (`ge_slice_ranks`); see `notes/conversion_rules.md`.
+
+* **2026-11-25 (5)** — GE slice timing now follows the full dcm2niix
+  logic (`ge_slice_timing`): version parsing (EA, >= 27.1), no HyperBand
+  timing before 26.0, epiRT / multi-phase / diffusion branches, group
+  delay, LX `SLICEORDER` (0 = sequential). Diffusion on cycling systems
+  (Premier/UHP/7.0T) remains unsupported (cycling mode not printed).
