@@ -1,0 +1,1685 @@
+[
+ {
+  "name": "Localizer",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\Localizer",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "gre",
+   "TA": "9.2",
+   "VoxelSize": [
+    2.2,
+    1.1,
+    10.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 2": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 3": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Coronal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "280 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "10 [mm]",
+    "TR": "20 [ms]",
+    "TE": "5 [ms]",
+    "Averages": "1",
+    "Concatenations": "3",
+    "Filter": "Elliptical filter",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "TD": "0 [ms]",
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "40 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "50 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Interpolation": "1",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Sequential",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Tune up",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "350 [mm]",
+     "A >> P": "263 [mm]",
+     "F >> H": "350 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Short term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "180 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Slice-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre",
+   "PulseSequenceDetails": "%SiemensSeq%\\gre",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Tune up",
+   "EchoTime": 0.005,
+   "DwellTime": 1.0851e-05,
+   "FlipAngle": 40.0,
+   "RepetitionTime": 0.02,
+   "RepetitionTimeExcitation": 0.02,
+   "Modality": "MR",
+   "ProtocolName": "Localizer",
+   "SeriesDescription": "Localizer",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 50.0,
+   "PhaseResolution": 0.5,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 10.0,
+   "SpacingBetweenSlices": 12.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 2.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 280.0,
+   "FieldOfViewPE": 280.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 1,
+   "OversampledAcquisitionMatrixSE": 1,
+   "FieldOfViewSE": 12.0,
+   "ReconMatrixFE": 512,
+   "ReconMatrixSE": 1
+  }
+ },
+ {
+  "name": "MPRAGE",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\MPRAGE",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "tfl_ADNI",
+   "TA": "9:38",
+   "VoxelSize": [
+    1.3,
+    1.3,
+    1.2
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   1
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "30 [%]",
+    "Slices per slab": "160",
+    "FoV read": "240 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "1.2 [mm]",
+    "TR": "3000 [ms]",
+    "TE": "3.5 5 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1000 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "192",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "240 [mm]",
+     "A >> P": "240 [mm]",
+     "R >> L": "192 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Bandwidth": "180 [Hz/Px]",
+    "Echo spacing": "8. 4 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\tfl_ADNI",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "B0ShimmingTechnique": "Standard",
+   "InversionTime": 1.0,
+   "DwellTime": 1.4468000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 3.0,
+   "RepetitionTimePreparation": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "MPRAGE",
+   "SeriesDescription": "MPRAGE",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 192,
+   "AcquisitionMatrixPE": 192,
+   "ReconMatrixPE": 192,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 192,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 1.2,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 192,
+   "OversampledAcquisitionMatrixFE": 384,
+   "OversampledAcquisitionMatrixPE": 192,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 192.0,
+   "ReconMatrixFE": 192,
+   "ReconMatrixSE": 160
+  }
+ },
+ {
+  "name": "MPRAGE Repeat",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\MPRAGE Repeat",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "tfl_ADNI",
+   "TA": "9:38",
+   "VoxelSize": [
+    1.3,
+    1.3,
+    1.2
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   2
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "30 [%]",
+    "Slices per slab": "160",
+    "FoV read": "240 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "1.2 [mm]",
+    "TR": "3000 [ms]",
+    "TE": "3.5 5 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1000 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "192",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "240 [mm]",
+     "A >> P": "240 [mm]",
+     "R >> L": "192 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Bandwidth": "180 [Hz/Px]",
+    "Echo spacing": "8. 4 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\tfl_ADNI",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "B0ShimmingTechnique": "Standard",
+   "InversionTime": 1.0,
+   "DwellTime": 1.4468000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 3.0,
+   "RepetitionTimePreparation": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "MPRAGE Repeat",
+   "SeriesDescription": "MPRAGE Repeat",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 192,
+   "AcquisitionMatrixPE": 192,
+   "ReconMatrixPE": 192,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 192,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 1.2,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 192,
+   "OversampledAcquisitionMatrixFE": 384,
+   "OversampledAcquisitionMatrixPE": 192,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 192.0,
+   "ReconMatrixFE": 192,
+   "ReconMatrixSE": 160
+  }
+ },
+ {
+  "name": "B1-calibration Head",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\B1-calibration Head",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "gre_ADNI",
+   "TA": "0:42",
+   "VoxelSize": [
+    2.3,
+    2.3,
+    2.5
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   3
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "96",
+    "FoV read": "300 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "2.5 [mm]",
+    "TR": "3.3 [ms]",
+    "TE": "1.08 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "2 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "300 [mm]",
+     "A >> P": "300 [mm]",
+     "R >> L": "240 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "980 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\gre_ADNI",
+   "MRAcquisitionType": "3D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00108,
+   "DwellTime": 3.9860000000000005e-06,
+   "FlipAngle": 2.0,
+   "RepetitionTime": 0.0033,
+   "RepetitionTimeExcitation": 0.0033,
+   "Modality": "MR",
+   "ProtocolName": "B1-calibration Head",
+   "SeriesDescription": "B1-calibration Head",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 128,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 980.0,
+   "SliceThickness": 2.5,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 300.0,
+   "FieldOfViewPE": 300.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 96,
+   "OversampledAcquisitionMatrixSE": 96,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 240.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 96
+  }
+ },
+ {
+  "name": "B1-calibration Body",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\B1-calibration Body",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "gre_ADNI",
+   "TA": "0:42",
+   "VoxelSize": [
+    2.3,
+    2.3,
+    2.5
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   4
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "96",
+    "FoV read": "300 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "2.5 [mm]",
+    "TR": "3.3 [ms]",
+    "TE": "1.08 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "BC"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "2 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "128",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "0",
+    "Body": "1",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "300 [mm]",
+     "A >> P": "300 [mm]",
+     "R >> L": "240 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "980 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "BC",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\gre_ADNI",
+   "MRAcquisitionType": "3D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00108,
+   "DwellTime": 3.9860000000000005e-06,
+   "FlipAngle": 2.0,
+   "RepetitionTime": 0.0033,
+   "RepetitionTimeExcitation": 0.0033,
+   "Modality": "MR",
+   "ProtocolName": "B1-calibration Body",
+   "SeriesDescription": "B1-calibration Body",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 128,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 980.0,
+   "SliceThickness": 2.5,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 300.0,
+   "FieldOfViewPE": 300.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 96,
+   "OversampledAcquisitionMatrixSE": 96,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 240.0,
+   "ReconMatrixFE": 128,
+   "ReconMatrixSE": 96
+  }
+ },
+ {
+  "name": "Axial PD-T2 TSE",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Human Protocol\\Axial PD-T2 TSE",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tse",
+   "TA": "6:50",
+   "VoxelSize": [
+    0.9,
+    0.9,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   5
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "48",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "240 [mm]",
+    "FoV phase": "89.1 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "3000 [ms]",
+    "TE[1]": "12 [ms]",
+    "TE[2]": "96 [ms]",
+    "Averages": "1",
+    "Concatenations": "4",
+    "Filter": "Elliptical filter",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "TD": "0 [ms]",
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "150 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Fat sat. mode": "Strong",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "90 [deg]",
+     "A >> P": "240 [mm]",
+     "R >> L": "214 [mm]",
+     "F >> H": "144 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Compensate T2 decay": "0",
+    "Averaging mode": "Long term",
+    "Contrasts": "2",
+    "Bandwidth": "163 [Hz/Px]",
+    "Flow comp.": "No",
+    "Allowed delay": "30 [s]",
+    "Echo spacing": "12 [ms]",
+    "Turbo factor": "7",
+    "RF pulse type": "Low SAR",
+    "Gradient mode": "Normal"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Fast Spin Echo",
+   "ScanningSequence": [
+    "SE"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "tse",
+   "PulseSequenceDetails": "%SiemensSeq%\\tse",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 33,
+   "DwellTime": 1.1982000000000001e-05,
+   "FlipAngle": 150.0,
+   "RepetitionTime": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "Axial PD-T2 TSE",
+   "SeriesDescription": "Axial PD-T2 TSE",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 228,
+   "ReconMatrixPE": 228,
+   "PercentPhaseFOV": 89.1,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 228,
+   "EchoTrainLength": 7,
+   "PixelBandwidth": 163.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TSE",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 228,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 213.83999999999997,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 48,
+   "OversampledAcquisitionMatrixSE": 48,
+   "FieldOfViewSE": 144.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 48
+  }
+ },
+ {
+  "name": "QC Phantom-Localizer",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Phantom Protocol\\QC Phantom-Localizer",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "gre",
+   "TA": "9.2",
+   "VoxelSize": [
+    2.2,
+    1.1,
+    10.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   6
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 2": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Slice group 3": {
+     "Slices": "1",
+     "Dist. factor": "20 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Coronal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "280 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "10 [mm]",
+    "TR": "20 [ms]",
+    "TE": "5 [ms]",
+    "Averages": "1",
+    "Concatenations": "3",
+    "Filter": "Elliptical filter",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "TD": "0 [ms]",
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "40 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "50 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Interpolation": "1",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Sequential",
+    "Series": "Interleaved",
+    "Saturation mode": "Standard",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Tune up",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "350 [mm]",
+     "A >> P": "263 [mm]",
+     "F >> H": "350 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Segments": "1",
+    "Tagging": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1",
+    "Wash - In": "0",
+    "Wash - Out": "0",
+    "TTP": "0",
+    "PEI": "0",
+    "MIP - time": "0"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "2D",
+    "Phase stabilisation": "0",
+    "Averaging mode": "Short term",
+    "Asymmetric echo": "Off",
+    "Contrasts": "1",
+    "Bandwidth": "180 [Hz/Px]",
+    "Flow comp.": "No",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Slice-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "gre",
+   "PulseSequenceDetails": "%SiemensSeq%\\gre",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Tune up",
+   "EchoTime": 0.005,
+   "DwellTime": 1.0851e-05,
+   "FlipAngle": 40.0,
+   "RepetitionTime": 0.02,
+   "RepetitionTimeExcitation": 0.02,
+   "Modality": "MR",
+   "ProtocolName": "QC Phantom-Localizer",
+   "SeriesDescription": "QC Phantom-Localizer",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 128,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 50.0,
+   "PhaseResolution": 0.5,
+   "PhaseEncodingSteps": 128,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 10.0,
+   "SpacingBetweenSlices": 12.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 2.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 128,
+   "FieldOfViewFE": 280.0,
+   "FieldOfViewPE": 280.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 1,
+   "OversampledAcquisitionMatrixSE": 1,
+   "FieldOfViewSE": 12.0,
+   "ReconMatrixFE": 512,
+   "ReconMatrixSE": 1
+  }
+ },
+ {
+  "name": "QC Phantom Sagittal MPRAGE",
+  "path": "\\\\USER\\ADNI\\MAIN-PHASE\\Phantom Protocol\\QC Phantom Sagittal MPRAGE",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "tfl_ADNI",
+   "TA": "9:38",
+   "VoxelSize": [
+    1.3,
+    1.3,
+    1.3
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   7
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "30 [%]",
+    "Slices per slab": "160",
+    "FoV read": "240 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "1.3 [mm]",
+    "TR": "3000 [ms]",
+    "TE": "3. 55 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1000 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "192",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "CP Head Array / HE": "1",
+    "Body": "0",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "0",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "Use Default Value [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "240 [mm]",
+     "A >> P": "240 [mm]",
+     "R >> L": "208 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Off",
+    "Bandwidth": "180 [Hz/Px]",
+    "Echo spacing": "8.4 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Sonata syngo MR 200 2B",
+   "MagneticFieldStrength": 1.5,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl_ADNI",
+   "PulseSequenceDetails": "%CustomerSeq%\\tfl_ADNI",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "B0ShimmingTechnique": "Standard",
+   "InversionTime": 1.0,
+   "DwellTime": 1.4468000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 3.0,
+   "RepetitionTimeExcitation": 0.008400000000000001,
+   "RepetitionTimePreparation": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "QC Phantom Sagittal MPRAGE",
+   "SeriesDescription": "QC Phantom Sagittal MPRAGE",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 192,
+   "AcquisitionMatrixPE": 192,
+   "ReconMatrixPE": 192,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 192,
+   "PixelBandwidth": 180.0,
+   "SliceThickness": 1.3,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 192,
+   "OversampledAcquisitionMatrixFE": 384,
+   "OversampledAcquisitionMatrixPE": 192,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 208.0,
+   "ReconMatrixFE": 192,
+   "ReconMatrixSE": 160
+  }
+ }
+]

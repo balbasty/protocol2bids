@@ -1,0 +1,118 @@
+[
+ {
+  "name": "EPI_REST",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "PATIENT POSITION": {
+    "Patient Entry": "Head First",
+    "Patient Position": "Supine",
+    "Coil Configuration": "8HRBRAIN",
+    "Plane": "AXIAL",
+    "Series Description": "EPI_REST"
+   },
+   "SCAN TIMING": {
+    "Flip Angle": "90",
+    "TE": "30.0",
+    "Number of Echoes": "1",
+    "TR": "2000.0",
+    "Number of Shots": "1"
+   },
+   "IMAGE ENHANCE": {
+    "Filter Choice": "None"
+   },
+   "GATING/TRIGGER": {
+    "EPI_REST": null,
+    "Auto Trigger Type": "Off"
+   },
+   "FMRI": {
+    "Brain Wave Real Time": "0",
+    "Paradigm String": "Research Mode"
+   },
+   "IMAGING PARAMETERS": {
+    "Imaging Mode": "2D",
+    "Pulse Sequence": "Gradient Echo",
+    "Imaging Options": "EPI, Asset, FMRI"
+   },
+   "SCAN RANGE": {
+    "FOV": "22.0",
+    "Slice Thickness": "3.4",
+    "Slice Spacing": "0.0"
+   },
+   "ACQ TIMING": {
+    "Freq": "64",
+    "Phase": "64",
+    "Freq DIR": "R/L",
+    "NEX": "1.00",
+    "Phase FOV": "1.00",
+    "Auto Shim": "Auto",
+    "Phase Correction": "Yes"
+   },
+   "USER CVS": {
+    "User CV0": "1.00"
+   },
+   "MULTI-PHASE": {
+    "Slice per Location": "180",
+    "Delay after Acquisition": "0",
+    "Initial State": "Control",
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "1",
+    "# of Repetitions ACTIVE": "1",
+    "# of Dummy Acquisition": "5"
+   },
+   "SAT": {
+    "Tag Type": "None"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No",
+    "Seperate Series": "0",
+    "Delay after Acquisition without AV": "0",
+    "Mask Phase": "0",
+    "Mask Pause": "0"
+   },
+   "TRICKS": {
+    "Pause On/Off": "On",
+    "Auto Subtract": "0",
+    "Auto SCIC": "Off",
+    "Property of": "Mon Sep 29 13:11:25 PDT 2014"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "8HRBRAIN",
+   "Modality": "MR",
+   "ProtocolName": "EPI_REST",
+   "SeriesDescription": "EPI_REST",
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "AcquisitionMatrixFE": 64,
+   "AcquisitionMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 3.4,
+   "SpacingBetweenSlices": 3.4,
+   "NumberShots": 1,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j"
+  }
+ }
+]

@@ -1,0 +1,250 @@
+[
+ {
+  "name": "dti_64dir_3x3x3",
+  "path": "\\\\USER\\INVESTIGATORS\\Castellanos\\Child-AdultR01\\dti_64dir_3x3x3",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "cbi_ep2d_diff_1_4",
+   "TA": "5:43",
+   "VoxelSize": [
+    3.0,
+    3.0,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "50",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "192 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "5200 [ms]",
+    "TE": "78 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "Fat sat.",
+    "Measurements": "1",
+    "Delay in TR": "0 [ms]"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "140.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "90 [deg]",
+     "A >> P": "192 [mm]",
+     "R >> L": "192 [mm]",
+     "F >> H": "150 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "Diff": {
+    "Diffusion mode": "MDDW",
+    "Diff. weightings": "2",
+    "b-value[1]": "0 [s/mm²]",
+    "b-value[2]": "1000 [s/mm²]",
+    "Diff. weighted images": "1",
+    "Trace weighted images": "0",
+    "Average ADC maps": "0",
+    "Individual ADC maps": "0",
+    "Noise level": "40",
+    "Diff. directions": "64"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "3720 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.32 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast",
+    "Image Reconstruction": "Save Raw",
+    "Field Map Mode": "FMap Off",
+    "Readout Direction": "Normal"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Spin Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "cbi_ep2d_diff_1_4",
+   "PulseSequenceDetails": "%CustomerSeq%\\cbi_ep2d_diff_1_4",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00032,
+   "TotalReadoutTime": 0.02016,
+   "EchoTime": 0.078,
+   "SliceTiming": [
+    2.6,
+    0.0,
+    2.704,
+    0.104,
+    2.808,
+    0.208,
+    2.912,
+    0.312,
+    3.016,
+    0.416,
+    3.12,
+    0.52,
+    3.224,
+    0.624,
+    3.328,
+    0.728,
+    3.432,
+    0.832,
+    3.536,
+    0.936,
+    3.64,
+    1.04,
+    3.744,
+    1.144,
+    3.848,
+    1.248,
+    3.952,
+    1.352,
+    4.056,
+    1.456,
+    4.16,
+    1.56,
+    4.264,
+    1.664,
+    4.368,
+    1.768,
+    4.472,
+    1.872,
+    4.576,
+    1.976,
+    4.68,
+    2.08,
+    4.784,
+    2.184,
+    4.888,
+    2.288,
+    4.992,
+    2.392,
+    5.096,
+    2.496
+   ],
+   "DwellTime": 2.1000000000000002e-06,
+   "RepetitionTime": 5.2,
+   "Modality": "MR",
+   "ProtocolName": "dti_64dir_3x3x3",
+   "SeriesDescription": "dti_64dir_3x3x3",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 3720.0,
+   "BandwidthPerPixelPhaseEncode": 48.82812499999999,
+   "DerivedVendorReportedEchoSpacing": 0.00032,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "SE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 192.0,
+   "FieldOfViewPE": 192.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 50,
+   "OversampledAcquisitionMatrixSE": 50,
+   "FieldOfViewSE": 150.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 50,
+   "SliceOrder": "Interleaved",
+   "DiffusionMode": "MDDW",
+   "DiffusionNumberOfDirections": 64
+  }
+ }
+]

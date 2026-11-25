@@ -1,0 +1,51 @@
+[
+ {
+  "name": "(REST) spiral in-out pulse sequences",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE",
+   "MagneticFieldStrength": 3.0,
+   "ManufacturersModelName": "SIGNA"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "": {
+    "Scanner": "GE SIGNA 3T",
+    "Protocol": "(REST) spiral in-out pulse sequences",
+    "Scan Plane": "Oblique",
+    "Field of View": "22 cm",
+    "Slice Thickness": "4",
+    "Spacing": "0.5",
+    "Freq. Dir": "A/P",
+    "TR": "2.0 s",
+    "# of Slices": "31",
+    "# of TE(s) per Scan": "1",
+    "TE": "30 ms",
+    "Flip Angle": "80 Degrees",
+    "Frequency": "64",
+    "Bandwidth": "125",
+    "# of Volumes": "180",
+    "# of Voxels": "64 x 64 x 31",
+    "Voxel Size": "3.4375 x 3.4375 x 3.5 mm"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "SIGNA",
+   "MagneticFieldStrength": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "(REST) spiral in-out pulse sequences",
+   "SeriesDescription": "(REST) spiral in-out pulse sequences",
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 80.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.5
+  }
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "name": "ABIDEII-BNI_1 Anatomical",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-BNI_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Ingenia",
+    "Headcoil": "15Ch",
+    "Field Strength": "3T",
+    "Sequence": "MPRAGE",
+    "Flip Angle [Deg]": "9",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "Shortest",
+    "Repetition Time (TR) [ms]": "shortest",
+    "Bandwidth per Voxel (Readout) [Hz]": "240",
+    "Parallel Acquisition": "SENSE x 1",
+    "Number of Slices": "170",
+    "Slice Orientation": "Axial",
+    "Slice Acquisition Order": "Sequential",
+    "Slice Thickness [mm]": "1.2",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "270X252",
+    "Acquisition Matrix": "244X227",
+    "Slice In-Place Resolution [mm ]": "1.1X1.1",
+    "Acquisition Time [min:sec]": "5:34",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Ingenia",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "15Ch",
+   "PulseSequenceType": "MPRAGE",
+   "MRAcquisitionType": "2D",
+   "InversionTime": 0.9,
+   "FlipAngle": 9.0,
+   "PixelBandwidth": 240.0,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 1.0,
+   "SliceThickness": 1.2,
+   "SpacingBetweenSlices": 1.2
+  }
+ },
+ {
+  "name": "ABIDEII-BNI_1 Rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-BNI_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Ingenia",
+    "Headcoil": "15Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "80",
+    "Echo Time (TE) [ms]": "25",
+    "Repetition Time (TR) [ms]": "3000",
+    "Bandwidth per Voxel (Readout) [Hz]": "3280",
+    "Parallel Acquisition": "SENSE x 2",
+    "Number of Slices": "50",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "240X240",
+    "Acquisition Matrix": "64X64",
+    "Slice In-Place Resolution [mm ]": "3.75X3.75",
+    "Number of Measurements": "120",
+    "Acquisition Time [min:sec]": "6.09",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Ingenia",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "15Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 3.0,
+   "EchoTime": 0.025,
+   "FlipAngle": 80.0,
+   "PhilipsReportedBandwidth": 3280.0,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0
+  }
+ }
+]

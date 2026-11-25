@@ -1,0 +1,43 @@
+[
+ {
+  "name": "anat",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE",
+   "MagneticFieldStrength": 3.0,
+   "ManufacturersModelName": "SIGNA"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "": {
+    "SCANNER": "GE SIGNA 3T"
+   },
+   "ANAT T1": {
+    "Voxel Sise": "0.859 X 1.500 X 0.859 mm",
+    "Number of voxels": "[256 voxels] [132 voxels][256 voxels]",
+    "FLIP Angle": "15 degrees",
+    "TR": "8.4ms",
+    "TE": "1.8ms",
+    "Slices": "132",
+    "FOV": "22cm",
+    "Data Axis Tilt": "Plumb"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "SIGNA",
+   "MagneticFieldStrength": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "anat",
+   "SeriesDescription": "anat",
+   "RepetitionTime": 0.008400000000000001,
+   "EchoTime": 0.0018000000000000002,
+   "FlipAngle": 15.0
+  }
+ }
+]

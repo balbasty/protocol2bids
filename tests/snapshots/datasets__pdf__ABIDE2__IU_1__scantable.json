@@ -1,0 +1,115 @@
+[
+ {
+  "name": "ABIDEII-IU_1 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-IU_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TriTim",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "3D TFL",
+    "Flip Angle [Deg]": "8",
+    "Inversion Time (TI) [ms]": "1000",
+    "Echo Time (TE) [ms]": "2.3",
+    "Repetition Time (TR) [ms]": "2400",
+    "Bandwidth per Voxel (Readout) [Hz]": "210",
+    "Parallel Acquisition": "GRAPPA x 2",
+    "Partial Fourier": "[7/8]",
+    "Number of Slices": "256",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "0.7",
+    "Slice Gap [mm]": "0.35",
+    "Field of View [mm]": "224x224",
+    "Acquisition Matrix": "320x320",
+    "Slice In-Place Resolution [mm ]": "0.7x0.7",
+    "Acquisition Time [min:sec]": "7:02",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TriTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "3D TFL",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 2.4,
+   "EchoTime": 0.0023,
+   "InversionTime": 1.0,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 210.0,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "ParallelReductionFactorInPlane": 2.0,
+   "PartialFourier": 0.07,
+   "SliceThickness": 0.7,
+   "AcquisitionMatrixPE": 320
+  }
+ },
+ {
+  "name": "ABIDEII-IU_1 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-IU_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TriTim",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "60",
+    "Echo Time (TE) [ms]": "28",
+    "Repetition Time (TR) [ms]": "813",
+    "Bandwidth per Voxel (Readout) [Hz]": "2604",
+    "Number of Slices": "42",
+    "Slice Thickness [mm]": "3.4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "220x220",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.4x3.4",
+    "Number of Measurements": "433",
+    "Acquisition Time [min:sec]": "16:21",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TriTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 0.8130000000000001,
+   "EchoTime": 0.028,
+   "FlipAngle": 60.0,
+   "PixelBandwidth": 2604.0,
+   "SliceThickness": 3.4,
+   "SpacingBetweenSlices": 3.4,
+   "AcquisitionMatrixPE": 64
+  }
+ }
+]

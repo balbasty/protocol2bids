@@ -1,0 +1,160 @@
+[
+ {
+  "name": "ABIDEII-SDSU_1 Anatomical",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "ABIDEII-SDSU_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "MR750",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "3D SPGR",
+    "Flip Angle [Deg]": "8",
+    "Inversion Time (TI) [ms]": "600",
+    "Echo Time (TE) [ms]": "3.172",
+    "Repetition Time (TR) [ms]": "8.136",
+    "Bandwidth per Voxel (Readout) [Hz]": "244.141",
+    "Partial Fourier": "No",
+    "Number of Slices": "172",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "1",
+    "Slice Gap [mm]": "1",
+    "Field of View [mm]": "256x256",
+    "Acquisition Matrix": "256x192",
+    "Slice In-Place Resolution [mm ]": "1x1",
+    "Acquisition Time [min:sec]": "4:54",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "3D SPGR",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 0.008136,
+   "EchoTime": 0.0031720000000000003,
+   "InversionTime": 0.6,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 244.141,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 192
+  }
+ },
+ {
+  "name": "ABIDEII-SDSU_1 Rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "ABIDEII-SDSU_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "MR750",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2000",
+    "Bandwidth per Voxel (Readout) [Hz]": "7812.5",
+    "Parallel Acquisition": "ASSET",
+    "Number of Slices": "42",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "3.4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "220x220",
+    "Acquisition Matrix": "64x64",
+    "Number of Measurements": "180",
+    "Acquisition Time [min:sec]": "6:10",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 7812.5,
+   "SliceThickness": 3.4,
+   "SpacingBetweenSlices": 3.4,
+   "AcquisitionMatrixPE": 64
+  }
+ },
+ {
+  "name": "ABIDEII-SDSU_1 DTI",
+  "path": "",
+  "vendor": "GE",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {
+   "site": "ABIDEII-SDSU_1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "GE",
+    "Model": "MR750",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Repetition Time (TR) [ms]": "8500",
+    "Number of Slices": "68",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "2",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "128x128",
+    "Slice In-Place Resolution [mm ]": "3.4375x3.4375 0.9375x0.9375/1.875x1.875",
+    "Fat Suppression": "Yes",
+    "Number of Directions": "61",
+    "Number of B Zeros": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ManufacturersModelName": "MR750",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 8.5,
+   "SliceThickness": 2.0,
+   "SpacingBetweenSlices": 2.0
+  }
+ }
+]

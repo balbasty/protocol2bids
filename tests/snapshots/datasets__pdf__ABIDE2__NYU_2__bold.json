@@ -1,0 +1,231 @@
+[
+ {
+  "name": "LFO_Relax_ offline",
+  "path": "\\\\USER\\INVESTIGATORS\\Castellanos\\Awake_Asleep_Inscapes\\LFO_Relax_ offline",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "cbi_seg_epi_gre",
+   "TA": "6:00",
+   "VoxelSize": [
+    3.0,
+    3.0,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "34",
+     "Dist. factor": "0 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "240 [mm]",
+    "FoV phase": "80.0 [%]",
+    "Slice thickness": "3 [mm]",
+    "TR": "2000 [ms]",
+    "TE": "30 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "TR"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Magn. preparation": "None",
+    "Flip angle": "82 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "Fat sat.",
+    "Measurements": "180",
+    "Pause after meas.": "0 [s]",
+    "Multiple series": "0"
+   },
+   "Resolution": {
+    "Base resolution": "80",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "Off"
+    },
+    "Interpolation": "0"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Nova_TR / TR": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "140.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "90 [deg]",
+     "A >> P": "240 [mm]",
+     "R >> L": "192 [mm]",
+     "F >> H": "102 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Dimension": "2D",
+    "Averaging mode": "Long term",
+    "Bandwidth": "3906 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.32 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast",
+    "RF spoiling": "1",
+    "Image Reconstruction": "Save Raw",
+    "Field Map Mode": "FMap Off",
+    "Multi Mode": "Multi Shot",
+    "No. of Echos": "1",
+    "Inner Image Size": "16",
+    "No. of Shots": "1",
+    "Readout Direction": "Normal",
+    "Spoil Phase Step": "123.0",
+    "Spoil Grad Amp": "3.0"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "TR",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "cbi_seg_epi_gre",
+   "PulseSequenceDetails": "%CustomerSeq%\\cbi_seg_epi_gre",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00032,
+   "TotalReadoutTime": 0.02016,
+   "EchoTime": 0.03,
+   "SliceTiming": [
+    1.0,
+    0.0,
+    1.058824,
+    0.058824,
+    1.117647,
+    0.117647,
+    1.176471,
+    0.176471,
+    1.235294,
+    0.235294,
+    1.294118,
+    0.294118,
+    1.352941,
+    0.352941,
+    1.411765,
+    0.411765,
+    1.470588,
+    0.470588,
+    1.529412,
+    0.529412,
+    1.588235,
+    0.588235,
+    1.647059,
+    0.647059,
+    1.705882,
+    0.705882,
+    1.764706,
+    0.764706,
+    1.823529,
+    0.823529,
+    1.882353,
+    0.882353,
+    1.941176,
+    0.941176
+   ],
+   "DwellTime": 1.6000000000000001e-06,
+   "FlipAngle": 82.0,
+   "RepetitionTime": 2.0,
+   "Modality": "MR",
+   "ProtocolName": "LFO_Relax_ offline",
+   "SeriesDescription": "LFO_Relax_ offline",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 80,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 80.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 3906.0,
+   "BandwidthPerPixelPhaseEncode": 48.82812499999999,
+   "DerivedVendorReportedEchoSpacing": 0.00032,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 80,
+   "OversampledAcquisitionMatrixFE": 160,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 192.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 34,
+   "OversampledAcquisitionMatrixSE": 34,
+   "FieldOfViewSE": 102.0,
+   "ReconMatrixFE": 80,
+   "ReconMatrixSE": 34,
+   "SliceOrder": "Interleaved"
+  }
+ }
+]

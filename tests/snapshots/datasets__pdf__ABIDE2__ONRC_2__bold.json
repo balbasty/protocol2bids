@@ -1,0 +1,249 @@
+[
+ {
+  "name": "cmrrBOLD rest",
+  "path": "\\\\USER\\Assaf\\Autism/ schizophrenia(126265)\\ASD/SZ.2013 day 1\\cmrrBOLD rest",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Skyra",
+   "SoftwareVersions": "syngo MR D13"
+  },
+  "header": {
+   "SequenceFolder": null,
+   "SequenceName": "epfid",
+   "TA": "7:37",
+   "PAT": "Off",
+   "VoxelSize": [
+    3.0,
+    3.0,
+    3.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "parameters": {
+   "Properties": {
+    "Prio Recon": "Off",
+    "Load to viewer": "On",
+    "Inline movie": "Off",
+    "Auto store images": "On",
+    "Load to stamp segments": "Off",
+    "Load images to graphic segments": "Off",
+    "Auto open inline display": "Off",
+    "Wait for user to start": "On",
+    "Start measurements": "single"
+   },
+   "Routine": {
+    "Nr. of slice groups": "1",
+    "Slices": "48",
+    "Dist. factor": "0 %",
+    "Position": "Isocenter",
+    "Orientation": "Transversal",
+    "Phase enc. dir.": "A >> P",
+    "AutoAlign": "---",
+    "Phase oversampling": "0 %",
+    "FoV read": "240 mm",
+    "FoV phase": "100.0 %",
+    "Slice thickness": "3.00 mm",
+    "TR": "475 ms",
+    "TE": "30.00 ms",
+    "Multi-band accel. factor": "8",
+    "Filter": "Prescan Normalize",
+    "Coil elements": "HEA;HEP"
+   },
+   "Contrast": {
+    "MTC": "Off",
+    "Magn. preparation": "None",
+    "Flip angle": "60 deg",
+    "Fat suppr.": "Fat sat.",
+    "Averaging mode": "Long term",
+    "Measurements": "947",
+    "Delay in TR": "0 ms",
+    "Reconstruction": "Magnitude",
+    "Multiple series": "Off"
+   },
+   "Resolution": {
+    "Base resolution": "80",
+    "Phase resolution": "100 %",
+    "Phase partial Fourier": "Off",
+    "Interpolation": "Off",
+    "PAT mode": "None",
+    "Distortion Corr.": "Off",
+    "Hamming": "Off",
+    "Prescan Normalize": "On",
+    "Raw filter": "Off",
+    "Elliptical filter": "Off"
+   },
+   "Geometry": {
+    "Nr. of slice groups": "1",
+    "Slices": "48",
+    "Dist. factor": "0 %",
+    "Position": "Isocenter",
+    "Phase enc. dir.": "A >> P",
+    "Phase oversampling": "0 %",
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Nr. of sat. regions": "0",
+    "Position mode": "L-P-H",
+    "Fat suppr.": "Fat sat.",
+    "Special sat.": [
+     "None",
+     "None"
+    ],
+    "Table position": "P"
+   },
+   "System": {
+    "Body": "Off",
+    "HEP": "On",
+    "HEA": "On",
+    "SP5": "Off",
+    "SP6": "Off",
+    "SP7": "Off",
+    "SP8": "Off",
+    "SP1": "Off",
+    "SP2": "Off",
+    "SP3": "Off",
+    "SP4": "Off",
+    "Position mode": "L-P-H",
+    "Positioning mode": "REF",
+    "Table position": [
+     "H",
+     "0 mm",
+     "0 mm"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Coil Combine Mode": "Sum of Squares",
+    "AutoAlign": "---",
+    "Coil Select Mode": "Default",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "Off",
+    "Confirm freq. adjustment": "Off",
+    "Assume Dominant Fat": "Off",
+    "Assume Silicone": "Off",
+    "Adjustment Tolerance": "Auto",
+    "? Ref. amplitude 1H": "0.000 V",
+    "Position": "Isocenter",
+    "Rotation": "0.00 deg",
+    "R >> L": "240 mm",
+    "A >> P": "240 mm",
+    "F >> H": "144 mm",
+    "Frequency 1H": "123.246551 MHz",
+    "Correction factor": "1",
+    "MBExc 1H": "546.973 V",
+    "Gain": "High",
+    "Img. Scale. Cor.": "1.000"
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Magn. preparation": "None"
+   },
+   "Inline": {
+    "Distortion correction": "Off"
+   },
+   "Sequence": {
+    "Introduction": "Off",
+    "Averaging mode": "Long term",
+    "Multi-slice mode": "Interleaved",
+    "Bandwidth": "2604 Hz/Px",
+    "Flow comp.": "No",
+    "Free echo spacing": "Off",
+    "Echo spacing": "0.55 ms",
+    "EPI factor": "80",
+    "Gradient mode": "Fast",
+    "RF spoiling": "Off",
+    "Online multi-band recon.": "Online",
+    "Physio recording": "Off",
+    "Triggering scheme": "Standard",
+    "TX/RX delta frequency": "0 Hz",
+    "TX Nucleus": "None",
+    "TX delta frequency": "0 Hz",
+    "Coil elements": "HEA;HEP",
+    "Acquisition duration": "0 ms"
+   },
+   "BOLD": {
+    "GLM Statistics": "Off",
+    "Dynamic t-maps": "Off",
+    "Ignore meas. at start": "0",
+    "Ignore after transition": "0",
+    "Model transition states": "On",
+    "Temp. highpass filter": "On",
+    "Threshold": "4.00",
+    "Paradigm size": "20",
+    "Motion correction": "Off",
+    "Spatial filter": "Off",
+    "Delay in TR": "0 ms",
+    "Distortion Corr.": "Off"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Skyra",
+   "SoftwareVersions": "syngo MR D13",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HEA;HEP",
+   "CoilCombinationMethod": "rSOS",
+   "PulseSequenceType": "Multiband Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "epfid",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00055,
+   "TotalReadoutTime": 0.04345,
+   "EchoTime": 0.03,
+   "DwellTime": 2.4000000000000003e-06,
+   "FlipAngle": 60.0,
+   "MultibandAccelerationFactor": 8,
+   "RepetitionTime": 0.47500000000000003,
+   "Modality": "MR",
+   "ProtocolName": "cmrrBOLD rest",
+   "SeriesDescription": "cmrrBOLD rest",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "ImagingFrequency": 123.246551,
+   "BaseResolution": 80,
+   "AcquisitionMatrixPE": 80,
+   "ReconMatrixPE": 80,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 80,
+   "EchoTrainLength": 80,
+   "PixelBandwidth": 2604.0,
+   "BandwidthPerPixelPhaseEncode": 22.727272727272727,
+   "DerivedVendorReportedEchoSpacing": 0.00055,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 80,
+   "OversampledAcquisitionMatrixFE": 160,
+   "OversampledAcquisitionMatrixPE": 80,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 240.0,
+   "PartialFourierPE": 1.0,
+   "ReconMatrixFE": 80
+  }
+ }
+]

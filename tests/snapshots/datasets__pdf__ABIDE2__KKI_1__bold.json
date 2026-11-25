@@ -1,0 +1,292 @@
+[
+ {
+  "name": "bold",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {},
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "INFO PAGE": {
+    "Total scan duration": "06:40.0",
+    "Rel. signal level (%)": "100",
+    "Act. TR/TE (ms)": "2500 / 30",
+    "Dyn. scan time": "00:02.5",
+    "ACQ matrix M x P": "84 x 81",
+    "ACQ voxel MPS (mm)": "3.05 / 3.15 / 3.00",
+    "REC voxel MPS (mm)": "2.67 / 2.67 / 3.00",
+    "Scan percentage (%)": "96.66666",
+    "Packages": "1",
+    "Min. slice gap (mm)": "0",
+    "EPI factor": "29",
+    "Act. WFS (pix) / BW (Hz)": "7.681 / 56.6",
+    "BW in EPI freq. dir. (Hz)": "2696.9",
+    "Min. WFS (pix) / Max. BW (Hz)": "7.659 / 56.7",
+    "Min. TR/TE (ms)": "2340 / 10",
+    "SAR / head": "< 31 % / 1.0 W/kg",
+    "Whole body / level": "< 0.1 W/kg / normal",
+    "B1 rms [uT]": "1.303495",
+    "PNS / level": "63 % / normal",
+    "Sound Pressure Level (dB)": "18.33103"
+   },
+   "MOTION": {
+    "Cardiac synchronization": "no",
+    "Respiratory compensation": "no",
+    "Navigator respiratory comp": "no",
+    "Flow compensation": "no",
+    "Temporal slice spacing": "equidistant",
+    "fMRI echo stabilisation": "no",
+    "NSA": "1"
+   },
+   "DYN/ANG": {
+    "Angio / Contrast enh.": "no",
+    "Quantitative flow": "no",
+    "Manual start": "yes",
+    "Dynamic study": {
+     "": "individual",
+     "dyn scans": "156",
+     "recon multiplier": "1",
+     "dyn scan times": "shortest",
+     "dummy scans": "2",
+     "immediate subtraction": "no",
+     "fast next scan": "no",
+     "Physiology marker": "yes",
+     "synch. ext. device": "yes",
+     "start at dyn.": "1",
+     "interval (dyn)": "127",
+     "RF off (dyn)": "0",
+     "dyn stabilization": "no",
+     "prospect. motion corr.": "no"
+    },
+    "Keyhole": "no",
+    "Arterial Spin labeling": {
+     "": "no",
+     "vascular crushing": "no"
+    },
+    "Mag reset": "no"
+   },
+   "GEOMETRY": {
+    "Nucleus": "H1",
+    "Coil selection": {
+     "": "SENSE-Head-8",
+     "element selection": "SENSE",
+     "connection": "d"
+    },
+    "Dual coil": "no",
+    "CLEAR": "no",
+    "FOV": {
+     "RL (mm)": {
+      "": "256",
+      "AP (mm)": "256",
+      "FH (mm)": "141"
+     }
+    },
+    "Voxel size": {
+     "RL (mm)": {
+      "": "3",
+      "AP (mm)": "3"
+     }
+    },
+    "Slice thickness (mm)": "3",
+    "Recon voxel size (mm)": "3",
+    "RFOV (%)": "100",
+    "Fold-over suppression": "no",
+    "Matrix scan": {
+     "": "84",
+     "reconstruction": "96"
+    },
+    "Scan percentage (%)": "101.1905",
+    "SENSE": {
+     "": "yes",
+     "P reduction (AP)": "3",
+     "P os factor": "1"
+    },
+    "k-t BLAST": "no",
+    "Stacks": {
+     "": "1",
+     "type": "parallel",
+     "slices": "47",
+     "slice thickness (mm)": "3",
+     "slice gap": "user defined",
+     "gap (mm)": "0",
+     "slice orientation": "transverse",
+     "fold-over direction": "AP",
+     "fat shift direction": "P"
+    },
+    "Minimum number of packages": "1",
+    "Slice scan order": "ascend",
+    "PlanAlign": "no",
+    "REST slabs": "0",
+    "Interactive positioning": "no"
+   },
+   "OFFC/ANG": {
+    "Stacks": "1",
+    "Stack Offc.": {
+     "AP (P=+mm)": {
+      "": "7.755532",
+      "RL (L=+mm)": "-4.348525",
+      "FH (H=+mm)": "5.026796",
+      "Ang.": {
+       "AP (deg)": "4.226448"
+      },
+      "RL (deg)": "0.3673933",
+      "FH (deg)": "-2.611281"
+     }
+    }
+   },
+   "CONTRAST": {
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "MS",
+     "technique": "FFE"
+    },
+    "Contrast enhancement": "no",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": {
+     "": "EPI",
+     "shot mode": "single-shot"
+    },
+    "Echoes": {
+     "": "1",
+     "partial echo": "no",
+     "shifted echo": "no"
+    },
+    "TE": {
+     "": "user defined",
+     "(ms)": "30"
+    },
+    "Flip angle (deg)": "75",
+    "TR": {
+     "": "user defined",
+     "(ms)": "2500"
+    },
+    "Halfscan": "no",
+    "Water-fat shift": "minimum",
+    "Shim": "auto",
+    "Fat suppression": {
+     "": "SPIR",
+     "strength": "strong",
+     "frequency offset": "default"
+    },
+    "Water suppression": "no",
+    "MTC": "no",
+    "Research prepulse": "no",
+    "Diffusion mode": "no",
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "PNS mode": "high",
+    "Gradient mode": "default",
+    "SofTone mode": "no POST/PROC",
+    "Preparation phases": {
+     "": "auto",
+     "Power optimization": "auto"
+    },
+    "Manual Offset Freq.": "no",
+    "SENSE ref. scan": "no",
+    "B0 field map/Dixon": "no",
+    "B1 field map": "no",
+    "MIP/MPR": "no",
+    "Images": "M, no, no, no",
+    "Autoview image": "M",
+    "Calculated images": "no, no, no, no",
+    "Reference tissue": "Grey matter",
+    "EPI 2D phase correction": "no",
+    "Preset window contrast": "soft",
+    "Reconstruction mode": {
+     "": "real time",
+     "reuse memory": "no"
+    },
+    "Save raw data": "no",
+    "Hardcopy protocol": "no",
+    "Ringing filtering": "default",
+    "Geometry correction": "default"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "MagneticFieldStrength": 3.0,
+   "ImagingFrequency": 127.728,
+   "Modality": "MR",
+   "ProtocolName": "bold",
+   "ReceiveCoilName": "SENSE-Head-8",
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 75.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 3.0,
+   "AcquisitionMatrixFE": 84,
+   "AcquisitionMatrixPE": 81,
+   "ReconMatrixPE": 96,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j",
+   "WaterFatShift": 7.681,
+   "EchoTrainLength": 29,
+   "EstimatedTotalReadoutTime": 0.0170973766557857,
+   "EstimatedEffectiveEchoSpacing": 0.0001799723858503758,
+   "SliceTiming": [
+    0.0,
+    0.053191,
+    0.106383,
+    0.159574,
+    0.212766,
+    0.265957,
+    0.319149,
+    0.37234,
+    0.425532,
+    0.478723,
+    0.531915,
+    0.585106,
+    0.638298,
+    0.691489,
+    0.744681,
+    0.797872,
+    0.851064,
+    0.904255,
+    0.957447,
+    1.010638,
+    1.06383,
+    1.117021,
+    1.170213,
+    1.223404,
+    1.276596,
+    1.329787,
+    1.382979,
+    1.43617,
+    1.489362,
+    1.542553,
+    1.595745,
+    1.648936,
+    1.702128,
+    1.755319,
+    1.808511,
+    1.861702,
+    1.914894,
+    1.968085,
+    2.021277,
+    2.074468,
+    2.12766,
+    2.180851,
+    2.234043,
+    2.287234,
+    2.340426,
+    2.393617,
+    2.446809
+   ]
+  }
+ }
+]

@@ -1,0 +1,111 @@
+[
+ {
+  "name": "ABIDEII-KUL_3 Anatomical",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-KUL_3"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva Ds",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "3D TFE",
+    "Flip Angle [Deg]": "8",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "4.6",
+    "Repetition Time (TR) [ms]": "9.4",
+    "Bandwidth per Voxel (Readout) [Hz]": "131",
+    "Parallel Acquisition": "SENSE x P1.5 S2.5 SENSE x P2",
+    "Number of Slices": "182",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "1.2",
+    "Field of View [mm]": "250x250",
+    "Acquisition Matrix": "208x207",
+    "Slice In-Place Resolution [mm ]": "1.2x1.2",
+    "Acquisition Time [min:sec]": "1:43",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva Ds",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "3D TFE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 0.0094,
+   "EchoTime": 0.0046,
+   "InversionTime": 0.9,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 131.0,
+   "SliceThickness": 1.2,
+   "AcquisitionMatrixPE": 207
+  }
+ },
+ {
+  "name": "ABIDEII-KUL_3 Rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "ABIDEII-KUL_3"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Model": "Achieva Ds",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2500",
+    "Bandwidth per Voxel (Readout) [Hz]": "2188",
+    "Number of Slices": "45",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "2.7",
+    "Slice Gap [mm]": "0.4",
+    "Field of View [mm]": "200x200",
+    "Acquisition Matrix": "80x78",
+    "Slice In-Place Resolution [mm ]": "2.5x2.56",
+    "Number of Measurements": "162",
+    "Acquisition Time [min:sec]": "7:00",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Achieva Ds",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PhilipsReportedBandwidth": 2188.0,
+   "SliceThickness": 2.7,
+   "SpacingBetweenSlices": 3.1,
+   "AcquisitionMatrixPE": 78
+  }
+ }
+]

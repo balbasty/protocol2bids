@@ -290,8 +290,10 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 - [x] 1.4 `values.py` value parsing.
 - [x] 1.5 `vendors/siemens/printout.py` single parser (banner, title,
       TOC, cards, groups, continuations).
-- [~] 1.6 Tests on all Siemens PDFs (smoke test on every file + hand-
-      checked values per version). JSON snapshots still to do.
+- [x] 1.6 Tests on all Siemens PDFs (smoke test on every file + hand-
+      checked values per version) and JSON snapshots of every PDF of the
+      corpus (`tests/test_snapshots.py`, regenerate with
+      `pytest tests/test_snapshots.py --update-snapshots`).
 - [x] 1.7 Font-recoded PDF (`siemens_vb_hmri.pdf`): handled by OCR
       fallback when the text layer looks garbled (`font_recoder.py` is
       now unused).

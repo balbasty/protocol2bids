@@ -1,0 +1,235 @@
+[
+ {
+  "name": "Rest 210 with fixation",
+  "path": "\\\\USER\\Stevens\\ADHD Med (126115)\\ADHD Med Day 2\\Rest 210 with fixation",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "USER",
+   "SequenceName": "ep2d_bold",
+   "TA": "5:15",
+   "VoxelSize": [
+    3.4,
+    3.4,
+    4.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "29",
+     "Dist. factor": "25 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "FoV read": "220 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "4 [mm]",
+    "TR": "1500 [ms]",
+    "TE": "27 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "MTC": "0",
+    "Flip angle": "60 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "Fat sat.",
+    "Measurements": "210",
+    "Delay in TR": "0 [ms]",
+    "Multiple series": "0"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Ascending",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Scan at current TP": "1",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "250.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "0 [deg]",
+     "R >> L": "220 [mm]",
+     "A >> P": "220 [mm]",
+     "F >> H": "144 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "t-Test": "0",
+    "Threshold": "4.00",
+    "Window": "Growing",
+    "Dynamic t-maps": "0",
+    "Starting ignore meas": "0",
+    "Paradigm size": "20",
+    "Meas[1]": "Ignore",
+    "Meas[2]": "Ignore",
+    "Meas[3]": "Baseline",
+    "Meas[4]": "Baseline",
+    "Meas[5]": "Baseline",
+    "Meas[6]": "Baseline",
+    "Meas[7]": "Baseline",
+    "Meas[8]": "Baseline",
+    "Meas[9]": "Baseline",
+    "Meas[10]": "Baseline",
+    "Meas[11]": "Ignore",
+    "Meas[12]": "Ignore",
+    "Meas[13]": "Active",
+    "Meas[14]": "Active",
+    "Meas[15]": "Active",
+    "Meas[16]": "Active",
+    "Meas[17]": "Active",
+    "Meas[18]": "Active",
+    "Meas[19]": "Active",
+    "Meas[20]": "Active",
+    "Motion correction": "0",
+    "Spatial filter": "0"
+   },
+   "Sequence": {
+    "Introduction": "0",
+    "Averaging mode": "Long term",
+    "Bandwidth": "4112 [Hz/Px]",
+    "Free echo spacing": "0",
+    "Echo spacing": "0.29 [ms]",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "ep2d_bold",
+   "PulseSequenceDetails": "%CustomerSeq%\\ep2d_bold",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Standard",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00029,
+   "TotalReadoutTime": 0.01827,
+   "EchoTime": 0.027,
+   "SliceTiming": [
+    0.0,
+    0.051724,
+    0.103448,
+    0.155172,
+    0.206897,
+    0.258621,
+    0.310345,
+    0.362069,
+    0.413793,
+    0.465517,
+    0.517241,
+    0.568966,
+    0.62069,
+    0.672414,
+    0.724138,
+    0.775862,
+    0.827586,
+    0.87931,
+    0.931034,
+    0.982759,
+    1.034483,
+    1.086207,
+    1.137931,
+    1.189655,
+    1.241379,
+    1.293103,
+    1.344828,
+    1.396552,
+    1.448276
+   ],
+   "DwellTime": 1.9e-06,
+   "FlipAngle": 60.0,
+   "RepetitionTime": 1.5,
+   "Modality": "MR",
+   "ProtocolName": "Rest 210 with fixation",
+   "SeriesDescription": "Rest 210 with fixation",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 4112.0,
+   "BandwidthPerPixelPhaseEncode": 53.87931034482759,
+   "DerivedVendorReportedEchoSpacing": 0.00029,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 5.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 1.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 220.0,
+   "FieldOfViewPE": 220.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 29,
+   "OversampledAcquisitionMatrixSE": 29,
+   "FieldOfViewSE": 145.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 29,
+   "SliceOrder": "Ascending"
+  }
+ }
+]

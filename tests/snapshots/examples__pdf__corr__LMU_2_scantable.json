@@ -1,0 +1,121 @@
+[
+ {
+  "name": "LMU 2 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "LMU 2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Verio",
+    "Headcoil": "12 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D MPRAGE",
+    "Flip Angle [Deg]": "9.0",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "3.06",
+    "Repetition Time (TR) [ms]": "2400.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "230",
+    "Parallel Acquisition": "GRAPPA x 2",
+    "Partial Fourier": "7/8",
+    "Number of Slices": "160",
+    "Slice Orientation": "Saggital",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Interleaved Ascending Interleaved Ascending",
+    "Slice Thickness [mm]": "1.0",
+    "Slice Gap [mm]": "0.5",
+    "Field of View [mm]": "256",
+    "Acquisition Matrix": "256x246",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "4:45",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "12 Chan",
+   "PulseSequenceType": "3D MPRAGE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 2.4,
+   "EchoTime": 0.0030600000000000002,
+   "InversionTime": 0.9,
+   "FlipAngle": 9.0,
+   "PixelBandwidth": 230.0,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "ParallelReductionFactorInPlane": 2.0,
+   "PartialFourier": 0.875,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 246,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "LMU 2 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "LMU 2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Verio",
+    "Headcoil": "12 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "80",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "3000",
+    "Bandwidth per Voxel (Readout) [Hz]": "2232",
+    "Number of Slices": "28",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "4.0",
+    "Slice Gap [mm]": "0.4",
+    "Field of View [mm]": "192",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.0x3.0",
+    "Number of Measurements": "120",
+    "Acquisition Time [min:sec]": "6:06",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "12 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 3.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 80.0,
+   "PixelBandwidth": 2232.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.4,
+   "AcquisitionMatrixPE": 64,
+   "DirectionPE": "AP"
+  }
+ }
+]

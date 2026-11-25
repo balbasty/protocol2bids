@@ -1,0 +1,38 @@
+[
+ {
+  "name": "rest",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "GE SIGNA 3T": {
+    "Data Axes Tilt": "Oblique",
+    "Voxel size": "3.125 X 3.125 X 4.500",
+    "Number of voxels": "[ 64 voxels] [ 64 voxels] [ 29 voxels]",
+    "Numbe of Volumes": "180",
+    "TR": "2 sec",
+    "TE": "30ms",
+    "Flip Angle": "80 degrees",
+    "matrix": "64x64",
+    "Slices": "29",
+    "FOV": "20cm"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "Modality": "MR",
+   "ProtocolName": "rest",
+   "SeriesDescription": "rest",
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 80.0
+  }
+ }
+]

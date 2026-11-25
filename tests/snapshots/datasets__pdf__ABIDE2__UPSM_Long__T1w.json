@@ -1,0 +1,213 @@
+[
+ {
+  "name": "TC_t1_mprage_sag_ns",
+  "path": "\\\\USER\\Dr. O'Hearn\\Faces\\Faces\\TC_t1_mprage_sag_ns",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR A30"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tfl",
+   "TA": "8:59",
+   "VoxelSize": [
+    1.1,
+    1.1,
+    1.1
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "176",
+    "FoV read": "269 [mm]",
+    "FoV phase": "100.0 [%]",
+    "Slice thickness": "1.05 [mm]",
+    "TR": "2100 [ms]",
+    "TE": "3.93 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Elliptical filter",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "1000 [ms]",
+    "Flip angle": "7 [deg]",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "Off",
+    "Slice partial Fourier": "Off",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "Off"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Filter 5": {
+     "Image Filter": "Off"
+    },
+    "Trajectory": "Cartesian",
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Ascending"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "140.000 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Sagittal",
+     "Rotation": "0 [deg]",
+     "F >> H": "269 [mm]",
+     "A >> P": "269 [mm]",
+     "R >> L": "185 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Asymmetric echo": "Allowed",
+    "Bandwidth": "130 [Hz/Px]",
+    "Echo spacing": "9.4 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR A30",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR"
+   ],
+   "SequenceName": "tfl",
+   "PulseSequenceDetails": "%SiemensSeq%\\tfl",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Standard",
+   "EchoTime": 0.00393,
+   "InversionTime": 1.0,
+   "DwellTime": 1.5024e-05,
+   "FlipAngle": 7.0,
+   "RepetitionTime": 2.1,
+   "RepetitionTimeExcitation": 0.0094,
+   "RepetitionTimePreparation": 2.1,
+   "Modality": "MR",
+   "ProtocolName": "TC_t1_mprage_sag_ns",
+   "SeriesDescription": "TC_t1_mprage_sag_ns",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 256,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 256,
+   "PixelBandwidth": 130.0,
+   "SliceThickness": 1.05,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 256,
+   "FieldOfViewFE": 269.0,
+   "FieldOfViewPE": 269.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 176,
+   "OversampledAcquisitionMatrixSE": 176,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 184.8,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 176
+  }
+ }
+]

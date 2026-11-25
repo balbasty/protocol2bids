@@ -1,0 +1,217 @@
+[
+ {
+  "name": "BNU 3 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "BNU 3"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "12 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D MPRAGE",
+    "Flip Angle [Deg]": "7.0",
+    "Inversion Time (TI) [ms]": "1100",
+    "Echo Time (TE) [ms]": "3.39",
+    "Repetition Time (TR) [ms]": "2530.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "190",
+    "Partial Fourier": "Oﬀ",
+    "Number of Slices": "128",
+    "Slice Orientation": "Saggital",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "1.33",
+    "Slice Gap [mm]": "0.6515",
+    "Field of View [mm]": "256",
+    "Acquisition Matrix": "256x192",
+    "Slice In-Place Resolution [mm ]": "1.3x1.0",
+    "Acquisition Time [min:sec]": "8:07",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "12 Chan",
+   "PulseSequenceType": "3D MPRAGE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 2.5300000000000002,
+   "EchoTime": 0.0033900000000000002,
+   "InversionTime": 1.1,
+   "FlipAngle": 7.0,
+   "PixelBandwidth": 190.0,
+   "SliceThickness": 1.33,
+   "AcquisitionMatrixPE": 192,
+   "DirectionPE": "AP"
+  }
+ },
+ {
+  "name": "BNU 3 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "BNU 3"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "12 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "2000",
+    "Bandwidth per Voxel (Readout) [Hz]": "2520",
+    "Number of Slices": "34",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Acquisition Order": "Interleaved Ascending Interleaved Ascending Interleaved Ascending",
+    "Slice Thickness [mm]": "3.5",
+    "Slice Gap [mm]": "0.7",
+    "Field of View [mm]": "200",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.5x3.5",
+    "Number of Measurements": "150",
+    "Acquisition Time [min:sec]": "8:06",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "12 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.0,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "PixelBandwidth": 2520.0,
+   "SliceThickness": 3.5,
+   "SpacingBetweenSlices": 4.2,
+   "AcquisitionMatrixPE": 64,
+   "DirectionPE": "AP",
+   "SliceTiming": [
+    1.0,
+    0.0,
+    1.058824,
+    0.058824,
+    1.117647,
+    0.117647,
+    1.176471,
+    0.176471,
+    1.235294,
+    0.235294,
+    1.294118,
+    0.294118,
+    1.352941,
+    0.352941,
+    1.411765,
+    0.411765,
+    1.470588,
+    0.470588,
+    1.529412,
+    0.529412,
+    1.588235,
+    0.588235,
+    1.647059,
+    0.647059,
+    1.705882,
+    0.705882,
+    1.764706,
+    0.764706,
+    1.823529,
+    0.823529,
+    1.882353,
+    0.882353,
+    1.941176,
+    0.941176
+   ]
+  }
+ },
+ {
+  "name": "BNU 3 DTI",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "BNU 3"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "TrioTim",
+    "Headcoil": "12 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Echo Time (TE) [ms]": "104",
+    "Repetition Time (TR) [ms]": "7200.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "1396.0",
+    "Parallel Acquisition": "GRAPPA x 2",
+    "Partial Fourier": "None",
+    "Number of Slices": "49.0",
+    "Slice Orientation": "a",
+    "Slice Phase Encoding Direction": "Anterior to Posterior",
+    "Slice Thickness [mm]": "2.5",
+    "Slice Gap [mm]": "0.0",
+    "Field of View [mm]": "230.0",
+    "Acquisition Matrix": "128x128",
+    "Slice In-Place Resolution [mm ]": "1.8x1.8",
+    "Number of Measurements": "65",
+    "Acquisition Time [min:sec]": "8:11",
+    "Fat Suppression": "Yes",
+    "Number of Directions": "64.0",
+    "Number of B Zeros": "1.0",
+    "B Value(s) [s/mm ]": "1000.0",
+    "Averages": "1.0"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "12 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 7.2,
+   "EchoTime": 0.10400000000000001,
+   "PixelBandwidth": 1396.0,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 2.5,
+   "SpacingBetweenSlices": 2.5,
+   "AcquisitionMatrixPE": 128,
+   "DirectionPE": "AP"
+  }
+ }
+]

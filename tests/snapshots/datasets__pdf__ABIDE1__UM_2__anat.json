@@ -1,0 +1,152 @@
+[
+ {
+  "name": "3mm AX overlay",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Patient Position": {
+    "Patient Position": "Supine",
+    "Patient Entry": "Head First",
+    "Coil": "HEAD",
+    "Series Description": "3mm AX overlay"
+   },
+   "Imaging Parameters": {
+    "Plane": "Axial",
+    "Mode": "2D",
+    "Pulse Seq": "Gradient Echo",
+    "Imaging Options": "VBw, EDR, Fast"
+   },
+   "Scan Timing": {
+    "# of Echoes": "1",
+    "TE": "5.7 ms",
+    "TR": "250 ms",
+    "Flip Angle": "90",
+    "Bandwidth": "15.63"
+   },
+   "Acquisition Timing": {
+    "Frequency": "256",
+    "Frequency DIR": "A/P",
+    "Phase": "160",
+    "Auto Center Frequency": "Water",
+    "NEX": "2.00",
+    "Phase FOV": "1.00",
+    "Autoshim": "On",
+    "# of Acqs Before Pause": "0"
+   },
+   "Scanning Range": {
+    "FOV": "22",
+    "Slice Thickness": "3.0",
+    "Spacing": "0.0",
+    "# of Slices": "40 Anatomical Scan -- UM T1spgr"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "HEAD",
+   "Modality": "MR",
+   "ProtocolName": "3mm AX overlay",
+   "SeriesDescription": "3mm AX overlay",
+   "RepetitionTime": 0.25,
+   "EchoTime": 0.0057,
+   "FlipAngle": 90.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo",
+   "EchoPlanarPulseSequence": false,
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 160,
+   "PercentPhaseFOV": 100.0,
+   "PixelBandwidth": 122.109,
+   "NumberOfAverages": 2.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "PhaseEncodingAnatomicalAxis": "RL",
+   "PhaseEncodingAxis": "i"
+  }
+ },
+ {
+  "name": "3d spgr IR sag",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "Patient Position": {
+    "Patient Position": "Supine",
+    "Patient Entry": "Head First",
+    "Coil": "HEAD",
+    "Series Description": "3d spgr IR sag"
+   },
+   "Imaging Parameters": {
+    "Plane": "Axial",
+    "Mode": "3D",
+    "Pulse Seq": "SPGR",
+    "Imaging Options": "VBw, EDR, Fast, IrP"
+   },
+   "Scan Timing": {
+    "# of Echoes": "1",
+    "TE": "1.8 msecs",
+    "Prep Time": "500",
+    "Flip Angle": "15",
+    "Bandwidth": "15.63"
+   },
+   "Acquisition Timing": {
+    "Frequency": "256",
+    "Frequency DIR": "A/P",
+    "Phase": "160",
+    "Auto Center Frequency": "Water",
+    "NEX": "1.00",
+    "Phase FOV": "0.80",
+    "Autoshim": "On"
+   },
+   "Scanning Range": {
+    "FOV": "26",
+    "Slice Thickness": "1.2",
+    "Locs per Slab": "128",
+    "# of Slabs": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "HEAD",
+   "Modality": "MR",
+   "ProtocolName": "3d spgr IR sag",
+   "SeriesDescription": "3d spgr IR sag",
+   "EchoTime": 0.0018000000000000002,
+   "InversionTime": 0.5,
+   "FlipAngle": 15.0,
+   "MRAcquisitionType": "3D",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "PulseSequenceType": "Inversion Recovery Fast Spoiled Gradient Echo",
+   "EchoPlanarPulseSequence": false,
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 160,
+   "PercentPhaseFOV": 80.0,
+   "PixelBandwidth": 122.109,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 1.2,
+   "PhaseEncodingAnatomicalAxis": "RL",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]

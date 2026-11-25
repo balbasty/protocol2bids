@@ -1,0 +1,257 @@
+[
+ {
+  "name": "func_inplanes",
+  "path": "\\\\USER\\SolomonLab\\OvalTI\\32ch_40\\func_inplanes",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "SoftwareVersions": "syngo MR B17"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "ep2d_bold",
+   "TA": "2.0 s",
+   "PAT": "Off",
+   "VoxelSize": [
+    3.5,
+    3.5,
+    4.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Properties": {
+    "Prio Recon": "Off",
+    "Before measurement": null,
+    "After measurement": null,
+    "Load to viewer": "On",
+    "Inline movie": "Off",
+    "Auto store images": "On",
+    "Load to stamp segments": "Off",
+    "Load images to graphic segments": "Off",
+    "Auto open inline display": "Off",
+    "Start measurement without further preparation": "On",
+    "Wait for user to start": "On",
+    "Start measurements": "single"
+   },
+   "Routine": {
+    "Slice group 1": {
+     "Slices": "36",
+     "Dist. factor": "0 %",
+     "Position": "L0.0 P0.3 H2.5",
+     "Orientation": "T > C-7.1",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0.00 deg"
+    },
+    "Phase oversampling": "0 %",
+    "FoV read": "224 mm",
+    "FoV phase": "100.0 %",
+    "Slice thickness": "4.0 mm",
+    "TR": "2000 ms",
+    "TE": "24 ms",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "None",
+    "Coil elements": "HEA;HEP"
+   },
+   "Contrast": {
+    "MTC": "Off",
+    "Flip angle": "90 deg",
+    "Fat suppr.": "Fat sat.",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "1",
+    "Delay in TR": "0 ms",
+    "Multiple series": "Off"
+   },
+   "Resolution": {
+    "Base resolution": "64",
+    "Phase resolution": "100 %",
+    "Phase partial Fourier": "Off",
+    "Interpolation": "Off",
+    "PAT mode": "None",
+    "Matrix Coil Mode": "Auto (CP)",
+    "Distortion Corr.": "Off",
+    "Prescan Normalize": "Off",
+    "Raw filter": "On",
+    "Elliptical filter": "Off",
+    "Hamming": "Off"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Interleaved",
+    "Series": "Interleaved",
+    "Special sat.": "None"
+   },
+   "System": {
+    "Body": "Off",
+    "HEP": "On",
+    "HEA": "On",
+    "Positioning mode": "FIX",
+    "Table position": [
+     "H",
+     "0 mm"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "L >> R",
+    "Coronal": "P >> A",
+    "Transversal": "F >> H",
+    "Coil Combine Mode": "Adaptive Combine",
+    "Auto Coil Select": "Default",
+    "Shim mode": "Advanced",
+    "Adjust with body coil": "Off",
+    "Confirm freq. adjustment": "On",
+    "Assume Silicone": "Off",
+    "? Ref. amplitude 1H": "0.000 V",
+    "Adjustment Tolerance": "Auto",
+    "Adjust volume": {
+     "Position": "L0.0 P0.3 H2.5",
+     "Orientation": "T > C-7.1",
+     "Rotation": "0.00 deg",
+     "R >> L": "224 mm",
+     "A >> P": "224 mm",
+     "F >> H": "144 mm"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None"
+   },
+   "BOLD": {
+    "GLM Statistics": "Off",
+    "Dynamic t-maps": "Off",
+    "Starting ignore meas": "0",
+    "Ignore after transition": "0",
+    "Model transition states": "On",
+    "Temp. highpass filter": "On",
+    "Threshold": "4.00",
+    "Paradigm size": "3",
+    "Meas[1]": "Baseline",
+    "Meas[2]": "Baseline",
+    "Meas[3]": "Active",
+    "Motion correction": "Off",
+    "Spatial filter": "Off"
+   },
+   "Sequence": {
+    "Introduction": "Off",
+    "Bandwidth": "2232 Hz/Px",
+    "Free echo spacing": "On",
+    "Echo spacing": "0.51 ms",
+    "EPI factor": "64",
+    "RF pulse type": "Normal",
+    "Gradient mode": "Fast"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "TrioTim",
+   "SoftwareVersions": "syngo MR B17",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HEA;HEP",
+   "MatrixCoilMode": "Auto (CP)",
+   "CoilCombinationMethod": "Adaptive Combine",
+   "PulseSequenceType": "Gradient Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [
+    "FS"
+   ],
+   "SequenceName": "ep2d_bold",
+   "PulseSequenceDetails": "%SiemensSeq%\\ep2d_bold",
+   "MRAcquisitionType": "2D",
+   "MTState": false,
+   "B0ShimmingTechnique": "Advanced",
+   "NumberShots": 1,
+   "EffectiveEchoSpacing": 0.00051,
+   "TotalReadoutTime": 0.032130000000000006,
+   "EchoTime": 0.024,
+   "SliceTiming": [
+    1.0,
+    0.0,
+    1.055556,
+    0.055556,
+    1.111111,
+    0.111111,
+    1.166667,
+    0.166667,
+    1.222222,
+    0.222222,
+    1.277778,
+    0.277778,
+    1.333333,
+    0.333333,
+    1.388889,
+    0.388889,
+    1.444444,
+    0.444444,
+    1.5,
+    0.5,
+    1.555556,
+    0.555556,
+    1.611111,
+    0.611111,
+    1.666667,
+    0.666667,
+    1.722222,
+    0.722222,
+    1.777778,
+    0.777778,
+    1.833333,
+    0.833333,
+    1.888889,
+    0.888889,
+    1.944444,
+    0.944444
+   ],
+   "DwellTime": 3.5000000000000004e-06,
+   "FlipAngle": 90.0,
+   "RepetitionTime": 2.0,
+   "Modality": "MR",
+   "ProtocolName": "func_inplanes",
+   "SeriesDescription": "func_inplanes",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 64,
+   "AcquisitionMatrixPE": 64,
+   "ReconMatrixPE": 64,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 64,
+   "EchoTrainLength": 64,
+   "PixelBandwidth": 2232.0,
+   "BandwidthPerPixelPhaseEncode": 30.637254901960784,
+   "DerivedVendorReportedEchoSpacing": 0.00051,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "GRE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "LR",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 64,
+   "OversampledAcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixPE": 64,
+   "FieldOfViewFE": 224.0,
+   "FieldOfViewPE": 224.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 36,
+   "OversampledAcquisitionMatrixSE": 36,
+   "FieldOfViewSE": 144.0,
+   "ReconMatrixFE": 64,
+   "ReconMatrixSE": 36,
+   "SliceOrder": "Interleaved"
+  }
+ }
+]

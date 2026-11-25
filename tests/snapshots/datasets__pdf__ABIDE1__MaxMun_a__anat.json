@@ -1,0 +1,258 @@
+[
+ {
+  "name": "t1_mprage_sag",
+  "path": "\\\\USER\\FORSCHUNG\\Koerte\\Asperger_Child\\t1_mprage_sag",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "SoftwareVersions": "syngo MR B17"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tfl",
+   "TA": "3:41",
+   "PAT": "2",
+   "VoxelSize": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0,
+   1
+  ],
+  "parameters": {
+   "Properties": {
+    "Prio Recon": "Off",
+    "Before measurement": null,
+    "After measurement": null,
+    "Load to viewer": "On",
+    "Inline movie": "Off",
+    "Auto store images": "On",
+    "Load to stamp segments": "Off",
+    "Load images to graphic segments": "Off",
+    "Auto open inline display": "Off",
+    "Start measurement without further preparation": "On",
+    "Wait for user to start": "Off",
+    "Start measurements": "single"
+   },
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 %",
+     "Position": "L1.8 P4.6 H22.5",
+     "Orientation": "Sagittal",
+     "Phase enc. dir.": "A >> P",
+     "Rotation": "0.00 deg"
+    },
+    "Phase oversampling": "0 %",
+    "Slice oversampling": "30.0 %",
+    "Slices per slab": "160",
+    "FoV read": "256 mm",
+    "FoV phase": "93.8 %",
+    "Slice thickness": "1.00 mm",
+    "TR": "1800 ms",
+    "TE": "3.06 ms",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Distortion Corr.(2D), Prescan Normalize",
+    "Coil elements": "HEA;HEP;NE2"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "900 ms",
+    "Flip angle": "9 deg",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Averaging mode": "Long term",
+    "Reconstruction": "Magnitude",
+    "Measurements": "1",
+    "Multiple series": "Each measurement"
+   },
+   "Resolution": {
+    "Base resolution": "256",
+    "Phase resolution": "100 %",
+    "Slice resolution": "100 %",
+    "Phase partial Fourier": "7/8",
+    "Slice partial Fourier": "Off",
+    "Interpolation": "Off",
+    "PAT mode": "GRAPPA",
+    "Accel. factor PE": "2",
+    "Ref. lines PE": "36",
+    "Accel. factor 3D": "1",
+    "Matrix Coil Mode": "Auto (Triple)",
+    "Reference scan mode": "Integrated",
+    "Image Filter": "Off",
+    "Distortion Corr.": "On",
+    "Mode": "2D",
+    "Unfiltered images": [
+     "Off",
+     "Off"
+    ],
+    "Prescan Normalize": "On",
+    "Normalize": "Off",
+    "B1 filter": "Off",
+    "Raw filter": "Off",
+    "Elliptical filter": "Off"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved",
+    "Set-n-Go Protocol": "Off",
+    "Table position": [
+     "H",
+     "23 mm"
+    ],
+    "Inline Composing": "Off"
+   },
+   "System": {
+    "Body": "Off",
+    "NE2": "On",
+    "HEP": "On",
+    "HEA": "On",
+    "SP4": "Off",
+    "SP2": "Off",
+    "SP8": "Off",
+    "SP6": "Off",
+    "SP3": "Off",
+    "SP1": "Off",
+    "SP7": "Off",
+    "SP5": "Off",
+    "Positioning mode": "ISO",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Save uncombined": "Off",
+    "Coil Combine Mode": "Sum of Squares",
+    "AutoAlign": "---",
+    "Auto Coil Select": "Default",
+    "Shim mode": "Standard",
+    "Adjust with body coil": "Off",
+    "Confirm freq. adjustment": "Off",
+    "Assume Silicone": "Off",
+    "? Ref. amplitude 1H": "0.000 V",
+    "Adjustment Tolerance": "Auto",
+    "Adjust volume": {
+     "Position": "L1.8 P4.6 H22.5",
+     "Orientation": "Sagittal",
+     "Rotation": "0.00 deg",
+     "F >> H": "256 mm",
+     "A >> P": "240 mm",
+     "R >> L": "160 mm"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "Off",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "Off",
+    "Std-Dev-Sag": "Off",
+    "Std-Dev-Cor": "Off",
+    "Std-Dev-Tra": "Off",
+    "Std-Dev-Time": "Off",
+    "MIP-Sag": "Off",
+    "MIP-Cor": "Off",
+    "MIP-Tra": "Off",
+    "MIP-Time": "Off",
+    "Save original images": "On"
+   },
+   "Sequence": {
+    "Introduction": "On",
+    "Dimension": "3D",
+    "Elliptical scanning": "Off",
+    "Asymmetric echo": "Off",
+    "Bandwidth": "230 Hz/Px",
+    "Flow comp.": "No",
+    "Echo spacing": "7.3 ms",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Normal",
+    "Excitation": "Non-sel.",
+    "RF spoiling": "On"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Verio",
+   "SoftwareVersions": "syngo MR B17",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HEA;HEP;NE2",
+   "MatrixCoilMode": "Auto (Triple)",
+   "CoilCombinationMethod": "rSOS",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR",
+    "PFP"
+   ],
+   "SequenceName": "tfl",
+   "PulseSequenceDetails": "%SiemensSeq%\\tfl",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Standard",
+   "ParallelReductionFactorInPlane": 2,
+   "ParallelReductionFactorOutOfPlane": 1,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "PartialFourier": 0.875,
+   "PartialFourierDirection": "PHASE",
+   "EchoTime": 0.0030600000000000002,
+   "InversionTime": 0.9,
+   "DwellTime": 8.492000000000001e-06,
+   "FlipAngle": 9.0,
+   "RepetitionTime": 1.8,
+   "RepetitionTimeExcitation": 0.0073,
+   "RepetitionTimePreparation": 1.8,
+   "Modality": "MR",
+   "ProtocolName": "t1_mprage_sag",
+   "SeriesDescription": "t1_mprage_sag",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 256,
+   "AcquisitionMatrixPE": 240,
+   "ReconMatrixPE": 240,
+   "PercentPhaseFOV": 93.8,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 210,
+   "PixelBandwidth": 230.0,
+   "SliceThickness": 1.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "RL",
+   "DirectionPE": "AP",
+   "DirectionFE": "IS",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixFE": 512,
+   "OversampledAcquisitionMatrixPE": 240,
+   "FieldOfViewFE": 256.0,
+   "FieldOfViewPE": 240.128,
+   "PartialFourierPE": 0.875,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 208,
+   "PartialFourierSE": 1.0,
+   "FieldOfViewSE": 160.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 160
+  }
+ }
+]

@@ -1,0 +1,211 @@
+[
+ {
+  "name": "anat",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera",
+   "MagneticFieldStrength": 3.0
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "INFO PAGE": {
+    "Total scan duration": "4:11.2",
+    "Rel. signal level (%)": "100",
+    "Act. TR/TE (ms)": "9.0 / 3.5",
+    "ACQ matrix M x P": "256 x 231",
+    "ACQ voxel MPS (mm)": "1.00 / 1.00 / 1.00",
+    "REC voxel MPS (mm)": "1.00 / 1.00 / 1.00",
+    "Scan percentage (%)": "100",
+    "TFE shots": "101",
+    "TFE dur.shot / acq (ms)": "2462.7 / 1458.0",
+    "Min. T1 delay": "144.523407",
+    "Act. WFS (pix) /BW (Hz)": "2.269 / 191.5",
+    "Min. WFS (pix) / Max. BW (Hz)": "0.388 / 1121.1",
+    "SAR / head": {
+     "<": "7 %"
+    },
+    "Whole body / level": "0.0 W/kg / normal",
+    "B1 rms [uT]": "0.61 uT",
+    "PNS / level": "80 % / normal",
+    "Sound Pressure level (dB)": "18.006155"
+   },
+   "MOTION": {
+    "Cardiac syncronization": "no",
+    "Respiratory compensat": "no",
+    "Navigator respiratory compensation": "no",
+    "Flow compensation": "no",
+    "fMRI echo stabilization": "no",
+    "NSA": "1"
+   },
+   "DYN/ANG": {
+    "Angio / Contrast enh.": "no",
+    "Quantitative flow": "no",
+    "CENTRA": "no",
+    "Manual start": "no",
+    "Dynamic study": "no",
+    "Arterial Spin labeling": "no"
+   },
+   "GEOMETRY": {
+    "Nucleus": "[N/A]",
+    "Coil selection 1": {
+     "": "SENSE-Head-32P",
+     "element selection": "selection 1"
+    },
+    "Coil selection 2": {
+     "": "SENSE-Head-32AH",
+     "element selection": "selection 1"
+    },
+    "Dual coil": "yes",
+    "CLEAR": {
+     "": "yes",
+     "body tuned": "no"
+    },
+    "FOV": {
+     "RL(mm)": "256",
+     "AP(mm)": "232",
+     "FH(mm)": "170"
+    },
+    "Voxel size": {
+     "FH(mm)": {
+      "": "1",
+      "RL(mm)": "1",
+      "AP(mm)": "1"
+     }
+    },
+    "Recon voxel size(mm)": "1",
+    "Fold-over suppression": "no",
+    "Slice oversampling": "default",
+    "Reconstruction matrix": "256",
+    "Scan percentage (%)": "100",
+    "SENSE": "yes",
+    "Overcontiguous slices": "no",
+    "Stacks": {
+     "": "1",
+     "slices": "170",
+     "slice thickness (mm)": "1",
+     "slice orientation": "transverse",
+     "fold-over direction": "AL",
+     "fat shift direction": "L"
+    },
+    "Chunks": "1",
+    "PlanAlign": "no",
+    "REST slabs": "0",
+    "Interactive positioning": "no"
+   },
+   "OFFC/ANG": {
+    "Stacks": "1",
+    "Stack Offc.": {
+     "AP (P=+mm)": "-19.2856312"
+    },
+    "RL (L=+mm)": "4.03035402",
+    "FH (H=+mm)": "32.6415443",
+    "Ang.": {
+     "AP (deg)": "1.05257308"
+    },
+    "RL (deg)": "-0.56958276",
+    "FH (deg)": "-1.34385669"
+   },
+   "CONTRAST": {
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "3D",
+     "technique": "FFE"
+    },
+    "Contrast enhancement": "T1",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": {
+     "": "TFE",
+     "3D non-selective": "no",
+     "shot mode": "multishot"
+    },
+    "TFE factor": {
+     "": "162",
+     "startup echoes": "default",
+     "shot interval": "shortest",
+     "(ms)": "2462.70532",
+     "profile order": "low_high",
+     "turbo direction": "radial"
+    },
+    "Echoes": {
+     "partial echo": "no",
+     "shifted echo": "no"
+    },
+    "TE": "shortest",
+    "Flip angle (deg)": "8",
+    "TR": "user defined",
+    "Halfscan": "no",
+    "Water-fat-shift": "maximum",
+    "Shim": "auto",
+    "Fat suppression": "no",
+    "Water suppression": "no",
+    "TFE prepulse": {
+     "": "invert",
+     "slice selection": "no",
+     "delay": {
+      "": "user defined",
+      "(ms)": "1000"
+     },
+     "PSIR": "no"
+    },
+    "MTC": "no",
+    "T2prep": "no",
+    "Research prepulse": "no",
+    "Diffusion mode": "no",
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "PNS mode": "moderate",
+    "Gradient mode": "maximum",
+    "SofTone mode": "no"
+   },
+   "POSTPROC": {
+    "Preparation phases": "auto",
+    "B0 field map": "no",
+    "MIP/MPR": "no",
+    "Images": "M (3) no",
+    "Autoview Image": "M",
+    "Calculated images": "(4) no",
+    "Reference tissue": "Grey matter",
+    "Preset window contrast": "soft",
+    "Reconstruction mode": "real time",
+    "Save raw data": "no",
+    "Hardcopy protocol": "no",
+    "Ringing filtering": "rectangular",
+    "Geometry correction": "default",
+    "Elliptical k-space shutter": "default"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera",
+   "MagneticFieldStrength": 3.0,
+   "ImagingFrequency": 127.728,
+   "Modality": "MR",
+   "ProtocolName": "anat",
+   "ReceiveCoilName": "SENSE-Head-32P",
+   "RepetitionTime": 0.009000000000000001,
+   "EchoTime": 0.0035,
+   "FlipAngle": 8.0,
+   "InversionTime": 1.0,
+   "RepetitionTimePreparation": 2.46270532,
+   "MRAcquisitionType": "3D",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "PulseSequenceType": "Inversion Recovery Turbo Field Echo (MPRAGE-like)",
+   "EchoPlanarPulseSequence": false,
+   "RepetitionTimeExcitation": 0.009000000000000001,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 231,
+   "ReconMatrixPE": 256,
+   "SliceThickness": 1.0
+  }
+ }
+]

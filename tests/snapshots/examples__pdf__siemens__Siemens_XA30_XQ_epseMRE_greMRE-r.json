@@ -1,0 +1,509 @@
+[
+ {
+  "name": "epiMRE_tra_p2_bh_4slc",
+  "path": "\\\\USER\\MRE\\MRE_3T\\Siemens_3T_MRE\\epiMRE_tra_p2_bh_4slc",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "3.0T XQ",
+   "SoftwareVersions": "Numaris/X VA30A-03DZ"
+  },
+  "header": {
+   "TA": "13 sec",
+   "CoilSelection": "Auto",
+   "VoxelSize": [
+    1.6,
+    1.6,
+    8.0
+   ],
+   "Acc": "2",
+   "RelSNR": 1.0
+  },
+  "pages": [
+   1,
+   2
+  ],
+  "parameters": {
+   "Properties": {
+    "Start measurement without further preparation": "On",
+    "Wait for User to Start": "Off",
+    "Start measurements": "Single Measurement",
+    "Prio Recon": "Off",
+    "Auto Open Inline Display": "Off",
+    "Auto Close Inline Display": "Off",
+    "Load Images to MR View&GO": "On",
+    "Auto Store Images": "On",
+    "Load Images to Stamp Segments": "Off",
+    "Load Images to Graphic Segments": "Off",
+    "Graphic segment": "Default",
+    "Inline Movie": "Off"
+   },
+   "Routine": {
+    "Slice Group 1": {
+     "Slices": "4",
+     "Distance Factor": "25 %",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase Encoding Dir.": "A >> P"
+    },
+    "Phase Oversampling": "0 %",
+    "FoV Read": "420 mm",
+    "FoV Phase": "100.0 %",
+    "Slice Thickness": "8.0 mm",
+    "TR": "1200.0 ms",
+    "TE": "48.00 ms",
+    "Averages": "1",
+    "Concatenations": "1",
+    "AutoAlign": "---"
+   },
+   "Contrast - Common": {
+    "TR": "1200.0 ms",
+    "TE": "48.00 ms",
+    "Fat-Water Contrast": "SPAIR",
+    "Fat Saturation": "Strong"
+   },
+   "Contrast - Dynamic": {
+    "Dynamic Mode": "Standard"
+   },
+   "Resolution - Common": {
+    "FoV Read": "420 mm",
+    "FoV Phase": "100.0 %",
+    "Slice Thickness": "8.0 mm",
+    "Base Resolution": "100",
+    "Phase Resolution": "100 %"
+   },
+   "Resolution - Acceleration": {
+    "Acceleration mode": "GRAPPA",
+    "Reference Scans": "EPI/Separate",
+    "Acceleration Factor PE": "2",
+    "Reference Lines PE": "32",
+    "Phase Partial Fourier": "Off"
+   },
+   "Resolution - Filter": {
+    "Raw Filter": "On",
+    "Elliptical Filter": "Off",
+    "Hamming": "Off",
+    "Distortion Correction": "2D",
+    "Normalize": "Prescan"
+   },
+   "Geometry - Common": {
+    "Slice Group 1": {
+     "Slices": "4",
+     "Distance Factor": "25 %",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase Encoding Dir.": "A >> P"
+    },
+    "Phase Oversampling": "0 %",
+    "FoV Read": "420 mm",
+    "FoV Phase": "100.0 %",
+    "Slice Thickness": "8.0 mm",
+    "TR": "1200.0 ms",
+    "Multi-Slice Mode": "Interleaved",
+    "Series": "Interleaved",
+    "Concatenations": "1"
+   },
+   "Geometry - AutoAlign": {
+    "Slice Group 1": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase Encoding Dir.": "A >> P"
+    },
+    "AutoAlign": "---",
+    "Initial Position": "Isocenter",
+    "L": "0.0 mm",
+    "P": "0.0 mm",
+    "H": "0.0 mm",
+    "Initial Orientation": "Transversal",
+    "Initial Rotation": "0.00 deg"
+   },
+   "Geometry - Saturation": {
+    "Special Saturation": "Parallel F/H",
+    "Gap": "10.00 mm",
+    "Thickness": "50.00 mm"
+   },
+   "Geometry - Tim Planning Suite": {
+    "Set-n-Go Protocol": "Off",
+    "Table Position": [
+     "0 mm",
+     "H"
+    ],
+    "Inline Composing": "Off"
+   },
+   "System - Miscellaneous": {
+    "Coil Selection": "Auto Coil Select",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Coil Combination": "Adaptive Combine",
+    "Matrix Optimization": "Off",
+    "Coil Focus": "Flat"
+   },
+   "System - Adjustments": {
+    "Adjustment Strategy": "Standard",
+    "B0 Shim": "Standard",
+    "B1 Shim": "TrueForm",
+    "CoilShim": "Off",
+    "Adjustment Tolerance": "Auto",
+    "Adjust with Body Coil": "Off",
+    "Confirm Frequency": "Never",
+    "Assume Silicone": "Off"
+   },
+   "System - Adjust Volume": {
+    "Position": "Isocenter",
+    "Orientation": "Transversal",
+    "Rotation": "0.00 deg",
+    "A >> P": "420 mm",
+    "R >> L": "420 mm",
+    "F >> H": "38 mm",
+    "Reset": "Off"
+   },
+   "System - Tx/Rx": {
+    "Frequency 1H": "123.200000 MHz",
+    "? Ref. Amplitude 1H": "0.000 V",
+    "Reset": "Off",
+    "Image Scaling": "1.000"
+   },
+   "Sequence - Part 1": {
+    "Sequence Name": "epseMRE",
+    "Excitation": "Standard",
+    "RF Pulse Type": "Normal",
+    "Gradient Mode": "Fast",
+    "Bandwidth": "2174 Hz/Px",
+    "Echo Spacing": "0.52 ms",
+    "Free Echo Spacing": "Off",
+    "EPI Factor": "100"
+   },
+   "Sequence - Part 2": {
+    "Introduction": "Off"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "3.0T XQ",
+   "SoftwareVersions": "Numaris/X VA30A-03DZ",
+   "MagneticFieldStrength": 3.0,
+   "CoilCombinationMethod": "Adaptive Combine",
+   "PulseSequenceType": "Spin Echo EPI",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "SequenceVariant": [
+    "SK"
+   ],
+   "ScanOptions": [],
+   "SequenceName": "epseMRE",
+   "MRAcquisitionType": "2D",
+   "NumberShots": 1,
+   "ParallelReductionFactorInPlane": 2,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "EffectiveEchoSpacing": 0.00026000000000000003,
+   "TotalReadoutTime": 0.025740000000000002,
+   "EchoTime": 0.048,
+   "SliceTiming": [
+    0.6,
+    0.0,
+    0.9,
+    0.3
+   ],
+   "DwellTime": 2.3e-06,
+   "RepetitionTime": 1.2,
+   "Modality": "MR",
+   "ProtocolName": "epiMRE_tra_p2_bh_4slc",
+   "SeriesDescription": "epiMRE_tra_p2_bh_4slc",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "ImagingFrequency": 123.2,
+   "BaseResolution": 100,
+   "AcquisitionMatrixPE": 100,
+   "ReconMatrixPE": 100,
+   "PercentPhaseFOV": 100.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 100,
+   "EchoTrainLength": 50,
+   "PixelBandwidth": 2174.0,
+   "BandwidthPerPixelPhaseEncode": 38.46153846153846,
+   "DerivedVendorReportedEchoSpacing": 0.0005200000000000001,
+   "SliceThickness": 8.0,
+   "SpacingBetweenSlices": 10.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": true,
+   "SequenceFamily": "SE-EPI",
+   "DirectionSE": "IS",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 2.0,
+   "AcquisitionMatrixFE": 100,
+   "OversampledAcquisitionMatrixFE": 200,
+   "OversampledAcquisitionMatrixPE": 100,
+   "FieldOfViewFE": 420.0,
+   "FieldOfViewPE": 420.0,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 4,
+   "OversampledAcquisitionMatrixSE": 4,
+   "FieldOfViewSE": 40.0,
+   "ReconMatrixFE": 100,
+   "ReconMatrixSE": 4,
+   "SliceOrder": "Interleaved"
+  }
+ },
+ {
+  "name": "greMRE_tra_p2_mbh_128_4slc",
+  "path": "\\\\USER\\MRE\\MRE_3T\\Siemens_3T_MRE\\greMRE_tra_p2_mbh_128_4slc",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "3.0T XQ",
+   "SoftwareVersions": "Numaris/X VA30A-03DZ"
+  },
+  "header": {
+   "TA": "2:52 min",
+   "CoilSelection": "Auto",
+   "VoxelSize": [
+    1.6,
+    1.6,
+    10.0
+   ],
+   "Acc": "2",
+   "RelSNR": 1.0
+  },
+  "pages": [
+   3,
+   4
+  ],
+  "parameters": {
+   "Properties": {
+    "Start measurement without further preparation": "On",
+    "Wait for User to Start": "Off",
+    "Start measurements": "Single Measurement",
+    "Prio Recon": "Off",
+    "Auto Open Inline Display": "On",
+    "Auto Close Inline Display": "Off",
+    "Load Images to MR View&GO": "On",
+    "Auto Store Images": "On",
+    "Load Images to Stamp Segments": "Off",
+    "Load Images to Graphic Segments": "Off",
+    "Graphic segment": "Default",
+    "Inline Movie": "Off"
+   },
+   "Routine": {
+    "Slice Group 1": {
+     "Slices": "4",
+     "Distance Factor": "0 %",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase Encoding Dir.": "A >> P"
+    },
+    "Phase Oversampling": "0 %",
+    "FoV Read": "420 mm",
+    "FoV Phase": "87.5 %",
+    "Slice Thickness": "10.0 mm",
+    "TR": "50.0 ms",
+    "TE": "21.29 ms",
+    "Averages": "1"
+   },
+   "Contrast - Common": {
+    "TR": "50.0 ms",
+    "TE": "21.29 ms",
+    "Magn. Preparation": "None",
+    "Flip Angle": "25 deg"
+   },
+   "Resolution - Common": {
+    "FoV Read": "420 mm",
+    "FoV Phase": "87.5 %",
+    "Slice Thickness": "10.0 mm",
+    "Base Resolution": "128",
+    "Phase Resolution": "71 %",
+    "Interpolation": "On"
+   },
+   "Resolution - Acceleration": {
+    "Acceleration mode": "GRAPPA",
+    "Reference Scans": "Integrated",
+    "Acceleration Factor PE": "2",
+    "Reference Lines PE": "10",
+    "Phase Partial Fourier": "Off",
+    "Asymmetric Echo": "Off"
+   },
+   "Resolution - Filter": {
+    "Distortion Correction": "2D",
+    "Normalize": "Prescan"
+   },
+   "Geometry - Common": {
+    "Slice Group 1": {
+     "Slices": "4"
+    },
+    "Distance Factor": "0 %",
+    "Position": "Isocenter",
+    "Orientation": "Transversal",
+    "Phase Encoding Dir.": "A >> P",
+    "Phase Oversampling": "0 %",
+    "FoV Read": "420 mm",
+    "FoV Phase": "87.5 %",
+    "Slice Thickness": "10.0 mm",
+    "TR": "50.0 ms",
+    "Series": "Ascending"
+   },
+   "Geometry - AutoAlign": {
+    "Slice Group 1": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase Encoding Dir.": "A >> P"
+    },
+    "Initial Position": "Isocenter",
+    "L": "0.0 mm",
+    "P": "0.0 mm",
+    "H": "0.0 mm",
+    "Initial Orientation": "Transversal",
+    "Initial Rotation": "0.00 deg"
+   },
+   "Geometry - Saturation": {
+    "Saturation Mode": "Standard",
+    "Special Saturation": "Parallel F/H",
+    "Gap": "10.00 mm",
+    "Thickness": "60.00 mm"
+   },
+   "Geometry - Tim Planning Suite": {
+    "Set-n-Go Protocol": "Off",
+    "Table Position": [
+     "0 mm",
+     "H"
+    ],
+    "Inline Composing": "Off"
+   },
+   "System - Miscellaneous": {
+    "Coil Selection": "Auto Coil Select",
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "H >> F",
+    "Coil Combination": "Adaptive Combine",
+    "Matrix Optimization": "Off",
+    "Coil Focus": "Flat"
+   },
+   "System - Adjustments": {
+    "Adjustment Strategy": "Standard",
+    "B0 Shim": "Standard",
+    "B1 Shim": "TrueForm",
+    "CoilShim": "Off",
+    "Adjustment Tolerance": "Auto",
+    "Adjust with Body Coil": "Off",
+    "Confirm Frequency": "Never",
+    "Assume Silicone": "Off"
+   },
+   "System - Adjust Volume": {
+    "Position": "Isocenter",
+    "Orientation": "Transversal",
+    "Rotation": "0.00 deg",
+    "A >> P": "368 mm",
+    "R >> L": "420 mm",
+    "F >> H": "40 mm",
+    "Reset": "Off"
+   },
+   "System - Tx/Rx": {
+    "Frequency 1H": "123.200000 MHz",
+    "? Ref. Amplitude 1H": "0.000 V",
+    "Reset": "Off",
+    "Image Scaling": "2.000"
+   },
+   "Physio - Signal": {
+    "1st Signal/Mode": "None",
+    "TR": "50.0 ms"
+   },
+   "Physio - PACE": {
+    "Resp. Control": "Breath-hold"
+   },
+   "Sequence - Part 1": {
+    "Sequence Name": "greMRE_r",
+    "Dimension": "2D",
+    "Excitation": "Slice-sel.",
+    "RF Pulse Type": "Normal",
+    "Gradient Mode": "Fast",
+    "Flow Compensation": "On",
+    "Bandwidth": "399 Hz/Px",
+    "Echo Spacing": "24.32 ms",
+    "Asymmetric Echo": "Off"
+   },
+   "Sequence - Part 2": {
+    "RF Spoiling": "On",
+    "Phase Enc. Rewinder": "On"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "3.0T XQ",
+   "SoftwareVersions": "Numaris/X VA30A-03DZ",
+   "MagneticFieldStrength": 3.0,
+   "CoilCombinationMethod": "Adaptive Combine",
+   "PulseSequenceType": "Gradient Echo",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "SequenceVariant": [
+    "SP"
+   ],
+   "ScanOptions": [
+    "FC"
+   ],
+   "SequenceName": "greMRE_r",
+   "MRAcquisitionType": "2D",
+   "SpoilingState": true,
+   "SpoilingType": "RF",
+   "ParallelReductionFactorInPlane": 2,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "EchoTime": 0.02129,
+   "SliceTiming": [
+    0.0,
+    0.0125,
+    0.025,
+    0.0375
+   ],
+   "DwellTime": 9.790000000000001e-06,
+   "FlipAngle": 25.0,
+   "RepetitionTime": 0.05,
+   "RepetitionTimeExcitation": 0.05,
+   "Modality": "MR",
+   "ProtocolName": "greMRE_tra_p2_mbh_128_4slc",
+   "SeriesDescription": "greMRE_tra_p2_mbh_128_4slc",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "ImagingFrequency": 123.2,
+   "BaseResolution": 128,
+   "AcquisitionMatrixPE": 80,
+   "ReconMatrixPE": 160,
+   "PercentPhaseFOV": 87.5,
+   "PercentSampling": 71.0,
+   "PhaseResolution": 0.71,
+   "PhaseEncodingSteps": 80,
+   "PixelBandwidth": 399.0,
+   "SliceThickness": 10.0,
+   "SpacingBetweenSlices": 10.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "GRE",
+   "DirectionSE": "SI",
+   "DirectionPE": "AP",
+   "DirectionFE": "RL",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 128,
+   "OversampledAcquisitionMatrixFE": 256,
+   "OversampledAcquisitionMatrixPE": 80,
+   "FieldOfViewFE": 420.0,
+   "FieldOfViewPE": 367.5,
+   "PartialFourierPE": 1.0,
+   "AcquisitionMatrixSE": 4,
+   "OversampledAcquisitionMatrixSE": 4,
+   "FieldOfViewSE": 40.0,
+   "ReconMatrixFE": 256,
+   "ReconMatrixSE": 4,
+   "SliceOrder": "Ascending"
+  }
+ }
+]

@@ -1,0 +1,116 @@
+[
+ {
+  "name": "ABIDEII-OILH_2 Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-OILH_2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Skyra",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "MPRAGE",
+    "Flip Angle [Deg]": "13",
+    "Inversion Time (TI) [ms]": "794",
+    "Echo Time (TE) [ms]": "2.88",
+    "Repetition Time (TR) [ms]": "2200",
+    "Bandwidth per Voxel (Readout) [Hz]": "200",
+    "Parallel Acquisition": "GRAPPA x 3",
+    "Partial Fourier": "No",
+    "Number of Slices": "208",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "0.8",
+    "Slice Gap [mm]": "0.4",
+    "Field of View [mm]": "256x176",
+    "Acquisition Matrix": "320x320",
+    "Slice In-Place Resolution [mm ]": "0.8x0.8",
+    "Acquisition Time [min:sec]": "3:25",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Skyra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "MPRAGE",
+   "MRAcquisitionType": "2D",
+   "RepetitionTime": 2.2,
+   "EchoTime": 0.0028799999999999997,
+   "InversionTime": 0.794,
+   "FlipAngle": 13.0,
+   "PixelBandwidth": 200.0,
+   "ParallelAcquisitionTechnique": "GRAPPA",
+   "ParallelReductionFactorInPlane": 3.0,
+   "SliceThickness": 0.8,
+   "SpacingBetweenSlices": 1.2,
+   "AcquisitionMatrixPE": 320
+  }
+ },
+ {
+  "name": "ABIDEII-OILH_2 Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-OILH_2"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Skyra",
+    "Headcoil": "32Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "60",
+    "Echo Time (TE) [ms]": "30",
+    "Repetition Time (TR) [ms]": "475",
+    "Bandwidth per Voxel (Readout) [Hz]": "2604",
+    "Number of Slices": "48",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "3",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "240x240",
+    "Acquisition Matrix": "80x80",
+    "Slice In-Place Resolution [mm ]": "3x3",
+    "Number of Measurements": "947",
+    "Acquisition Time [min:sec]": "7.37",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Skyra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 0.47500000000000003,
+   "EchoTime": 0.03,
+   "FlipAngle": 60.0,
+   "PixelBandwidth": 2604.0,
+   "SliceThickness": 3.0,
+   "SpacingBetweenSlices": 3.0,
+   "AcquisitionMatrixPE": 80
+  }
+ }
+]

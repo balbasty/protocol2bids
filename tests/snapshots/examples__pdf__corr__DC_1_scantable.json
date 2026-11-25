@@ -1,0 +1,114 @@
+[
+ {
+  "name": "DC 1 Anatomical",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "DC 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "3D T1-TFE",
+    "Flip Angle [Deg]": "8.0",
+    "Inversion Time (TI) [ms]": "900",
+    "Echo Time (TE) [ms]": "3.7",
+    "Repetition Time (TR) [ms]": "2375.0",
+    "Bandwidth per Voxel (Readout) [Hz]": "191.4",
+    "Parallel Acquisition": "SENSE x 2.5",
+    "Number of Slices": "220",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "1.0",
+    "Field of View [mm]": "240",
+    "Acquisition Matrix": "240x187",
+    "Slice In-Place Resolution [mm ]": "1.0x1.0",
+    "Acquisition Time [min:sec]": "3:06",
+    "Fat Suppression": "None"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "3D T1-TFE",
+   "MRAcquisitionType": "3D",
+   "RepetitionTime": 2.375,
+   "EchoTime": 0.0037,
+   "InversionTime": 0.9,
+   "FlipAngle": 8.0,
+   "PixelBandwidth": 191.4,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.5,
+   "SliceThickness": 1.0,
+   "AcquisitionMatrixPE": 187
+  }
+ },
+ {
+  "name": "DC 1 Rest",
+  "path": "",
+  "vendor": "Philips",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {
+   "site": "DC 1"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Philips",
+    "Headcoil": "32 Chan",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "90",
+    "Echo Time (TE) [ms]": "35",
+    "Repetition Time (TR) [ms]": "2500",
+    "Bandwidth per Voxel (Readout) [Hz]": "3625",
+    "Parallel Acquisition": "SENSE x 2",
+    "Number of Slices": "36",
+    "Slice Orientation": "Axial",
+    "Slice Phase Encoding Direction": "Right to Left Anterior to Posterior",
+    "Slice Thickness [mm]": "3.5",
+    "Slice Gap [mm]": "0.5",
+    "Field of View [mm]": "240",
+    "Acquisition Matrix": "80x80",
+    "Slice In-Place Resolution [mm ]": "3.0x3.0",
+    "Number of Measurements": "120",
+    "Acquisition Time [min:sec]": "5:10",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "32 Chan",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.035,
+   "FlipAngle": 90.0,
+   "PhilipsReportedBandwidth": 3625.0,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "SliceThickness": 3.5,
+   "SpacingBetweenSlices": 4.0,
+   "AcquisitionMatrixPE": 80,
+   "DirectionPE": "RL"
+  }
+ }
+]

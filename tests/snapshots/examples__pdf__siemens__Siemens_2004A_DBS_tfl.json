@@ -1,0 +1,212 @@
+[
+ {
+  "name": "FGATIR 3D-IR Axial",
+  "path": "\\\\USER\\BRAIN_SUF\\DBS\\DBS PRE-IMPLANT ONLY\\ FGATIR 3D-IR Axial",
+  "vendor": "Siemens",
+  "format": "printout",
+  "scanner": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A"
+  },
+  "header": {
+   "SequenceFolder": "SIEMENS",
+   "SequenceName": "tfl",
+   "TA": "11:14",
+   "VoxelSize": [
+    0.8,
+    0.8,
+    1.0
+   ],
+   "RelSNR": 1.0
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Routine": {
+    "Slab group 1": {
+     "Slabs": "1",
+     "Dist. factor": "50 [%]",
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Phase enc. dir.": "R >> L",
+     "Rotation": "90 [deg]"
+    },
+    "Phase oversampling": "0 [%]",
+    "Slice oversampling": "0 [%]",
+    "Slices per slab": "160",
+    "FoV read": "240 [mm]",
+    "FoV phase": "80.0 [%]",
+    "Slice thickness": "1 [mm]",
+    "TR": "3000 [ms]",
+    "TE": "4.39 [ms]",
+    "Averages": "1",
+    "Concatenations": "1",
+    "Filter": "Large FoV, …",
+    "Coil elements": "HE"
+   },
+   "Contrast": {
+    "Magn. preparation": "Non-sel. IR",
+    "TI": "409 [ms]",
+    "Flip angle": "8 [deg]",
+    "Reconstruction": "Magnitude",
+    "Fat suppr.": "None",
+    "Water suppr.": "None",
+    "Measurements": "1"
+   },
+   "Resolution": {
+    "Base resolution": "320",
+    "Phase resolution": "100 [%]",
+    "Slice resolution": "100 [%]",
+    "Phase partial Fourier": "7/8",
+    "Slice partial Fourier": "6/8",
+    "Filter 1": {
+     "Raw filter": "Off"
+    },
+    "Filter 2": {
+     "Large FoV": "On"
+    },
+    "Filter 3": {
+     "Normalize": "Off"
+    },
+    "Filter 4": {
+     "Elliptical filter": "On"
+    },
+    "Interpolation": "0",
+    "PAT mode": "None"
+   },
+   "Geometry": {
+    "Multi-slice mode": "Single shot",
+    "Series": "Interleaved"
+   },
+   "System": {
+    "Save uncombined": "0",
+    "Scan at current TP": "0",
+    "Scan region position": [
+     "H",
+     "0 [mm]"
+    ],
+    "MSMA": "S - C - T",
+    "Sagittal": "R >> L",
+    "Coronal": "A >> P",
+    "Transversal": "F >> H",
+    "Head 3T / HE": "1",
+    "Shim mode": "Standard",
+    "Confirm freq. adjustment": "0",
+    "Assume Silicone": "0",
+    "Ref. amplitude [1H]": "126.364 [V]",
+    "Adjust volume": {
+     "Position": "Isocenter",
+     "Orientation": "Transversal",
+     "Rotation": "90 [deg]",
+     "A >> P": "240 [mm]",
+     "R >> L": "192 [mm]",
+     "F >> H": "160 [mm]"
+    }
+   },
+   "Physio": {
+    "1st Signal/Mode": "None",
+    "Dark blood": "0",
+    "Resp. control": "Off"
+   },
+   "Inline": {
+    "Subtract": "0",
+    "Std-Dev-Sag": "0",
+    "Std-Dev-Cor": "0",
+    "Std-Dev-Tra": "0",
+    "Std-Dev-Time": "0",
+    "MIP-Sag": "0",
+    "MIP-Cor": "0",
+    "MIP-Tra": "0",
+    "MIP-Time": "0",
+    "Save original images": "1"
+   },
+   "Sequence": {
+    "Introduction": "1",
+    "Dimension": "3D",
+    "Elliptical scanning": "0",
+    "Averaging mode": "Long term",
+    "Asymmetric echo": "Allowed",
+    "Bandwidth": "130 [Hz/Px]",
+    "Echo spacing": "9.7 [ms]",
+    "RF pulse type": "Fast",
+    "Gradient mode": "Fast",
+    "Excitation": "Slab-sel.",
+    "RF spoiling": "1"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "SoftwareVersions": "syngo MR 2004A",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilActiveElements": "HE",
+   "PulseSequenceType": "MPRAGE",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "SequenceVariant": [
+    "SK",
+    "SP",
+    "MP"
+   ],
+   "ScanOptions": [
+    "IR",
+    "PFP"
+   ],
+   "SequenceName": "tfl",
+   "PulseSequenceDetails": "%SiemensSeq%\\tfl",
+   "MRAcquisitionType": "3D",
+   "SpoilingState": true,
+   "SpoilingType": "COMBINED",
+   "SpoilingRFPhaseIncrement": 50.0,
+   "B0ShimmingTechnique": "Standard",
+   "PartialFourier": 0.875,
+   "PartialFourierDirection": "COMBINATION",
+   "EchoTime": 0.00439,
+   "InversionTime": 0.40900000000000003,
+   "DwellTime": 1.2019000000000001e-05,
+   "FlipAngle": 8.0,
+   "RepetitionTime": 3.0,
+   "RepetitionTimeExcitation": 0.0097,
+   "RepetitionTimePreparation": 3.0,
+   "Modality": "MR",
+   "ProtocolName": "FGATIR 3D-IR Axial",
+   "SeriesDescription": "FGATIR 3D-IR Axial",
+   "ImageType": [
+    "ORIGINAL",
+    "PRIMARY"
+   ],
+   "BaseResolution": 320,
+   "AcquisitionMatrixPE": 256,
+   "ReconMatrixPE": 256,
+   "PercentPhaseFOV": 80.0,
+   "PercentSampling": 100.0,
+   "PhaseResolution": 1.0,
+   "PhaseEncodingSteps": 224,
+   "PixelBandwidth": 130.0,
+   "SliceThickness": 1.0,
+   "NumberOfAverages": 1,
+   "EchoPlanarPulseSequence": false,
+   "SequenceFamily": "TFL",
+   "DirectionSE": "IS",
+   "DirectionPE": "RL",
+   "DirectionFE": "AP",
+   "SliceGap": 0.0,
+   "AcquisitionMatrixFE": 320,
+   "OversampledAcquisitionMatrixFE": 640,
+   "OversampledAcquisitionMatrixPE": 256,
+   "FieldOfViewFE": 240.0,
+   "FieldOfViewPE": 192.0,
+   "PartialFourierPE": 0.875,
+   "AcquisitionMatrixSE": 160,
+   "OversampledAcquisitionMatrixSE": 160,
+   "PartialFourierSE": 0.75,
+   "FieldOfViewSE": 160.0,
+   "ReconMatrixFE": 320,
+   "ReconMatrixSE": 160
+  }
+ }
+]

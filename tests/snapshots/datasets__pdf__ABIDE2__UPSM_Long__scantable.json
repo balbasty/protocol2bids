@@ -1,0 +1,112 @@
+[
+ {
+  "name": "ABIDEII-UPSM_Long Anatomical",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-UPSM_Long"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Allegra",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "MPRAGE",
+    "Flip Angle [Deg]": "7",
+    "Inversion Time (TI) [ms]": "1000",
+    "Echo Time (TE) [ms]": "3.93",
+    "Repetition Time (TR) [ms]": "2100",
+    "Bandwidth per Voxel (Readout) [Hz]": "130",
+    "Partial Fourier": "No",
+    "Number of Slices": "176",
+    "Slice Orientation": "Axial",
+    "Slice Thickness [mm]": "1.05",
+    "Slice Gap [mm]": "0.525",
+    "Field of View [mm]": "269x269",
+    "Acquisition Matrix": "256x256",
+    "Slice In-Place Resolution [mm ]": "1.1x1.1",
+    "Acquisition Time [min:sec]": "8:59",
+    "Fat Suppression": "No"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "MPRAGE",
+   "MRAcquisitionType": "2D",
+   "RepetitionTime": 2.1,
+   "EchoTime": 0.00393,
+   "InversionTime": 1.0,
+   "FlipAngle": 7.0,
+   "PixelBandwidth": 130.0,
+   "SliceThickness": 1.05,
+   "SpacingBetweenSlices": 1.575,
+   "AcquisitionMatrixPE": 256
+  }
+ },
+ {
+  "name": "ABIDEII-UPSM_Long Rest",
+  "path": "",
+  "vendor": "Siemens",
+  "format": "table",
+  "scanner": {
+   "Manufacturer": "Siemens"
+  },
+  "header": {
+   "site": "ABIDEII-UPSM_Long"
+  },
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "Table": {
+    "Manufacturer": "Siemens",
+    "Model": "Allegra",
+    "Headcoil": "8Ch",
+    "Field Strength": "3T",
+    "Sequence": "EPI",
+    "Flip Angle [Deg]": "70",
+    "Echo Time (TE) [ms]": "25",
+    "Repetition Time (TR) [ms]": "1500",
+    "Bandwidth per Voxel (Readout) [Hz]": "3126",
+    "Number of Slices": "29",
+    "Slice Thickness [mm]": "4",
+    "Slice Gap [mm]": "0",
+    "Field of View [mm]": "200x200",
+    "Acquisition Matrix": "64x64",
+    "Slice In-Place Resolution [mm ]": "3.1x3.1",
+    "Number of Measurements": "200",
+    "Acquisition Time [min:sec]": "5.06",
+    "Fat Suppression": "Yes"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Siemens",
+   "ManufacturersModelName": "Allegra",
+   "MagneticFieldStrength": 3.0,
+   "ReceiveCoilName": "8Ch",
+   "PulseSequenceType": "EPI",
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP"
+   ],
+   "RepetitionTime": 1.5,
+   "EchoTime": 0.025,
+   "FlipAngle": 70.0,
+   "PixelBandwidth": 3126.0,
+   "SliceThickness": 4.0,
+   "SpacingBetweenSlices": 4.0,
+   "AcquisitionMatrixPE": 64
+  }
+ }
+]

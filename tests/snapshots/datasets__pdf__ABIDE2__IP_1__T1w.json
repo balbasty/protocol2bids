@@ -1,0 +1,217 @@
+[
+ {
+  "name": "T1w",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera Achieva",
+   "MagneticFieldStrength": 1.5
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "": {
+    "SAG T1 3D": {
+     "MPRAGE": {
+      "Voxel 1.00x1.00x1.00": "Rel. SNR 0.98"
+     }
+    },
+    "TE 5.6 TR 25": {
+     "Uniformity CLEAR": {
+      "AP (mm) 240": {
+       "RL (mm)": "170"
+      }
+     }
+    },
+    "Total scan duration": {
+     "04 :37.9": {
+      "PlanAlign": "no"
+     }
+    },
+    "Rel. SNR": {
+     "0.978": {
+      "REST slab": "0"
+     }
+    },
+    "Act. TR/TE (ms)": {
+     "25/5.6": {
+      "Interactive positioning": "no"
+     }
+    },
+    "ACQ matrix M x P": "240 x 240",
+    "ACQ voxel MPS (mm)": {
+     "1.00 / 1.00 / 1.00": "Contrast"
+    },
+    "REC voxel MPS (mm)": {
+     "0.94 / 0.94 / 1.00": {
+      "Scan type": "Imaging"
+     }
+    },
+    "Scan percentage (%)": {
+     "100": {
+      "Scan mode": "3D"
+     }
+    },
+    "Act. WFS (pix) / BW (Hz)": {
+     "1533 / 141.7": {
+      "technique": "FFE"
+     }
+    },
+    "Min. WFS (pix) / Max BV (Hz)": {
+     "0.425 / 510.6": {
+      "Contrast enhancement": "T1"
+     }
+    },
+    "Min. TR/TE (ms)": {
+     "12 / 4.7": {
+      "Acquisition mode": "cartesian"
+     }
+    },
+    "SAR / local torso": {
+     "< 8%": {
+      "Fast Imaging mode": "none"
+     }
+    },
+    "Whole body / level": {
+     "< 0.2 W/Kg/normal": {
+      "Echoes": "1"
+     }
+    },
+    "SED": {
+     "< 0.1 Kj/Kg": {
+      "Partial echo": "no"
+     }
+    },
+    "B1+rms": {
+     "119 uT": {
+      "Shifted echo": "no"
+     }
+    },
+    "Max B1+rms": {
+     "119 uT": {
+      "TE": "user defined"
+     }
+    },
+    "PNS / level": {
+     "22% / normal": {
+      "(ms)": "5.6"
+     }
+    },
+    "dB/dt": {
+     "12.8 T/s": {
+      "Flip angle (deg)": "30"
+     }
+    },
+    "Sound Pressure Level (dB)": {
+     "--6.6": {
+      "TR": {
+       "": "user defined",
+       "(ms)": "25"
+      }
+     }
+    },
+    "Geometry": {
+     "Halfscan": "no"
+    },
+    "Uniformity": {
+     "CLEAR": {
+      "Water-fat shift": "maximum"
+     }
+    },
+    "FOV": {
+     "FH (mm)": {
+      "240": {
+       "Shim": "default"
+      },
+      "AP (mm)": {
+       "240": {
+        "mDIXON": "no"
+       },
+       "RL (mm)": {
+        "170": {
+         "Fat suppression": "no"
+        }
+       }
+      }
+     }
+    },
+    "Voxel size": {
+     "FH (mm)": {
+      "1": {
+       "Water suppression": "no"
+      },
+      "AP (mm)": {
+       "1": {
+        "MTC": "no"
+       },
+       "RL (mm)": {
+        "1": {
+         "Diffusion mode": "no"
+        }
+       }
+      }
+     }
+    },
+    "Recon voxel size (mm)": {
+     "0.94": {
+      "SAR mode": "high"
+     }
+    },
+    "Fold--over suppression": {
+     "no": {
+      "B1 mode": "default"
+     }
+    },
+    "Slice oversampling": {
+     "default": {
+      "PNS mode": "low"
+     }
+    },
+    "Reconstruction matrix": {
+     "256": {
+      "Gradient mode": "default"
+     }
+    },
+    "SENSE": {
+     "yes": {
+      "SoftTone mode": "no"
+     },
+     "P reduction (AP)": "2",
+     "S reduction (RL)": "2"
+    },
+    "k-t BLAST": "no",
+    "Overcontiguous slices": "no",
+    "Stacks": {
+     "": "1",
+     "slices": "170",
+     "slice orientation": "sagittal",
+     "fold-over direction": "AP",
+     "fat shit direction": "F"
+    }
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "ManufacturersModelName": "Intera Achieva",
+   "MagneticFieldStrength": 1.5,
+   "ImagingFrequency": 63.864,
+   "Modality": "MR",
+   "ProtocolName": "T1w",
+   "FlipAngle": 30.0,
+   "MRAcquisitionType": "3D",
+   "ScanningSequence": [
+    "GR"
+   ],
+   "PulseSequenceType": "Fast Field Echo",
+   "EchoPlanarPulseSequence": false,
+   "AcquisitionMatrixFE": 240,
+   "AcquisitionMatrixPE": 240,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]

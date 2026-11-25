@@ -1,0 +1,114 @@
+[
+ {
+  "name": "FSPGR_Anat",
+  "path": "",
+  "vendor": "GE",
+  "format": "sheet",
+  "scanner": {
+   "Manufacturer": "GE"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "PATIENT POSITION": {
+    "Patient Entry": "Head First",
+    "Patient Position": "Supine",
+    "Coil Configuration": "8HRBRAIN",
+    "Plane": "SAGITTAL",
+    "Series Description": "FSPGR_Anat"
+   },
+   "SCAN TIMING": {
+    "Flip Angle": "8",
+    "TE": "Min Full",
+    "Number of Echoes": "1",
+    "TI": "600",
+    "Receiver Bandwidth": "31.25"
+   },
+   "IMAGE ENHANCE": {
+    "Filter Choice": "None",
+    "FSPGR_Anat": null
+   },
+   "GATING/TRIGGER": {
+    "Auto Trigger Type": "Off"
+   },
+   "FMRI": {
+    "Initial State": "Control",
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "0",
+    "# of Repetitions ACTIVE": "0"
+   },
+   "SAT": {
+    "Tag Type": "None"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No",
+    "Property of": null
+   },
+   "IMAGING PARAMETERS": {
+    "Imaging Mode": "3D",
+    "Pulse Sequence": "SPGR",
+    "Imaging Options": "EDR, Fast, IrP, Asset"
+   },
+   "SCAN RANGE": {
+    "FOV": "25.6",
+    "Slice Thickness": "1.0",
+    "Location per Slab": "176",
+    "Overlap Locations": "0"
+   },
+   "ACQ TIMING": {
+    "Freq": "256",
+    "Phase": "192",
+    "Freq DIR": "S/I",
+    "NEX": "1.00",
+    "Phase FOV": "1.00",
+    "Auto Shim": "Auto",
+    "Phase Correction": {
+     "No": "FSPGR_Anat"
+    }
+   },
+   "USER CVS": {
+    "User CV23": "100.00"
+   },
+   "MULTI-PHASE": {
+    "# of Acquisition": "0",
+    "Seperate Series": "0",
+    "Mask Phase": "0",
+    "Mask Pause": "0"
+   },
+   "TRICKS": {
+    "Pause On/Off": "On",
+    "Auto Subtract": "0",
+    "Auto SCIC": "Off",
+    "Page 5 of 16": "Mon Sep 29 13:11:25 PDT 2014"
+   }
+  },
+  "bids": {
+   "Manufacturer": "GE",
+   "ReceiveCoilName": "8HRBRAIN",
+   "Modality": "MR",
+   "ProtocolName": "FSPGR_Anat",
+   "SeriesDescription": "FSPGR_Anat",
+   "InversionTime": 0.6,
+   "FlipAngle": 8.0,
+   "MRAcquisitionType": "3D",
+   "ScanningSequence": [
+    "GR",
+    "IR"
+   ],
+   "PulseSequenceType": "Inversion Recovery Fast Spoiled Gradient Echo",
+   "EchoPlanarPulseSequence": false,
+   "ParallelAcquisitionTechnique": "ASSET",
+   "AcquisitionMatrixFE": 256,
+   "AcquisitionMatrixPE": 192,
+   "PercentPhaseFOV": 100.0,
+   "NumberOfAverages": 1.0,
+   "SliceThickness": 1.0,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "i"
+  }
+ }
+]
