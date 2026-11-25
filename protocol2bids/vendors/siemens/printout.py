@@ -577,7 +577,7 @@ def sniff(pages: list[Page]) -> bool:
     """Is this a Siemens printout?"""
     for page in pages:
         text = ' '.join(w.text for w in page.words)
-        if re.search(r'SIEMENS\s+MAGNETOM', text):
+        if re.search(r'SIEMENS\s+MAGNE|syngo\s*MR|Numaris/X', text):
             return True
         if page.ocr or not page.words:
             continue

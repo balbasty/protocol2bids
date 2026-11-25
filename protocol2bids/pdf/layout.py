@@ -169,7 +169,20 @@ def find_columns(
         Sorted list of separator positions (empty if single column).
     """
     lines = [ln for ln in lines if not (exclude and exclude(ln))]
-    segments = [s for ln in lines for s in ln.segments]
+    bounds = _find_columns(lines, width, max_columns, multi_only=False)
+    if not bounds:
+        # Retry, ignoring single-segment lines (titles, headers, page
+        # numbers) when measuring the coverage of gutters.
+        bounds = _find_columns(lines, width, max_columns, multi_only=True)
+    return bounds
+
+
+def _find_columns(
+    lines: list[Line], width: float, max_columns: int, multi_only: bool
+) -> list[float]:
+    segments = [s for ln in lines
+                if not multi_only or len(ln.segments) > 1
+                for s in ln.segments]
     if not segments:
         return []
     maxcount = max(1, len(lines) // 50)
@@ -178,7 +191,8 @@ def find_columns(
         maxcount=maxcount,
     )
 
-    def is_separator(x: float, left: float, right: float) -> bool:
+    def score(x: float, left: float, right: float) -> float:
+        """min(fraction of multi-segment lines on each side), or 0."""
         nright = nleft = nmulti_right = nmulti_left = 0
         for ln in lines:
             segs = [s for s in ln.segments if left <= s.x0 < right]
@@ -193,24 +207,28 @@ def find_columns(
                 nleft += 1
                 nmulti_left += len(l_) >= 2
         if nright < 5 or nleft < 5:
-            return False
+            return 0.0
         # both sides must contain their own key/value pairs
-        return (nmulti_right >= 0.3 * nright and
-                nmulti_left >= 0.3 * nleft)
+        fr, fl = nmulti_right / nright, nmulti_left / nleft
+        return min(fr, fl) if min(fr, fl) >= 0.3 else 0.0
 
     bounds: list[float] = []
-    # Greedy: try gutters from widest to narrowest
-    candidates = sorted(gutters, key=lambda g: g[0] - g[1])
-    for g0, g1 in candidates:
-        x = 0.5 * (g0 + g1)
+    widths = {0.5 * (g0 + g1): g1 - g0 for g0, g1 in gutters}
+    candidates = list(widths)
+    while candidates and len(bounds) + 1 < max_columns:
         edges = [0.0] + sorted(bounds) + [width + 1]
-        for left, right in zip(edges[:-1], edges[1:]):
-            if left < x < right:
-                break
-        if is_separator(x, left, right):
-            bounds.append(x)
-        if len(bounds) + 1 >= max_columns:
+        scored = []
+        for x in candidates:
+            for left, right in zip(edges[:-1], edges[1:]):
+                if left < x < right:
+                    break
+            # ties (within 0.1) are broken by the width of the gutter
+            scored.append((round(score(x, left, right), 1), widths[x], x))
+        best, _, x = max(scored)
+        if best <= 0:
             break
+        bounds.append(x)
+        candidates.remove(x)
     return sorted(bounds)
 
 

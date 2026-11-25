@@ -175,8 +175,24 @@ def load_pages(
                             if recoder:
                                 word.text = recoder(word.text)
                             page.words.append(word)
+            page.words = _dedup(page.words)
             pages.append(page)
     return pages
+
+
+def _dedup(words: list[Word]) -> list[Word]:
+    """Remove words printed twice at the same position (fake bold)."""
+    seen = set()
+    out = []
+    for w in words:
+        key = (w.text, round(w.x0), round(w.baseline))
+        near = {(w.text, round(w.x0) + dx, round(w.baseline) + dy)
+                for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+        if seen & near:
+            continue
+        seen.add(key)
+        out.append(w)
+    return out
 
 
 _GARBLED = re.compile(r'[A-Za-z]{3,}')

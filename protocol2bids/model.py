@@ -52,6 +52,7 @@ SYNONYMS: list[tuple[str, ...]] = [
     ('multi-slice mode', 'multi slice mode'),
     ('ref. amplitude 1h', 'reference amplitude 1h'),
     ('free echo spacing',),
+    ('fat shift direction', 'fat shit direction'),
 ]
 
 _SYNONYM_MAP: dict[str, str] = {}
@@ -65,6 +66,9 @@ def normalize_key(key: str) -> str:
     key = key.replace(' ', ' ').strip().casefold()
     key = re.sub(r'\s+', ' ', key)
     key = key.rstrip(':').strip()
+    key = re.sub(r'\s*\(\s*', ' (', key)
+    key = re.sub(r'\s*\)', ')', key).strip()
+    key = re.sub(r'\s*/\s*', ' / ', key)
     return _SYNONYM_MAP.get(key, key)
 
 

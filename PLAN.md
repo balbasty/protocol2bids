@@ -320,15 +320,19 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
       (`--skip-pages` kept for backward compatibility).
 - [x] 3.3 `p2b dump file.pdf` (raw protocol tree as JSON) and
       `--explain` provenance.
-- [ ] 3.4 Regenerate `examples/json`, `datasets/p2b` with the new code
-      and update `convert*.sh`.
+- [x] 3.4 Regenerate `examples/json`, `datasets/p2b` with the new code
+      and update `convert*.sh` (protocols selected by index, not pages).
 
 ### Phase 4 — other vendors / formats (reuse layout engine)
-- [ ] 4.1 Philips ExamCard table layout (`ABIDE1/KKI`, `SBL`).
-- [ ] 4.2 Philips ExamCard txt dump (`Leuven_*`) — reuse/port `philips/txt.py`.
-- [ ] 4.3 GE scan sheet (`SDSU`, `Stanford`, `MIA_1`, `SU_2`, ...).
-- [ ] 4.4 GE DICOM dump (`ge_dicom_fcon.pdf`, `EMC_1`) — port `ge/dicom_printout.py`.
-- [ ] 4.5 GE LX tcl (`IACAS`).
+- [~] 4.1 Philips ExamCard table layout (`ABIDE1/KKI`, `SBL`): reader done
+      (`pdf/kvtable.py` + `vendors/philips/examcard.py`), BIDS mapping todo.
+- [~] 4.2 Philips ExamCard txt dump (`Leuven_*`, `Trinity`): same reader;
+      BIDS mapping todo.
+- [~] 4.3 GE scan sheet (`SDSU`, `Stanford`, `MIA_1`, `SU_2`, `UM_*`):
+      reader done (`vendors/ge/readers.py`), BIDS mapping todo.
+- [~] 4.4 GE DICOM dump (`ge_dicom_fcon.pdf`, `EMC_1`): reader done; BIDS
+      mapping todo (port `ge/dicom_printout.py`).
+- [~] 4.5 GE LX tcl (`IACAS`): reader done; BIDS mapping todo.
 - [ ] 4.6 Scan tables (`*_scantable.pdf`) — port `vendors/fcon.py`.
 - [ ] 4.7 BIDS mappings for Philips / GE.
 
@@ -370,3 +374,10 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
     incomplete); OCR output is noisy (some keys/cards misread);
     `examples/json` and `datasets/p2b` have **not** been regenerated yet
     (task 3.4).
+
+* **2026-11-25 (2)** — Maintainer answers: keep helper keys; OCR is an
+  acceptable optional dependency; name multi-protocol outputs after the
+  protocol (done). Outputs regenerated. Readers for Philips and GE
+  written; BIDS converters for them, vendor dispatch in `api.py`, scan
+  tables and tests still to do. A review of the conversion rules against
+  dcm2niix/literature is in progress.
