@@ -1,0 +1,17 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Achieva",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "32Ch",
+    "PulseSequenceType": "EPI",
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP"
+    ],
+    "RepetitionTime": 2.0,
+    "EchoTime": 0.025,
+    "FlipAngle": 90.0,
+    "SliceThickness": 3.0,
+    "SpacingBetweenSlices": 3.0,
+    "AcquisitionMatrixPE": 77
+}

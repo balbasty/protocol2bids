@@ -1,0 +1,19 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Ingenia",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "15Ch",
+    "PulseSequenceType": "EPI",
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP"
+    ],
+    "RepetitionTime": 3.0,
+    "EchoTime": 0.025,
+    "FlipAngle": 80.0,
+    "PhilipsReportedBandwidth": 3280.0,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "SliceThickness": 4.0,
+    "SpacingBetweenSlices": 4.0
+}

@@ -1,0 +1,15 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Achieva Ds",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "32Ch",
+    "PulseSequenceType": "3D TFE",
+    "MRAcquisitionType": "3D",
+    "RepetitionTime": 0.0094,
+    "EchoTime": 0.0046,
+    "InversionTime": 0.9,
+    "FlipAngle": 8.0,
+    "PixelBandwidth": 131.0,
+    "SliceThickness": 1.2,
+    "AcquisitionMatrixPE": 207
+}

@@ -28,10 +28,10 @@ p2b \
     --inp examples/pdf/corr/siemens/ipcas_wei_all.pdf \
     --out examples/json/corr/siemens/ipcas_wei_anat.json \
     --nii examples/nii/corr/siemens/ipcas_wei_anat.nii \
-    --skip-pages 0 1 2 3
+    --select t1_mprage_sag
 
 p2b \
     --inp examples/pdf/corr/siemens/ipcas_wei_all.pdf \
     --out examples/json/corr/siemens/ipcas_wei_rest.json \
     --nii examples/nii/corr/siemens/ipcas_wei_rest.nii \
-    --skip-pages 0 1 3 4 5
+    --select 1

@@ -1,0 +1,27 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Intera Achieva",
+    "MagneticFieldStrength": 1.5,
+    "ImagingFrequency": 63.864,
+    "Modality": "MR",
+    "ProtocolName": "dwi",
+    "FlipAngle": 90.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP",
+        "SE"
+    ],
+    "PulseSequenceType": "Spin Echo EPI",
+    "EchoPlanarPulseSequence": true,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "AcquisitionMatrixFE": 96,
+    "AcquisitionMatrixPE": 74,
+    "ReconMatrixPE": 96,
+    "PartialFourierEnabled": "YES",
+    "PartialFourier": 0.683,
+    "SliceThickness": 2.5,
+    "SpacingBetweenSlices": 2.5,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j"
+}

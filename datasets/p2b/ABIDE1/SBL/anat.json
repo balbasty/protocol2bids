@@ -1,0 +1,27 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Intera",
+    "MagneticFieldStrength": 3.0,
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "anat",
+    "ReceiveCoilName": "SENSE-Head-32P",
+    "RepetitionTime": 0.009000000000000001,
+    "EchoTime": 0.0035,
+    "FlipAngle": 8.0,
+    "InversionTime": 1.0,
+    "RepetitionTimePreparation": 2.46270532,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "Inversion Recovery Turbo Field Echo (MPRAGE-like)",
+    "EchoPlanarPulseSequence": false,
+    "RepetitionTimeExcitation": 0.009000000000000001,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "AcquisitionMatrixFE": 256,
+    "AcquisitionMatrixPE": 231,
+    "ReconMatrixPE": 256,
+    "SliceThickness": 1.0
+}

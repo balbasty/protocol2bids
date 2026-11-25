@@ -1,0 +1,56 @@
+{
+    "Manufacturer": "GE",
+    "ManufacturersModelName": "DISCOVERY MR750",
+    "SoftwareVersions": "21\\LX\\MR Software release:20.1_IB2_1020.a",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "8HRBRAIN",
+    "ScanningSequence": [
+        "GR"
+    ],
+    "SequenceVariant": [
+        "SS",
+        "SP",
+        "SK"
+    ],
+    "ScanOptions": [
+        "FAST_GEMS",
+        "ACC_GEMS"
+    ],
+    "PulseSequenceName": "efgre3d",
+    "MRAcquisitionType": "3D",
+    "SeriesDescription": "IR-FSPGR TI350 FL16 BW18 5min40 0.9x0.9x0.9-Asset",
+    "ProtocolName": "GenerationR-4Nov2009",
+    "ImageType": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+    ],
+    "Modality": "MR",
+    "RepetitionTime": 0.01026,
+    "EchoTime": 0.004236,
+    "FlipAngle": 16.0,
+    "ImagingFrequency": 127.705356,
+    "PixelBandwidth": 81.3672,
+    "SliceThickness": 0.9,
+    "SpacingBetweenSlices": 0.9,
+    "EchoTrainLength": 1,
+    "PercentSampling": 100.0,
+    "PercentPhaseFOV": 100.0,
+    "NumberOfAverages": 1.0,
+    "PatientPosition": "HFS",
+    "InPlanePhaseEncodingDirectionDICOM": "ROW",
+    "ImageOrientationPatientDICOM": [
+        0.0890827,
+        0.996023,
+        -0.00146486,
+        -0.0114139,
+        -0.00045776
+    ],
+    "SAR": 0.267604,
+    "InversionTime": 0.35000000000000003,
+    "AcquisitionMatrixPE": 256,
+    "AcquisitionMatrixFE": 256,
+    "ReconMatrixPE": 512,
+    "PhaseEncodingAxis": "i",
+    "ParallelReductionFactorInPlane": 2.0
+}

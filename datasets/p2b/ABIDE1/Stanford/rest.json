@@ -1,0 +1,9 @@
+{
+    "Manufacturer": "GE",
+    "Modality": "MR",
+    "ProtocolName": "rest",
+    "SeriesDescription": "rest",
+    "RepetitionTime": 2.0,
+    "EchoTime": 0.03,
+    "FlipAngle": 80.0
+}
