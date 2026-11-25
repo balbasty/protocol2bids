@@ -89,7 +89,7 @@ documented in [`notes/conversion_rules.md`](notes/conversion_rules.md).
 OCR requires [tesseract](https://github.com/tesseract-ocr/tesseract)
 to be installed (e.g. `apt install tesseract-ocr`).
 
-See [`PLAN.md`](PLAN.md) for the design of the parser and the roadmap.
+See [`notes/PLAN.md`](notes/PLAN.md) for the design of the parser and the roadmap.
 
 ## List of JSON keys set (or not) by protocol2bids
 
