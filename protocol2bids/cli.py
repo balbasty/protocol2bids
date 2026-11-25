@@ -1,4 +1,5 @@
 import json
+import re
 from ast import literal_eval
 from logging import getLogger, basicConfig, INFO, DEBUG, WARNING
 from os import PathLike
@@ -50,6 +51,42 @@ def _parse_dict(value, name):
     return value
 
 
+def _safe(name: str) -> str:
+    name = re.sub(r'[^A-Za-z0-9._+-]+', '_', name).strip('_.')
+    return name or 'protocol'
+
+
+def output_paths(
+    inp: str | PathLike, out: str | PathLike | None, names: list[str]
+) -> list[Path]:
+    """
+    Output paths of the sidecars.
+
+    * one protocol: `out` (or `<inp>.json`, or `<out>/<name>.json` if `out`
+      is a directory);
+    * several protocols: one file per protocol, named after the protocol:
+      `<out stem>_<name>.json` (or `<out>/<name>.json` if `out` is a
+      directory).
+    """
+    is_dir = out is not None and not Path(out).suffix
+    if out is None:
+        out = Path(inp).with_suffix('.json')
+    out = Path(out)
+    if len(names) == 1:
+        return [out / f'{_safe(names[0])}.json' if is_dir else out]
+    paths, seen = [], {}
+    for name in names:
+        name = _safe(name)
+        seen[name] = seen.get(name, 0) + 1
+        if seen[name] > 1:
+            name = f'{name}_{seen[name]}'
+        if is_dir:
+            paths.append(out / f'{name}.json')
+        else:
+            paths.append(out.with_name(f'{out.stem}_{name}{out.suffix}'))
+    return paths
+
+
 @app.default
 def protocol2bids(
     inp: str | PathLike,
@@ -75,8 +112,10 @@ def protocol2bids(
     inp
         Path to input protocol file
     out
-        Path to output JSON file. If several protocols are converted,
-        one file per protocol is written (suffixed with an index).
+        Path to output JSON file, or output directory.
+        If several protocols are converted, one file per protocol is
+        written, named after the protocol (`<out>_<protocol>.json`, or
+        `<out>/<protocol>.json` if `out` is a directory).
         Defaults to the input path with a `.json` extension.
     hints
         Protocol hints (ex: "siemens")
@@ -123,6 +162,7 @@ def protocol2bids(
     assigns = _parse_dict(assigns, 'assigns')
 
     sidecars = {}
+    names = []
     for i, (prot, nifti) in enumerate(zip(prots, nii)):
         sidecar = protocol_to_bids(prot, nifti or None, extra=not bids_only,
                                    explain=explain)
@@ -131,17 +171,11 @@ def protocol2bids(
         if key in sidecars:
             key = f'{key} ({i+1})'
         sidecars[key] = sidecar
+        names.append(prot.name or f'protocol{i+1}')
 
-    if out is None:
-        out = Path(inp).with_suffix('.json')
-    out = Path(out)
-    if not out.suffix:
-        out = out / 'protocol.json'
-    out.parent.mkdir(parents=True, exist_ok=True)
-    for i, sidecar in enumerate(sidecars.values()):
-        opath = out
-        if len(sidecars) > 1:
-            opath = out.with_stem(out.stem + f'{i+1}')
+    for opath, sidecar in zip(output_paths(inp, out, names),
+                              sidecars.values()):
+        opath.parent.mkdir(parents=True, exist_ok=True)
         with opath.open('w') as f:
             json.dump(sidecar, f, indent=4)
 
