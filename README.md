@@ -12,6 +12,19 @@ when BIDSifying "old" public datasets for which only PDF protocols are available
 pip install protocol2bids @ git+https://github.com/balbasty/protocol2bids
 ```
 
+> [!WARNING]
+> **License of dependencies.** `protocol2bids` itself is released under the
+> MIT license, but it depends on [PyMuPDF](https://github.com/pymupdf/PyMuPDF),
+> which is licensed under the
+> [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html) (a commercial
+> license is also available from [Artifex](https://artifex.com/licensing)).
+> Installing and using `protocol2bids` (e.g., with `pip`) is not affected.
+> However, if you **bundle or redistribute** `protocol2bids` together with
+> PyMuPDF (e.g., in a container image, a packaged application, or a
+> closed-source product, including software offered over a network), the
+> combined work is subject to the terms of the AGPL, unless you obtain a
+> commercial PyMuPDF license.
+
 ## Usage
 
 ```shell

@@ -346,9 +346,9 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 
 1. Keep non-BIDS helper keys (`DirectionPE`, `OversampledAcquisitionMatrix*`,
    `HasPartialFourier*`, ...) in the output sidecars, or only behind a flag?
-2. `pymupdf` is AGPL while this package is MIT. Keep it (fast, already
-   used) or switch to `pdfplumber`/`pdfminer.six` (MIT, slower)? The
-   layout engine is written against a small `Word` interface so either works.
+2. ~~`pymupdf` is AGPL while this package is MIT.~~ Decision: keep
+   PyMuPDF; the README warns about its license for people who bundle
+   protocol2bids.
 3. Is OCR (tesseract) an acceptable optional dependency?
 4. Should multi-protocol PDFs produce one sidecar per protocol by default
    (named after the protocol), rather than `out1.json`, `out2.json`?
