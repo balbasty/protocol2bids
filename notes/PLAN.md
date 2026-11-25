@@ -395,3 +395,8 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
   `fcon.py`, `utils/font_recoder.py`) removed.
   Remaining: snapshots, HyperBand / product-SMS slice timing,
   `Gong_scantable.pdf`, optional MIT PDF backend.
+
+* **2026-11-25 (4)** — Snapshot tests added (`tests/snapshots/`).
+  Slice order of Siemens product SMS inferred empirically from 374 real
+  sidecars (`sms_interleaved`), GE HyperBand ported from dcm2niix
+  (`ge_slice_ranks`); see `notes/conversion_rules.md`.

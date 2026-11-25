@@ -120,3 +120,18 @@ def test_scan_table():
     assert b['ParallelAcquisitionTechnique'] == 'GRAPPA'
     assert b['ParallelReductionFactorInPlane'] == 2
     assert b['PartialFourier'] == 0.75
+
+
+def test_ge_hyperband_order():
+    from protocol2bids.vendors.ge.bids import ge_is_r03, ge_slice_ranks
+    assert ge_is_r03('27\\LX\\MR Software release:RX27.0_R03') is True
+    assert ge_is_r03('DV26.0_R02') is False
+    assert ge_is_r03('') is None
+    # RX28 (R03+), N=32, HB4: nexc 8 -> 1,3,5,7,2,4,8,6 (ds003858)
+    ranks, nslots = ge_slice_ranks(32, 4, r03=True)
+    assert nslots == 8
+    assert sorted(range(8), key=lambda g: ranks[g]) == \
+        [0, 2, 4, 6, 1, 3, 7, 5]
+    # before 27.0 R03: even nexc gets a dummy slot (60 slices HB6 -> 11)
+    _, nslots = ge_slice_ranks(60, 6, r03=False)
+    assert nslots == 11
