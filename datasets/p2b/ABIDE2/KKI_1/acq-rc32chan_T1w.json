@@ -1,0 +1,28 @@
+{
+    "Manufacturer": "Philips",
+    "MagneticFieldStrength": 3.0,
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "acq-rc32chan_T1w",
+    "ReceiveCoilName": "SENSE-Head- 32P",
+    "RepetitionTime": 0.008199999999999999,
+    "EchoTime": 0.0037,
+    "FlipAngle": 8.0,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "Inversion Recovery Turbo Field Echo (MPRAGE-like)",
+    "EchoPlanarPulseSequence": false,
+    "RepetitionTimeExcitation": 0.008199999999999999,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "ParallelReductionFactorOutOfPlane": 1.2,
+    "AcquisitionMatrixFE": 212,
+    "AcquisitionMatrixPE": 172,
+    "ReconMatrixPE": 224,
+    "SliceThickness": 1.0,
+    "PhaseEncodingAnatomicalAxis": "RL",
+    "PhaseEncodingAxis": "i"
+}

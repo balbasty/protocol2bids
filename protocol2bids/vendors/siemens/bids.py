@@ -148,6 +148,11 @@ def base_sequence(name: str) -> str:
     return name.split('\\')[-1].strip().lstrip('*')
 
 
+def is_cmrr(name: str) -> bool:
+    """CMRR (or HCP) multiband sequences."""
+    return bool(re.search(r'cmrr|mbep2d|hcp_', name.lower()))
+
+
 def is_3d(ctx: Context) -> bool:
     dim = ctx.opt('Dimension', card='Sequence')
     if dim:
@@ -412,14 +417,20 @@ def sequence_type(ctx: Context):
     if ir:
         scanning.append('IR')
 
-    # SequenceVariant
+    # SequenceVariant (as found in dcm2niix sidecars of Siemens data,
+    # see notes/conversion_rules.md)
+    base = base_sequence(name).lower()
+    diffusion = 'diff' in base or ctx.has('Diffusion mode')
     variant = []
-    segmented = epi or family in ('TSE', 'SPACE', 'TFL', 'GRASE')
+    segmented = epi or family in ('TSE', 'SPACE', 'TFL', 'GRASE', 'TFI')
     if segmented:
         variant.append('SK')
-    if family in ('TFI',) or (family == 'GRE-EPI' and not spoiled):
+    if family == 'TFI' or (family == 'GRE-EPI' and is_cmrr(name)):
         variant.append('SS')
-    if spoiled or family in ('FLASH', 'TFL'):
+    if (
+        family in ('FLASH', 'TFL', 'GRE', 'TSE', 'SPACE')
+        or (family == 'SE-EPI' and diffusion) or (spoiled and not epi)
+    ):
         variant.append('SP')
     if ir or family == 'TFL':
         variant.append('MP')
@@ -601,6 +612,14 @@ def directions(ctx: Context):
         ctx.set('DirectionFE', fe)
 
 
+def _is_3d_non_epi(ctx: Context) -> bool:
+    try:
+        return is_3d(ctx) and not classify(sequence_name(ctx))[0].endswith(
+            'EPI')
+    except Missing:
+        return False
+
+
 @rule
 def nifti_directions(ctx: Context):
     if ctx.anat2vox is None:
@@ -614,8 +633,10 @@ def nifti_directions(ctx: Context):
         if dirkey not in ctx:
             continue
         axis = ctx.anat2vox[ctx[dirkey]]
-        if name == 'FrequencyEncodingDirection':
-            ctx.set(name, axis)
+        if name == 'PhaseEncodingDirection' and _is_3d_non_epi(ctx):
+            # dcm2niix does not report a PE polarity for 3D sequences
+            # (polarity is meaningless when there is no EPI distortion)
+            ctx.set('PhaseEncodingAxis', axis[0])
         else:
             ctx.set(name, axis)
         ctx.set(f'ReconMatrix{key}', int(shape['ijk'.index(axis[0])]))
@@ -626,7 +647,8 @@ def slice_geometry(ctx: Context):
     thickness = V.quantity(ctx.get('Slice thickness', card='Routine'), 'mm')
     ctx.set('SliceThickness', thickness)
     if is_3d(ctx):
-        ctx.set('SpacingBetweenSlices', thickness)
+        # dcm2niix writes no SpacingBetweenSlices for single-slab 3D
+        # Siemens data; "Dist. factor" is the gap between *slabs*.
         ctx.set('SliceGap', 0.0)
         return
     dist = ctx.opt('Dist. factor', card=['Routine', 'Geometry'], group='Sl')
@@ -686,7 +708,9 @@ def slice_matrix(ctx: Context):
                               group='Sl'))
         ctx.set('AcquisitionMatrixSE', n)
         ctx.set('OversampledAcquisitionMatrixSE', n)
-    ctx.set('FieldOfViewSE', n * ctx['SpacingBetweenSlices'])
+    spacing = (ctx['SpacingBetweenSlices'] if 'SpacingBetweenSlices' in ctx
+               else ctx['SliceThickness'])
+    ctx.set('FieldOfViewSE', n * spacing)
 
 
 @rule
@@ -733,8 +757,11 @@ def partial_fourier(ctx: Context):
 def bandwidth(ctx: Context):
     bw = V.number(numbered(ctx, 'Bandwidth', card='Sequence')[0])
     ctx.set('PixelBandwidth', bw)
-    # Siemens bandwidth is per pixel of the (non-oversampled) readout
-    ctx.set('DwellTime', 1 / (bw * ctx['AcquisitionMatrixFE']))
+    # Siemens bandwidth is per pixel of the (non-oversampled) readout,
+    # while DwellTime (DICOM RealDwellTime, in ns) includes the default
+    # 2x readout oversampling.
+    dwell = 1 / (bw * ctx['AcquisitionMatrixFE'] * 2)
+    ctx.set('DwellTime', round(dwell * 1e9) * 1e-9)
 
 
 # ----------------------------------------------------------------------
@@ -783,6 +810,26 @@ def echo_train(ctx: Context):
             ctx.set('NumberShots', int(ceil(steps / accel_pe(ctx) / etl)))
 
 
+def cmrr_interleaved(nshots: int) -> list[int]:
+    """
+    Excitation order of CMRR multiband interleaved acquisitions
+    (CMRR_MB_Slice_Order.pdf): always starts with slice 0; special orders
+    for an even number of shots > 4 to avoid exciting adjacent slices
+    in a row.
+    """
+    from math import gcd
+    if nshots % 2 or nshots <= 4:
+        return list(range(0, nshots, 2)) + list(range(1, nshots, 2))
+    if nshots == 6:
+        return [0, 2, 4, 1, 5, 3]
+    inc = nshots // 2 - 1
+    if inc % 2 == 0:
+        inc -= 1
+    if gcd(inc, nshots) != 1:
+        raise Missing('CMRR order')
+    return [(k * inc) % nshots for k in range(nshots)]
+
+
 @rule
 def slice_timing(ctx: Context):
     """Slice timing for 2D multi-slice acquisitions (Siemens ordering)."""
@@ -804,8 +851,13 @@ def slice_timing(ctx: Context):
     if nslices % mb:
         return
     nexc = nslices // mb
+    if mb > 1 and not is_cmrr(sequence_name(ctx)):
+        # Siemens product SMS ordering is not documented
+        return
     if order.startswith('interleaved'):
-        if nexc % 2:
+        if mb > 1:
+            exc_order = cmrr_interleaved(nexc)
+        elif nexc % 2:
             exc_order = list(range(0, nexc, 2)) + list(range(1, nexc, 2))
         else:
             exc_order = list(range(1, nexc, 2)) + list(range(0, nexc, 2))

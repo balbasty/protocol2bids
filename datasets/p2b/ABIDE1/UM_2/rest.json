@@ -1,0 +1,21 @@
+{
+    "Manufacturer": "GE",
+    "ReceiveCoilName": "HEAD",
+    "Modality": "MR",
+    "ProtocolName": "rest",
+    "SeriesDescription": "rest",
+    "RepetitionTime": 2.0,
+    "EchoTime": 0.03,
+    "FlipAngle": 90.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "GR"
+    ],
+    "PulseSequenceType": "Gradient Echo",
+    "EchoPlanarPulseSequence": false,
+    "NumberOfAverages": 1.0,
+    "SliceThickness": 3.0,
+    "SpacingBetweenSlices": 3.0,
+    "PhaseEncodingAnatomicalAxis": "RL",
+    "PhaseEncodingAxis": "i"
+}

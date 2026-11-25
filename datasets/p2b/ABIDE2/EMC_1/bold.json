@@ -1,0 +1,56 @@
+{
+    "Manufacturer": "GE",
+    "ManufacturersModelName": "DISCOVERY MR750",
+    "SoftwareVersions": "21\\LX\\MR Software release:20.1_IB2_1020.a",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "8HRBRAIN",
+    "ScanningSequence": [
+        "EP",
+        "GR"
+    ],
+    "SequenceVariant": [
+        "SS"
+    ],
+    "ScanOptions": [
+        "MP_GEMS",
+        "EPI_GEMS"
+    ],
+    "PulseSequenceName": "epi",
+    "MRAcquisitionType": "2D",
+    "SeriesDescription": "RestingState - 250 Volumes-37slices-2sec",
+    "ProtocolName": "GenerationR-4Nov2009",
+    "ImageType": [
+        "ORIGINAL",
+        "PRIMARY",
+        "OTHER"
+    ],
+    "Modality": "MR",
+    "RepetitionTime": 2.0,
+    "EchoTime": 0.03,
+    "FlipAngle": 85.0,
+    "ImagingFrequency": 127.705394,
+    "PixelBandwidth": 7812.5,
+    "SliceThickness": 4.0,
+    "SpacingBetweenSlices": 4.0,
+    "EchoTrainLength": 1,
+    "PercentSampling": 100.0,
+    "PercentPhaseFOV": 100.0,
+    "NumberOfAverages": 1.0,
+    "PatientPosition": "HFS",
+    "InPlanePhaseEncodingDirectionDICOM": "COL",
+    "ImageOrientationPatientDICOM": [
+        1.0,
+        -0.0,
+        0.0,
+        -0.0,
+        1.0,
+        0.0
+    ],
+    "SAR": 0.317719,
+    "AcquisitionMatrixPE": 64,
+    "AcquisitionMatrixFE": 64,
+    "ReconMatrixPE": 64,
+    "PhaseEncodingAxis": "j",
+    "EffectiveEchoSpacing": 0.00052,
+    "TotalReadoutTime": 0.03276
+}

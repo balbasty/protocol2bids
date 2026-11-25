@@ -32,7 +32,10 @@ def test_epi_bold_vb17():
     assert b['SequenceName'] == 'ep2d_bold'
     assert b['PulseSequenceType'] == 'Gradient Echo EPI'
     assert b['ScanningSequence'] == ['EP']
+    assert b['SequenceVariant'] == ['SK']
+    assert b['ScanOptions'] == ['FS']
     assert b['MRAcquisitionType'] == '2D'
+    assert b['DwellTime'] == pytest.approx(3.1e-6, abs=1e-9)
     assert b['RepetitionTime'] == pytest.approx(2.0)
     assert b['EchoTime'] == pytest.approx(0.030)
     assert b['FlipAngle'] == 90
@@ -65,9 +68,14 @@ def test_mprage_vb17():
     assert b['RepetitionTime'] == pytest.approx(2.53)
     assert b['RepetitionTimePreparation'] == pytest.approx(2.53)
     assert b['RepetitionTimeExcitation'] == pytest.approx(7.8e-3)
-    # 3D: no gap between partitions
-    assert b['SpacingBetweenSlices'] == b['SliceThickness']
+    # 3D: like dcm2niix, no SpacingBetweenSlices and no PE polarity
+    assert 'SpacingBetweenSlices' not in b
+    assert 'PhaseEncodingDirection' not in b
+    assert b['PhaseEncodingAxis'] == 'j'
     assert 'SliceTiming' not in b
+    assert b['SequenceVariant'] == ['SK', 'SP', 'MP']
+    # DwellTime includes the 2x readout oversampling (RealDwellTime)
+    assert b['DwellTime'] == pytest.approx(1 / (190 * 256 * 2), abs=1e-9)
 
 
 def test_grappa_vd13():
@@ -142,3 +150,15 @@ def test_epi_with_acceleration_and_oversampling():
     assert b['PartialFourierDirection'] == 'PHASE'
     assert 'PFP' in b['ScanOptions'] and 'OSP' in b['SequenceVariant']
     assert b['SliceTiming'] == pytest.approx([i * 0.1 for i in range(10)])
+
+
+def test_cmrr_order():
+    from protocol2bids.vendors.siemens.bids import cmrr_interleaved
+    # odd number of shots: same as single band (starts with slice 0)
+    assert cmrr_interleaved(11) == [0, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9]
+    # even number of shots: CMRR always starts with slice 0
+    assert cmrr_interleaved(4) == [0, 2, 1, 3]
+    assert cmrr_interleaved(6) == [0, 2, 4, 1, 5, 3]
+    # measured on dcm_qa fMRI_MB_int_26 (36 slices, MB2)
+    assert cmrr_interleaved(18) == [0, 7, 14, 3, 10, 17, 6, 13, 2, 9, 16,
+                                    5, 12, 1, 8, 15, 4, 11]

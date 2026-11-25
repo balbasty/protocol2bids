@@ -1,0 +1,25 @@
+{
+    "Manufacturer": "GE",
+    "ReceiveCoilName": "8HRBRAIN",
+    "Modality": "MR",
+    "ProtocolName": "FSPGR_Anat",
+    "SeriesDescription": "FSPGR_Anat",
+    "InversionTime": 0.6,
+    "FlipAngle": 8.0,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "Inversion Recovery Fast Spoiled Gradient Echo",
+    "EchoPlanarPulseSequence": false,
+    "ParallelAcquisitionTechnique": "ASSET",
+    "ParallelReductionFactorInPlane": 1.0,
+    "AcquisitionMatrixFE": 256,
+    "AcquisitionMatrixPE": 192,
+    "PercentPhaseFOV": 100.0,
+    "NumberOfAverages": 1.0,
+    "SliceThickness": 1.0,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j"
+}

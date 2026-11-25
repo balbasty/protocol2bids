@@ -11,7 +11,8 @@
         "EP"
     ],
     "SequenceVariant": [
-        "SK"
+        "SK",
+        "SP"
     ],
     "ScanOptions": [
         "PFP",
@@ -54,7 +55,7 @@
         1.35
     ],
     "SliceEncodingDirection": "k",
-    "DwellTime": 4.001280409731114e-06,
+    "DwellTime": 2.001e-06,
     "RepetitionTime": 3.0,
     "Modality": "MR",
     "ProtocolName": "ep2d_diff_3scan_trace_p2",

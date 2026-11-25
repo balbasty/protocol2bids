@@ -74,7 +74,7 @@
         0.475
     ],
     "SliceEncodingDirection": "k",
-    "DwellTime": 3.0048076923076925e-05,
+    "DwellTime": 1.5024e-05,
     "FlipAngle": 90.0,
     "RepetitionTime": 1.0,
     "RepetitionTimeExcitation": 1.0,

@@ -91,6 +91,7 @@ def read_kv(
     hierarchy: bool = True,
     skip: Callable[[str], bool] | None = None,
     key_filter: Callable[[str], str] = lambda key: key,
+    gap: float = 1.2,
 ) -> tuple[list[Entry], list[str]]:
     """
     Parse key/value tables.
@@ -106,6 +107,8 @@ def read_kv(
         Rows to drop (page numbers, titles...).
     key_filter : callable(str) -> str
         Applied to every key (e.g., to fix broken ligatures).
+    gap : float
+        Horizontal gap (in font size units) that separates segments.
 
     Returns
     -------
@@ -116,6 +119,7 @@ def read_kv(
     rows = make_rows(
         pages,
         skip=(lambda ln: skip(ln.text)) if skip else None,
+        gap=gap,
     )
     kmax = _key_max(rows)
     vmin = _value_min(rows)

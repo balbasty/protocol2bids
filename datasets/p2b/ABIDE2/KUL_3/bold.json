@@ -1,0 +1,18 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Achieva Ds",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "32Ch",
+    "PulseSequenceType": "EPI",
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP"
+    ],
+    "RepetitionTime": 2.5,
+    "EchoTime": 0.03,
+    "FlipAngle": 90.0,
+    "PhilipsReportedBandwidth": 2188.0,
+    "SliceThickness": 2.7,
+    "SpacingBetweenSlices": 3.1,
+    "AcquisitionMatrixPE": 78
+}

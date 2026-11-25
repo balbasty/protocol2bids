@@ -324,17 +324,18 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
       and update `convert*.sh` (protocols selected by index, not pages).
 
 ### Phase 4 — other vendors / formats (reuse layout engine)
-- [~] 4.1 Philips ExamCard table layout (`ABIDE1/KKI`, `SBL`): reader done
+- [x] 4.1 Philips ExamCard table layout (`ABIDE1/KKI`, `SBL`): reader done
       (`pdf/kvtable.py` + `vendors/philips/examcard.py`), BIDS mapping todo.
-- [~] 4.2 Philips ExamCard txt dump (`Leuven_*`, `Trinity`): same reader;
+- [x] 4.2 Philips ExamCard txt dump (`Leuven_*`, `Trinity`): same reader;
       BIDS mapping todo.
-- [~] 4.3 GE scan sheet (`SDSU`, `Stanford`, `MIA_1`, `SU_2`, `UM_*`):
+- [x] 4.3 GE scan sheet (`SDSU`, `Stanford`, `MIA_1`, `SU_2`, `UM_*`):
       reader done (`vendors/ge/readers.py`), BIDS mapping todo.
-- [~] 4.4 GE DICOM dump (`ge_dicom_fcon.pdf`, `EMC_1`): reader done; BIDS
+- [x] 4.4 GE DICOM dump (`ge_dicom_fcon.pdf`, `EMC_1`): reader done; BIDS
       mapping todo (port `ge/dicom_printout.py`).
-- [~] 4.5 GE LX tcl (`IACAS`): reader done; BIDS mapping todo.
-- [ ] 4.6 Scan tables (`*_scantable.pdf`) — port `vendors/fcon.py`.
-- [ ] 4.7 BIDS mappings for Philips / GE.
+- [x] 4.5 GE LX tcl (`IACAS`): reader done; BIDS mapping todo.
+- [x] 4.6 Scan tables (`*_scantable.pdf`): `vendors/tables.py` (all but
+      `Gong_scantable.pdf`, which has another layout).
+- [x] 4.7 BIDS mappings for Philips / GE (`vendors/{philips,ge}/bids.py`).
 
 ### Phase 5 — docs
 - [~] 5.1 README: new CLI and supported formats matrix done; key table
@@ -381,3 +382,14 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
   written; BIDS converters for them, vendor dispatch in `api.py`, scan
   tables and tests still to do. A review of the conversion rules against
   dcm2niix/literature is in progress.
+
+* **2026-11-25 (3)** — Rules reviewed against dcm2niix source/validation
+  data and literature: see `notes/conversion_rules.md` (Siemens DwellTime
+  ×2, CMRR multiband order, SequenceVariant per sequence, no
+  SpacingBetweenSlices / PE polarity for 3D; Philips/GE conventions).
+  Philips, GE and scan-table converters + format detection done; outputs
+  regenerated (new Philips/GE sites enabled in `datasets/convert_*.sh`).
+  Old draft modules (`philips/txt.py`, `ge/dicom_printout.py`,
+  `fcon.py`, `utils/font_recoder.py`) removed.
+  Remaining: snapshots, HyperBand / product-SMS slice timing,
+  `Gong_scantable.pdf`, optional MIT PDF backend.

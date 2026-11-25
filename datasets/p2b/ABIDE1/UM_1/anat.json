@@ -1,0 +1,25 @@
+{
+    "Manufacturer": "GE",
+    "ReceiveCoilName": "HEAD",
+    "Modality": "MR",
+    "ProtocolName": "3d spgr IR sag",
+    "SeriesDescription": "3d spgr IR sag",
+    "EchoTime": 0.0018000000000000002,
+    "InversionTime": 0.5,
+    "FlipAngle": 15.0,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "Inversion Recovery Fast Spoiled Gradient Echo",
+    "EchoPlanarPulseSequence": false,
+    "AcquisitionMatrixFE": 256,
+    "AcquisitionMatrixPE": 160,
+    "PercentPhaseFOV": 80.0,
+    "PixelBandwidth": 122.109,
+    "NumberOfAverages": 1.0,
+    "SliceThickness": 1.2,
+    "PhaseEncodingAnatomicalAxis": "RL",
+    "PhaseEncodingAxis": "i"
+}

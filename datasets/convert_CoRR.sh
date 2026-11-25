@@ -33,6 +33,8 @@ PARAMETERS=(
     "XHCUMS     anat               all        1"
     "XHCUMS     dti                all        3"
     "XHCUMS     rest               all        4"
+    "IACAS      anat               anat"
+    "IACAS      rest               rest"
 )
 
 for ((i = 0; i < ${#PARAMETERS[@]}; i++)); do

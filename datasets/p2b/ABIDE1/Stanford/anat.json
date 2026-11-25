@@ -1,0 +1,11 @@
+{
+    "Manufacturer": "GE",
+    "ManufacturersModelName": "SIGNA",
+    "MagneticFieldStrength": 3.0,
+    "Modality": "MR",
+    "ProtocolName": "anat",
+    "SeriesDescription": "anat",
+    "RepetitionTime": 0.008400000000000001,
+    "EchoTime": 0.0018000000000000002,
+    "FlipAngle": 15.0
+}

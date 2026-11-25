@@ -1,0 +1,31 @@
+{
+    "Manufacturer": "Philips",
+    "MagneticFieldStrength": 3.0,
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "rest",
+    "ReceiveCoilName": "SENSE-Head-8",
+    "RepetitionTime": 2.0,
+    "EchoTime": 0.028,
+    "FlipAngle": 90.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP",
+        "GR"
+    ],
+    "PulseSequenceType": "Gradient Echo EPI",
+    "EchoPlanarPulseSequence": true,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "AcquisitionMatrixFE": 80,
+    "AcquisitionMatrixPE": 80,
+    "ReconMatrixPE": 80,
+    "SliceThickness": 3.5,
+    "SpacingBetweenSlices": 3.85,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j",
+    "WaterFatShift": 11.001,
+    "EchoTrainLength": 43,
+    "EstimatedTotalReadoutTime": 0.0247561391318852,
+    "EstimatedEffectiveEchoSpacing": 0.00031336884977069875
+}

@@ -16,14 +16,6 @@ LOGGER = getLogger(__name__)
 
 app = cyclopts.App("protocol2bids", help_format="markdown")
 
-Hint = Literal[
-    'siemens',
-    'siemens.va',
-    'siemens.vb',
-    'siemens.vd',
-    'siemens.ve',
-    'siemens.xa',
-]
 
 
 def _setup_logging(verbose: int = 0):

@@ -11,7 +11,8 @@
         "EP"
     ],
     "SequenceVariant": [
-        "SK"
+        "SK",
+        "SP"
     ],
     "ScanOptions": [
         "PFP",
@@ -96,7 +97,7 @@
         3.870968
     ],
     "SliceEncodingDirection": "k",
-    "DwellTime": 5.001600512163892e-06,
+    "DwellTime": 2.5010000000000003e-06,
     "RepetitionTime": 8.0,
     "Modality": "MR",
     "ProtocolName": "DTI_30_2p2x2p2x2p2_6-8_p2",

@@ -10,8 +10,7 @@
         "EP"
     ],
     "SequenceVariant": [
-        "SK",
-        "SS"
+        "SK"
     ],
     "ScanOptions": [
         "FS"
@@ -24,7 +23,7 @@
     "EffectiveEchoSpacing": 0.00055,
     "TotalReadoutTime": 0.04345,
     "EchoTime": 0.03,
-    "DwellTime": 4.800307219662058e-06,
+    "DwellTime": 2.4000000000000003e-06,
     "FlipAngle": 60.0,
     "MultibandAccelerationFactor": 8,
     "RepetitionTime": 0.47500000000000003,

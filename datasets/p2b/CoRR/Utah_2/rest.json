@@ -11,8 +11,7 @@
         "EP"
     ],
     "SequenceVariant": [
-        "SK",
-        "SS"
+        "SK"
     ],
     "ScanOptions": [
         "FS"
@@ -72,7 +71,7 @@
         0.95
     ],
     "SliceEncodingDirection": "k",
-    "DwellTime": 5.399101589495508e-06,
+    "DwellTime": 2.7e-06,
     "FlipAngle": 90.0,
     "RepetitionTime": 2.0,
     "Modality": "MR",

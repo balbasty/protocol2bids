@@ -63,8 +63,15 @@ sidecar = protocol_to_bids(protocols[0], nii="image.nii.gz")
 | Siemens | syngo MR E11 (VE)                                 | ✅              |
 | Siemens | Numaris/X VA20–VA31 (XA)                          | ✅              |
 | Siemens | scanned printouts / broken fonts                  | ✅ (needs OCR)  |
-| Philips | ExamCards                                         | planned         |
-| GE      | scan parameter sheets, DICOM dumps                | planned         |
+| Philips | ExamCards (table view and text export)          | ✅              |
+| GE      | scan parameter sheets (console or retyped)        | ✅              |
+| GE      | LX protocol scripts (`set TR "2000"`)             | ✅              |
+| GE      | DICOM header dumps                                | ✅              |
+| any     | FCON1000 scan tables (CoRR, ABIDE)                | ✅              |
+
+The format is detected automatically (`--hints` forces it). The rules
+used to derive each key, their sources and their known uncertainties are
+documented in [`notes/conversion_rules.md`](notes/conversion_rules.md).
 
 OCR requires [tesseract](https://github.com/tesseract-ocr/tesseract)
 to be installed (e.g. `apt install tesseract-ocr`).

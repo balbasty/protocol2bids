@@ -48,7 +48,12 @@ def sniff_lx(pages: list[Page]) -> bool:
 
 def sniff_sheet(pages: list[Page]) -> bool:
     text = _text(pages[:3])
-    return sum(v in text for v in SHEET_VOCABULARY) >= 3
+    if sum(v in text for v in SHEET_VOCABULARY) >= 3:
+        return True
+    # short, retyped sheets: "GE SIGNA 3T" + a few timing parameters
+    return bool(re.search(r'\bGE\b|SIGNA', text)) and sum(
+        bool(re.search(rf'\b{k}\b', text, re.I))
+        for k in ('TR', 'TE', 'Flip', 'FOV|Field of View')) >= 3
 
 
 # ----------------------------------------------------------------------
@@ -78,11 +83,18 @@ def read_sheet(
         allpages, is_header=_is_section, hierarchy=False,
         key_filter=fix_ti_ligature,
     )
+    if entries and all(e.value is None for e in entries):
+        # keys and values separated by a few spaces only
+        entries, full = read_kv(
+            allpages, is_header=_is_section, hierarchy=False,
+            key_filter=fix_ti_ligature, gap=0.6,
+        )
     # Split into protocols when the first section header repeats
     protocols: list[Protocol] = []
-    first_card = None
+    unset = object()
+    first_card = unset
     for e in entries:
-        if first_card is None:
+        if first_card is unset:
             first_card = e.card
         if not protocols or (
             e.card == first_card and protocols[-1].entries

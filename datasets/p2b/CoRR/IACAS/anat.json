@@ -1,0 +1,27 @@
+{
+    "Manufacturer": "GE",
+    "MagneticFieldStrength": 3.0,
+    "ReceiveCoilName": "8HRBRAIN",
+    "Modality": "MR",
+    "ProtocolName": "Sag 3D BRAVO RIGHT",
+    "SeriesDescription": "Sag 3D BRAVO RIGHT",
+    "InversionTime": 1.1,
+    "FlipAngle": 7.0,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "BRAVO",
+    "EchoPlanarPulseSequence": false,
+    "ParallelAcquisitionTechnique": "ASSET",
+    "ParallelReductionFactorInPlane": 2.0,
+    "AcquisitionMatrixFE": 256,
+    "AcquisitionMatrixPE": 256,
+    "PercentPhaseFOV": 90.0,
+    "PixelBandwidth": 244.141,
+    "NumberOfAverages": 1.0,
+    "SliceThickness": 1.0,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j"
+}

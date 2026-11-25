@@ -9,7 +9,8 @@
         "EP"
     ],
     "SequenceVariant": [
-        "SK"
+        "SK",
+        "SP"
     ],
     "ScanOptions": [
         "FS"
@@ -77,7 +78,7 @@
         2.496
     ],
     "SliceEncodingDirection": "k",
-    "DwellTime": 4.200268817204301e-06,
+    "DwellTime": 2.1000000000000002e-06,
     "RepetitionTime": 5.2,
     "Modality": "MR",
     "ProtocolName": "dti_64dir_3x3x3",

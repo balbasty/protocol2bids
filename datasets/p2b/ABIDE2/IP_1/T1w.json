@@ -1,0 +1,19 @@
+{
+    "Manufacturer": "Philips",
+    "ManufacturersModelName": "Intera Achieva",
+    "MagneticFieldStrength": 1.5,
+    "ImagingFrequency": 63.864,
+    "Modality": "MR",
+    "ProtocolName": "T1w",
+    "FlipAngle": 30.0,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR"
+    ],
+    "PulseSequenceType": "Fast Field Echo",
+    "EchoPlanarPulseSequence": false,
+    "AcquisitionMatrixFE": 240,
+    "AcquisitionMatrixPE": 240,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j"
+}
