@@ -94,7 +94,7 @@ def make_lines(page: Page, gap: float = 1.2) -> list[Line]:
     rows: list[list[Word]] = []
     for word in words:
         tol = 0.35 * max(word.size, 1)
-        if rows and abs(rows[-1][-1].baseline - word.baseline) <= tol:
+        if rows and abs(rows[-1][0].baseline - word.baseline) <= tol:
             rows[-1].append(word)
         else:
             rows.append([word])

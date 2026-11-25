@@ -161,6 +161,12 @@ def load_pages(
                     )
                     pages.append(page)
                     continue
+            if textpage is None:
+                # Do not clip to the mediabox: some printouts contain
+                # glyphs whose boxes are (partly) outside of it, and which
+                # are rendered by most viewers.
+                flags = pymupdf.TEXTFLAGS_RAWDICT & ~pymupdf.TEXT_MEDIABOX_CLIP
+                textpage = pdfpage.get_textpage(flags=flags)
             raw = pdfpage.get_text('rawdict', textpage=textpage)
             for block in raw['blocks']:
                 for line in block.get('lines', []):
@@ -183,3 +189,79 @@ def looks_garbled(pages: list[Page], min_words: int = 20) -> bool:
         return False
     ascii_like = sum(bool(_GARBLED.search(w)) for w in words)
     return ascii_like < 0.2 * len(words)
+
+
+def is_garbled_text(text: str) -> bool:
+    """Text made of control / private-use characters (font without a
+    unicode mapping)."""
+    if not text:
+        return False
+    bad = sum(
+        ord(c) < 32 or 0xE000 <= ord(c) <= 0xF8FF or c == '\ufffd'
+        for c in text
+    )
+    return bad > 0.3 * len(text)
+
+
+def ocr_garbled_lines(path: str | PathLike, pages: list[Page]) -> int:
+    """
+    Replace lines made of garbled words by their OCR transcription.
+
+    Only the bounding box of each garbled line is rendered and OCRed, so
+    that the rest of the page keeps its (exact) embedded text.
+
+    Returns the number of lines that were OCRed.
+    """
+    import pymupdf
+
+    todo = {
+        page.index: [w for w in page.words if is_garbled_text(w.text)]
+        for page in pages
+    }
+    if not any(todo.values()):
+        return 0
+    count = 0
+    with pymupdf.open(str(path)) as doc:
+        for page in pages:
+            garbled = todo[page.index]
+            if not garbled:
+                continue
+            # group garbled words by baseline
+            groups: list[list[Word]] = []
+            for w in sorted(garbled, key=lambda w: w.baseline):
+                if groups and abs(groups[-1][0].baseline - w.baseline) < \
+                        0.5 * max(w.size, 1):
+                    groups[-1].append(w)
+                else:
+                    groups.append([w])
+            pdfpage = doc[page.index]
+            for group in groups:
+                rect = pymupdf.Rect(
+                    min(w.x0 for w in group) - 2,
+                    min(w.y0 for w in group) - 1,
+                    max(w.x1 for w in group) + 2,
+                    max(w.y1 for w in group) + 1,
+                )
+                ids = {id(w) for w in group}
+                if rect.width < 8 or rect.height < 4:
+                    # too small to be OCRed (isolated glyph): drop it
+                    page.words = [w for w in page.words if id(w) not in ids]
+                    continue
+                try:
+                    pix = pdfpage.get_pixmap(dpi=400, clip=rect)
+                    ocr = pymupdf.open('pdf', pix.pdfocr_tobytes())
+                    text = ocr[0].get_text('text')
+                except Exception as e:
+                    LOGGER.warning(f'OCR unavailable ({e}).')
+                    return count
+                text = ' '.join(text.split()).translate(_NORMALIZE)
+                page.words = [w for w in page.words if id(w) not in ids]
+                if text:
+                    ref = group[0]
+                    page.words.append(Word(
+                        text, rect.x0 + 2, rect.y0 + 1, rect.x1 - 2,
+                        rect.y1 - 1, ref.size, ref.bold, ref.font,
+                        ref.baseline,
+                    ))
+                count += 1
+    return count

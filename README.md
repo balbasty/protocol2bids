@@ -14,28 +14,62 @@ pip install protocol2bids @ git+https://github.com/balbasty/protocol2bids
 
 ## Usage
 
-```text
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃         protocol2bids : Convert protocol printouts to BIDS sidecars         ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-╭─ Commands ──────────────────────────────────────────────────────────────────╮
-│ --help,-h  Display this message and exit.                                   │
-│ --version  Display application version.                                     │
-╰─────────────────────────────────────────────────────────────────────────────╯
-╭─ Parameters ────────────────────────────────────────────────────────────────╮
-│ *  INP,--inp   Path to input protocol file [required]                       │
-│ *  OUT,--out   Path to output JSON file [required]                          │
-│    --hints     Protocol hints (ex: "siemens.vb")                            │
-│    --nii       Path(s) to nifti file(s) (to read shape/affine from)         │
-│    --defaults  Dictionary of default BIDS metadata                          │
-│    --assigns   Dictionary of BIDS metadata to assign                        │
-╰─────────────────────────────────────────────────────────────────────────────╯
-```
-
 ```shell
->> protocol2bids /path/to/printout.pdf /path/to/sidecar.json
+# List the protocols contained in a printout
+p2b list /path/to/printout.pdf
+
+# Convert all protocols (one sidecar per protocol)
+p2b /path/to/printout.pdf /path/to/sidecar.json
+
+# Convert a single protocol, selected by index or name (glob pattern),
+# using the NIfTI header to map anatomical directions to voxel axes
+p2b /path/to/printout.pdf /path/to/sidecar.json \
+    --select "*rest*" --nii /path/to/image.nii.gz
+
+# Dump the raw content of the printout (all cards / parameters) as JSON
+p2b dump /path/to/printout.pdf
 ```
+
+Useful options of the conversion command:
+
+| Option         | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| `--select`     | Protocols to convert (0-based indices or name patterns)       |
+| `--nii`        | NIfTI file(s), one per selected protocol                      |
+| `--defaults`   | Dictionary of default BIDS metadata                           |
+| `--assigns`    | Dictionary of BIDS metadata to assign (overrides)             |
+| `--skip-pages` | (0-based) pages to ignore (legacy; prefer `--select`)         |
+| `--bids-only`  | Do not write protocol2bids-specific helper keys               |
+| `--explain`    | Write the protocol parameters used for each key               |
+| `--ocr`        | OCR policy (`auto`, `always`, `never`) for unreadable pages   |
+
+From python:
+
+```python
+from protocol2bids import read_protocols, protocol_to_bids
+
+protocols = read_protocols("printout.pdf")
+print(protocols[0].get("TR", card="Routine"))   # "2000 ms"
+sidecar = protocol_to_bids(protocols[0], nii="image.nii.gz")
+```
+
+### Supported printouts
+
+| Vendor  | Format                                            | Status          |
+| ------- | ------------------------------------------------- | --------------- |
+| Siemens | syngo MR 2002B / 2004A / A30 (VA)                 | ✅              |
+| Siemens | syngo MR B15 / B17 / B19 (VB)                     | ✅              |
+| Siemens | syngo MR D11 / D13 (VD)                           | ✅              |
+| Siemens | syngo MR E11 (VE)                                 | ✅              |
+| Siemens | Numaris/X VA20–VA31 (XA)                          | ✅              |
+| Siemens | scanned printouts / broken fonts                  | ✅ (needs OCR)  |
+| Philips | ExamCards                                         | planned         |
+| GE      | scan parameter sheets, DICOM dumps                | planned         |
+
+OCR requires [tesseract](https://github.com/tesseract-ocr/tesseract)
+to be installed (e.g. `apt install tesseract-ocr`).
+
+See [`PLAN.md`](PLAN.md) for the design of the parser and the roadmap.
 
 ## List of JSON keys set (or not) by protocol2bids
 

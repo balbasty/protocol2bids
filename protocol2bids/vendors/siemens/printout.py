@@ -26,14 +26,15 @@ from collections import Counter
 from dataclasses import dataclass
 from logging import getLogger
 from os import PathLike
-from statistics import median
 from typing import Iterable
 
 from ...model import Entry, Protocol
 from ...pdf.layout import (
     Line, Row, cluster_1d, is_separator_text, make_rows, nearest,
 )
-from ...pdf.words import Page, load_pages
+from ...pdf.words import (
+    Page, load_pages, looks_garbled, ocr_garbled_lines,
+)
 
 LOGGER = getLogger(__name__)
 
@@ -236,6 +237,8 @@ def _classify(rows: list[Row], stats: dict[int, ColumnStats]) -> list[_Item]:
                 items.append(_Item('path', row, value=text))
             elif RE_TITLE.match(text):
                 items.append(_Item('title', row, value=text))
+            elif RE_TOC.match(text):
+                items.append(_Item('toc', row))
             elif _is_garbled(text):
                 items.append(_Item('garbled', row, value=text))
             else:
@@ -245,6 +248,9 @@ def _classify(rows: list[Row], stats: dict[int, ColumnStats]) -> list[_Item]:
             continue
         if is_separator_text(text):
             items.append(_Item('sep', row))
+            continue
+        if RE_TOC.match(text):
+            items.append(_Item('toc', row))
             continue
         st = stats.get(row.column)
         if st is None:
@@ -309,10 +315,31 @@ def _build(items: list[_Item], scanner: dict) -> list[Protocol]:
     title_seen = False
     pending: str | None = None     # value printed just above its key
 
+    in_toc = False
+    toc_path: _Item | None = None
+
     for i, item in enumerate(items):
         if item.row.page != current_page:
             current_page = item.row.page
             page_has_content = False
+
+        if item.kind == 'toc':
+            in_toc = True
+            toc_path = None
+            continue
+        if in_toc:
+            # Skip the table of contents until a protocol title is found
+            if item.kind == 'path':
+                toc_path = item
+                continue
+            if item.kind == 'banner':
+                continue
+            if item.kind != 'title':
+                toc_path = None
+                continue
+            in_toc = False
+            prot = new_protocol(toc_path.value if toc_path else '')
+            expect, title_seen = 'head', False
 
         if item.kind == 'banner':
             info = parse_banner(item.value)
@@ -358,11 +385,11 @@ def _build(items: list[_Item], scanner: dict) -> list[Protocol]:
                     prot.header.update(parse_title(item.row.text))
                     continue
                 if not title_seen:
-                    prot.path += ' ' + item.row.segments[0].text
+                    prot.path += item.row.segments[0].text
                     continue
             elif not title_seen:
                 # (possibly corrupted) wrapped path
-                prot.path += ' ' + item.row.segments[0].text
+                prot.path += item.row.segments[0].text
                 continue
 
         if item.kind == 'full':
@@ -463,20 +490,33 @@ def _build(items: list[_Item], scanner: dict) -> list[Protocol]:
 
 
 def _toc_pages(pages: list[Page]) -> set[int]:
-    """Pages that belong to a table of contents."""
+    """
+    Pages that belong to a table of contents.
+
+    A page is a TOC page if its "Table of contents" heading is in its top
+    part, or if a TOC started on a previous page and no protocol title has
+    been found since. (A TOC that starts in the middle of a page is
+    handled at the row level by the parser.)
+    """
     toc = set()
     in_toc = False
     for page in pages:
-        texts = [w.text for w in page.words]
-        joined = ' '.join(texts)
-        if re.search(r'Table\s+of\s+contents', joined, re.I):
-            in_toc = True
-        elif in_toc:
-            # TOC ends when a protocol title is found
-            if re.search(r'(^|\s)(TA|Scan\s*Time)\s*:', joined):
-                in_toc = False
+        words = page.words
+        joined = ' '.join(w.text for w in words)
+        has_title = re.search(r'(^|\s)(TA|Scan\s*Time)\s*:', joined)
+        heading = [
+            w for w, nxt, nxt2 in zip(words, words[1:], words[2:])
+            if (w.text, nxt.text, nxt2.text.lower()) ==
+            ('Table', 'of', 'contents')
+        ]
+        if in_toc and has_title:
+            in_toc = False
         if in_toc:
             toc.add(page.index)
+        if heading:
+            if heading[0].baseline < 0.25 * page.height and not has_title:
+                toc.add(page.index)
+            in_toc = True
     return toc
 
 
@@ -502,9 +542,22 @@ def read_printout(
     protocols : list[Protocol]
     """
     allpages = load_pages(path, ocr=ocr)
+    if not sniff(allpages) and not looks_garbled(allpages):
+        LOGGER.warning(f'{path} does not look like a Siemens printout.')
+        return []
+    if ocr and looks_garbled(allpages):
+        LOGGER.info('Text layer looks garbled: falling back to OCR.')
+        allpages = load_pages(path, ocr=True)
+    elif ocr:
+        ocr_garbled_lines(path, allpages)
     for page in allpages:
         # Some re-printed PDFs contain spurious "!" glyphs in the margins
         page.words = [w for w in page.words if w.text.strip('!')]
+        # Drop annotations printed above the scanner banner
+        banner = [w.baseline for w in page.words if w.text == 'MAGNETOM']
+        if banner and min(banner) < 0.15 * page.height:
+            top = min(banner) - 2
+            page.words = [w for w in page.words if w.baseline >= top]
     if pages is not None:
         pages = set(pages)
         allpages = [p for p in allpages if p.index in pages]
@@ -521,8 +574,11 @@ def read_printout(
 
 
 def sniff(pages: list[Page]) -> bool:
-    for page in pages[:3]:
-        text = ' '.join(w.text for w in page.words[:200])
+    """Is this a Siemens printout?"""
+    for page in pages:
+        text = ' '.join(w.text for w in page.words)
         if re.search(r'SIEMENS\s+MAGNETOM', text):
             return True
+        if page.ocr or not page.words:
+            continue
     return False

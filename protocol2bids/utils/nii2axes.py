@@ -45,8 +45,8 @@ def nii2axes(**kwargs):
     voxel_size = (affine**2).sum(0)**0.5
     affine = affine / voxel_size
 
-    # add noise to avoid issues if there's a 45 deg angle somewhere
-    affine = affine + (np.random.random([3, 3]) - 0.5) * 1e-5
+    # add (deterministic) noise to avoid ties at 45 deg angles
+    affine = affine + np.random.default_rng(0).uniform(-5e-6, 5e-6, [3, 3])
 
     # project onto canonical axes
     onehot = np.round(np.square(affine)).astype(np.int32)
@@ -63,10 +63,13 @@ def nii2axes(**kwargs):
     anatnames = ['LR', 'PA', 'IS']
     voxnames = ['i', 'j', 'k']
 
+    # `anatnames` give the direction of increasing RAS coordinates
+    # (L -> R, P -> A, I -> S). Reverse them if the voxel axis points
+    # towards decreasing RAS coordinates.
     vox2anat = [
-        anatnames[index[0]][::-1] if sign[0] else index[0],
-        anatnames[index[1]][::-1] if sign[1] else index[1],
-        anatnames[index[2]][::-1] if sign[2] else index[2],
+        anatnames[index[0]][::-1] if sign[0] < 0 else anatnames[index[0]],
+        anatnames[index[1]][::-1] if sign[1] < 0 else anatnames[index[1]],
+        anatnames[index[2]][::-1] if sign[2] < 0 else anatnames[index[2]],
     ]
     anat2vox = {}
     if 'LR' in vox2anat:

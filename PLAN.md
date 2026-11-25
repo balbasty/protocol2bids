@@ -275,39 +275,50 @@ a namespace or dropped with `--strict-bids`.
 Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 
 ### Phase 0 — infrastructure
-- [ ] 0.1 `pyproject.toml` (keep setup.cfg metadata), optional extras
-      `[nifti]` (nibabel), `[ocr]`, `[test]`; fix editable install.
-- [ ] 0.2 `tests/` skeleton + pytest config + CI workflow.
-- [ ] 0.3 Corpus index `tests/corpus.py` listing every PDF with its
-      family (from §2) — single source of truth for tests.
+- [x] 0.1 `pyproject.toml` (build-system only; metadata stays in
+      `setup.cfg`), `[test]` extra, nibabel/numpy added to deps; editable
+      install works.
+- [x] 0.2 `tests/` + `pytest.ini` + `.github/workflows/tests.yml`
+      (installs tesseract for OCR tests).
+- [~] 0.3 Corpus index: Siemens part lives in `tests/test_corpus.py`;
+      other families to add with phase 4.
 
 ### Phase 1 — extraction (Siemens first)
-- [ ] 1.1 `pdf/words.py` word extraction (+ font info, recoding hook).
-- [ ] 1.2 `pdf/layout.py` lines → segments → columns → rows.
-- [ ] 1.3 `model.py` Entry/Protocol + normalised lookup + synonyms.
-- [ ] 1.4 `values.py` value parsing.
-- [ ] 1.5 `vendors/siemens/printout.py` single parser (banner, title,
+- [x] 1.1 `pdf/words.py` word extraction (+ font info, recoding hook).
+- [x] 1.2 `pdf/layout.py` lines → segments → columns → rows.
+- [x] 1.3 `model.py` Entry/Protocol + normalised lookup + synonyms.
+- [x] 1.4 `values.py` value parsing.
+- [x] 1.5 `vendors/siemens/printout.py` single parser (banner, title,
       TOC, cards, groups, continuations).
-- [ ] 1.6 Tests + snapshots on all Siemens PDFs (VA, VB, VD, VE, XA,
-      re-typeset).
-- [ ] 1.7 Font-recoded PDF (`siemens_vb_hmri.pdf`).
-- [ ] 1.8 OCR fallback for `examples/unparsable/*` (optional dependency).
+- [~] 1.6 Tests on all Siemens PDFs (smoke test on every file + hand-
+      checked values per version). JSON snapshots still to do.
+- [x] 1.7 Font-recoded PDF (`siemens_vb_hmri.pdf`): handled by OCR
+      fallback when the text layer looks garbled (`font_recoder.py` is
+      now unused).
+- [x] 1.8 OCR fallback for `examples/unparsable/*` (full-page OCR for
+      pages without text, line-level OCR for garbled lines, e.g. XA titles).
 
 ### Phase 2 — Siemens → BIDS
-- [ ] 2.1 New `vendors/siemens/bids.py` driver (`Missing` exception,
-      provenance), port all existing keys.
-- [ ] 2.2 Fix bugs listed in §3; add `RepetitionTime`, `SliceTiming`,
+- [x] 2.1 New `vendors/siemens/bids.py` driver (`Missing` exception,
+      provenance via `--explain`), existing keys ported.
+- [x] 2.2 Fix bugs listed in §3; add `RepetitionTime`, `SliceTiming`,
       `PercentPhaseFOV`, sequence classification table.
-- [ ] 2.3 Direction handling incl. oblique / rotation; NIfTI-based recon
-      matrices.
-- [ ] 2.4 Diffusion / multi-echo / MB specifics.
-- [ ] 2.5 Validation against `datasets/json/ABIDE2`.
+- [~] 2.3 Direction handling: main orientation of oblique slices used;
+      NIfTI-based recon matrices. **Fixed polarity bug in
+      `utils/nii2axes.py`** (positive axes were reversed). TODO: verify
+      FE polarity / sagittal slice polarity against real DICOMs.
+- [~] 2.4 Multi-echo (`EchoTime` list, `EchoTime1/2`), MB slice timing,
+      diffusion summary keys done. TODO: CMRR/HCP specific cards,
+      concatenations in slice timing.
+- [~] 2.5 Validation against `datasets/json/ABIDE2`: done by hand (see
+      §11); to be turned into a test with an allow-list of known
+      reference errors.
 
 ### Phase 3 — CLI
-- [ ] 3.1 `p2b list file.pdf` (protocol index, names, sequence).
-- [ ] 3.2 `p2b convert file.pdf --select 2|"*rest*" --nii ... --out ...`
-      (keep `--skip-pages` for backward compatibility).
-- [ ] 3.3 `p2b dump file.pdf` (raw protocol tree as JSON) and
+- [x] 3.1 `p2b list file.pdf` (protocol index, names, sequence).
+- [x] 3.2 `p2b file.pdf out.json --select 2|"*rest*" --nii ...`
+      (`--skip-pages` kept for backward compatibility).
+- [x] 3.3 `p2b dump file.pdf` (raw protocol tree as JSON) and
       `--explain` provenance.
 - [ ] 3.4 Regenerate `examples/json`, `datasets/p2b` with the new code
       and update `convert*.sh`.
@@ -322,7 +333,8 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 - [ ] 4.7 BIDS mappings for Philips / GE.
 
 ### Phase 5 — docs
-- [ ] 5.1 README: new CLI, supported formats matrix, limitations.
+- [~] 5.1 README: new CLI and supported formats matrix done; key table
+      still describes the old implementation.
 - [ ] 5.2 Move formulas from code comments to `notes/` where missing.
 
 ## 10. Open questions for the maintainer
@@ -335,3 +347,26 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 3. Is OCR (tesseract) an acceptable optional dependency?
 4. Should multi-protocol PDFs produce one sidecar per protocol by default
    (named after the protocol), rather than `out1.json`, `out2.json`?
+
+## 11. Findings / status log
+
+* **2026-11-25** — Phase 1 + most of phase 2/3 implemented on
+  `claude/refactor/robust-pdf-parser`.
+  * Every Siemens PDF of the corpus parses (`tests/test_corpus.py`),
+    including re-printed PDFs with annotations, scanned PDFs (OCR) and
+    PDFs with broken fonts (OCR).
+  * pymupdf's default `TEXT_MEDIABOX_CLIP` drops glyphs that poppler
+    renders (e.g. `datasets/pdf/CoRR/Utah_1/fieldmap.pdf`); disabled.
+  * Old per-version parsers (`siemens/{va,vb,vd,ve,common,utils}.py`) and
+    `register.py` were removed; `philips/`, `ge/`, `fcon.py` are untouched
+    and still unregistered (phase 4).
+  * ABIDE2 reference sidecars vs ours: TE/TR/FA/PE direction agree;
+    differences come from the references: dist. factor applied to 3D
+    slab partitions (`SpacingBetweenSlices` 1.5× too large),
+    `AcquisitionMatrixPE` = base resolution (ignores FoV phase / phase
+    resolution), NYU_1/NYU_2 bold values swapped, `TriTim` typo.
+  * Known limitations: `Siemens_VB19+XA20+2002B_*.pdf` is a compilation
+    of partial printouts with annotations (parses, but many protocols are
+    incomplete); OCR output is noisy (some keys/cards misread);
+    `examples/json` and `datasets/p2b` have **not** been regenerated yet
+    (task 3.4).
