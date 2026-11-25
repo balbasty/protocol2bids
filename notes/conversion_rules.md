@@ -60,12 +60,12 @@ Main sources:
 | Sheet "Bandwidth" is ±kHz: `PixelBandwidth = 2 × BW × 1000 / Freq` | ✅ (medium-high) | Matches GE sidecars (±250 kHz / 64 → 7812.5). |
 | EPI timing from DICOM (0043,102C) | ✅ | dcm2niix: `R = 1/(0043,1083)[0]`, `RF = 4 if PFF else 2`, `lines = ceil(AcqPE/R/RF)·RF`, `EES = (lines−1)·ESP/(AcqPE−1)`, `TRT = EES·(ReconPE−1)`. Only available from DICOM dumps. Cannot be derived from scan sheets (ramp sampling). |
 | Interleaved order: odd first for any N | ✅ | |
-| HyperBand slice timing | ✅ (= dcm2niix model) | dcm2niix *computes* GE SliceTiming itself (`sliceTimeGE`): nexc = ceil(N/MB); even nexc: before 27.0 R03 one dummy slot is added, from 27.0 R03 on the last two excitations are swapped; descending mirrors all N slices. Our port matches all dcm_qa_ge references (44 sidecars); mismatches only for an old dcm2niix build, a hand-made sidecar and diffusion with cycling off (which uses the pre-R03 path; not implemented). Needs the software version (not on scan sheets). |
+| HyperBand slice timing | ✅ (= dcm2niix model) | dcm2niix *computes* GE SliceTiming itself (`sliceTimingGE`/`sliceTimeGE`): nexc = ceil(N/MB); even nexc: before 27.0 R03 one dummy slot is added (slices then mapped modulo nexc+1), from 27.0 R03 (or ≥ 27.1) on the last two excitations are swapped; HyperBand before 26.0: not supported. Our port matches all dcm_qa_ge references and 45/45 HyperBand sidecars computed by recent dcm2niix (remaining mismatches: old dcm2niix builds that did not record the MB factor, hand-made sidecars). Needs the software version (not on scan sheets). |
+| GE slice timing: sequence types | ✅ (= dcm2niix) | Only for epiRT (IOPT contains FMRI: times spread over TR − group delay `DELACQNOAV`), multi-phase EPI (spread over TR; `DELACQ` = Minimum → no delay; variable delays `MPhVar` unsupported) and diffusion (non-cycling systems: pre-R03 behaviour; Premier/UHP/7.0T use gradient cycling whose mode is not printed → no timing). Not for 3D, localizers or other sequences. LX `SLICEORDER`: 0 = sequential, otherwise interleaved. Slice times are given in acquisition-index order; dcm2niix additionally reverses them when the DICOM slices are spatially flipped, which a printout cannot tell. |
 | Phase-encoding polarity | ⚠️ | Not on scan sheets → `PhaseEncodingAxis` only. |
 | `PercentPhaseFOV = Phase FOV × 100` | ✅ | |
 | `AcquisitionMatrixPE` = printed "Phase" | ⚠️ | Relation with Phase FOV not established. |
 | Fractional NEX = partial Fourier | ✅ (medium) | Only `PartialFourierEnabled` is set. |
-| LX `SLICEORDER` codes | ⚠️ | Undocumented → no `SliceTiming` from LX scripts. |
 
 ## Scan tables (FCON1000)
 

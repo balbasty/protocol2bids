@@ -295,22 +295,103 @@ def ge_slice_ranks(n: int, mb: int = 1, interleaved: bool = True,
     return ranks, nexc
 
 
-def ge_is_r03(version: str | None) -> bool | None:
-    """Is the software at least 27.0 R03? (None if unknown)"""
-    m = re.search(r'(\d\d)\.(\d)_?R?(\d\d)', version or '')
+def ge_version(version: str | None) -> tuple[float, int, int] | None:
+    """
+    Parse GE software versions like dcm2niix `readSoftwareVersionsGE`:
+    '27\\LX\\MR Software release:RX27.0_R02_1831.a' -> (27.0, 27, 2);
+    '28\\LX\\MR29.1_EA_2039.g' -> (29.1, 29, 0) (EA = release 0);
+    '30\\LX\\SIGNA_LX1.MR30.0_R01_2236.d' -> (30.0, 30, 1).
+    Returns (major as float, major as int, release) or None.
+    """
+    m = re.search(r'(\d\d)\.(\d)_(R(\d\d)|EA|M\d)', version or '')
     if not m:
         return None
-    major, minor, rel = int(m.group(1)), int(m.group(2)), int(m.group(3))
-    return (major, minor, rel) >= (27, 0, 3)
+    major = int(m.group(1))
+    release = int(m.group(4)) if m.group(4) else 0
+    return major + int(m.group(2)) / 10, major, release
+
+
+def ge_is_r03(version: str | None) -> bool | None:
+    """Is the software 27.0 R03 or later? (dcm2niix `is27r3`)"""
+    v = ge_version(version)
+    if v is None:
+        return None
+    major, imajor, release = v
+    return major >= 27.1 or (imajor == 27 and release >= 3)
+
+
+CYCLING_SYSTEMS = ('Premier', 'UHP', '7.0T')
+
+
+def ge_slice_timing(
+    nslices: int,
+    tr: float,
+    mb: int = 1,
+    interleaved: bool = True,
+    version: str | None = None,
+    kind: str = 'mph',
+    group_delay: float = 0.0,
+    model: str | None = None,
+) -> list[float] | None:
+    """
+    GE slice timing, as computed by dcm2niix (`sliceTimingGE` and
+    `sliceTimeGE`, console/nii_dicom_batch.cpp).
+
+    Parameters
+    ----------
+    nslices, tr : number of slices, repetition time (s)
+    mb : HyperBand factor
+    interleaved : slice order (LX `SLICEORDER` != 0)
+    version : software version (needed for HyperBand)
+    kind : 'fmri' (epiRT, IOPT contains FMRI), 'mph' (multi-phase EPI),
+        'diff' (diffusion), anything else -> None (not supported)
+    group_delay : group delay (s); for 'fmri', times are spread over
+        TR - group_delay; for 'mph' the DICOM TR excludes it.
+    model : scanner model (diffusion: Premier/UHP/7.0T use gradient
+        cycling, whose slice order is not supported)
+
+    Returns
+    -------
+    times : list[float] or None
+        One time per slice index (acquisition order of slice indices,
+        i.e. before any spatial flip done by dcm2niix).
+    """
+    r03 = True
+    if mb > 1:
+        v = ge_version(version)
+        if v is None:
+            return None           # HyperBand order depends on the version
+        if v[0] < 26.0:
+            return None           # dcm2niix: early HyperBand unsupported
+        r03 = bool(ge_is_r03(version))
+    if kind == 'fmri':
+        span = tr - group_delay
+    elif kind == 'mph':
+        if group_delay < 0:
+            return None           # variable delays: unsupported
+        span = tr
+    elif kind == 'diff':
+        if model and any(c in model for c in CYCLING_SYSTEMS):
+            return None           # cycling mode unknown from a printout
+        r03 = False               # cycling off: pre-27.0R03 behaviour
+        span = tr
+    else:
+        return None
+    ranks, nslots = ge_slice_ranks(nslices, mb, interleaved, r03=r03)
+    return [round(r * span / nslots, 6) for r in ranks]
 
 
 @sheet_rule
 def s_slice_timing(ctx: Context):
-    """GE interleaved: odd slices first (1, 3, 5, ..., 2, 4, ...)."""
+    """See `ge_slice_timing`."""
     if ctx.out.get('MRAcquisitionType') == '3D':
         return
     order = ctx.get('SliceOrder').strip().lower()
-    if order != 'interleaved':  # LX SLICEORDER codes are undocumented
+    if order in ('interleaved',) or (order.isdigit() and int(order) != 0):
+        interleaved = True
+    elif order in ('sequential', '0'):
+        interleaved = False
+    else:
         return
     try:
         n = V.integer(ctx.get('Slices'))
@@ -318,22 +399,42 @@ def s_slice_timing(ctx: Context):
         if ctx.shape is None:
             raise
         n = int(ctx.shape[2])   # 2D acquisitions: slices along k
-    tr = ctx['RepetitionTime']
     mb = 1
-    for key in ('Slice Acceleration Factor', 'HyperBand Factor',
+    for key in ('MBACCEL', 'Slice Acceleration Factor', 'HyperBand Factor',
                 'Multiband Factor'):
         value = ctx.prot.get(key, default=None)
         if value:
-            mb = int(round(V.number(value)))
+            mb = max(1, int(round(V.number(value))))
             break
-    r03 = True
-    if mb > 1:
-        r03 = ge_is_r03(ctx.prot.scanner.get('SoftwareVersions'))
-        if r03 is None:
-            return   # HyperBand order depends on the software version
-        ctx.set('MultibandAccelerationFactor', mb)
-    ranks, nslots = ge_slice_ranks(n, mb, interleaved=True, r03=r03)
-    ctx.set('SliceTiming', [round(r * tr / nslots, 6) for r in ranks])
+    options = (ctx.opt('Options') or '').upper()
+    seq = (ctx.opt('PulseSequence') or '').upper()
+    if 'FMRI' in options:
+        kind = 'fmri'
+    elif 'DIFF' in options or 'DIFF' in seq:
+        kind = 'diff'
+    elif 'MPH' in options or 'EPI' in options or 'EPI' in seq:
+        kind = 'mph'
+    else:
+        return
+    # group delay (s): LX DELACQNOAV; "Minimum" delay -> 0
+    group_delay = 0.0
+    delay = ctx.prot.get('DELACQNOAV', default=None)
+    if delay:
+        group_delay = V.number(delay)
+    if 'MPHVAR' in options:
+        group_delay = -1
+    if (ctx.prot.get('DELACQ', default='') or '').lower() == 'minimum':
+        group_delay = 0.0
+    timing = ge_slice_timing(
+        n, ctx['RepetitionTime'], mb, interleaved,
+        version=ctx.prot.scanner.get('SoftwareVersions'), kind=kind,
+        group_delay=group_delay,
+        model=ctx.prot.scanner.get('ManufacturersModelName'),
+    )
+    if timing is not None:
+        if mb > 1:
+            ctx.set('MultibandAccelerationFactor', mb)
+        ctx.set('SliceTiming', timing)
 
 
 # ----------------------------------------------------------------------

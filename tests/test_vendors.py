@@ -135,3 +135,43 @@ def test_ge_hyperband_order():
     # before 27.0 R03: even nexc gets a dummy slot (60 slices HB6 -> 11)
     _, nslots = ge_slice_ranks(60, 6, r03=False)
     assert nslots == 11
+
+
+def test_ge_dcm2niix_rule():
+    from protocol2bids.vendors.ge.bids import (
+        ge_is_r03, ge_slice_timing, ge_version)
+    # version strings (dcm2niix readSoftwareVersionsGE examples)
+    assert ge_version('27\\LX\\MR Software release:RX27.0_R02_1831.a') == \
+        (27.0, 27, 2)
+    assert ge_version('28\\LX\\MR29.1_EA_2039.g') == (29.1, 29, 0)
+    assert ge_version('30\\LX\\SIGNA_LX1.MR30.0_R01_2236.d') == \
+        (30.0, 30, 1)
+    assert ge_is_r03('28\\LX\\MR29.1_EA_2039.g') is True     # >= 27.1
+    # sequential vs interleaved
+    assert ge_slice_timing(4, 2.0, interleaved=False) == [0, 0.5, 1.0, 1.5]
+    assert ge_slice_timing(4, 2.0) == [0, 1.0, 0.5, 1.5]
+    # epiRT (FMRI): times spread over TR - group delay
+    assert ge_slice_timing(4, 2.0, kind='fmri', group_delay=0.4) == \
+        pytest.approx([0, 0.8, 0.4, 1.2])
+    # HyperBand: needs the version, unsupported before 26.0
+    assert ge_slice_timing(8, 2.0, mb=2) is None
+    assert ge_slice_timing(8, 2.0, mb=2, version='DV25.0_R02') is None
+    # diffusion: cycling off (non-cycling systems) -> pre-R03 dummy slot
+    t = ge_slice_timing(8, 2.0, mb=2, version='RX28.0_R04', kind='diff',
+                        model='DISCOVERY MR750')
+    # (dcm2niix maps slices modulo the enlarged number of slots)
+    assert len(set(t)) == 5 and max(t) == pytest.approx(2.0 * 4 / 5)
+    # diffusion on cycling systems: mode unknown -> None
+    assert ge_slice_timing(8, 2.0, mb=2, version='RX28.0_R04', kind='diff',
+                           model='SIGNA Premier') is None
+    # unsupported sequences
+    assert ge_slice_timing(8, 2.0, kind='other') is None
+
+
+def test_ge_lx_slice_timing():
+    # LX script: SLICEORDER "1" (interleaved), IOPT "EPI, FMRI", 32 slices
+    _, b = _one('datasets/pdf/CoRR/IACAS/rest.pdf')
+    st = b['SliceTiming']
+    assert len(st) == 32
+    assert st[0] == 0 and st[2] == pytest.approx(2.0 / 32)
+    assert st[1] == pytest.approx(16 * 2.0 / 32)
