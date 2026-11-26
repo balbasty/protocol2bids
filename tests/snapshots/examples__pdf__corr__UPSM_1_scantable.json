@@ -48,6 +48,7 @@
    "PulseSequenceType": "3D MPRAGE",
    "MRAcquisitionType": "3D",
    "RepetitionTime": 2.1,
+   "RepetitionTimePreparation": 2.1,
    "EchoTime": 0.0034300000000000003,
    "InversionTime": 1.05,
    "FlipAngle": 8.0,

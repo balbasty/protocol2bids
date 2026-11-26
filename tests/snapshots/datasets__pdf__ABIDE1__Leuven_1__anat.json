@@ -193,7 +193,7 @@
    "Modality": "MR",
    "ProtocolName": "anat",
    "ReceiveCoilName": "SENSE-Head-8",
-   "RepetitionTime": 0.0096,
+   "RepetitionTime": 3.0,
    "EchoTime": 0.0046,
    "FlipAngle": 8.0,
    "InversionTime": 0.9,

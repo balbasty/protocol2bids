@@ -5,7 +5,7 @@
     "Modality": "MR",
     "ProtocolName": "acq-rc8chan_T1w",
     "ReceiveCoilName": "SENSE-Head-8",
-    "RepetitionTime": 0.008,
+    "RepetitionTime": 3.5,
     "EchoTime": 0.0037,
     "FlipAngle": 8.0,
     "InversionTime": 1.0,

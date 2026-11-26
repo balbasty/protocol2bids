@@ -5,6 +5,8 @@
     "ImagingFrequency": 63.864,
     "Modality": "MR",
     "ProtocolName": "dwi",
+    "RepetitionTime": 5.407,
+    "EchoTime": 0.08600000000000001,
     "FlipAngle": 90.0,
     "MRAcquisitionType": "2D",
     "ScanningSequence": [
@@ -23,5 +25,9 @@
     "SliceThickness": 2.5,
     "SpacingBetweenSlices": 2.5,
     "PhaseEncodingAnatomicalAxis": "AP",
-    "PhaseEncodingAxis": "j"
+    "PhaseEncodingAxis": "j",
+    "WaterFatShift": 5.78,
+    "EchoTrainLength": 37,
+    "EstimatedTotalReadoutTime": 0.025918563790159357,
+    "EstimatedEffectiveEchoSpacing": 0.00027282698726483536
 }

@@ -130,14 +130,33 @@ def table_to_bids(prot: Protocol, nii: dict | None = None,
     def sequence():
         seq = _find(prot, r'Sequence')
         out['PulseSequenceType'] = seq
-        up = seq.upper()
-        out['MRAcquisitionType'] = '3D' if '3D' in up else '2D'
+        up = seq.upper().replace('-', '')
+        three_d = ('3D', 'MPRAGE', 'TFE', 'SPGR', 'BRAVO', 'TFL', 'MP2RAGE',
+                   'SPACE', 'CUBE', 'VISTA')
+        out['MRAcquisitionType'] = '3D' if any(k in up for k in three_d) \
+            else '2D'
         if 'EPI' in up:
             out['ScanningSequence'] = ['EP']
     attempt(sequence)
 
     def times():
-        out['RepetitionTime'] = V.number(_find(prot, r'Repetition Time')) * 1e-3
+        tr = V.number(_find(prot, r'Repetition Time')) * 1e-3
+        try:
+            _find(prot, r'Inversion Time')
+            inverted = True
+        except Missing:
+            inverted = False
+        if out.get('MRAcquisitionType') == '3D' and inverted:
+            # MPRAGE-like: RepetitionTime is the inversion TR. Sites
+            # report either the inversion TR (Siemens) or the excitation
+            # TR (Philips TFE, GE IR-SPGR): tell them apart by magnitude.
+            if tr >= 0.5:
+                out['RepetitionTime'] = tr
+                out['RepetitionTimePreparation'] = tr
+            else:
+                out['RepetitionTimeExcitation'] = tr
+            return
+        out['RepetitionTime'] = tr
     attempt(times)
 
     def echo():

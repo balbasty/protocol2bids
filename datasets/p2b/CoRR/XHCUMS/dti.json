@@ -56,6 +56,7 @@
     ],
     "SliceEncodingDirection": "k",
     "DwellTime": 2.001e-06,
+    "FlipAngle": 90.0,
     "RepetitionTime": 3.0,
     "Modality": "MR",
     "ProtocolName": "ep2d_diff_3scan_trace_p2",

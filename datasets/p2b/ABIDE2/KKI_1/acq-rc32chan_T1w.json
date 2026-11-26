@@ -5,7 +5,6 @@
     "Modality": "MR",
     "ProtocolName": "acq-rc32chan_T1w",
     "ReceiveCoilName": "SENSE-Head- 32P",
-    "RepetitionTime": 0.008199999999999999,
     "EchoTime": 0.0037,
     "FlipAngle": 8.0,
     "MRAcquisitionType": "3D",

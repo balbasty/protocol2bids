@@ -1,0 +1,275 @@
+[
+ {
+  "name": "bold",
+  "path": "",
+  "vendor": "Philips",
+  "format": "examcard",
+  "scanner": {
+   "Manufacturer": "Philips"
+  },
+  "header": {},
+  "pages": [
+   0
+  ],
+  "parameters": {
+   "": {
+    "SmartSelect": "yes",
+    "Coil 1 (exclude)": "None",
+    "Uniformity": "CLEAR",
+    "FOV": {
+     "RL (mm)": "200",
+     "AP (mm)": "200",
+     "FH (mm)": "139.100006"
+    },
+    "Voxel size": {
+     "RL (mm)": "2.5",
+     "AP (mm)": "2.5"
+    },
+    "Slice thickness (mm)": "2.70000005",
+    "Recon voxel size (mm)": "1.5625",
+    "Fold-over suppression": "no",
+    "Reconstruction matrix": "128",
+    "SENSE": {
+     "": "yes",
+     "P reduction (AP)": "2.00000191"
+    },
+    "Stacks": {
+     "": "1",
+     "type": "parallel",
+     "slices": "45",
+     "slice gap": {
+      "": "user defined",
+      "gap (mm)": "0.400000095"
+     },
+     "slice orientation": "transverse",
+     "fold-over direction": "AP",
+     "fat shift direction": "P"
+    },
+    "Stack Offc.": {
+     "AP (P=+mm)": {
+      "": "3.46703482",
+      "RL (L=+mm)": "-1.86268961",
+      "FH (H=+mm)": "6.00166178",
+      "Ang.": {
+       "AP (deg)": {
+        "": "1.67722583",
+        "RL (deg)": "-6.91727448",
+        "FH (deg)": "-1.97884226"
+       }
+      },
+      "Free rotatable": "no"
+     }
+    },
+    "Minimum number of packages": "1",
+    "Slice scan order": "ascend",
+    "Large table movement": "no",
+    "PlanAlign": "no",
+    "REST slabs": "0",
+    "Patient position": {
+     "": "head first",
+     "orientation": "supine"
+    },
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "MS",
+     "technique": "FFE"
+    },
+    "Contrast enhancement": "no",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": {
+     "": "EPI",
+     "shot mode": "single-shot"
+    },
+    "Echoes": {
+     "": "1",
+     "partial echo": "no",
+     "shifted echo": "no"
+    },
+    "TE": {
+     "": "user defined",
+     "(ms)": "30"
+    },
+    "Flip angle (deg)": "90",
+    "TR": {
+     "": "user defined",
+     "(ms)": "2500"
+    },
+    "Halfscan": "no",
+    "Water-fat shift": "minimum",
+    "Shim": "auto",
+    "Fat suppression": {
+     "": "SPIR",
+     "strength": "medium",
+     "frequency offset": {
+      "": "user defined",
+      "offset (Hz)": "125"
+     }
+    },
+    "Water suppression": "no",
+    "MTC": "no",
+    "Research prepulse": "no",
+    "Diffusion mode": "no",
+    "Multi-transmit": "no",
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "SAR Patient data": "auto",
+    "PNS mode": "high",
+    "Gradient mode": "maximum",
+    "SofTone mode": "no",
+    "Cardiac synchronization": "no",
+    "Respiratory compensation": "no",
+    "Navigator respiratory comp": "no",
+    "Flow compensation": "no",
+    "Temporal slice spacing": "equidistant",
+    "fMRI echo stabilisation": "no",
+    "NSA": "1",
+    "Angio / Contrast enh.": "no",
+    "Quantitative flow": "no",
+    "Manual start": "yes",
+    "Dynamic study": {
+     "": "individual",
+     "dyn scans": "162",
+     "recon multiplier": "1",
+     "dyn scan times": "shortest",
+     "fov time mode": "default",
+     "dummy scans": "4",
+     "immediate subtraction": "no",
+     "fast next scan": "no",
+     "synch. ext. device": {
+      "": "yes",
+      "start at dyn.": "1",
+      "interval (dyn)": "1"
+     },
+     "dyn stabilization": "regular",
+     "prospect. motion corr.": "no"
+    },
+    "Keyhole": "no",
+    "Arterial Spin labeling": "no",
+    "Preparation phases": "auto",
+    "Interactive F0": "no",
+    "B0 field map": "no",
+    "B1 field map": "no",
+    "MIP/MPR": "no",
+    "SWIp": "no",
+    "Images": "M\", (3) \"no",
+    "Autoview image": "M",
+    "Calculated images": "(4) \"no\"",
+    "Reference tissue": "White matter",
+    "EPI 2D phase correction": "no",
+    "Recon compression": "No",
+    "Preset window contrast": "soft",
+    "Reconstruction mode": {
+     "": "real time",
+     "reuse memory": "no"
+    },
+    "Save raw data": "no",
+    "Hardcopy protocol": "no",
+    "Image filter": "system default",
+    "Geometry correction": "default",
+    "IF_info_seperator": "0",
+    "Total scan duration": "06:59.9",
+    "Rel. SNR": "1",
+    "Act. TR/TE (ms)": "2500 / 30",
+    "Dyn. scan time": "00:02.5",
+    "Time to k0": "00:01.2",
+    "ACQ matrix M x P": "80 x 78",
+    "ACQ voxel MPS (mm)": "2.50 / 2.56 / 2.70",
+    "REC voxel MPS (mm)": "1.56 / 1.56 / 2.70",
+    "Scan percentage (%)": "97.5",
+    "Packages": "1",
+    "Min. slice gap (mm)": "-0",
+    "EPI factor": "39",
+    "Act. WFS (pix) / BW (Hz)": "10.560 / 41.1",
+    "BW in EPI freq. dir. (Hz)": "2188.2",
+    "Min. WFS (pix) / Max. BW (Hz)": "8.312 / 52.3",
+    "Min. TR/TE (ms)": "2433 / 14",
+    "SPIR offset act./default (Hz)": "125 [220]",
+    "SAR / local torso": "< 61 %",
+    "Whole body / level": "< 0.8 W/kg / normal",
+    "SED": "< 0.3 kJ/kg",
+    "B1+rms": "1.26 uT",
+    "Max B1+rms": "1.27 uT",
+    "PNS / level": "88 % / 1st level",
+    "dB/dt": "119.3 T/s",
+    "Sound Pressure Level (dB)": "20.0253181"
+   }
+  },
+  "bids": {
+   "Manufacturer": "Philips",
+   "MagneticFieldStrength": 3.0,
+   "ImagingFrequency": 127.728,
+   "Modality": "MR",
+   "ProtocolName": "bold",
+   "RepetitionTime": 2.5,
+   "EchoTime": 0.03,
+   "FlipAngle": 90.0,
+   "MRAcquisitionType": "2D",
+   "ScanningSequence": [
+    "EP",
+    "GR"
+   ],
+   "PulseSequenceType": "Gradient Echo EPI",
+   "EchoPlanarPulseSequence": true,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "AcquisitionMatrixFE": 80,
+   "AcquisitionMatrixPE": 78,
+   "ReconMatrixPE": 128,
+   "SliceThickness": 2.70000005,
+   "SpacingBetweenSlices": 3.1,
+   "PhaseEncodingAnatomicalAxis": "AP",
+   "PhaseEncodingAxis": "j",
+   "WaterFatShift": 10.56,
+   "EchoTrainLength": 39,
+   "EstimatedTotalReadoutTime": 0.023708468731348235,
+   "EstimatedEffectiveEchoSpacing": 0.0001866808561523483,
+   "SliceTiming": [
+    0.0,
+    0.055556,
+    0.111111,
+    0.166667,
+    0.222222,
+    0.277778,
+    0.333333,
+    0.388889,
+    0.444444,
+    0.5,
+    0.555556,
+    0.611111,
+    0.666667,
+    0.722222,
+    0.777778,
+    0.833333,
+    0.888889,
+    0.944444,
+    1.0,
+    1.055556,
+    1.111111,
+    1.166667,
+    1.222222,
+    1.277778,
+    1.333333,
+    1.388889,
+    1.444444,
+    1.5,
+    1.555556,
+    1.611111,
+    1.666667,
+    1.722222,
+    1.777778,
+    1.833333,
+    1.888889,
+    1.944444,
+    2.0,
+    2.055556,
+    2.111111,
+    2.166667,
+    2.222222,
+    2.277778,
+    2.333333,
+    2.388889,
+    2.444444
+   ]
+  }
+ }
+]

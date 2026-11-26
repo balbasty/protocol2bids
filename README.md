@@ -52,6 +52,8 @@ Useful options of the conversion command:
 | `--defaults`   | Dictionary of default BIDS metadata                           |
 | `--assigns`    | Dictionary of BIDS metadata to assign (overrides)             |
 | `--skip-pages` | (0-based) pages to ignore (legacy; prefer `--select`)         |
+| `--fill-from`  | Other document (e.g. site scan table) to fill missing keys    |
+| `--fill-select`| Protocol to use in `--fill-from`                              |
 | `--bids-only`  | Do not write protocol2bids-specific helper keys               |
 | `--explain`    | Write the protocol parameters used for each key               |
 | `--ocr`        | OCR policy (`auto`, `always`, `never`) for unreadable pages   |
@@ -76,7 +78,7 @@ sidecar = protocol_to_bids(protocols[0], nii="image.nii.gz")
 | Siemens | syngo MR E11 (VE)                                 | ✅              |
 | Siemens | Numaris/X VA20–VA31 (XA)                          | ✅              |
 | Siemens | scanned printouts / broken fonts                  | ✅ (needs OCR)  |
-| Philips | ExamCards (table view and text export)          | ✅              |
+| Philips | ExamCards (table view, text export, `.txt` files) | ✅              |
 | GE      | scan parameter sheets (console or retyped)        | ✅              |
 | GE      | LX protocol scripts (`set TR "2000"`)             | ✅              |
 | GE      | DICOM header dumps                                | ✅              |

@@ -15,171 +15,51 @@
   ],
   "parameters": {
    "": {
-    "SAG T1 3D": {
-     "MPRAGE": {
-      "Voxel 1.00x1.00x1.00": "Rel. SNR 0.98"
-     }
-    },
-    "TE 5.6 TR 25": {
-     "Uniformity CLEAR": {
-      "AP (mm) 240": {
-       "RL (mm)": "170"
-      }
-     }
-    },
-    "Total scan duration": {
-     "04 :37.9": {
-      "PlanAlign": "no"
-     }
-    },
-    "Rel. SNR": {
-     "0.978": {
-      "REST slab": "0"
-     }
-    },
-    "Act. TR/TE (ms)": {
-     "25/5.6": {
-      "Interactive positioning": "no"
-     }
-    },
+    "Total scan duration": "04 :37.9",
+    "Rel. SNR": "0.978",
+    "Act. TR/TE (ms)": "25/5.6",
     "ACQ matrix M x P": "240 x 240",
-    "ACQ voxel MPS (mm)": {
-     "1.00 / 1.00 / 1.00": "Contrast"
-    },
-    "REC voxel MPS (mm)": {
-     "0.94 / 0.94 / 1.00": {
-      "Scan type": "Imaging"
-     }
-    },
-    "Scan percentage (%)": {
-     "100": {
-      "Scan mode": "3D"
-     }
-    },
-    "Act. WFS (pix) / BW (Hz)": {
-     "1533 / 141.7": {
-      "technique": "FFE"
-     }
-    },
-    "Min. WFS (pix) / Max BV (Hz)": {
-     "0.425 / 510.6": {
-      "Contrast enhancement": "T1"
-     }
-    },
-    "Min. TR/TE (ms)": {
-     "12 / 4.7": {
-      "Acquisition mode": "cartesian"
-     }
-    },
-    "SAR / local torso": {
-     "< 8%": {
-      "Fast Imaging mode": "none"
-     }
-    },
-    "Whole body / level": {
-     "< 0.2 W/Kg/normal": {
-      "Echoes": "1"
-     }
-    },
-    "SED": {
-     "< 0.1 Kj/Kg": {
-      "Partial echo": "no"
-     }
-    },
-    "B1+rms": {
-     "119 uT": {
-      "Shifted echo": "no"
-     }
-    },
-    "Max B1+rms": {
-     "119 uT": {
-      "TE": "user defined"
-     }
-    },
-    "PNS / level": {
-     "22% / normal": {
-      "(ms)": "5.6"
-     }
-    },
-    "dB/dt": {
-     "12.8 T/s": {
-      "Flip angle (deg)": "30"
-     }
-    },
-    "Sound Pressure Level (dB)": {
-     "--6.6": {
-      "TR": {
-       "": "user defined",
-       "(ms)": "25"
-      }
-     }
-    },
-    "Geometry": {
-     "Halfscan": "no"
-    },
-    "Uniformity": {
-     "CLEAR": {
-      "Water-fat shift": "maximum"
-     }
-    },
+    "ACQ voxel MPS (mm)": "1.00 / 1.00 / 1.00",
+    "REC voxel MPS (mm)": "0.94 / 0.94 / 1.00",
+    "Scan percentage (%)": "100",
+    "Act. WFS (pix) / BW (Hz)": "1533 / 141.7",
+    "Min. WFS (pix) / Max BV (Hz)": "0.425 / 510.6",
+    "Min. TR/TE (ms)": "12 / 4.7",
+    "SAR / local torso": "< 8%",
+    "Whole body / level": "< 0.2 W/Kg/normal",
+    "SED": "< 0.1 Kj/Kg",
+    "B1+rms": "119 uT",
+    "Max B1+rms": "119 uT",
+    "PNS / level": "22% / normal",
+    "dB/dt": "12.8 T/s",
+    "Sound Pressure Level (dB)": "-6.6"
+   },
+   "Geometry": {
+    "Uniformity": "CLEAR",
     "FOV": {
      "FH (mm)": {
-      "240": {
-       "Shim": "default"
-      },
+      "": "240",
       "AP (mm)": {
-       "240": {
-        "mDIXON": "no"
-       },
-       "RL (mm)": {
-        "170": {
-         "Fat suppression": "no"
-        }
-       }
+       "": "240",
+       "RL (mm)": "170"
       }
      }
     },
     "Voxel size": {
      "FH (mm)": {
-      "1": {
-       "Water suppression": "no"
-      },
+      "": "1",
       "AP (mm)": {
-       "1": {
-        "MTC": "no"
-       },
-       "RL (mm)": {
-        "1": {
-         "Diffusion mode": "no"
-        }
-       }
+       "": "1",
+       "RL (mm)": "1"
       }
      }
     },
-    "Recon voxel size (mm)": {
-     "0.94": {
-      "SAR mode": "high"
-     }
-    },
-    "Fold--over suppression": {
-     "no": {
-      "B1 mode": "default"
-     }
-    },
-    "Slice oversampling": {
-     "default": {
-      "PNS mode": "low"
-     }
-    },
-    "Reconstruction matrix": {
-     "256": {
-      "Gradient mode": "default"
-     }
-    },
+    "Recon voxel size (mm)": "0.94",
+    "Fold-over suppression": "no",
+    "Slice oversampling": "default",
+    "Reconstruction matrix": "256",
     "SENSE": {
-     "yes": {
-      "SoftTone mode": "no"
-     },
+     "": "yes",
      "P reduction (AP)": "2",
      "S reduction (RL)": "2"
     },
@@ -191,7 +71,47 @@
      "slice orientation": "sagittal",
      "fold-over direction": "AP",
      "fat shit direction": "F"
-    }
+    },
+    "PlanAlign": "no",
+    "REST slab": "0",
+    "Interactive positioning": "no"
+   },
+   "Contrast": {
+    "Scan type": "Imaging",
+    "Scan mode": {
+     "": "3D",
+     "technique": "FFE"
+    },
+    "Contrast enhancement": "T1",
+    "Acquisition mode": "cartesian",
+    "Fast Imaging mode": "none",
+    "Echoes": {
+     "": "1",
+     "Partial echo": "no",
+     "Shifted echo": "no"
+    },
+    "TE": {
+     "": "user defined",
+     "(ms)": "5.6"
+    },
+    "Flip angle (deg)": "30",
+    "TR": {
+     "": "user defined",
+     "(ms)": "25"
+    },
+    "Halfscan": "no",
+    "Water-fat shift": "maximum",
+    "Shim": "default",
+    "mDIXON": "no",
+    "Fat suppression": "no",
+    "Water suppression": "no",
+    "MTC": "no",
+    "Diffusion mode": "no",
+    "SAR mode": "high",
+    "B1 mode": "default",
+    "PNS mode": "low",
+    "Gradient mode": "default",
+    "SoftTone mode": "no"
    }
   },
   "bids": {
@@ -201,6 +121,8 @@
    "ImagingFrequency": 63.864,
    "Modality": "MR",
    "ProtocolName": "T1w",
+   "RepetitionTime": 0.025,
+   "EchoTime": 0.0056,
    "FlipAngle": 30.0,
    "MRAcquisitionType": "3D",
    "ScanningSequence": [
@@ -208,8 +130,12 @@
    ],
    "PulseSequenceType": "Fast Field Echo",
    "EchoPlanarPulseSequence": false,
+   "ParallelAcquisitionTechnique": "SENSE",
+   "ParallelReductionFactorInPlane": 2.0,
+   "ParallelReductionFactorOutOfPlane": 2.0,
    "AcquisitionMatrixFE": 240,
    "AcquisitionMatrixPE": 240,
+   "ReconMatrixPE": 256,
    "PhaseEncodingAnatomicalAxis": "AP",
    "PhaseEncodingAxis": "i"
   }

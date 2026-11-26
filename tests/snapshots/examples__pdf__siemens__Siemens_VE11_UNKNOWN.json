@@ -3626,6 +3626,7 @@
     2.090278
    ],
    "DwellTime": 2.701e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 4.3,
    "Modality": "MR",
    "ProtocolName": "DTI_custom_v1_AP",
@@ -4032,6 +4033,7 @@
     2.090278
    ],
    "DwellTime": 2.701e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 4.3,
    "Modality": "MR",
    "ProtocolName": "DTI_custom_v1_rev",

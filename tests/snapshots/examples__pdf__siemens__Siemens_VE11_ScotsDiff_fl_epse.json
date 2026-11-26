@@ -1019,6 +1019,7 @@
     3.885714
    ],
    "DwellTime": 3.2000000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "ep2d_diff_cor",
@@ -1778,6 +1779,7 @@
     3.885714
    ],
    "DwellTime": 3.2000000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "ep2d_diff_ax",
@@ -2537,6 +2539,7 @@
     3.885714
    ],
    "DwellTime": 3.2000000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "ep2d_diff_sag",

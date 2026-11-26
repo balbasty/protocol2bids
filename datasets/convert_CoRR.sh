@@ -2,7 +2,7 @@
 # Convert the CoRR printouts. Run from the `datasets` directory.
 
 PARAMETERS=(
-#   site       out                pdf        [protocol index, see `p2b list`]
+#   site       out                input      [protocol index | -] [p2b options]
     "BMB_1      anat               anat"
     "BMB_1      rest               rest"
     "BNU_1      anat               anat"
@@ -39,19 +39,25 @@ PARAMETERS=(
 
 for ((i = 0; i < ${#PARAMETERS[@]}; i++)); do
 
-    # split parameter row: site, output name, input pdf, [protocol index]
+    # split parameter row:
+    #   site, output name, input (pdf by default), [protocol index or "-"],
+    #   [extra p2b options]
     IFS=" " read -r -a arr <<< "${PARAMETERS[$i]}"
     site="${arr[0]}"
     out="${arr[1]}"
     inp="${arr[2]}"
+    [[ "${inp}" == *.* ]] || inp="${inp}.pdf"
     opts=()
-    if [ ${#arr[@]} -gt 3 ]; then
+    if [ ${#arr[@]} -gt 3 ] && [ "${arr[3]}" != "-" ]; then
         opts=(--select "${arr[3]}")
     fi
+    if [ ${#arr[@]} -gt 4 ]; then
+        opts+=("${arr[@]:4}")
+    fi
 
-    echo "${site}: ${inp}.pdf -> ${out}.json"
+    echo "${site}: ${inp} -> ${out}.json"
     p2b \
-        --inp "pdf/CoRR/${site}/${inp}.pdf" \
+        --inp "pdf/CoRR/${site}/${inp}" \
         --out "p2b/CoRR/${site}/${out}.json" \
         --nii "nii/CoRR/${site}/${out}.nii" \
         "${opts[@]}"

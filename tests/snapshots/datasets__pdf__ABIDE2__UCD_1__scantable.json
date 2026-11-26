@@ -44,8 +44,9 @@
    "MagneticFieldStrength": 3.0,
    "ReceiveCoilName": "32Ch",
    "PulseSequenceType": "MPRAGE",
-   "MRAcquisitionType": "2D",
+   "MRAcquisitionType": "3D",
    "RepetitionTime": 2.0,
+   "RepetitionTimePreparation": 2.0,
    "EchoTime": 0.00316,
    "InversionTime": 1.05,
    "FlipAngle": 8.0,
@@ -53,7 +54,6 @@
    "ParallelAcquisitionTechnique": "GRAPPA",
    "ParallelReductionFactorInPlane": 2.0,
    "SliceThickness": 1.0,
-   "SpacingBetweenSlices": 1.5,
    "AcquisitionMatrixPE": 256
   }
  },

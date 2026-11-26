@@ -43,14 +43,14 @@
    "MagneticFieldStrength": 3.0,
    "ReceiveCoilName": "8Ch",
    "PulseSequenceType": "MPRAGE",
-   "MRAcquisitionType": "2D",
+   "MRAcquisitionType": "3D",
    "RepetitionTime": 2.1,
+   "RepetitionTimePreparation": 2.1,
    "EchoTime": 0.00393,
    "InversionTime": 1.0,
    "FlipAngle": 7.0,
    "PixelBandwidth": 130.0,
    "SliceThickness": 1.05,
-   "SpacingBetweenSlices": 1.575,
    "AcquisitionMatrixPE": 256
   }
  },

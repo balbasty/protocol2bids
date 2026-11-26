@@ -1,0 +1,30 @@
+{
+    "Manufacturer": "Philips",
+    "MagneticFieldStrength": 3.0,
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "dwi",
+    "RepetitionTime": 7.8500000000000005,
+    "EchoTime": 0.101,
+    "FlipAngle": 90.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP",
+        "SE"
+    ],
+    "PulseSequenceType": "Spin Echo EPI",
+    "EchoPlanarPulseSequence": true,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "AcquisitionMatrixFE": 92,
+    "AcquisitionMatrixPE": 90,
+    "ReconMatrixPE": 192,
+    "SliceThickness": 3.0,
+    "SpacingBetweenSlices": 3.0,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j",
+    "WaterFatShift": 11.988,
+    "EchoTrainLength": 45,
+    "EstimatedTotalReadoutTime": 0.027004515349593593,
+    "EstimatedEffectiveEchoSpacing": 0.00014138489711829107
+}

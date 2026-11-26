@@ -1,15 +1,28 @@
 {
     "Manufacturer": "Philips",
-    "ManufacturersModelName": "Ingenia",
     "MagneticFieldStrength": 3.0,
-    "ReceiveCoilName": "15Ch",
-    "PulseSequenceType": "MPRAGE",
-    "MRAcquisitionType": "2D",
-    "InversionTime": 0.9,
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "T1w",
+    "RepetitionTime": 2.5,
+    "EchoTime": 0.0031000000000000003,
     "FlipAngle": 9.0,
-    "PixelBandwidth": 240.0,
+    "InversionTime": 0.9,
+    "RepetitionTimePreparation": 2.5,
+    "MRAcquisitionType": "3D",
+    "ScanningSequence": [
+        "GR",
+        "IR"
+    ],
+    "PulseSequenceType": "Inversion Recovery Turbo Field Echo (MPRAGE-like)",
+    "EchoPlanarPulseSequence": false,
+    "RepetitionTimeExcitation": 0.0067,
     "ParallelAcquisitionTechnique": "SENSE",
     "ParallelReductionFactorInPlane": 1.0,
-    "SliceThickness": 1.2,
-    "SpacingBetweenSlices": 1.2
+    "ParallelReductionFactorOutOfPlane": 1.8,
+    "AcquisitionMatrixFE": 244,
+    "AcquisitionMatrixPE": 227,
+    "ReconMatrixPE": 256,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j"
 }

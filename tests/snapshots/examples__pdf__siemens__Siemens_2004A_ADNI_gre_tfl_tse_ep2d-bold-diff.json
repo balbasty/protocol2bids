@@ -1766,6 +1766,7 @@
     3.258333
    ],
    "DwellTime": 2.5010000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 6.8,
    "Modality": "MR",
    "ProtocolName": "DTI-6directions-2.5x2.5x3",
@@ -2019,6 +2020,7 @@
     3.402083
    ],
    "DwellTime": 2.5010000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 7.1000000000000005,
    "Modality": "MR",
    "ProtocolName": "DTI-12directions-2.5x2.5x3",

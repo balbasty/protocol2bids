@@ -1,19 +1,30 @@
 {
     "Manufacturer": "Philips",
-    "ManufacturersModelName": "Ingenia",
     "MagneticFieldStrength": 3.0,
-    "ReceiveCoilName": "15Ch",
-    "PulseSequenceType": "EPI",
-    "MRAcquisitionType": "2D",
-    "ScanningSequence": [
-        "EP"
-    ],
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "bold",
     "RepetitionTime": 3.0,
     "EchoTime": 0.025,
     "FlipAngle": 80.0,
-    "PhilipsReportedBandwidth": 3280.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP",
+        "GR"
+    ],
+    "PulseSequenceType": "Gradient Echo EPI",
+    "EchoPlanarPulseSequence": true,
     "ParallelAcquisitionTechnique": "SENSE",
     "ParallelReductionFactorInPlane": 2.0,
+    "AcquisitionMatrixFE": 64,
+    "AcquisitionMatrixPE": 62,
+    "ReconMatrixPE": 64,
     "SliceThickness": 4.0,
-    "SpacingBetweenSlices": 4.0
+    "SpacingBetweenSlices": 4.0,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j",
+    "WaterFatShift": 6.306,
+    "EchoTrainLength": 31,
+    "EstimatedTotalReadoutTime": 0.014066972970135067,
+    "EstimatedEffectiveEchoSpacing": 0.00022328528524023916
 }

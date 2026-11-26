@@ -28,12 +28,15 @@ SNAPSHOTS = ROOT / 'tests' / 'snapshots'
 CORPUS = sorted(
     str(p.relative_to(ROOT))
     for folder in ('examples', 'datasets')
-    for p in (ROOT / folder).rglob('*.pdf')
+    for ext in ('*.pdf', '*.txt')
+    for p in (ROOT / folder).rglob(ext)
 )
 
 
 def snapshot_path(pdf: str) -> Path:
-    return SNAPSHOTS / (pdf.replace('/', '__')[:-4] + '.json')
+    stem, ext = pdf.rsplit('.', 1)
+    suffix = '' if ext == 'pdf' else f'.{ext}'
+    return SNAPSHOTS / (stem.replace('/', '__') + suffix + '.json')
 
 
 def make_snapshot(pdf: str) -> list[dict]:

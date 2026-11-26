@@ -48,6 +48,7 @@
    "PulseSequenceType": "3D SPGR",
    "MRAcquisitionType": "3D",
    "RepetitionTime": 8.068,
+   "RepetitionTimePreparation": 8.068,
    "EchoTime": 0.0031360000000000003,
    "InversionTime": 0.45,
    "FlipAngle": 8.0,

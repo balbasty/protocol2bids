@@ -35,7 +35,21 @@
    },
    "FMRI": {
     "Brain Wave Real Time": "0",
-    "Paradigm String": "Research Mode"
+    "Paradigm String": "Research Mode",
+    "Paradigm UID": "1.2.840.113819.3.20060302.1",
+    "Initial State": "Control",
+    "PSD Trigger": "Internal",
+    "Slice Order": "Interleaved",
+    "View Order": "Bottom/Up",
+    "# of Repetitions REST": "1",
+    "# of Repetitions ACTIVE": "1",
+    "# of Dummy Acquisition": "5"
+   },
+   "SAT": {
+    "Tag Type": "None"
+   },
+   "CONTRAST": {
+    "Contrast Yes/No": "No"
    },
    "IMAGING PARAMETERS": {
     "Imaging Mode": "2D",
@@ -62,19 +76,7 @@
    "MULTI-PHASE": {
     "Slice per Location": "180",
     "Delay after Acquisition": "0",
-    "Initial State": "Control",
-    "PSD Trigger": "Internal",
-    "Slice Order": "Interleaved",
-    "View Order": "Bottom/Up",
-    "# of Repetitions REST": "1",
-    "# of Repetitions ACTIVE": "1",
-    "# of Dummy Acquisition": "5"
-   },
-   "SAT": {
-    "Tag Type": "None"
-   },
-   "CONTRAST": {
-    "Contrast Yes/No": "No",
+    "# of Acquisition": "0",
     "Seperate Series": "0",
     "Delay after Acquisition without AV": "0",
     "Mask Phase": "0",

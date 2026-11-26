@@ -1,17 +1,30 @@
 {
     "Manufacturer": "Philips",
-    "ManufacturersModelName": "Achieva",
     "MagneticFieldStrength": 3.0,
-    "ReceiveCoilName": "32Ch",
-    "PulseSequenceType": "EPI",
-    "MRAcquisitionType": "2D",
-    "ScanningSequence": [
-        "EP"
-    ],
+    "ImagingFrequency": 127.728,
+    "Modality": "MR",
+    "ProtocolName": "bold",
     "RepetitionTime": 2.0,
     "EchoTime": 0.025,
     "FlipAngle": 90.0,
+    "MRAcquisitionType": "2D",
+    "ScanningSequence": [
+        "EP",
+        "GR"
+    ],
+    "PulseSequenceType": "Gradient Echo EPI",
+    "EchoPlanarPulseSequence": true,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.5,
+    "AcquisitionMatrixFE": 80,
+    "AcquisitionMatrixPE": 77,
+    "ReconMatrixPE": 80,
     "SliceThickness": 3.0,
-    "SpacingBetweenSlices": 3.0,
-    "AcquisitionMatrixPE": 77
+    "SpacingBetweenSlices": 3.3,
+    "PhaseEncodingAnatomicalAxis": "AP",
+    "PhaseEncodingAxis": "j",
+    "WaterFatShift": 11.0,
+    "EchoTrainLength": 31,
+    "EstimatedTotalReadoutTime": 0.024538011841339316,
+    "EstimatedEffectiveEchoSpacing": 0.00031060774482707997
 }

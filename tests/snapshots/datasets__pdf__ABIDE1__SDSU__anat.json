@@ -47,8 +47,7 @@
    "TRICKS": {
     "Pause On/Off": "On",
     "Auto Subtract": "0",
-    "Auto SCIC": "Off",
-    "Property of": null
+    "Auto SCIC": "Off"
    },
    "IMAGING PARAMETERS": {
     "Imaging Mode": "3D",
@@ -86,7 +85,7 @@
    },
    "CONTRAST": {
     "Contrast Yes/No": "No",
-    "Page 10 of 12": "Sun Jul 22 13:53:32 PDT 2012"
+    "Property of": "Sun Jul 22 13:53:32 PDT 2012"
    }
   },
   "bids": {
@@ -105,7 +104,7 @@
    "PulseSequenceType": "Inversion Recovery Fast Spoiled Gradient Echo",
    "EchoPlanarPulseSequence": false,
    "ParallelAcquisitionTechnique": "ASSET",
-   "ParallelReductionFactorInPlane": 1.0,
+   "ParallelReductionFactorInPlane": 2.0,
    "AcquisitionMatrixFE": 256,
    "AcquisitionMatrixPE": 192,
    "PercentPhaseFOV": 100.0,

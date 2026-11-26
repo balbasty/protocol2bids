@@ -47,7 +47,6 @@
     "Pause On/Off": "On",
     "3D_T1_Sag-Structural_(FSPGR_BRAVO) Auto Subtract": "0",
     "Auto SCIC": "Off",
-    "Property of": null,
     "Slice Thickness": "1.0",
     "Location per Slab": "220",
     "Overlap Locations": "0"
@@ -73,7 +72,7 @@
    },
    "CONTRAST": {
     "Contrast Yes/No": "No",
-    "Page 3 of 4": "Tue Oct 04 12:01:36 EDT 2016"
+    "Property of": "Tue Oct 04 12:01:36 EDT 2016"
    }
   },
   "bids": {

@@ -5,7 +5,8 @@
     "MagneticFieldStrength": 3.0,
     "ReceiveCoilName": "8HRBRAIN",
     "ScanningSequence": [
-        "GR"
+        "GR",
+        "IR"
     ],
     "SequenceVariant": [
         "SS",
@@ -26,7 +27,6 @@
         "OTHER"
     ],
     "Modality": "MR",
-    "RepetitionTime": 0.01026,
     "EchoTime": 0.004236,
     "FlipAngle": 16.0,
     "ImagingFrequency": 127.705356,
@@ -48,6 +48,7 @@
     ],
     "SAR": 0.267604,
     "InversionTime": 0.35000000000000003,
+    "RepetitionTimeExcitation": 0.01026,
     "AcquisitionMatrixPE": 256,
     "AcquisitionMatrixFE": 256,
     "ReconMatrixPE": 512,

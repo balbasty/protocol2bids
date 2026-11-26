@@ -44,8 +44,7 @@
    "TRICKS": {
     "Pause On/Off": "On",
     "Auto Subtract": "0",
-    "Auto SCIC": "Off",
-    "Property of": null
+    "Auto SCIC": "Off"
    },
    "IMAGING PARAMETERS": {
     "Imaging Mode": "2D",
@@ -86,7 +85,7 @@
    },
    "CONTRAST": {
     "Contrast Yes/No": "No",
-    "Page 6 of 16": "Mon Sep 29 13:11:25 PDT 2014"
+    "Property of": "Mon Sep 29 13:11:25 PDT 2014"
    }
   },
   "bids": {

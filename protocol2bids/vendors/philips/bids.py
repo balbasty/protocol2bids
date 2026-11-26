@@ -85,7 +85,7 @@ def hardware(ctx: Context):
     if field is None:
         # water-fat shift (pix) x bandwidth (Hz/pix) = water-fat
         # difference in Hz = 3.4 ppm x gamma x B0
-        wfs, bw = _pair(ctx.get('Act. WFS (pix) / BW (Hz)'))[:2]
+        wfs, bw = _wfs_bw(ctx)
         estimate = wfs * bw / (FAT_WATER_PPM * GYRO)
         field = min((0.5, 1.0, 1.5, 3.0, 7.0), key=lambda b: abs(b - estimate))
     ctx.set('MagneticFieldStrength', field)
@@ -106,9 +106,24 @@ def coil(ctx: Context):
 
 @rule
 def timing(ctx: Context):
-    tr, te = _pair(ctx.get('Act. TR/TE (ms)'))[:2]
+    try:
+        tr, te = _pair(ctx.get('Act. TR/TE (ms)'))[:2]
+    except Missing:
+        # some exports (e.g. diffusion) print them separately
+        tr = _pair(ctx.get('Act. TR (ms)'))[0]
+        te = _pair(ctx.get('Act. TE (ms)'))[0]
     ctx.set('RepetitionTime', tr * 1e-3)
     ctx.set('EchoTime', te * 1e-3)
+
+
+def _wfs_bw(ctx: Context) -> tuple[float, float]:
+    """Water-fat shift (pix) and bandwidth (Hz/pix)."""
+    for key in ('Act. WFS (pix) / BW (Hz)', 'WFS (pix) / BW (Hz)'):
+        value = ctx.opt(key)
+        if value is not None:
+            wfs, bw = _pair(value)[:2]
+            return wfs, bw
+    raise Missing('WFS (pix) / BW (Hz)')
 
 
 @rule
@@ -132,22 +147,32 @@ def inversion(ctx: Context):
     """
     if not _inverted(ctx):
         return
+    delay = (ctx.opt('delay', group='TFE prepulse') or '').strip().lower()
+    if delay == 'shortest' and ctx.prot.has('Min. TI delay'):
+        # "shortest": the delay actually used is the minimum one
+        ctx.set('InversionTime', V.number(ctx.get('Min. TI delay')) * 1e-3)
     for key, group in (('To Exc (ms)', 'TFE prepulse'),
                        ('(ms)', 'TFE prepulse'), ('TI (ms)', None),
                        ('IR delay (ms)', None)):
         value = ctx.opt(key, group=group)
-        if value is not None:
+        if value is not None and 'InversionTime' not in ctx:
             try:
                 ctx.set('InversionTime', V.number(value) * 1e-3)
                 break
             except ValueError:
                 pass
-    interval = ctx.opt('(ms)', group='TFE factor')
-    if interval is not None:
-        try:
-            ctx.set('RepetitionTimePreparation', V.number(interval) * 1e-3)
-        except ValueError:
-            pass
+    # shot interval = time between two inversions. Depending on the
+    # software version it is printed below "TFE factor" or "TFE startup
+    # echoes": look for "(ms)" below "shot interval", wherever it is.
+    for e in ctx.prot.find('(ms)'):
+        groups = [g.lower() for g in e.group]
+        if 'shot interval' in groups or (
+                groups and groups[0] == 'tfe factor'):
+            try:
+                ctx.set('RepetitionTimePreparation', V.number(e.value) * 1e-3)
+                break
+            except ValueError:
+                pass
 
 
 @rule
@@ -183,6 +208,13 @@ def sequence(ctx: Context):
     ctx.set('EchoPlanarPulseSequence', epi)
     if fast == 'TFE':
         ctx.set('RepetitionTimeExcitation', ctx['RepetitionTime'])
+        if _inverted(ctx):
+            # MPRAGE-like: RepetitionTime is the inversion TR (as for
+            # Siemens), not the excitation TR. Unknown -> not written.
+            if 'RepetitionTimePreparation' in ctx:
+                ctx.set('RepetitionTime', ctx['RepetitionTimePreparation'])
+            else:
+                ctx.out.pop('RepetitionTime', None)
 
 
 @rule
@@ -266,7 +298,7 @@ def epi_readout(ctx: Context):
     """dcm2niix (issue #377) estimates from the water-fat shift."""
     if not ctx.out.get('EchoPlanarPulseSequence'):
         return
-    wfs = _pair(ctx.get('Act. WFS (pix) / BW (Hz)'))[0]
+    wfs = _wfs_bw(ctx)[0]
     epi_factor = V.integer(ctx.get('EPI factor'))
     freq = ctx['ImagingFrequency']
     ctx.set('WaterFatShift', wfs)
