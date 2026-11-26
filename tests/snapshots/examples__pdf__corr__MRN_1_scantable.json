@@ -48,6 +48,7 @@
    "PulseSequenceType": "3D MEMPR",
    "MRAcquisitionType": "3D",
    "RepetitionTime": 2.5300000000000002,
+   "RepetitionTimePreparation": 2.5300000000000002,
    "EchoTime": 0.00164,
    "InversionTime": 1.2,
    "FlipAngle": 7.0,

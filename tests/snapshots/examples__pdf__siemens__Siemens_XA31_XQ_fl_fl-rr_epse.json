@@ -957,6 +957,7 @@
     3.885714
    ],
    "DwellTime": 3.3980000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "QIBA_diff_qa_cor",
@@ -1650,6 +1651,7 @@
     3.885714
    ],
    "DwellTime": 3.3980000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "QIBA_diff_qa_ax",
@@ -2341,6 +2343,7 @@
     3.885714
    ],
    "DwellTime": 3.3980000000000003e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "qiba_diff_qa_sag",

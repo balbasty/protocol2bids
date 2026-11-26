@@ -609,6 +609,7 @@
     3.435484
    ],
    "DwellTime": 3.202e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 7.1000000000000005,
    "Modality": "MR",
    "ProtocolName": "DWI fast (send to RAPID)",
@@ -2875,6 +2876,7 @@
    "B0ShimmingTechnique": "Standard",
    "ParallelReductionFactorInPlane": 2,
    "ParallelAcquisitionTechnique": "GRAPPA",
+   "FlipAngle": 90.0,
    "Modality": "MR",
    "ProtocolName": "DWI (send to Rapid)",
    "SeriesDescription": "DWI (send to Rapid)",
@@ -4352,6 +4354,7 @@
     2.006667
    ],
    "DwellTime": 2.2e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 4.3,
    "Modality": "MR",
    "ProtocolName": "DWI (send to Rapid) *",

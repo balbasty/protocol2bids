@@ -231,6 +231,7 @@
     3.526531
    ],
    "DwellTime": 2.798e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 7.2,
    "Modality": "MR",
    "ProtocolName": "DTI_64_18x18x25_p2_opt",

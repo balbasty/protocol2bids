@@ -1,4 +1,5 @@
 {
+    "MagneticFieldStrength": 3.0,
     "Manufacturer": "GE",
     "Modality": "MR",
     "ProtocolName": "rest",

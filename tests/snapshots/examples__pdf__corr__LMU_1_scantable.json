@@ -47,6 +47,7 @@
    "PulseSequenceType": "3D T1-TFE",
    "MRAcquisitionType": "3D",
    "RepetitionTime": 2.375,
+   "RepetitionTimePreparation": 2.375,
    "InversionTime": 0.9,
    "FlipAngle": 8.0,
    "PixelBandwidth": 191.5,

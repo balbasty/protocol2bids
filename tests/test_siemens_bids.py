@@ -189,3 +189,12 @@ def test_sms_product_order():
     # even MB, odd nexc, unknown version: undecidable
     with pytest.raises(Exception):
         sms_interleaved(72, 8)
+
+
+def test_se_epi_flip_angle_default():
+    # product ep2d_diff/epse: 90 deg, not printed
+    b = _bids('examples/pdf/siemens/Siemens_VD13_tfi_tse_epse.pdf', index=-1)
+    assert b['FlipAngle'] == 90
+    # user sequence (NYU cbi_ep2d_diff, 60 deg): no default
+    b = _bids('datasets/pdf/ABIDE2/NYU_1/dwi.pdf')
+    assert 'FlipAngle' not in b

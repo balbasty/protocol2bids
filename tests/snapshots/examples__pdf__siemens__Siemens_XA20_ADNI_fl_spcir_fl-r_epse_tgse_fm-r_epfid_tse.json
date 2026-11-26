@@ -1685,6 +1685,7 @@
     3.209877
    ],
    "DwellTime": 2.5e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 6.5,
    "Modality": "MR",
    "ProtocolName": "Axial MB DTI s3 p2",

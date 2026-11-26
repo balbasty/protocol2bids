@@ -5,6 +5,8 @@
     "ImagingFrequency": 63.864,
     "Modality": "MR",
     "ProtocolName": "T1w",
+    "RepetitionTime": 0.025,
+    "EchoTime": 0.0056,
     "FlipAngle": 30.0,
     "MRAcquisitionType": "3D",
     "ScanningSequence": [
@@ -12,8 +14,12 @@
     ],
     "PulseSequenceType": "Fast Field Echo",
     "EchoPlanarPulseSequence": false,
+    "ParallelAcquisitionTechnique": "SENSE",
+    "ParallelReductionFactorInPlane": 2.0,
+    "ParallelReductionFactorOutOfPlane": 2.0,
     "AcquisitionMatrixFE": 240,
     "AcquisitionMatrixPE": 240,
+    "ReconMatrixPE": 256,
     "PhaseEncodingAnatomicalAxis": "AP",
     "PhaseEncodingAxis": "j"
 }

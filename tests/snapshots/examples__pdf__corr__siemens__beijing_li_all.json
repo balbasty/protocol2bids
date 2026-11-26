@@ -982,6 +982,7 @@
     1.35
    ],
    "DwellTime": 2.001e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 3.0,
    "Modality": "MR",
    "ProtocolName": "ep2d_diff_3scan_trace_p2",
@@ -1565,6 +1566,7 @@
     3.875
    ],
    "DwellTime": 2.798e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.0,
    "Modality": "MR",
    "ProtocolName": "ep2d_diff",

@@ -185,7 +185,7 @@ def _find_columns(
                 for s in ln.segments]
     if not segments:
         return []
-    maxcount = max(1, len(lines) // 50)
+    maxcount = max(2, len(lines) // 50)
     gutters = _coverage_gutters(
         segments, 0.15 * width, 0.85 * width, minwidth=4,
         maxcount=maxcount,

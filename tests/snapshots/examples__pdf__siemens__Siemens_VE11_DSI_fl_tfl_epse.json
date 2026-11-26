@@ -1864,6 +1864,7 @@
     1.35625
    ],
    "DwellTime": 2.3e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 2.8000000000000003,
    "Modality": "MR",
    "ProtocolName": "dMRI_dir258_1_HDFT_Siemens_noGR",
@@ -2261,6 +2262,7 @@
     1.35625
    ],
    "DwellTime": 2.3e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 2.8000000000000003,
    "Modality": "MR",
    "ProtocolName": "dMRI_dir258_2_HDFT_Siemens_noGR",

@@ -175,3 +175,63 @@ def test_ge_lx_slice_timing():
     assert len(st) == 32
     assert st[0] == 0 and st[2] == pytest.approx(2.0 / 32)
     assert st[1] == pytest.approx(16 * 2.0 / 32)
+
+
+def test_philips_text_export_file():
+    # ExamCard "Key = value;" text export (.txt), MPRAGE-like TFE
+    p, b = _one('datasets/pdf/ABIDE2/BNI_1/T1w.txt')
+    assert detect_format(pdf('datasets/pdf/ABIDE2/BNI_1/T1w.txt')) == \
+        'philips'
+    assert b['MRAcquisitionType'] == '3D'
+    assert b['InversionTime'] == pytest.approx(0.9)
+    # RepetitionTime = inversion TR (shot interval), not the excitation TR
+    assert b['RepetitionTime'] == pytest.approx(2.5)
+    assert b['RepetitionTimePreparation'] == pytest.approx(2.5)
+    assert b['RepetitionTimeExcitation'] == pytest.approx(0.0067)
+    # 3D SENSE: P = in-plane, S = through-plane
+    assert b['ParallelReductionFactorInPlane'] == 1
+    assert b['ParallelReductionFactorOutOfPlane'] == pytest.approx(1.8)
+
+
+def test_philips_dwi_separate_tr_te():
+    _, b = _one('datasets/pdf/ABIDE2/BNI_1/dwi.txt')
+    assert b['RepetitionTime'] == pytest.approx(7.85)
+    assert b['EchoTime'] == pytest.approx(0.101)
+    assert b['MagneticFieldStrength'] == 3.0
+
+
+def test_philips_shortest_ti_delay():
+    _, b = _one('datasets/pdf/ABIDE1/Trinity/anat.pdf')
+    assert b['InversionTime'] == pytest.approx(1.06017468)
+
+
+def test_ge_phase_acceleration_and_mprage_tr():
+    _, b = _one('datasets/pdf/ABIDE1/SDSU/rest.pdf')
+    assert b['ParallelReductionFactorInPlane'] == 2     # Phase Acc. Factor
+    _, b = _one('datasets/pdf/ABIDE2/EMC_1/T1w.pdf')
+    # IR-FSPGR: DICOM TR is the excitation TR
+    assert 'RepetitionTime' not in b
+    assert b['RepetitionTimeExcitation'] == pytest.approx(0.01026)
+    assert 'IR' in b['ScanningSequence']
+
+
+def test_scan_table_mprage():
+    prots = read_protocols(pdf('datasets/pdf/ABIDE2/TCD_1/scantable.pdf'))
+    b = protocol_to_bids(prots[0], strict=True)
+    assert b['MRAcquisitionType'] == '3D'
+    assert 'RepetitionTime' not in b          # 8.4 ms = excitation TR
+    assert b['RepetitionTimeExcitation'] == pytest.approx(0.0084)
+
+
+def test_fill_from(tmp_path):
+    import json
+    from protocol2bids.cli import protocol2bids
+    out = tmp_path / 'T1w.json'
+    protocol2bids(pdf('datasets/pdf/ABIDE2/SDSU_1/T1w.pdf'), out,
+                  fill_from=pdf('datasets/pdf/ABIDE2/SDSU_1/scantable.pdf'),
+                  fill_select='0')
+    b = json.loads(out.read_text())
+    # the sheet prints "TE: Min Full"; the scan table gives the value
+    assert b['EchoTime'] == pytest.approx(0.003172)
+    # values from the printout are not overridden
+    assert b['InversionTime'] == pytest.approx(0.6)

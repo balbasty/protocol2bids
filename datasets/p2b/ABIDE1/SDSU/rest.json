@@ -15,7 +15,7 @@
     "PulseSequenceType": "Gradient Echo EPI",
     "EchoPlanarPulseSequence": true,
     "ParallelAcquisitionTechnique": "ASSET",
-    "ParallelReductionFactorInPlane": 1.0,
+    "ParallelReductionFactorInPlane": 2.0,
     "AcquisitionMatrixFE": 64,
     "AcquisitionMatrixPE": 64,
     "PercentPhaseFOV": 100.0,

@@ -90,6 +90,8 @@ def protocol2bids(
     defaults: str | dict | None = None,
     assigns: str | dict | None = None,
     skip_pages: Iterable[int] | None = None,
+    fill_from: str | PathLike | None = None,
+    fill_select: str | None = None,
     bids_only: bool = False,
     explain: bool = False,
     ocr: Literal['auto', 'always', 'never'] = 'auto',
@@ -124,6 +126,13 @@ def protocol2bids(
         Dictionary of BIDS metadata to assign
     skip_pages
         List of (0-based) pages to ignore in the protocol
+    fill_from
+        Another document describing the same acquisition (e.g. the site's
+        scan table). Keys missing from the sidecar are taken from it;
+        existing keys are never overridden.
+    fill_select
+        Protocol to use in `fill_from` (index or name pattern).
+        Default: first protocol.
     bids_only
         Only write BIDS and dcm2niix keys (no protocol2bids helper keys)
     explain
@@ -152,6 +161,11 @@ def protocol2bids(
 
     defaults = _parse_dict(defaults, 'defaults')
     assigns = _parse_dict(assigns, 'assigns')
+    if fill_from:
+        fill_prots = read_protocols(fill_from, ocr=ocr)
+        fill_prots = select_protocols(fill_prots, [fill_select or 0])
+        fill = protocol_to_bids(fill_prots[0], extra=False)
+        defaults = {**fill, **defaults}
 
     sidecars = {}
     names = []

@@ -1057,6 +1057,7 @@
    "TotalReadoutTime": 0.09932,
    "EchoTime": 0.098,
    "DwellTime": 2.499e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 8.2,
    "Modality": "MR",
    "ProtocolName": "ax diff",

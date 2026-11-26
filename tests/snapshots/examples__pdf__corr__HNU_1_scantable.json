@@ -46,7 +46,7 @@
    "ReceiveCoilName": "8 Chan",
    "PulseSequenceType": "3D SPGR",
    "MRAcquisitionType": "3D",
-   "RepetitionTime": 0.008060000000000001,
+   "RepetitionTimeExcitation": 0.008060000000000001,
    "InversionTime": 0.45,
    "FlipAngle": 8.0,
    "PixelBandwidth": 125.0,

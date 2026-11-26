@@ -46,7 +46,7 @@
    "ReceiveCoilName": "8 Chan",
    "PulseSequenceType": "3D BRAVO",
    "MRAcquisitionType": "3D",
-   "RepetitionTime": 0.007788000000000001,
+   "RepetitionTimeExcitation": 0.007788000000000001,
    "EchoTime": 0.002984,
    "InversionTime": 1.1,
    "FlipAngle": 7.0,

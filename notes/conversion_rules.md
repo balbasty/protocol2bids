@@ -39,6 +39,18 @@ Main sources:
 | `SpoilingRFPhaseIncrement = 50°` for product FLASH-based sequences | ✅ (medium) | Pulseq maintainers, Preibisch & Deichmann 2009, PLOS One 2025. No Siemens document found. Only written for `SIEMENS:` sequences with RF spoiling. |
 | `ScanningSequence` / `SequenceVariant` / `ScanOptions` | 🔧 | Aligned on real dcm2niix sidecars: `ep2d_bold` EP / SK / FS; CMRR bold adds SS; `ep2d_diff` EP / SK\SP; `tfl` GR\IR / SK\SP\MP / IR; `gre_field_mapping` GR / SP; `tse` SE / SK\SP; SPACE-FLAIR SE\IR / SK\SP\MP; TrueFISP GR / SK\SS. OSP when phase oversampling > 0. Options vary with protocol details, so treat these as approximate. |
 | `MagneticFieldStrength` from model name, else Larmor frequency | ✅ | |
+| `FlipAngle` of spin-echo EPI | 🔧 | Not printed for product diffusion/SE-EPI (`ep2d_diff`, `epse`, `resolve`…): 90°. Not assumed for user sequences (NYU's `cbi_ep2d_diff` uses 60°). |
+
+## MPRAGE-like sequences (all vendors)
+
+`RepetitionTime` is the **inversion TR** (time between two inversions), as
+Siemens prints it; the excitation TR goes to `RepetitionTimeExcitation`
+and the inversion TR also to `RepetitionTimePreparation`. When only the
+excitation TR is known (GE sheets and DICOM dumps of IR-SPGR/BRAVO,
+Philips TFE without a printed shot interval, scan tables reporting a TR
+< 0.5 s for a 3D inversion-recovery scan), `RepetitionTime` is **not
+written**. Note: this differs from dcm2niix for GE/Philips, which copies
+DICOM (0018,0080), i.e. the excitation TR.
 
 ## Philips
 
@@ -50,7 +62,9 @@ Main sources:
 | `MagneticFieldStrength` from `WFS × BW` when no title | ✅ | WFS (pix) × BW (Hz/pix) = water-fat difference (≈ 434 Hz at 3 T). |
 | Slice order (single package) | 🔧 | "default" = odd first (1,3,5,…,2,4,…) **for any N**; "interleaved" = step `round(sqrt(N))`; ascend/descend; "rev. central". The sqrt step is often wrongly attributed to "default". |
 | `SliceTiming` | ⚠️ | dcm2niix writes none for Philips. We write it only for 1 package, no multiband and "Temporal slice spacing = equidistant"; otherwise omitted. |
-| TFE inversion time | ⚠️ | We write the prepulse delay as printed ("To Exc"); with a linear profile order the effective TI is longer. |
+| TFE inversion time | ⚠️ | We write the prepulse delay as printed ("To Exc" / "delay (ms)"); when the delay is "shortest", the printed `Min. TI delay` is used. With a linear profile order the effective TI is longer. |
+| TFE inversion TR | ✅ | "shot interval (ms)" (printed below "TFE factor" or "TFE startup echoes" depending on the release) → `RepetitionTimePreparation` and `RepetitionTime`. |
+| SENSE factors | ✅ | `P reduction` = in-plane, `S reduction` = through-plane (3D). |
 | Scan-table "Bandwidth" of Philips EPI | 🔧 | Usually the PE bandwidth from the WFS: stored as `PhilipsReportedBandwidth`, not `PixelBandwidth`. |
 
 ## GE
@@ -64,12 +78,34 @@ Main sources:
 | GE slice timing: sequence types | ✅ (= dcm2niix) | Only for epiRT (IOPT contains FMRI: times spread over TR − group delay `DELACQNOAV`), multi-phase EPI (spread over TR; `DELACQ` = Minimum → no delay; variable delays `MPhVar` unsupported) and diffusion (non-cycling systems: pre-R03 behaviour; Premier/UHP/7.0T use gradient cycling whose mode is not printed → no timing). Not for 3D, localizers or other sequences. LX `SLICEORDER`: 0 = sequential, otherwise interleaved. Slice times are given in acquisition-index order; dcm2niix additionally reverses them when the DICOM slices are spatially flipped, which a printout cannot tell. |
 | Phase-encoding polarity | ⚠️ | Not on scan sheets → `PhaseEncodingAxis` only. |
 | `PercentPhaseFOV = Phase FOV × 100` | ✅ | |
+| ASSET factor | 🔧 | "Phase Acceleration Factor" (in-plane); the sheets' plain "Acceleration Factor" is something else. |
+| "TE: Min Full", no TR on 3D sheets | ⚠️ | Not recoverable from the sheet; use `--fill-from` with the site scan table. |
 | `AcquisitionMatrixPE` = printed "Phase" | ⚠️ | Relation with Phase FOV not established. |
 | Fractional NEX = partial Fourier | ✅ (medium) | Only `PartialFourierEnabled` is set. |
 
 ## Scan tables (FCON1000)
 
 Values are hand-typed by sites: only direct mappings are made.
+`MRAcquisitionType` is 3D for MPRAGE/TFE/SPGR/BRAVO/SPACE-like sequence
+names. See above for the TR of MPRAGE-like scans.
 `PhaseEncodingDirection` uses the Siemens convention and is written only
 for Siemens tables with a NIfTI file. The old mapping used the readout
 bandwidth as `BandwidthPerPixelPhaseEncode`, which was wrong (removed).
+
+## Cross-checks against the brainspresso ABIDE templates
+
+Differences that come from the templates, verified on the printouts and
+NIfTI headers:
+
+* NYU_1 / NYU_2 bold: the printouts match the NIfTI geometry (33 × 4 mm
+  vs 34 × 3 mm slices); the scan tables, and the templates, swap TE/flip
+  angle between the two sites.
+* Yale anat: the NIfTI (160 slices, 256 mm FOV) is protocol 1
+  (`Sag_3D_short_ipat`); the template describes protocol 0.
+* KKI / Trinity anat: the template's in-plane SENSE factor is the
+  through-plane one (`S reduction`).
+* NYU_1/2, USM_1, BNI_1, ETH_1, KUL_3, TCD_1 T1w:
+  `RepetitionTimePreparation` in the templates is the TE, TI or excitation
+  TR.
+* Templates store the bold/dwi TR in `RepetitionTimeExcitation`;
+  protocol2bids writes `RepetitionTime` for EPI (as BIDS and dcm2niix).

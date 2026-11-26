@@ -46,6 +46,7 @@
    "PulseSequenceType": "3D TFL",
    "MRAcquisitionType": "3D",
    "RepetitionTime": 2.4,
+   "RepetitionTimePreparation": 2.4,
    "EchoTime": 0.0023,
    "InversionTime": 1.0,
    "FlipAngle": 8.0,

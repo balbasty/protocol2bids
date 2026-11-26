@@ -45,8 +45,7 @@
     "Tag Type": "None"
    },
    "CONTRAST": {
-    "Contrast Yes/No": "No",
-    "Property of": null
+    "Contrast Yes/No": "No"
    },
    "IMAGING PARAMETERS": {
     "Imaging Mode": "3D",
@@ -83,7 +82,7 @@
     "Pause On/Off": "On",
     "Auto Subtract": "0",
     "Auto SCIC": "Off",
-    "Page 5 of 16": "Mon Sep 29 13:11:25 PDT 2014"
+    "Property of": "Mon Sep 29 13:11:25 PDT 2014"
    }
   },
   "bids": {

@@ -229,6 +229,7 @@
     2.982222
    ],
    "DwellTime": 4.497e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 6.1000000000000005,
    "Modality": "MR",
    "ProtocolName": "DKI1",
@@ -508,6 +509,7 @@
     2.982222
    ],
    "DwellTime": 4.497e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 6.1000000000000005,
    "Modality": "MR",
    "ProtocolName": "DKI2",
@@ -785,6 +787,7 @@
     2.982222
    ],
    "DwellTime": 4.497e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 6.1000000000000005,
    "Modality": "MR",
    "ProtocolName": "DKI_B0",

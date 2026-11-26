@@ -42,7 +42,8 @@ CANONICAL = {
     'Shots': ('Number of Shots', 'NUMSHOTS'),
     'Slices': ('# of Slices', 'Slices', 'NOSLC'),
     'LocsPerSlab': ('Locs per Slab',),
-    'Asset': ('Acceleration Factor', 'Phase Acceleration', 'PHASEASSET'),
+    'Asset': ('Phase Acceleration Factor', 'Phase Acceleration',
+              'PHASEASSET', 'Acceleration Factor'),
     'SliceOrder': ('Slice Order', 'SLICEORDER'),
     'Echoes': ('Number of Echoes', '# of Echoes', '# of TE(s) per Scan',
                'NECHO'),
@@ -184,6 +185,25 @@ def s_sequence(ctx: Context):
     ctx.set('EchoPlanarPulseSequence', epi)
     if 'ASSET' in options:
         ctx.set('ParallelAcquisitionTechnique', 'ASSET')
+
+
+def _mprage_tr(ctx: Context):
+    """
+    3D inversion-recovery gradient echo (IR-SPGR, BRAVO, MPRAGE): the
+    printed / DICOM TR is the excitation TR. RepetitionTime is reserved
+    for the inversion TR (as for Siemens), which GE does not print.
+    """
+    scanning = ctx.out.get('ScanningSequence', [])
+    if (
+        ctx.out.get('MRAcquisitionType') == '3D' and 'IR' in scanning
+        and 'EP' not in scanning and 'RepetitionTime' in ctx.out
+    ):
+        ctx.set('RepetitionTimeExcitation', ctx.out.pop('RepetitionTime'))
+
+
+@sheet_rule
+def s_mprage_tr(ctx: Context):
+    _mprage_tr(ctx)
 
 
 @sheet_rule
@@ -503,6 +523,14 @@ def d_inversion(ctx: Context):
     ti = float(ctx.tag('0018,0082'))
     if ti > 0:
         ctx.set('InversionTime', ti * 1e-3)
+        scanning = ctx.out.get('ScanningSequence', [])
+        if 'IR' not in scanning and 'EP' not in scanning:
+            ctx.set('ScanningSequence', scanning + ['IR'])
+
+
+@dicom_rule
+def d_mprage_tr(ctx: Context):
+    _mprage_tr(ctx)
 
 
 @dicom_rule

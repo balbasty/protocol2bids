@@ -141,6 +141,9 @@ def load_pages(
     """
     import pymupdf
 
+    if str(path).lower().endswith('.txt'):
+        return load_text_pages(path)
+
     pages = []
     with pymupdf.open(str(path)) as doc:
         for index, pdfpage in enumerate(doc):
@@ -281,3 +284,33 @@ def ocr_garbled_lines(path: str | PathLike, pages: list[Page]) -> int:
                     ))
                 count += 1
     return count
+
+
+def load_text_pages(
+    path: str | PathLike,
+    char_width: float = 6.0,
+    line_height: float = 12.0,
+    tabsize: int = 8,
+) -> list[Page]:
+    """
+    Load a plain-text export (e.g. Philips ExamCard "Key = value;" files)
+    as a single page of positioned words: column -> x, line -> y. This
+    lets the layout-based parsers handle text files like PDFs.
+    """
+    raw = open(path, 'rb').read().decode('utf-8', errors='replace')
+    lines = raw.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+    size = 10.0
+    page = Page(0, 0.0, 0.0)
+    width = 0
+    for iline, line in enumerate(lines):
+        line = line.expandtabs(tabsize).translate(_NORMALIZE)
+        width = max(width, len(line))
+        baseline = (iline + 1) * line_height
+        for m in re.finditer(r'\S+', line):
+            x0 = m.start() * char_width
+            x1 = m.end() * char_width
+            page.words.append(Word(m.group(), x0, baseline - size, x1,
+                                   baseline, size, False, 'text', baseline))
+    page.width = max(width * char_width, 1.0)
+    page.height = (len(lines) + 1) * line_height
+    return [page]

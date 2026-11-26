@@ -1992,6 +1992,7 @@
     1.679012
    ],
    "DwellTime": 1.901e-06,
+   "FlipAngle": 90.0,
    "RepetitionTime": 3.4,
    "Modality": "MR",
    "ProtocolName": "Axial MB DTI",

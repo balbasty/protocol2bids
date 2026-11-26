@@ -554,7 +554,21 @@ def inversion_time(ctx: Context):
 
 @rule
 def flip_angle(ctx: Context):
-    fas = [V.number(x) for x in numbered(ctx, 'Flip angle', card='Contrast')]
+    try:
+        fas = [V.number(x)
+               for x in numbered(ctx, 'Flip angle', card='Contrast')]
+    except Missing:
+        # Product spin-echo EPI (ep2d_diff, epse): the excitation is
+        # always 90 deg and is not printed. (User sequences may differ,
+        # e.g. NYU's cbi_ep2d_diff uses 60 deg.)
+        folder = (ctx.prot.header.get('SequenceFolder') or '').upper()
+        base = base_sequence(sequence_name(ctx)).lower()
+        product = base in ('ep2d_diff', 'epse', 'ep2d_se', 'resolve',
+                           'ep_seg_se')
+        if folder not in ('USER', 'CUSTOMER') and product:
+            ctx.set('FlipAngle', 90.0)
+            return
+        raise
     ctx.set('FlipAngle', scalar_or_list(fas))
 
 

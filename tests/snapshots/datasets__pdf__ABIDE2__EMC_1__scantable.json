@@ -43,8 +43,8 @@
    "MagneticFieldStrength": 3.0,
    "ReceiveCoilName": "8Ch",
    "PulseSequenceType": "IR-FSPGR",
-   "MRAcquisitionType": "2D",
-   "RepetitionTime": 0.01027,
+   "MRAcquisitionType": "3D",
+   "RepetitionTimeExcitation": 0.01027,
    "EchoTime": 0.004236,
    "InversionTime": 0.35000000000000003,
    "FlipAngle": 16.0,
@@ -52,7 +52,6 @@
    "ParallelAcquisitionTechnique": "ASSET",
    "ParallelReductionFactorInPlane": 2.0,
    "SliceThickness": 0.9,
-   "SpacingBetweenSlices": 0.9,
    "AcquisitionMatrixPE": 256
   }
  },
